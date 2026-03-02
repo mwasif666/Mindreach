@@ -8,14 +8,15 @@ const __dirname = path.dirname(__filename)
 
 const projectRoot = path.resolve(__dirname, '..')
 const templateRoot = path.resolve(projectRoot, '..')
-const pageSourceCandidates = [templateRoot, path.resolve(templateRoot, 'New folder')]
+const pageSourceCandidates = [
+  projectRoot,
+  path.resolve(projectRoot, 'New folder'),
+  templateRoot,
+  path.resolve(templateRoot, 'New folder'),
+]
 const pageSourceRoot = pageSourceCandidates.find((candidate) =>
   fs.existsSync(path.resolve(candidate, 'index.php')),
 )
-
-if (!pageSourceRoot) {
-  throw new Error('Unable to locate PHP page source directory (missing index.php).')
-}
 const pagesDir = path.resolve(projectRoot, 'src', 'pages')
 const templateAssetsDir = path.resolve(templateRoot, 'assets')
 const publicAssetsDir = path.resolve(projectRoot, 'public', 'assets')
@@ -89,6 +90,12 @@ const pageDefinitions = [
 
 const phpToRouteMap = Object.fromEntries(pageDefinitions.map((page) => [page.phpFile, page.route]))
 const converter = new HTMLtoJSX({ createClass: false })
+
+function hasCommittedReactPages() {
+  return pageDefinitions.every((definition) =>
+    fs.existsSync(path.resolve(pagesDir, definition.outputFile)),
+  )
+}
 
 function resolveIncludePath(includePath, currentFile) {
   const fromTemplateRoot = path.resolve(templateRoot, includePath)
@@ -225,8 +232,25 @@ function writePageComponent(definition, pageParts) {
 }
 
 function generateReactPages() {
-  fs.mkdirSync(path.dirname(publicAssetsDir), { recursive: true })
-  fs.cpSync(templateAssetsDir, publicAssetsDir, { recursive: true, force: true })
+  if (!pageSourceRoot) {
+    if (hasCommittedReactPages()) {
+      console.warn(
+        '[generate:pages] PHP source files not found. Using committed React page components.',
+      )
+      return
+    }
+
+    throw new Error(
+      'Unable to locate PHP page source directory (missing index.php), and committed React pages are missing.',
+    )
+  }
+
+  if (fs.existsSync(templateAssetsDir)) {
+    fs.mkdirSync(path.dirname(publicAssetsDir), { recursive: true })
+    fs.cpSync(templateAssetsDir, publicAssetsDir, { recursive: true, force: true })
+  } else {
+    console.warn(`[generate:pages] Assets source not found at ${templateAssetsDir}. Skipping asset sync.`)
+  }
 
   for (const definition of pageDefinitions) {
     const context = {}
