@@ -1,0 +1,1627 @@
+import PageLayout from '../components/layout/PageLayout'
+
+const PAGE_TITLE = "Home Three || Medizen || Medizen React Template"
+const BODY_CLASS = "body-bg2"
+
+function HomeThreePage() {
+  return (
+    <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
+      <div>
+        {/* Start Cursor Pointer */}
+        <div className="mouse-follower">
+          <span className="cursor-outline" />
+          <span className="cursor-dot" />
+        </div>
+        {/* End Cursor Pointer */}
+        {/* Header Section Start */}
+        <header id="header-sticky" className="header-3 bg-transparent sticky-header1">
+          <div className="container">
+            <div className="mega-menu-wrapper">
+              <div className="header-main style-2">
+                <div className="header-left">
+                  <div className="logo">
+                    <a href="/" className="header-logo">
+                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                    </a>
+                  </div>
+                </div>
+                <div className="header-right d-flex justify-content-end align-items-center">
+                  <div className="mean__menu-wrapper">
+                    <div className="main-menu">
+                      <nav id="mobile-menu">
+                        <ul>
+                          <li className="has-dropdown active menu-thumb">
+                            <a href="/">
+                              Home
+                              <i className="fas fa-angle-down" />
+                            </a>
+                            <ul className="submenu has-homemenu">
+                              <li>
+                                <div className="homemenu-items">
+                                  <div className="homemenu">
+                                    <a href="/" className="homemenu-thumb">
+                                      <img src="/assets/img/header/home-1.jpg" alt="img" />
+                                      <span className="demo-button">
+                                        <span className="theme-btn p1-bg box-style first-box">
+                                          <span className="black">Home 01</span>
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                  <div className="homemenu">
+                                    <a href="/home-2" className="homemenu-thumb mb-15">
+                                      <img src="/assets/img/header/home-2.jpg" alt="img" />
+                                      <span className="demo-button">
+                                        <span className="theme-btn p1-bg box-style first-box">
+                                          <span className="black">Home 02</span>
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                  <div className="homemenu">
+                                    <a href="/home-3" className="homemenu-thumb mb-15">
+                                      <img src="/assets/img/header/home-3.jpg" alt="img" />
+                                      <span className="demo-button">
+                                        <span className="theme-btn p1-bg box-style first-box">
+                                          <span className="black">Home 03</span>
+                                        </span>
+                                      </span>
+                                    </a>
+                                  </div>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#!">
+                              Services
+                              <i className="fas fa-angle-down" />
+                            </a>
+                            <ul className="submenu">
+                              <li><a href="/service">Services</a></li>
+                              <li><a href="/service-details">Services Details</a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#!">
+                              Projects
+                              <i className="fas fa-angle-down" />
+                            </a>
+                            <ul className="submenu">
+                              <li><a href="/project">Project</a></li>
+                              <li><a href="/project-details">Project Details</a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="#!">
+                              Blog
+                              <i className="fas fa-angle-down" />
+                            </a>
+                            <ul className="submenu">
+                              <li><a href="/blog">Blog</a></li>
+                              <li><a href="/blog-details">Blog Details</a></li>
+                            </ul>
+                          </li>
+                          <li className="has-dropdown">
+                            <a href="#!">
+                              Pages
+                              <i className="fas fa-angle-down" />
+                            </a>
+                            <ul className="submenu">
+                              <li><a href="/about">About Us</a></li>
+                              <li><a href="/doctor">Doctor</a></li>
+                              <li><a href="/doctor-details">Doctor Details</a></li>
+                              <li><a href="/pricing">Pricing</a></li>
+                            </ul>
+                          </li>
+                          <li>
+                            <a href="/contact">Contact</a>
+                          </li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                  <a href="#0" className="search-trigger search-icon d-none d-xl-block"><i className="fal fa-search" />
+                  </a>
+                  <div className="header__hamburger d-xl-none my-auto">
+                    <div className="sidebar__toggle">
+                      <img src="/assets/img/icon/menu.png" alt="icon" />
+                    </div>
+                  </div>
+                </div>
+                <div className="author-icon">
+                  <div className="icon">
+                    <i className="fa-light fa-phone-volume" />
+                  </div>
+                  <div className="content">
+                    <h5>
+                      <a href="tel:+1(345)678-910">+1(345)678-910</a>
+                    </h5>
+                  </div>
+                </div>
+                <div className="header-btn d-xl-block d-none">
+                  <a href="/contact" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100">
+                    Contact us
+                    <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        {/* Banner Section Start */}
+        <section className="banner-section3 fix bg-cover" style={{backgroundImage: 'url("/assets/img/banner/bg-color3.jpg")'}}>
+          <div className="container">
+            <div className="row g-5 justify-content-between">
+              <div className="col-xxl-7 col-xl-7 col-md-11 order-2 order-lg-1">
+                <div className="hero-content-version3">
+                  <span className="cmn-tag p1-bg heading-font mb-xxl-1 mb-3">Madical Care</span>
+                  <h1 className="black wow fadeInUp" data-wow-delay="0.6s">
+                    We Provide<br />
+                    <span className="position-relative z-1 w-100">
+                      Dental
+                      <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                    </span>
+                    Services<br /> &amp; Surgery
+                    <img src="/assets/img/banner/icon3_1.svg" alt="icon" className="img-icon" />
+                  </h1>
+                  <p>Dental care focuses on maintaining oral health through practices such as<br /> regular check-, and treatments
+                    for
+                    teeth and gums It includes</p>
+                  <div className="d-flex flex-wrap align-items-center gap-xxl-4 gap-xl-3 gap-3">
+                    <div className="hero-button">
+                      <a href="/pricing" className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
+                        Make Appoinment
+                        <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
+                      </a>
+                    </div>
+                    <div className="watch-video">
+                      <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" className="video-btn video-popup common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                        Watch Video
+                        <i className="fa-solid fa-play" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-xxl-5 col-xl-5 col-md-7 order-1 order-lg-2">
+                <div className="banner-thumb-items">
+                  <div className="thumb-shape-1">
+                    <img src="/assets/img/banner/shape3_2.png" alt="shape-img" />
+                  </div>
+                  <div className="thumb-shape-2">
+                    <img src="/assets/img/banner/shape3_1.png" alt="shape-img" />
+                  </div>
+                  <div className="thumb-shape-3">
+                    <img src="/assets/img/banner/search-shape.png" alt="shape-img" />
+                  </div>
+                  <div className="thumb">
+                    <img src="/assets/img/banner/hero3-thumb.png" alt="thumb" />
+                  </div>
+                  <div className="counter-area-1">
+                    <div className="counter-content d-center">
+                      <h3><span>1k</span>+</h3>
+                      <h4>Patients</h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* TextSlide System Section Start */}
+        <div className="sponsor-text-slide p1-bg swiper">
+          <div className="swiper-wrapper">
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                Quality Care Service
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                <img src="/assets/img/icon/star-text.png" alt="icon" />
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                Your Wellness Priority
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                <img src="/assets/img/icon/star-text.png" alt="icon" />
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                Caring for You Always
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                <img src="/assets/img/icon/star-text.png" alt="icon" />
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                Quality Care Service
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                <img src="/assets/img/icon/star-text.png" alt="icon" />
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                Your Wellness Priority
+              </div>
+            </div>
+            <div className="swiper-slide w-fit">
+              <div className="text-slide-item">
+                <img src="/assets/img/icon/star-text.png" alt="icon" />
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* Servie Section Start */}
+        <section className="services-section cmn-bg fix section-padding">
+          <div className="container">
+            <div className="section-title text-center mb-60">
+              <span className="cmn-tag p1-bg heading-font">Latest Service</span>
+              <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
+                Your Wellness Our Priority <br />
+                <span className="position-relative z-1">
+                  Healthier
+                  <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                </span>
+                Lives
+              </h2>
+            </div>
+            <div className="row g-4">
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
+                  <div className="thumb overflow-hidden reveal-left position-relative">
+                    <img src="/assets/img/service/service3-v1.jpg" alt="img" className="overflow-hidden w-100" />
+                  </div>
+                  <div className="service-content">
+                    <h3 className="black"><a href="/service-details">Quality Care Service</a></h3>
+                    <p className="pra">
+                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                    </p>
+                    <div className="service-btn-inner">
+                      <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
+                  <div className="thumb overflow-hidden reveal-left position-relative">
+                    <img src="/assets/img/service/service3-v2.jpg" alt="img" className="overflow-hidden w-100" />
+                  </div>
+                  <div className="service-content">
+                    <h3 className="black"><a href="/service-details">Your Wellness Priority</a></h3>
+                    <p className="pra">
+                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                    </p>
+                    <div className="service-btn-inner">
+                      <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6">
+                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
+                  <div className="thumb overflow-hidden reveal-left position-relative">
+                    <img src="/assets/img/service/service3-v3.jpg" alt="img" className="overflow-hidden w-100" />
+                  </div>
+                  <div className="service-content">
+                    <h3 className="black"><a href="/service-details">Caring for You Always</a></h3>
+                    <p className="pra">
+                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                    </p>
+                    <div className="service-btn-inner">
+                      <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Servie Section End */}
+        {/* About Section Start */}
+        <section className="about-section3 cmn-bg fix">
+          <div className="container">
+            <div className="about-wrapper3">
+              <div className="row g-5 justify-content-between">
+                <div className="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div className="about-content3">
+                    <div className="section-title">
+                      <span className="cmn-tag p1-bg heading-font">About Us</span>
+                      <h2 className="wow fadeInUp black visible-slowly-right mb-xxl-4 mb-3" data-wow-delay=".3s">
+                        Compassionate Dental There
+                        <span className="position-relative z-1">
+                          Health
+                          <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                        </span>
+                        First
+                      </h2>
+                      <p className="pra mb-sm-4 mb-3 position-relative syle-pra d-flex align-items-center gap-3">
+                        <img src="/assets/img/element/pra-element.png" alt="element" className="d-sm-block d-none" />
+                        Over 30 year’s experience providing top quality country'sacross world. The energy that
+                        is
+                        sourceable , free and healthy.
+                      </p>
+                    </div>
+                    <div className="progress-wrap">
+                      <div className="pro-items wow fadeInUp" data-wow-delay=".5s">
+                        <div className="pro-head">
+                          <h4 className="title">
+                            Dental and Mouth Care
+                          </h4>
+                          <span className="point style">
+                            87%
+                          </span>
+                        </div>
+                        <div className="progress">
+                          <div className="progress-value" />
+                        </div>
+                      </div>
+                      <div className="pro-items wow fadeInUp" data-wow-delay=".7s">
+                        <div className="pro-head">
+                          <h4 className="title">
+                            Cosmetic Treatment
+                          </h4>
+                          <span className="point">
+                            95%
+                          </span>
+                        </div>
+                        <div className="progress">
+                          <div className="progress-value style-two" />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="about-btn-inner mt-5">
+                      <a href="/about" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
+                  <div className="about-schedule rounded-4">
+                    <div className="about-content">
+                      <h1>Schedule</h1>
+                      <p>Dental care focuses on maintaining oral health through practices such as regular check-ups,
+                        cleanings, and treatments for teeth and gums. It includes preventive care to avoid dental issues</p>
+                      <div className="time-schedule">
+                        <ul>
+                          <li><span className="text">Monday - wednesday</span> <span>8AM - 10PM</span></li>
+                          <li><span className="text">Satuday - Sunday</span> <span>10AM - 2PM</span></li>
+                          <li><span className="text">Friday</span> <span>2PM - 8PM</span></li>
+                          <li><span className="text">thusday</span> <span>Off
+                            </span></li></ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Team Section Start */}
+        <section className="team-section3 fix cmn-bg section-padding pb-0">
+          <div className="container">
+            <div className="section-title text-center mb-60">
+              <span className="cmn-tag p1-bg heading-font">Our Team Member</span>
+              <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
+                Compassionate Dental<br />Exceptional
+                <span className="position-relative z-1">
+                  Results
+                  <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                </span>
+              </h2>
+            </div>
+            <div className="team-wrapper3">
+              <div className="row g-4 justify-content-between">
+                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div className="team-items-info3">
+                    <div className="thumb">
+                      <img src="/assets/img/team/teamThumb3_1.jpg" alt="thumb" />
+                    </div>
+                    <div className="team-content align-items-end">
+                      <h3><a href="/doctor-details">Dr.Alvin Eclair</a></h3>
+                      <p>Dental Care</p>
+                      <div className="social-wrapper d-flex align-items-center">
+                        <a href="#"><i className="fab fa-facebook-f" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div className="team-items-info3">
+                    <div className="thumb">
+                      <img src="/assets/img/team/teamThumb3_2.jpg" alt="thumb" />
+                    </div>
+                    <div className="team-content align-items-end">
+                      <h3><a href="/doctor-details">Dr.Alan Jelly</a></h3>
+                      <p>Eye Expert</p>
+                      <div className="social-wrapper d-flex align-items-center">
+                        <a href="#"><i className="fab fa-facebook-f" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div className="team-items-info3">
+                    <div className="thumb">
+                      <img src="/assets/img/team/teamThumb3_3.jpg" alt="thumb" />
+                    </div>
+                    <div className="team-content align-items-end">
+                      <h3><a href="/doctor-details">Dr. R. Chassay</a></h3>
+                      <p>Neurology Expert</p>
+                      <div className="social-wrapper d-flex align-items-center">
+                        <a href="#"><i className="fab fa-facebook-f" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
+                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Testimonial Section Start */}
+        <section className="testimonial-section3 section-padding cmn-bg fix">
+          <div className="container">
+            <div className="testimonial-wrapper3">
+              <div className="swiper testimonial-slider3">
+                <div className="swiper-wrapper">
+                  <div className="swiper-slide">
+                    <div className="testimonial-items3">
+                      <div className="testimonial-content">
+                        <div className="section-title text-center mb-60">
+                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
+                            What Our
+                            <span className="position-relative z-1">
+                              Present
+                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                            </span>
+                            Says?
+                          </h2>
+                        </div>
+                        <div className="thumb">
+                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                        </div>
+                        <div className="author-details">
+                          <h3>Michael Ramirez</h3>
+                          <div className="icon">
+                            <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
+                          </div>
+                          <span>Ceo</span>
+                        </div>
+                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
+                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <div className="star">
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star color-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="swiper-slide">
+                    <div className="testimonial-items3">
+                      <div className="testimonial-content">
+                        <div className="section-title text-center mb-60">
+                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
+                            What Our
+                            <span className="position-relative z-1">
+                              Present
+                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                            </span>
+                            Says?
+                          </h2>
+                        </div>
+                        <div className="thumb">
+                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                        </div>
+                        <div className="author-details">
+                          <h3>Michael Ramirez</h3>
+                          <div className="icon">
+                            <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
+                          </div>
+                          <span>Ceo</span>
+                        </div>
+                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
+                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <div className="star">
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star color-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="swiper-slide">
+                    <div className="testimonial-items3">
+                      <div className="testimonial-content">
+                        <div className="section-title text-center mb-60">
+                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
+                            What Our
+                            <span className="position-relative z-1">
+                              Present
+                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                            </span>
+                            Says?
+                          </h2>
+                        </div>
+                        <div className="thumb">
+                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                        </div>
+                        <div className="author-details">
+                          <h3>Michael Ramirez</h3>
+                          <div className="icon">
+                            <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
+                          </div>
+                          <span>Ceo</span>
+                        </div>
+                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
+                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <div className="star">
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star" />
+                          <i className="fas fa-star color-2" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="array-button d-flex align-items-between">
+                  <button className="array-prev"><i className="fal fa-arrow-left" /></button>
+                  <button className="array-next"><i className="fal fa-arrow-right" /></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Latest Project Section Start */}
+        <section className="latest-project3 cmn-bg fix">
+          <div className="container">
+            <div className="d-flex flex-sm-nowrap flex-wrap gap-2 align-items-end justify-content-between mb-60">
+              <div className="section-title">
+                <span className="cmn-tag p1-bg heading-font mb-3">Latest Project</span>
+                <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
+                  Expert Care for Bright Smiles<br />Your Dental Health
+                </h2>
+              </div>
+              <div className="array-button d-flex align-items-center gap-3 wow fadeInUp" data-wow-delay=".5s">
+                <button className="array-prev d-center">
+                  <img src="/assets/img/icon/arrow-left-black.png" alt="icon" />
+                </button>
+                <button className="array-next d-center active">
+                  <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                </button>
+              </div>
+            </div>
+            <div className="swiper latest-project3__wrapper">
+              <div className="swiper-wrapper">
+                <div className="swiper-slide">
+                  <div className="latest-project-slide3">
+                    <div className="thumb">
+                      <img src="/assets/img/project/projectThumb3_1.png" alt="thumb" />
+                    </div>
+                    <div className="content">
+                      <h4><a href="/project-details">Smile Confidently with Us Keeping Smiles</a></h4>
+                      <div className="btn-wrapper">
+                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="latest-project-slide3">
+                    <div className="thumb">
+                      <img src="/assets/img/project/projectThumb3_2.png" alt="thumb" />
+                    </div>
+                    <div className="content">
+                      <h4><a href="/project-details">A Comprehensive Dental Case Study</a></h4>
+                      <div className="btn-wrapper">
+                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="latest-project-slide3">
+                    <div className="thumb">
+                      <img src="/assets/img/project/projectThumb3_3.png" alt="thumb" />
+                    </div>
+                    <div className="content">
+                      <h4><a href="/project-details">An In-Depth Case Study on Smile Transformations</a></h4>
+                      <div className="btn-wrapper">
+                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="swiper-slide">
+                  <div className="latest-project-slide3">
+                    <div className="thumb">
+                      <img src="/assets/img/project/projectThumb3_4.png" alt="thumb" />
+                    </div>
+                    <div className="content">
+                      <h4><a href="/project-details">An In-Depth Analysis of Dental Practices</a></h4>
+                      <div className="btn-wrapper">
+                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Counter Care Section Start */}
+        <section className="care-counter3 cmn-bg fix section-padding">
+          <div className="container">
+            <div className="care-counter-wrap3">
+              <div className="row g-3 justify-content-center">
+                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                  <div className="counter-items3">
+                    <div className="content3">
+                      <h2><span className="count">600</span>+</h2>
+                      <p>Complte Project</p>
+                    </div>
+                    <div className="icon">
+                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
+                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
+                  <div className="counter-items3">
+                    <div className="content3">
+                      <h2><span className="count">200</span>+</h2>
+                      <p>Complte Project</p>
+                    </div>
+                    <div className="icon">
+                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
+                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
+                  <div className="counter-items3">
+                    <div className="content3">
+                      <h2><span className="count">500</span>+</h2>
+                      <p>Complte Project</p>
+                    </div>
+                    <div className="icon">
+                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
+                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
+                  <div className="counter-items3">
+                    <div className="content3">
+                      <h2><span className="count">500</span>+</h2>
+                      <p>Complte Project</p>
+                    </div>
+                    <div className="icon">
+                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
+                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Feature Section Start */}
+        <section className="feature-section3 fix cmn-bg">
+          <div className="container">
+            <div className="feature-wrapper3">
+              <div className="row g-4 mb-30">
+                <div className="col-xl-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                  <div className="feature-items1">
+                    <div className="content">
+                      <h2>Compassionate care a exceptional results</h2>
+                      <p>Dental care focuses on maintaining oral health through practices such as regular </p>
+                      <div className="feature-btn-inner">
+                        <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                          Read More
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                    <div className="icon">
+                      <img src="/assets/img/feature/featureIcon3_1.png" alt="icon" />
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                  <div className="feature-thumb">
+                    <img src="/assets/img/feature/featureThumb3_1.png" alt="thumb" />
+                  </div>
+                </div>
+                <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                  <div className="feature-content">
+                    <span>10</span>
+                    <h4>years of experiences</h4>
+                    <p>Dental care focuses maintaining oral health through practices such as regular check-ups, cleanings, and
+                      treatments</p>
+                  </div>
+                </div>
+              </div>
+              <div className="row g-4">
+                <div className="col-xl-9 col-lg-8 wow fadeInUp" data-wow-delay="0.9s">
+                  <div className="feature-inner-items2 reveal-left bg-cover rounded-4" style={{backgroundImage: 'url("/assets/img/feature/featureThumb3_2.png")'}}>
+                    <div className="content">
+                      <h1>A healthy tomorrow starts today</h1>
+                      <p>Dental care focuses on maintaining oral health through practices such as regular Dental care focuses
+                      </p>
+                      <div className="feature-btn-inner">
+                        <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                          Read More
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-3 col-lg-4 wow fadeInUp" data-wow-delay="1.3s">
+                  <div className="feature-inner-items3">
+                    <h3>Caring for You Always</h3>
+                    <ul className="list-area d-flex flex-column pb-xl-3">
+                      <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
+                        <i className="fa-solid fa-angles-right" /> Health Harmony
+                      </li>
+                      <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
+                        <i className="fa-solid fa-angles-right" /> Vitality Visions
+                      </li>
+                      <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
+                        <i className="fa-solid fa-angles-right" /> Care Connect Well
+                      </li>
+                      <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
+                        <i className="fa-solid fa-angles-right" /> Mindful Moments
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Pricing Section Start */}
+        <section className="pricing-section3 fix section-padding space-top cmn-bg">
+          <div className="container">
+            <div className="section-title text-center mb-60">
+              <span className="cmn-tag p1-bg heading-font">Pricing Plane</span>
+              <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
+                Where health meets hope <br /> partner in
+                <span className="position-relative z-1">
+                  wellness
+                  <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                </span>
+              </h2>
+              <div className="pricing-content">
+                <div className="pricing-tab-header">
+                  <ul className="nav" role="tablist">
+                    <li className="nav-item wow fadeInUp" data-wow-delay=".3s" role="presentation">
+                      <a href="#monthly" data-bs-toggle="tab" className="nav-link1" aria-selected="false" role="tab" tabIndex={-1}>
+                        Daily
+                      </a>
+                    </li>
+                    <li className="nav-item wow fadeInUp" data-wow-delay=".5s" role="presentation">
+                      <a href="#yearly" data-bs-toggle="tab" className="nav-link2 active" aria-selected="true" role="tab">
+                        Monthy
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div className="tab-content">
+              <div id="monthly" className="tab-pane fade" role="tabpanel">
+                <div className="row g-xxl-5 g-4 justify-content-center align-items-center">
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div className="pricing-items3">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_575)">
+                            <path d="M50.1116 70.1641C46.5737 70.1641 43.5287 67.6703 42.8753 64.2316L39.6145 47.0903C39.1974 44.9116 37.2578 43.3307 35.0003 43.3307C32.7428 43.3307 30.8032 44.9116 30.3891 47.0903L27.1282 64.2286C26.472 67.6703 23.4299 70.1641 19.8891 70.1641C16.1178 70.1641 12.9707 67.3699 12.5682 63.6628L11.2907 51.9261C10.8299 47.6795 9.92574 43.4736 8.60158 39.4166L6.11074 31.7749C3.99324 25.2736 2.91699 18.5157 2.91699 11.6849C2.91699 5.3324 8.14949 0.164062 14.5837 0.164062C19.3232 0.164062 23.9024 1.31906 28.8287 3.69615C32.982 5.70281 37.0216 5.70281 41.172 3.69615C46.0982 1.31906 50.6774 0.164062 55.1691 0.164062C61.8512 0.164062 67.0837 5.3324 67.0837 11.6849C67.0837 18.5128 66.0074 25.2736 63.8899 31.7778L61.3991 39.4166C60.0749 43.4736 59.1707 47.6795 58.7099 51.9261L57.4324 63.6628C57.0299 67.3699 53.8828 70.1641 50.1116 70.1641ZM35.0003 40.4141C38.6578 40.4141 41.8049 42.9924 42.4757 46.5478L45.7366 63.6861C46.1303 65.7482 47.9707 67.2474 50.1116 67.2474C52.3895 67.2474 54.2912 65.5703 54.5332 63.3478L55.8107 51.6111C56.2949 47.1691 57.2428 42.7591 58.6282 38.5124L61.1191 30.8736C63.1403 24.6641 64.167 18.2066 64.167 11.6849C64.167 6.93948 60.2412 3.08073 55.417 3.08073C51.1237 3.08073 46.9616 4.1424 42.4407 6.32406C37.5028 8.70698 32.4949 8.70698 27.5599 6.32406C23.0391 4.1424 18.877 3.08073 14.8316 3.08073C9.75949 3.08073 5.83366 6.93948 5.83366 11.6849C5.83366 18.2066 6.86033 24.6641 8.88449 30.8736L11.3753 38.5124C12.7607 42.7591 13.7087 47.1661 14.1899 51.6082L15.4674 63.3449C15.7095 65.5703 17.6112 67.2474 19.8891 67.2474C22.0299 67.2474 23.8674 65.7482 24.2612 63.6832L27.522 46.5449C28.1957 42.9924 31.3428 40.4141 35.0003 40.4141Z" fill="#14B8A6" />
+                            <path d="M61.9792 32.2474H51.73C48.9504 32.2474 46.4538 30.7044 45.2083 28.2165L44.0563 25.9153C43.3125 24.4249 41.8104 23.4974 40.145 23.4974H29.855C28.1896 23.4974 26.6875 24.4249 25.9438 25.9153L24.7917 28.2165C23.5463 30.7044 21.0496 32.2474 18.27 32.2474H8.02083C7.21583 32.2474 6.5625 31.594 6.5625 30.789C6.5625 29.984 7.21583 29.3307 8.02083 29.3307H18.27C19.9354 29.3307 21.4346 28.4032 22.1813 26.9128L23.3333 24.6115C24.5788 22.1236 27.0754 20.5807 29.855 20.5807H40.145C42.9246 20.5807 45.4212 22.1236 46.6667 24.6115L47.8188 26.9128C48.5625 28.4032 50.0646 29.3307 51.73 29.3307H61.9792C62.7842 29.3307 63.4375 29.984 63.4375 30.789C63.4375 31.594 62.7842 32.2474 61.9792 32.2474Z" fill="#14B8A6" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_575">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Perfect</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$29</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div className="pricing-items3 premium">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_531)">
+                            <path d="M41.3731 41.6537C40.956 41.6537 40.5331 41.5983 40.1072 41.4845C38.0072 40.9216 36.5664 39.0433 36.6831 37.0133L37.5347 27.2016C37.5727 26.5454 36.9835 25.8541 36.161 25.6324C35.3414 25.4079 34.4868 25.7199 34.1689 26.347L30.0418 35.1904C29.1085 37.0424 26.9093 37.9466 24.8181 37.3895C22.5722 36.7858 21.1139 34.7179 21.4231 32.577L22.2252 27.0091C22.2835 26.6474 22.4468 23.9495 22.7531 17.5387C22.9018 14.4354 23.386 11.3495 24.1822 8.36869C24.6752 6.52827 25.8535 4.99119 27.5072 4.03744C29.1552 3.08661 31.086 2.82994 32.9206 3.32577C34.1981 3.66702 35.356 4.35244 36.2718 5.30036C38.8531 7.96911 42.671 8.99869 46.2352 7.96911C47.501 7.61036 48.8514 7.59577 50.126 7.93702C53.9264 8.95202 56.1868 12.872 55.1718 16.6724C54.3697 19.6591 53.2439 22.5699 51.8235 25.332C48.8747 31.0487 47.676 33.452 47.5389 33.7962L45.4535 39.0141C44.8031 40.6445 43.1668 41.6537 41.3731 41.6537ZM35.6331 22.6458C36.0589 22.6458 36.4906 22.7012 36.9193 22.8179C39.0777 23.3983 40.5622 25.3291 40.4427 27.4116L39.591 37.2262C39.556 37.827 40.1043 38.4658 40.8627 38.6699C41.6793 38.8887 42.4989 38.562 42.7497 37.9291L44.8352 32.7112C45.0568 32.1541 46.5385 29.2229 49.2335 23.9962C50.5606 21.4179 51.6077 18.7024 52.3514 15.9229C52.646 14.832 52.4972 13.6945 51.9314 12.7204C51.3714 11.7462 50.4585 11.0491 49.3735 10.7574C48.6035 10.5533 47.7956 10.562 47.0372 10.7749C42.4347 12.0933 37.5056 10.772 34.1747 7.33036C33.6264 6.76161 32.9264 6.35036 32.1622 6.14619C31.0772 5.85452 29.9368 6.00619 28.9627 6.56911C27.9885 7.12619 27.2914 8.03619 27.0027 9.12119C26.256 11.9037 25.8068 14.7824 25.6639 17.6787C25.5093 20.9716 25.2293 26.6212 25.1156 27.4262L24.3135 32.9912C24.2172 33.662 24.7714 34.3562 25.5764 34.572C26.3202 34.7674 27.1281 34.4933 27.4227 33.9158L31.5497 25.0724C32.3197 23.547 33.9181 22.6458 35.6331 22.6458Z" fill="#090A0B" />
+                            <path d="M62.7083 70.1641H7.29167C3.26958 70.1641 0 66.8916 0 62.8724V36.6224C0 34.2104 1.96292 32.2474 4.375 32.2474H10.4621C12.5242 32.2474 14.3267 33.7204 14.7496 35.7504C16.0125 41.852 16.7563 46.5537 16.7621 46.6004C17.3658 51.7454 21.8021 55.5808 27.0842 55.5808C29.6421 55.5808 32.1008 54.6504 34.0113 52.9587C34.5596 52.4716 35.3937 52.4716 35.9392 52.9558C37.8642 54.6504 40.3404 55.5808 42.9158 55.5808C48.2008 55.5808 52.6342 51.7483 53.2321 46.6616C53.2438 46.5654 53.9525 41.9716 55.2475 35.7474C55.6646 33.7204 57.4671 32.2474 59.5321 32.2474H65.625C68.0371 32.2474 70 34.2104 70 36.6224V62.8724C70 66.8916 66.7304 70.1641 62.7083 70.1641ZM4.375 35.1641C3.57292 35.1641 2.91667 35.8174 2.91667 36.6224V62.8724C2.91667 65.2845 4.87958 67.2474 7.29167 67.2474H62.7083C65.1204 67.2474 67.0833 65.2845 67.0833 62.8724V36.6224C67.0833 35.8174 66.4271 35.1641 65.625 35.1641H59.5321C58.8467 35.1641 58.2458 35.657 58.1058 36.3366C56.8283 42.4849 56.1254 47.0087 56.1196 47.0524C55.3554 53.5566 49.6767 58.4974 42.9158 58.4974C40.0488 58.4974 37.2721 57.5904 34.9796 55.9191C32.6987 57.5904 29.9396 58.4974 27.0842 58.4974C20.3233 58.4974 14.6417 53.5537 13.8717 46.997C13.1017 40.4404 13.1367 42.3624 11.8942 36.3424C11.7513 35.6599 11.1475 35.1641 10.4621 35.1641H4.375Z" fill="#090A0B" />
+                            <path d="M7.29174 17.664C6.91841 17.664 6.54508 17.5211 6.25924 17.2382L3.34258 14.3215C2.77383 13.7528 2.77383 12.8282 3.34258 12.2594C3.91133 11.6907 4.83591 11.6907 5.40466 12.2594L8.32133 15.1761C8.89008 15.7449 8.89008 16.6694 8.32133 17.2382C8.03841 17.5211 7.66508 17.664 7.29174 17.664Z" fill="#090A0B" />
+                            <path d="M13.1253 14.7474C12.3203 14.7474 11.667 14.0941 11.667 13.2891V10.3724C11.667 9.5674 12.3203 8.91406 13.1253 8.91406C13.9303 8.91406 14.5837 9.5674 14.5837 10.3724V13.2891C14.5837 14.0941 13.9303 14.7474 13.1253 14.7474Z" fill="#090A0B" />
+                            <path d="M4.375 23.4974H1.45833C0.653333 23.4974 0 22.844 0 22.039C0 21.234 0.653333 20.5807 1.45833 20.5807H4.375C5.18 20.5807 5.83333 21.234 5.83333 22.039C5.83333 22.844 5.18 23.4974 4.375 23.4974Z" fill="#090A0B" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_531">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Easy</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$20</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div className="pricing-items3">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_579)">
+                            <path d="M65.625 58.4974H4.375C1.96292 58.4974 0 56.5344 0 54.1224V16.2057C0 13.7936 1.96292 11.8307 4.375 11.8307H10.2083C11.0133 11.8307 11.6667 12.484 11.6667 13.289C11.6667 14.094 11.0133 14.7474 10.2083 14.7474H4.375C3.57 14.7474 2.91667 15.4007 2.91667 16.2057V54.1224C2.91667 54.9244 3.57 55.5807 4.375 55.5807H65.625C66.43 55.5807 67.0833 54.9244 67.0833 54.1224V16.2057C67.0833 15.4007 66.43 14.7474 65.625 14.7474H59.7917C58.9867 14.7474 58.3333 14.094 58.3333 13.289C58.3333 12.484 58.9867 11.8307 59.7917 11.8307H65.625C68.0371 11.8307 70 13.7936 70 16.2057V54.1224C70 56.5344 68.0371 58.4974 65.625 58.4974Z" fill="#14B8A6" />
+                            <path d="M48.1253 70.164H21.8753C21.0703 70.164 20.417 69.5106 20.417 68.7056C20.417 67.9006 21.0703 67.2473 21.8753 67.2473H48.1253C48.9303 67.2473 49.5837 67.9006 49.5837 68.7056C49.5837 69.5106 48.9303 70.164 48.1253 70.164Z" fill="#14B8A6" />
+                            <path d="M30.6253 70.1641C29.8203 70.1641 29.167 69.5108 29.167 68.7058V57.0391C29.167 56.2341 29.8203 55.5808 30.6253 55.5808C31.4303 55.5808 32.0837 56.2341 32.0837 57.0391V68.7058C32.0837 69.5108 31.4303 70.1641 30.6253 70.1641Z" fill="#14B8A6" />
+                            <path d="M39.3753 70.1641C38.5703 70.1641 37.917 69.5108 37.917 68.7058V57.0391C37.917 56.2341 38.5703 55.5808 39.3753 55.5808C40.1803 55.5808 40.8337 56.2341 40.8337 57.0391V68.7058C40.8337 69.5108 40.1803 70.1641 39.3753 70.1641Z" fill="#14B8A6" />
+                            <path d="M42.9126 35.1641C40.7368 35.1641 38.8584 33.7203 38.4443 31.7311L36.7293 22.0303C36.5951 21.3886 35.8484 20.8724 34.9997 20.8724C34.1509 20.8724 33.4043 21.3886 33.2613 22.0741L31.5609 31.6874C31.138 33.7203 29.2597 35.1641 27.0868 35.1641C24.7622 35.1641 22.8197 33.5424 22.563 31.3899L21.8951 25.8074C21.8513 25.4428 21.3176 22.812 19.9497 16.5236C19.2905 13.4932 18.958 10.3899 18.958 7.29823C18.958 3.36365 22.1576 0.164062 26.0922 0.164062C27.4134 0.164062 28.7084 0.522813 29.843 1.2024C33.0251 3.1099 36.9743 3.1099 40.1563 1.2024C41.2909 0.522813 42.5888 0.164062 43.9072 0.164062C47.8418 0.164062 51.0413 3.36365 51.0413 7.29823C51.0413 10.3928 50.7088 13.4961 50.0497 16.5266C48.323 24.457 48.1218 25.6353 48.1043 25.8074L47.4393 31.3928C47.1826 33.5424 45.2372 35.1641 42.9126 35.1641ZM34.9997 17.9557C37.2368 17.9557 39.1676 19.4374 39.5934 21.482L41.3084 31.1799C41.4309 31.7691 42.1251 32.2474 42.9126 32.2474C43.7468 32.2474 44.4613 31.7195 44.5401 31.0457L45.208 25.4632C45.2343 25.2474 45.313 24.5911 47.2001 15.9082C47.8126 13.082 48.1247 10.1857 48.1247 7.30115C48.1247 4.97365 46.2347 3.08073 43.9072 3.08073C43.1168 3.08073 42.338 3.29656 41.6584 3.7049C37.5518 6.16948 32.4505 6.16948 28.3438 3.7049C27.6613 3.29656 26.8826 3.08073 26.0922 3.08073C23.7647 3.08073 21.8747 4.97073 21.8747 7.29823C21.8747 10.1828 22.1868 13.0791 22.7993 15.9053C24.0505 21.6511 24.7213 24.8653 24.7913 25.4603L25.4563 31.0457C25.538 31.7195 26.2526 32.2474 27.0868 32.2474C27.8743 32.2474 28.5684 31.7691 28.6997 31.1361L30.4001 21.5257C30.8318 19.4374 32.7626 17.9557 34.9997 17.9557Z" fill="#14B8A6" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_579">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Hard</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$49</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="yearly" className="tab-pane fade active show" role="tabpanel">
+                <div className="row g-xxl-5 g-4 justify-content-center align-items-center">
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div className="pricing-items3">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_575)">
+                            <path d="M50.1116 70.1641C46.5737 70.1641 43.5287 67.6703 42.8753 64.2316L39.6145 47.0903C39.1974 44.9116 37.2578 43.3307 35.0003 43.3307C32.7428 43.3307 30.8032 44.9116 30.3891 47.0903L27.1282 64.2286C26.472 67.6703 23.4299 70.1641 19.8891 70.1641C16.1178 70.1641 12.9707 67.3699 12.5682 63.6628L11.2907 51.9261C10.8299 47.6795 9.92574 43.4736 8.60158 39.4166L6.11074 31.7749C3.99324 25.2736 2.91699 18.5157 2.91699 11.6849C2.91699 5.3324 8.14949 0.164062 14.5837 0.164062C19.3232 0.164062 23.9024 1.31906 28.8287 3.69615C32.982 5.70281 37.0216 5.70281 41.172 3.69615C46.0982 1.31906 50.6774 0.164062 55.1691 0.164062C61.8512 0.164062 67.0837 5.3324 67.0837 11.6849C67.0837 18.5128 66.0074 25.2736 63.8899 31.7778L61.3991 39.4166C60.0749 43.4736 59.1707 47.6795 58.7099 51.9261L57.4324 63.6628C57.0299 67.3699 53.8828 70.1641 50.1116 70.1641ZM35.0003 40.4141C38.6578 40.4141 41.8049 42.9924 42.4757 46.5478L45.7366 63.6861C46.1303 65.7482 47.9707 67.2474 50.1116 67.2474C52.3895 67.2474 54.2912 65.5703 54.5332 63.3478L55.8107 51.6111C56.2949 47.1691 57.2428 42.7591 58.6282 38.5124L61.1191 30.8736C63.1403 24.6641 64.167 18.2066 64.167 11.6849C64.167 6.93948 60.2412 3.08073 55.417 3.08073C51.1237 3.08073 46.9616 4.1424 42.4407 6.32406C37.5028 8.70698 32.4949 8.70698 27.5599 6.32406C23.0391 4.1424 18.877 3.08073 14.8316 3.08073C9.75949 3.08073 5.83366 6.93948 5.83366 11.6849C5.83366 18.2066 6.86033 24.6641 8.88449 30.8736L11.3753 38.5124C12.7607 42.7591 13.7087 47.1661 14.1899 51.6082L15.4674 63.3449C15.7095 65.5703 17.6112 67.2474 19.8891 67.2474C22.0299 67.2474 23.8674 65.7482 24.2612 63.6832L27.522 46.5449C28.1957 42.9924 31.3428 40.4141 35.0003 40.4141Z" fill="#14B8A6" />
+                            <path d="M61.9792 32.2474H51.73C48.9504 32.2474 46.4538 30.7044 45.2083 28.2165L44.0563 25.9153C43.3125 24.4249 41.8104 23.4974 40.145 23.4974H29.855C28.1896 23.4974 26.6875 24.4249 25.9438 25.9153L24.7917 28.2165C23.5463 30.7044 21.0496 32.2474 18.27 32.2474H8.02083C7.21583 32.2474 6.5625 31.594 6.5625 30.789C6.5625 29.984 7.21583 29.3307 8.02083 29.3307H18.27C19.9354 29.3307 21.4346 28.4032 22.1813 26.9128L23.3333 24.6115C24.5788 22.1236 27.0754 20.5807 29.855 20.5807H40.145C42.9246 20.5807 45.4212 22.1236 46.6667 24.6115L47.8188 26.9128C48.5625 28.4032 50.0646 29.3307 51.73 29.3307H61.9792C62.7842 29.3307 63.4375 29.984 63.4375 30.789C63.4375 31.594 62.7842 32.2474 61.9792 32.2474Z" fill="#14B8A6" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_575">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Perfect</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$29</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div className="pricing-items3 premium">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_531)">
+                            <path d="M41.3731 41.6537C40.956 41.6537 40.5331 41.5983 40.1072 41.4845C38.0072 40.9216 36.5664 39.0433 36.6831 37.0133L37.5347 27.2016C37.5727 26.5454 36.9835 25.8541 36.161 25.6324C35.3414 25.4079 34.4868 25.7199 34.1689 26.347L30.0418 35.1904C29.1085 37.0424 26.9093 37.9466 24.8181 37.3895C22.5722 36.7858 21.1139 34.7179 21.4231 32.577L22.2252 27.0091C22.2835 26.6474 22.4468 23.9495 22.7531 17.5387C22.9018 14.4354 23.386 11.3495 24.1822 8.36869C24.6752 6.52827 25.8535 4.99119 27.5072 4.03744C29.1552 3.08661 31.086 2.82994 32.9206 3.32577C34.1981 3.66702 35.356 4.35244 36.2718 5.30036C38.8531 7.96911 42.671 8.99869 46.2352 7.96911C47.501 7.61036 48.8514 7.59577 50.126 7.93702C53.9264 8.95202 56.1868 12.872 55.1718 16.6724C54.3697 19.6591 53.2439 22.5699 51.8235 25.332C48.8747 31.0487 47.676 33.452 47.5389 33.7962L45.4535 39.0141C44.8031 40.6445 43.1668 41.6537 41.3731 41.6537ZM35.6331 22.6458C36.0589 22.6458 36.4906 22.7012 36.9193 22.8179C39.0777 23.3983 40.5622 25.3291 40.4427 27.4116L39.591 37.2262C39.556 37.827 40.1043 38.4658 40.8627 38.6699C41.6793 38.8887 42.4989 38.562 42.7497 37.9291L44.8352 32.7112C45.0568 32.1541 46.5385 29.2229 49.2335 23.9962C50.5606 21.4179 51.6077 18.7024 52.3514 15.9229C52.646 14.832 52.4972 13.6945 51.9314 12.7204C51.3714 11.7462 50.4585 11.0491 49.3735 10.7574C48.6035 10.5533 47.7956 10.562 47.0372 10.7749C42.4347 12.0933 37.5056 10.772 34.1747 7.33036C33.6264 6.76161 32.9264 6.35036 32.1622 6.14619C31.0772 5.85452 29.9368 6.00619 28.9627 6.56911C27.9885 7.12619 27.2914 8.03619 27.0027 9.12119C26.256 11.9037 25.8068 14.7824 25.6639 17.6787C25.5093 20.9716 25.2293 26.6212 25.1156 27.4262L24.3135 32.9912C24.2172 33.662 24.7714 34.3562 25.5764 34.572C26.3202 34.7674 27.1281 34.4933 27.4227 33.9158L31.5497 25.0724C32.3197 23.547 33.9181 22.6458 35.6331 22.6458Z" fill="#090A0B" />
+                            <path d="M62.7083 70.1641H7.29167C3.26958 70.1641 0 66.8916 0 62.8724V36.6224C0 34.2104 1.96292 32.2474 4.375 32.2474H10.4621C12.5242 32.2474 14.3267 33.7204 14.7496 35.7504C16.0125 41.852 16.7563 46.5537 16.7621 46.6004C17.3658 51.7454 21.8021 55.5808 27.0842 55.5808C29.6421 55.5808 32.1008 54.6504 34.0113 52.9587C34.5596 52.4716 35.3937 52.4716 35.9392 52.9558C37.8642 54.6504 40.3404 55.5808 42.9158 55.5808C48.2008 55.5808 52.6342 51.7483 53.2321 46.6616C53.2438 46.5654 53.9525 41.9716 55.2475 35.7474C55.6646 33.7204 57.4671 32.2474 59.5321 32.2474H65.625C68.0371 32.2474 70 34.2104 70 36.6224V62.8724C70 66.8916 66.7304 70.1641 62.7083 70.1641ZM4.375 35.1641C3.57292 35.1641 2.91667 35.8174 2.91667 36.6224V62.8724C2.91667 65.2845 4.87958 67.2474 7.29167 67.2474H62.7083C65.1204 67.2474 67.0833 65.2845 67.0833 62.8724V36.6224C67.0833 35.8174 66.4271 35.1641 65.625 35.1641H59.5321C58.8467 35.1641 58.2458 35.657 58.1058 36.3366C56.8283 42.4849 56.1254 47.0087 56.1196 47.0524C55.3554 53.5566 49.6767 58.4974 42.9158 58.4974C40.0488 58.4974 37.2721 57.5904 34.9796 55.9191C32.6987 57.5904 29.9396 58.4974 27.0842 58.4974C20.3233 58.4974 14.6417 53.5537 13.8717 46.997C13.1017 40.4404 13.1367 42.3624 11.8942 36.3424C11.7513 35.6599 11.1475 35.1641 10.4621 35.1641H4.375Z" fill="#090A0B" />
+                            <path d="M7.29174 17.664C6.91841 17.664 6.54508 17.5211 6.25924 17.2382L3.34258 14.3215C2.77383 13.7528 2.77383 12.8282 3.34258 12.2594C3.91133 11.6907 4.83591 11.6907 5.40466 12.2594L8.32133 15.1761C8.89008 15.7449 8.89008 16.6694 8.32133 17.2382C8.03841 17.5211 7.66508 17.664 7.29174 17.664Z" fill="#090A0B" />
+                            <path d="M13.1253 14.7474C12.3203 14.7474 11.667 14.0941 11.667 13.2891V10.3724C11.667 9.5674 12.3203 8.91406 13.1253 8.91406C13.9303 8.91406 14.5837 9.5674 14.5837 10.3724V13.2891C14.5837 14.0941 13.9303 14.7474 13.1253 14.7474Z" fill="#090A0B" />
+                            <path d="M4.375 23.4974H1.45833C0.653333 23.4974 0 22.844 0 22.039C0 21.234 0.653333 20.5807 1.45833 20.5807H4.375C5.18 20.5807 5.83333 21.234 5.83333 22.039C5.83333 22.844 5.18 23.4974 4.375 23.4974Z" fill="#090A0B" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_531">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Easy</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$20</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                  <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div className="pricing-items3">
+                      <div className="icon">
+                        <svg width={70} height={71} viewBox="0 0 70 71" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clipPath="url(#clip0_6100_579)">
+                            <path d="M65.625 58.4974H4.375C1.96292 58.4974 0 56.5344 0 54.1224V16.2057C0 13.7936 1.96292 11.8307 4.375 11.8307H10.2083C11.0133 11.8307 11.6667 12.484 11.6667 13.289C11.6667 14.094 11.0133 14.7474 10.2083 14.7474H4.375C3.57 14.7474 2.91667 15.4007 2.91667 16.2057V54.1224C2.91667 54.9244 3.57 55.5807 4.375 55.5807H65.625C66.43 55.5807 67.0833 54.9244 67.0833 54.1224V16.2057C67.0833 15.4007 66.43 14.7474 65.625 14.7474H59.7917C58.9867 14.7474 58.3333 14.094 58.3333 13.289C58.3333 12.484 58.9867 11.8307 59.7917 11.8307H65.625C68.0371 11.8307 70 13.7936 70 16.2057V54.1224C70 56.5344 68.0371 58.4974 65.625 58.4974Z" fill="#14B8A6" />
+                            <path d="M48.1253 70.164H21.8753C21.0703 70.164 20.417 69.5106 20.417 68.7056C20.417 67.9006 21.0703 67.2473 21.8753 67.2473H48.1253C48.9303 67.2473 49.5837 67.9006 49.5837 68.7056C49.5837 69.5106 48.9303 70.164 48.1253 70.164Z" fill="#14B8A6" />
+                            <path d="M30.6253 70.1641C29.8203 70.1641 29.167 69.5108 29.167 68.7058V57.0391C29.167 56.2341 29.8203 55.5808 30.6253 55.5808C31.4303 55.5808 32.0837 56.2341 32.0837 57.0391V68.7058C32.0837 69.5108 31.4303 70.1641 30.6253 70.1641Z" fill="#14B8A6" />
+                            <path d="M39.3753 70.1641C38.5703 70.1641 37.917 69.5108 37.917 68.7058V57.0391C37.917 56.2341 38.5703 55.5808 39.3753 55.5808C40.1803 55.5808 40.8337 56.2341 40.8337 57.0391V68.7058C40.8337 69.5108 40.1803 70.1641 39.3753 70.1641Z" fill="#14B8A6" />
+                            <path d="M42.9126 35.1641C40.7368 35.1641 38.8584 33.7203 38.4443 31.7311L36.7293 22.0303C36.5951 21.3886 35.8484 20.8724 34.9997 20.8724C34.1509 20.8724 33.4043 21.3886 33.2613 22.0741L31.5609 31.6874C31.138 33.7203 29.2597 35.1641 27.0868 35.1641C24.7622 35.1641 22.8197 33.5424 22.563 31.3899L21.8951 25.8074C21.8513 25.4428 21.3176 22.812 19.9497 16.5236C19.2905 13.4932 18.958 10.3899 18.958 7.29823C18.958 3.36365 22.1576 0.164062 26.0922 0.164062C27.4134 0.164062 28.7084 0.522813 29.843 1.2024C33.0251 3.1099 36.9743 3.1099 40.1563 1.2024C41.2909 0.522813 42.5888 0.164062 43.9072 0.164062C47.8418 0.164062 51.0413 3.36365 51.0413 7.29823C51.0413 10.3928 50.7088 13.4961 50.0497 16.5266C48.323 24.457 48.1218 25.6353 48.1043 25.8074L47.4393 31.3928C47.1826 33.5424 45.2372 35.1641 42.9126 35.1641ZM34.9997 17.9557C37.2368 17.9557 39.1676 19.4374 39.5934 21.482L41.3084 31.1799C41.4309 31.7691 42.1251 32.2474 42.9126 32.2474C43.7468 32.2474 44.4613 31.7195 44.5401 31.0457L45.208 25.4632C45.2343 25.2474 45.313 24.5911 47.2001 15.9082C47.8126 13.082 48.1247 10.1857 48.1247 7.30115C48.1247 4.97365 46.2347 3.08073 43.9072 3.08073C43.1168 3.08073 42.338 3.29656 41.6584 3.7049C37.5518 6.16948 32.4505 6.16948 28.3438 3.7049C27.6613 3.29656 26.8826 3.08073 26.0922 3.08073C23.7647 3.08073 21.8747 4.97073 21.8747 7.29823C21.8747 10.1828 22.1868 13.0791 22.7993 15.9053C24.0505 21.6511 24.7213 24.8653 24.7913 25.4603L25.4563 31.0457C25.538 31.7195 26.2526 32.2474 27.0868 32.2474C27.8743 32.2474 28.5684 31.7691 28.6997 31.1361L30.4001 21.5257C30.8318 19.4374 32.7626 17.9557 34.9997 17.9557Z" fill="#14B8A6" />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_6100_579">
+                              <rect width={70} height={70} fill="white" transform="translate(0 0.164062)" />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </div>
+                      <div className="pricing-head">
+                        <h4 className="mb-2">Hard</h4>
+                        <div className="d-flex align-items-end">
+                          <h2>$49</h2>
+                          <h6>/month</h6>
+                        </div>
+                      </div>
+                      <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-check" /> Touch Dental Care
+                        </li>
+                        <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
+                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                        </li>
+                      </ul>
+                      <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                        Book An Appiontment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*Appointment Section Start */}
+        <section className="appointment-section fix cmn-bg">
+          <div className="container">
+            <div className="appointment-wrapper">
+              <div className="row gx-0 gy-5 align-items-end">
+                <div className="col-lg-6 order-lg-0 order-1">
+                  <div className="appointment-thumb reveal-left">
+                    <img src="/assets/img/appiontment/appiontmentThumb3_1.png" alt="img" className="w-100 rounded-2" />
+                  </div>
+                </div>
+                <div className="col-lg-6">
+                  <div className="section-title">
+                    <span className="cmn-tag p1-bg heading-font">Contact Us</span>
+                    <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
+                      Get an Appiontment
+                    </h2>
+                  </div>
+                  <form action="#" className="appointment-forms">
+                    <div className="row g-lg-3 g-3">
+                      <div className="col-lg-6">
+                        <input type="text" placeholder="Your Name" />
+                      </div>
+                      <div className="col-lg-6">
+                        <input type="email" placeholder="Your Email" />
+                      </div>
+                      <div className="col-lg-6">
+                        <input type="text" placeholder="location" />
+                      </div>
+                      <div className="col-lg-6">
+                        <input type="text" placeholder="MM/dd/yyy" />
+                      </div>
+                      <div className="col-lg-12">
+                        <textarea name="message" placeholder="Message" rows={5} defaultValue={""} />
+                      </div>
+                      <div className="col-lg-12">
+                        <a href="/doctor-details" className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
+                          Book An Appiontment
+                          <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
+                        </a>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*<< Blog News Start >>*/}
+        <section className="blog-section2 section-padding cmn-bg">
+          <div className="container">
+            <div className="section-title text-center mb-60">
+              <span className="cmn-tag p1-bg heading-font">Our Latest Blog</span>
+              <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
+                Smile Confidently with<br />Smiles Radiant
+              </h2>
+            </div>
+            <div className="row g-4">
+              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div className="blog-items3">
+                  <div className="thumb rounded-4 position-relative mb-3">
+                    <img src="/assets/img/blog/blog3-v1.jpg" alt="img" className="rounded-4" />
+                    <div className="d-flex gap-1 align-items-center blog-date">
+                      <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
+                      <span className="cont">23 Dec 2023</span>
+                    </div>
+                  </div>
+                  <div className="content">
+                    <h3 className="mb-3">
+                      <a href="/blog-details" className="black">Fresh Breath Dental Studio Pearly Whites Dentistry</a>
+                    </h3>
+                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-solid fa-user n900-clr" />
+                        Admin
+                      </div>
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-regular fa-folder-open n900-clr" />
+                        Catagory
+                      </div>
+                    </div>
+                    <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                      Read More
+                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div className="blog-items3">
+                  <div className="thumb rounded-4 position-relative mb-3">
+                    <img src="/assets/img/blog/blog3-v2.jpg" alt="img" className="rounded-4" />
+                    <div className="d-flex gap-1 align-items-center blog-date">
+                      <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
+                      <span className="cont">23 Dec 2023</span>
+                    </div>
+                  </div>
+                  <div className="content">
+                    <h3 className="mb-3">
+                      <a href="/blog-details" className="black">Fresh Breath Dental Studio
+                        Pearly Whites Dentistry</a>
+                    </h3>
+                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-solid fa-user n900-clr" />
+                        Admin
+                      </div>
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-regular fa-folder-open n900-clr" />
+                        Catagory
+                      </div>
+                    </div>
+                    <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                      Read More
+                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div className="blog-items3">
+                  <div className="thumb rounded-4 position-relative mb-3">
+                    <img src="/assets/img/blog/blog3-v3.jpg" alt="img" className="rounded-4" />
+                    <div className="d-flex gap-1 align-items-center blog-date">
+                      <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
+                      <span className="cont">23 Dec 2023</span>
+                    </div>
+                  </div>
+                  <div className="content">
+                    <h3 className="mb-3">
+                      <a href="/blog-details" className="black">Fresh Breath Dental Studio
+                        Pearly Whites Dentistry</a>
+                    </h3>
+                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-solid fa-user n900-clr" />
+                        Admin
+                      </div>
+                      <div className="d-flex align-items-center gap-1 fs-eight pra">
+                        <i className="fa-regular fa-folder-open n900-clr" />
+                        Catagory
+                      </div>
+                    </div>
+                    <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
+                      Read More
+                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/*<< Blog News End >>*/}
+        {/*<< Footer News Appinment Start >>*/}
+        <div className="footer-new-appoinment3 position-relative cmn-bg">
+          <div className="container">
+            <div className="newsletter-appoinment-wrap3 p2-bg">
+              <div className="row">
+                <div className="col-xl-7 col-lg-7">
+                  <div className="newsletter-appoinment3">
+                    <div className="section-title">
+                      <h2 className="wow fadeInUp mb-xxl-4 mb-3 visible-slowly-right" data-wow-delay=".3s">
+                        Ready To Turn Dreams Into Reality Subscribe to Our Newsletter
+                      </h2>
+                      <div className="btn-button">
+                        <div className="appoinment-btn">
+                          <a href="/doctor-details" className="common-btn box-style first-box p1-bg d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
+                            Book An Appiontment
+                            <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+                          </a>
+                        </div>
+                        <div className="author-icon">
+                          <div className="icon">
+                            <svg width={49} height={48} viewBox="0 0 49 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <rect x="1.5" y={1} width={46} height={46} rx={23} stroke="white" strokeOpacity="0.4" strokeWidth={2} />
+                              <g clipPath="url(#clip0_6226_134)">
+                                <path d="M36.7308 30.9874L31.4528 27.4774C31.1235 27.2521 30.7595 27.1741 30.3608 27.2434C29.9622 27.3127 29.6415 27.5034 29.3988 27.8154L27.8648 29.7914C27.7782 29.9127 27.6525 29.9951 27.4878 30.0384C27.3232 30.0817 27.1715 30.0601 27.0328 29.9734L26.6428 29.7654C25.9668 29.3841 25.3862 29.0114 24.9008 28.6474C24.0862 28.0407 23.1675 27.2261 22.1448 26.2034C21.1222 25.1807 20.3075 24.2621 19.7008 23.4474C19.3368 22.9621 18.9642 22.3814 18.5828 21.7054L18.3748 21.3154C18.2882 21.1767 18.2665 21.0251 18.3098 20.8604C18.3532 20.6957 18.4355 20.5701 18.5568 20.4834L20.5328 18.9494C20.8448 18.7067 21.0355 18.3861 21.1048 17.9874C21.1742 17.5887 21.0962 17.2247 20.8708 16.8954L17.3608 11.6174C17.1182 11.2707 16.7975 11.0541 16.3988 10.9674C16.0002 10.8807 15.6275 10.9414 15.2808 11.1494L13.0968 12.4754C12.3862 12.8914 11.9095 13.5067 11.6668 14.3214C11.3722 15.4307 11.3288 16.6267 11.5368 17.9094C11.8142 19.5041 12.4815 21.1941 13.5388 22.9794C14.7695 25.0594 16.5288 27.2434 18.8168 29.5314C21.5208 32.2354 24.0775 34.2027 26.4868 35.4334C28.4455 36.4387 30.2828 36.9414 31.9988 36.9414C32.7268 36.9414 33.4028 36.8547 34.0268 36.6814C34.8415 36.4387 35.4568 35.9621 35.8728 35.2514L37.1988 33.0674C37.4068 32.7207 37.4675 32.3481 37.3808 31.9494C37.2941 31.5507 37.0775 31.2301 36.7308 30.9874ZM36.4448 32.6254L35.1188 34.8094C34.8068 35.3467 34.3648 35.6934 33.7928 35.8494C32.7702 36.1267 31.6608 36.1614 30.4648 35.9534C28.9742 35.6761 27.3882 35.0261 25.7068 34.0034C23.7308 32.8074 21.6422 31.1087 19.4408 28.9074C16.2515 25.7181 14.1195 22.7714 13.0448 20.0674C12.2302 18.0221 12.0482 16.1847 12.4988 14.5554C12.6895 13.9661 13.0362 13.5241 13.5388 13.2294L15.7488 11.9034C15.8875 11.8167 16.0435 11.7907 16.2168 11.8254C16.3902 11.8601 16.5288 11.9554 16.6328 12.1114L18.5308 14.9714L20.1428 17.3634C20.2295 17.5021 20.2598 17.6581 20.2338 17.8314C20.2078 18.0047 20.1255 18.1434 19.9868 18.2474L18.0108 19.7814C17.7162 20.0067 17.5298 20.3057 17.4518 20.6784C17.3738 21.0511 17.4302 21.4021 17.6208 21.7314L17.7768 22.0174C18.1582 22.7281 18.5395 23.3434 18.9208 23.8634C19.5448 24.7301 20.4115 25.7181 21.5208 26.8274C22.6302 27.9367 23.6182 28.8034 24.4848 29.4274C25.0048 29.8087 25.6202 30.1901 26.3308 30.5714L26.6168 30.7274C26.9462 30.9181 27.2972 30.9744 27.6698 30.8964C28.0425 30.8184 28.3415 30.6321 28.5668 30.3374L30.0748 28.3614C30.1961 28.2227 30.3435 28.1404 30.5168 28.1144C30.6902 28.0884 30.8462 28.1187 30.9848 28.2054L36.2368 31.7154C36.3928 31.8194 36.4881 31.9581 36.5228 32.1314C36.5575 32.3047 36.5315 32.4694 36.4448 32.6254ZM26.1488 15.2834C27.4835 15.2834 28.7228 15.6214 29.8668 16.2974C30.9762 16.9387 31.8515 17.8141 32.4928 18.9234C33.1688 20.0674 33.5068 21.3067 33.5068 22.6414C33.5068 22.7627 33.5501 22.8667 33.6368 22.9534C33.7235 23.0401 33.8275 23.0834 33.9488 23.0834C34.0702 23.0834 34.1698 23.0401 34.2478 22.9534C34.3258 22.8667 34.3648 22.7627 34.3648 22.6414C34.3648 21.1507 33.9922 19.7641 33.2468 18.4814C32.5188 17.2507 31.5308 16.2714 30.2828 15.5434C29.0175 14.7807 27.6395 14.3994 26.1488 14.3994C26.0275 14.3994 25.9235 14.4427 25.8368 14.5294C25.7502 14.6161 25.7068 14.7201 25.7068 14.8414C25.7068 14.9627 25.7502 15.0667 25.8368 15.1534C25.9235 15.2401 26.0275 15.2834 26.1488 15.2834ZM26.1488 17.8834C27.0155 17.8834 27.8128 18.0957 28.5408 18.5204C29.2688 18.9451 29.8451 19.5214 30.2698 20.2494C30.6945 20.9774 30.9068 21.7747 30.9068 22.6414C30.9068 22.7627 30.9502 22.8667 31.0368 22.9534C31.1235 23.0401 31.2275 23.0834 31.3488 23.0834C31.4701 23.0834 31.5698 23.0401 31.6478 22.9534C31.7258 22.8667 31.7648 22.7627 31.7648 22.6414C31.7648 21.6187 31.5135 20.6741 31.0108 19.8074C30.5082 18.9407 29.8278 18.2561 28.9698 17.7534C28.1118 17.2507 27.1715 16.9994 26.1488 16.9994C26.0275 16.9994 25.9235 17.0427 25.8368 17.1294C25.7502 17.2161 25.7068 17.3201 25.7068 17.4414C25.7068 17.5627 25.7502 17.6667 25.8368 17.7534C25.9235 17.8401 26.0275 17.8834 26.1488 17.8834ZM26.1488 20.4834C26.7555 20.4834 27.2668 20.6914 27.6828 21.1074C28.0988 21.5234 28.3068 22.0347 28.3068 22.6414C28.3068 22.7627 28.3502 22.8667 28.4368 22.9534C28.5235 23.0401 28.6275 23.0834 28.7488 23.0834C28.8702 23.0834 28.9698 23.0401 29.0478 22.9534C29.1258 22.8667 29.1648 22.7627 29.1648 22.6414C29.1648 22.0867 29.0305 21.5797 28.7618 21.1204C28.4932 20.6611 28.1248 20.2927 27.6568 20.0154C27.1888 19.7381 26.6862 19.5994 26.1488 19.5994C26.0275 19.5994 25.9235 19.6427 25.8368 19.7294C25.7502 19.8161 25.7068 19.9201 25.7068 20.0414C25.7068 20.1627 25.7502 20.2667 25.8368 20.3534C25.9235 20.4401 26.0275 20.4834 26.1488 20.4834Z" fill="white" />
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_6226_134">
+                                  <rect width={26} height={26} fill="white" transform="matrix(1 0 0 -1 11.4067 36.9414)" />
+                                </clipPath>
+                              </defs>
+                            </svg>
+                          </div>
+                          <div className="content">
+                            <h5>
+                              <a href="tel:+1(345)678-910">+1(345)678-910</a>
+                            </h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-xl-5 col-lg-5">
+                  <div className="appoinment-thumb">
+                    <div className="thumb">
+                      <img src="/assets/img/appiontment/appiontmentThumb3_3.png" alt="thumb" />
+                    </div>
+                    <div className="shape">
+                      <img src="/assets/img/appiontment/appiontmenticon3_1.png" alt="icon" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/*<< Footer Section Start >>*/}
+        <footer className="footer-section3 footer-style3 z-1 position-relative blackbg">
+          <div className="container">
+            <div className="footer-widgets-wrapper3">
+              <div className="row g-4 justify-content-between">
+                <div className="col-lg-3 col-md-6 col-sm-5 d-flex justify-content-lg-center">
+                  <div className="single-footer-widget3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div className="widget-head">
+                      <a href="/">
+                        <img src="/assets/img/logo/logo-white.png" alt="logo-img" />
+                      </a>
+                    </div>
+                    <ul className="footer-info d-flex flex-column gpa-xxl-4 gap-3">
+                      <li className="d-flex align-items-center gap-xl-3 gap-2">
+                        <div className="cont">
+                          <span className="fs-seven d-block">Address</span>
+                          <a href="javascript:void(0)" className="fs-six fw_500 white sub-font">66
+                            Broklyant,India</a>
+                        </div>
+                      </li>
+                      <li className="d-flex align-items-center gap-xl-3 gap-2">
+                        <div className="cont">
+                          <span className="fs-seven d-block">Phone Number</span>
+                          <a href="javascript:void(0)" className="fs-six fw_500 white sub-font">012 345
+                            678 9101</a>
+                        </div>
+                      </li>
+                      <li className="d-flex align-items-center gap-xl-3 gap-2">
+                        <div className="cont">
+                          <span className="fs-seven d-block">Email</span>
+                          <a href="javascript:void(0)" className="fs-six fw_500 white sub-font">abcd@gmail.com</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-5 d-flex justify-content-lg-center">
+                  <div className="single-footer-widget3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div className="widget-head">
+                      <h4 className="white fw_600">Page</h4>
+                    </div>
+                    <ul className="list-area">
+                      <li>
+                        <a href="/about">
+                          About Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/service">
+                          Services
+                        </a>
+                      </li>
+                      <li>
+                        <a href="/contact">
+                          Why Chose Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          Doctors
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          Blog And News
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-6 d-flex justify-content-lg-center">
+                  <div className="single-footer-widget3 wow fadeInUp" data-wow-delay="0.6s">
+                    <div className="widget-head">
+                      <h4 className="white fw_600">Services</h4>
+                    </div>
+                    <ul className="list-area">
+                      <li>
+                        <a href="javascript:void(0)" className="d-flex align-items-center gap-2">
+                          <i className="fa-solid fa-angles-right" /> Vitality Vitals Clinic
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)" className="d-flex align-items-center gap-2">
+                          <i className="fa-solid fa-angles-right" /> MedEx Wellness Center
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)" className="d-flex align-items-center gap-2">
+                          <i className="fa-solid fa-angles-right" /> HopeHealth Medical Group
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)" className="d-flex align-items-center gap-2">
+                          <i className="fa-solid fa-angles-right" /> SwiftCare Urgent Center
+                        </a>
+                      </li>
+                      <li>
+                        <a href="javascript:void(0)" className="d-flex align-items-center gap-2">
+                          <i className="fa-solid fa-angles-right" /> WellSpring Women's Clinic
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="col-lg-3 col-md-6 col-sm-5 d-flex justify-content-lg-center">
+                  <div className="single-footer-widget3 wow fadeInUp" data-wow-delay="0.7s">
+                    <div className="widget-head">
+                      <h4 className="white">Popular Post</h4>
+                    </div>
+                    <ul className="footer-info3 d-flex flex-column gpa-xxl-4 gap-3">
+                      <li className="align-items-center gap-xl-3 gap-2">
+                        <span className="icon3"><i className="fa-solid fa-calendar-days" />October 19, 2024</span>
+                        <div className="cont3">
+                          <h4><a href="/blog-details">Leading the Way in That<br />Moves You</a></h4>
+                        </div>
+                      </li>
+                      <li className="align-items-center gap-xl-3 gap-2">
+                        <span className="icon3"><i className="fa-solid fa-calendar-days" />October 19, 2024</span>
+                        <div className="cont3">
+                          <h4><a href="/blog-details">Tech Excellence, Always<br />The Future is Now</a></h4>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="footer-bottom3">
+            <div className="container">
+              <div className="footer-bottom-wrap">
+                <p className="body-font fs-seven">
+                  © 2025 MediZen | All Rights Reserved
+                </p>
+                <ul className="privacy">
+                  <li><a href="javascript:void(0)" className="fs-seven">Terms &amp; Condition</a></li>
+                  <li><a href="javascript:void(0)" className="fs-seven">Privacy Policy</a></li>
+                  <li><a href="javascript:void(0)" className="fs-seven">Contact Us</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        {/* Offcanvas Area Start */}
+        <div className="fix-area">
+          <div className="offcanvas__info">
+            <div className="offcanvas__wrapper">
+              <div className="offcanvas__content">
+                <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
+                  <div className="offcanvas__logo">
+                    <a href="/">
+                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                    </a>
+                  </div>
+                  <div className="offcanvas__close">
+                    <button>
+                      <i className="fas fa-times" />
+                    </button>
+                  </div>
+                </div>
+                <div className="mobile-menu fix mb-3" />
+                <div className="offcanvas__contact">
+                  <h4>Contact Info</h4>
+                  <ul>
+                    <li className="d-flex align-items-center">
+                      <div className="offcanvas__contact-icon">
+                        <i className="fal fa-map-marker-alt" />
+                      </div>
+                      <div className="offcanvas__contact-text">
+                        <a target="_blank" href="#">Mirpur,10 Road 1 House 12 Mirpur Dhaka Bangladesh</a>
+                      </div>
+                    </li>
+                    <li className="d-flex align-items-center">
+                      <div className="offcanvas__contact-icon mr-15">
+                        <i className="fal fa-envelope" />
+                      </div>
+                      <div className="offcanvas__contact-text">
+                        <a href="mailto:info@example.com"><span className="mailto:info@example.com">info@example.com</span></a>
+                        <a href="mailto:info@example.com"><span className="mailto:info@example.com">ex@example.com</span></a>
+                      </div>
+                    </li>
+                    <li className="d-flex align-items-center">
+                      <div className="offcanvas__contact-icon mr-15">
+                        <i className="fal fa-clock" />
+                      </div>
+                      <div className="offcanvas__contact-text">
+                        <a target="_blank" href="#">Sat-friday, 02am -09pm</a>
+                      </div>
+                    </li>
+                    <li className="d-flex align-items-center">
+                      <div className="offcanvas__contact-icon mr-15">
+                        <i className="far fa-phone" />
+                      </div>
+                      <div className="offcanvas__contact-text">
+                        <a href="tel:+11002345909" className="d-block">017 5552-0127</a>
+                        <a href="tel:+11002345909">017458632718</a>
+                      </div>
+                    </li>
+                  </ul>
+                  <div className="header-button mt-4">
+                    <a href="/contact" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100">
+                      Get Start
+                      <i className="fa-solid fa-arrow-right" />
+                    </a>
+                  </div>
+                  <div className="social-icon d-flex align-items-center">
+                    <a href="#"><i className="fab fa-facebook-f" /></a>
+                    <a href="#"><i className="fab fa-twitter" /></a>
+                    <a href="#"><i className="fab fa-youtube" /></a>
+                    <a href="#"><i className="fab fa-linkedin-in" /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="offcanvas__overlay" />
+        {/* Search Area Start */}
+        <div className="search-wrap">
+          <div className="search-inner">
+            <i className="fas fa-times search-close" id="search-close" />
+            <div className="search-cell">
+              <form method="get">
+                <div className="search-field-holder">
+                  <input type="search" className="main-search-input" placeholder="Search..." />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        {/*<< All JS Plugins >>*/}
+        {/*<< Viewport Js >>*/}
+        {/*<< Bootstrap Js >>*/}
+        {/*<< Nice Select Js >>*/}
+        {/*<< Waypoints Js >>*/}
+        {/*<< Counterup Js >>*/}
+        {/*<< Swiper Slider Js >>*/}
+        {/*<< MeanMenu Js >>*/}
+        {/*<< Magnific Popup Js >>*/}
+        {/*<< Wow Animation Js >>*/}
+        {/*<< Gsap Js >>*/}
+        {/*<< Lenis Js >>*/}
+        {/*<< ScrollSmoother Js >>*/}
+        {/*<< ScrollTrigger Js >>*/}
+        {/*<< Spalit Text Js >>*/}
+        {/*<< Valina Tilt Js >>*/}
+        {/*<< Main.js >>*/}
+      </div>
+
+    </PageLayout>
+  )
+}
+
+export default HomeThreePage
