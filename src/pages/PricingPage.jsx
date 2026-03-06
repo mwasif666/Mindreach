@@ -40,7 +40,7 @@ function PricingPage() {
                               <li>
                                 <div className="homemenu-items">
                                   <div className="homemenu">
-                                    <a href="/" className="homemenu-thumb">
+                                    <a href="/home-1" className="homemenu-thumb">
                                       <img src="/assets/img/header/home-1.jpg" alt="img" />
                                       <span className="demo-button">
                                         <span className="theme-btn p1-bg box-style first-box">
@@ -60,7 +60,7 @@ function PricingPage() {
                                     </a>
                                   </div>
                                   <div className="homemenu">
-                                    <a href="/home-3" className="homemenu-thumb mb-15">
+                                    <a href="/" className="homemenu-thumb mb-15">
                                       <img src="/assets/img/header/home-3.jpg" alt="img" />
                                       <span className="demo-button">
                                         <span className="theme-btn p1-bg box-style first-box">

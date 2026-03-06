@@ -1,0 +1,189 @@
+/*
+ * Keep non-home navbar items visible, but disable navigation for now.
+ * This applies to the desktop menu and the generated mobile/offcanvas menu.
+ */
+:is(#mobile-menu, .mobile-menu) a[href="/service"],
+:is(#mobile-menu, .mobile-menu) a[href="/service-details"],
+:is(#mobile-menu, .mobile-menu) a[href="/project"],
+:is(#mobile-menu, .mobile-menu) a[href="/project-details"],
+:is(#mobile-menu, .mobile-menu) a[href="/blog"],
+:is(#mobile-menu, .mobile-menu) a[href="/blog-details"],
+:is(#mobile-menu, .mobile-menu) a[href="/about"],
+:is(#mobile-menu, .mobile-menu) a[href="/doctor"],
+:is(#mobile-menu, .mobile-menu) a[href="/doctor-details"],
+:is(#mobile-menu, .mobile-menu) a[href="/pricing"],
+:is(#mobile-menu, .mobile-menu) a[href="/contact"] {
+  pointer-events: none;
+  cursor: default;
+}
+
+.mouse-follower,
+.mouse-follower span {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.body-bg2 .services-section .row > div,
+.body-bg2 .blog-section2 .row > div {
+  display: flex;
+}
+
+.body-bg2 .service-item3,
+.body-bg2 .latest-project3 .latest-project-slide3,
+.body-bg2 .blog-items3 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.body-bg2 .service-item3 .thumb,
+.body-bg2 .latest-project3 .latest-project-slide3 .thumb,
+.body-bg2 .feature-wrapper3 .feature-thumb,
+.body-bg2 .blog-items3 .thumb,
+.body-bg2 .appointment-wrapper .appointment-thumb,
+.body-bg2 .team-wrapper3 .team-items-info3 .thumb,
+.body-bg2 .testimonial-wrapper3 .testimonial-items3 .testimonial-content .thumb {
+  overflow: hidden;
+}
+
+.body-bg2 .service-item3 .thumb {
+  height: 280px;
+}
+
+.body-bg2 .service-item3 .service-content,
+.body-bg2 .blog-items3 .content,
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.body-bg2 .service-item3 .service-btn-inner,
+.body-bg2 .blog-items3 .common-btn,
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content .social-wrapper {
+  margin-top: auto;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 {
+  align-items: stretch;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 .thumb {
+  flex: 0 0 230px;
+  min-width: 230px;
+  height: 260px;
+  border-radius: 20px;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content p {
+  margin-bottom: 24px;
+}
+
+.body-bg2 .testimonial-wrapper3 .testimonial-items3 .testimonial-content .thumb {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+}
+
+.body-bg2 .service-item3 .thumb img,
+.body-bg2 .latest-project3 .latest-project-slide3 .thumb img,
+.body-bg2 .feature-wrapper3 .feature-thumb img,
+.body-bg2 .blog-items3 .thumb img,
+.body-bg2 .appointment-wrapper .appointment-thumb img,
+.body-bg2 .team-wrapper3 .team-items-info3 .thumb img,
+.body-bg2 .testimonial-wrapper3 .testimonial-items3 .testimonial-content .thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.body-bg2 .latest-project3 .latest-project-slide3 .thumb {
+  height: 340px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.body-bg2 .latest-project3 .latest-project-slide3 .content {
+  flex: 1;
+}
+
+.body-bg2 .feature-wrapper3 .feature-thumb {
+  height: 309px;
+  border-radius: 20px;
+}
+
+.body-bg2 .feature-wrapper3 .feature-inner-items2 {
+  min-height: 420px;
+  background-position: center;
+}
+
+.body-bg2 .appointment-wrapper .row {
+  align-items: stretch !important;
+}
+
+.body-bg2 .appointment-wrapper .appointment-thumb {
+  height: 100%;
+  min-height: 560px;
+  border-radius: 20px 0 0 20px;
+}
+
+.body-bg2 .appointment-wrapper .appointment-thumb img {
+  object-position: center top;
+}
+
+.body-bg2 .blog-items3 .thumb {
+  height: 300px;
+  border-radius: 20px;
+}
+
+.body-bg2 .blog-items3 .content {
+  gap: 0;
+}
+
+.body-bg2 .footer-new-appoinment3 .newsletter-appoinment-wrap3 {
+  padding-right: 80px;
+}
+
+.body-bg2 .footer-new-appoinment3 .newsletter-appoinment3 {
+  max-width: 900px;
+}
+
+@media (max-width: 991px) {
+  .body-bg2 .team-wrapper3 .team-items-info3 {
+    flex-direction: column;
+  }
+
+  .body-bg2 .team-wrapper3 .team-items-info3 .thumb {
+    flex-basis: auto;
+    min-width: 100%;
+    width: 100%;
+    height: 320px;
+  }
+
+  .body-bg2 .latest-project3 .latest-project-slide3 .thumb,
+  .body-bg2 .service-item3 .thumb,
+  .body-bg2 .blog-items3 .thumb,
+  .body-bg2 .feature-wrapper3 .feature-thumb,
+  .body-bg2 .appointment-wrapper .appointment-thumb {
+    height: auto;
+    min-height: 0;
+  }
+
+  .body-bg2 .appointment-wrapper .appointment-thumb {
+    border-radius: 20px;
+    max-height: 460px;
+  }
+
+  .body-bg2 .feature-wrapper3 .feature-inner-items2 {
+    min-height: 320px;
+  }
+
+  .body-bg2 .footer-new-appoinment3 .newsletter-appoinment-wrap3 {
+    padding-right: 28px;
+  }
+}

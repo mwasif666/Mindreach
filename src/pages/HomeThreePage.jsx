@@ -2,17 +2,33 @@ import PageLayout from '../components/layout/PageLayout'
 
 const PAGE_TITLE = "Home Three || Medizen || Medizen React Template"
 const BODY_CLASS = "body-bg2"
+const HOMEPAGE_IMAGES = {
+  hero: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
+  serviceAnxiety: '/assets/img/homepage-images/pexels-alex-green-5699431.jpg',
+  serviceDepression: '/assets/img/homepage-images/pexels-alex-green-5699474.jpg',
+  serviceTrauma: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
+  teamTherapists: '/assets/img/homepage-images/pexels-cottonbro-4100666.jpg',
+  teamPsychiatry: '/assets/img/homepage-images/pexels-cottonbro-4098374.jpg',
+  teamCoordinators: '/assets/img/homepage-images/pexels-cottonbro-3205403.jpg',
+  projectOne: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
+  projectTwo: '/assets/img/homepage-images/pexels-alex-green-5699431.jpg',
+  projectThree: '/assets/img/homepage-images/pexels-alex-green-5699474.jpg',
+  projectFour: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
+  featureThumb: '/assets/img/homepage-images/unsplash-feature-thumb.jpg',
+  featureBackground: '/assets/img/homepage-images/unsplash-feature-bg.jpg',
+  appointment: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
+  resourceOne: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
+  resourceTwo: '/assets/img/homepage-images/unsplash-feature-bg.jpg',
+  resourceThree: '/assets/img/homepage-images/pexels-cottonbro-4100666.jpg',
+  testimonialOne: '/assets/img/homepage-images/unsplash-portrait-1.jpg',
+  testimonialTwo: '/assets/img/homepage-images/unsplash-portrait-2.jpg',
+  testimonialThree: '/assets/img/homepage-images/unsplash-portrait-3.jpg',
+}
 
 function HomeThreePage() {
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
-        {/* Start Cursor Pointer */}
-        <div className="mouse-follower">
-          <span className="cursor-outline" />
-          <span className="cursor-dot" />
-        </div>
-        {/* End Cursor Pointer */}
         {/* Header Section Start */}
         <header id="header-sticky" className="header-3 bg-transparent sticky-header1">
           <div className="container">
@@ -39,7 +55,7 @@ function HomeThreePage() {
                               <li>
                                 <div className="homemenu-items">
                                   <div className="homemenu">
-                                    <a href="/" className="homemenu-thumb">
+                                    <a href="/home-1" className="homemenu-thumb">
                                       <img src="/assets/img/header/home-1.jpg" alt="img" />
                                       <span className="demo-button">
                                         <span className="theme-btn p1-bg box-style first-box">
@@ -59,7 +75,7 @@ function HomeThreePage() {
                                     </a>
                                   </div>
                                   <div className="homemenu">
-                                    <a href="/home-3" className="homemenu-thumb mb-15">
+                                    <a href="/" className="homemenu-thumb mb-15">
                                       <img src="/assets/img/header/home-3.jpg" alt="img" />
                                       <span className="demo-button">
                                         <span className="theme-btn p1-bg box-style first-box">
@@ -155,23 +171,25 @@ function HomeThreePage() {
             <div className="row g-5 justify-content-between">
               <div className="col-xxl-7 col-xl-7 col-md-11 order-2 order-lg-1">
                 <div className="hero-content-version3">
-                  <span className="cmn-tag p1-bg heading-font mb-xxl-1 mb-3">Madical Care</span>
+                  <span className="cmn-tag p1-bg heading-font mb-xxl-1 mb-3">Mental Health Care</span>
                   <h1 className="black wow fadeInUp" data-wow-delay="0.6s">
                     We Provide<br />
                     <span className="position-relative z-1 w-100">
-                      Dental
+                      Therapy
                       <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                     </span>
-                    Services<br /> &amp; Surgery
+                    Services<br /> &amp; Psychiatry Support
                     <img src="/assets/img/banner/icon3_1.svg" alt="icon" className="img-icon" />
                   </h1>
-                  <p>Dental care focuses on maintaining oral health through practices such as<br /> regular check-, and treatments
-                    for
-                    teeth and gums It includes</p>
+                  <p>
+                    Mental health care supports your emotional well-being through therapy, clinical guidance, and personalized
+                    treatment plans. MindReach connects you with licensed professionals for secure virtual sessions so you can get
+                    support for anxiety, depression, stress, trauma, ADHD, and more.
+                  </p>
                   <div className="d-flex flex-wrap align-items-center gap-xxl-4 gap-xl-3 gap-3">
                     <div className="hero-button">
                       <a href="/pricing" className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                        Make Appoinment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
                       </a>
                     </div>
@@ -196,7 +214,11 @@ function HomeThreePage() {
                     <img src="/assets/img/banner/search-shape.png" alt="shape-img" />
                   </div>
                   <div className="thumb">
-                    <img src="/assets/img/banner/hero3-thumb.png" alt="thumb" />
+                    <img
+                      src={HOMEPAGE_IMAGES.hero}
+                      alt="thumb"
+                      style={{ width: '472px', maxWidth: '100%', height: '564px', objectFit: 'cover', borderRadius: '32px' }}
+                    />
                   </div>
                   <div className="counter-area-1">
                     <div className="counter-content d-center">
@@ -214,7 +236,7 @@ function HomeThreePage() {
           <div className="swiper-wrapper">
             <div className="swiper-slide w-fit">
               <div className="text-slide-item">
-                Quality Care Service
+                Secure Virtual Care
               </div>
             </div>
             <div className="swiper-slide w-fit">
@@ -224,7 +246,7 @@ function HomeThreePage() {
             </div>
             <div className="swiper-slide w-fit">
               <div className="text-slide-item">
-                Your Wellness Priority
+                Flexible Scheduling
               </div>
             </div>
             <div className="swiper-slide w-fit">
@@ -234,7 +256,7 @@ function HomeThreePage() {
             </div>
             <div className="swiper-slide w-fit">
               <div className="text-slide-item">
-                Caring for You Always
+                Confidential Support
               </div>
             </div>
             <div className="swiper-slide w-fit">
@@ -244,7 +266,7 @@ function HomeThreePage() {
             </div>
             <div className="swiper-slide w-fit">
               <div className="text-slide-item">
-                Quality Care Service
+                Secure Virtual Care
               </div>
             </div>
             <div className="swiper-slide w-fit">
@@ -254,7 +276,7 @@ function HomeThreePage() {
             </div>
             <div className="swiper-slide w-fit">
               <div className="text-slide-item">
-                Your Wellness Priority
+                Flexible Scheduling
               </div>
             </div>
             <div className="swiper-slide w-fit">
@@ -268,26 +290,26 @@ function HomeThreePage() {
         <section className="services-section cmn-bg fix section-padding">
           <div className="container">
             <div className="section-title text-center mb-60">
-              <span className="cmn-tag p1-bg heading-font">Latest Service</span>
+              <span className="cmn-tag p1-bg heading-font">Our Services</span>
               <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                Your Wellness Our Priority <br />
+                Evidence-based virtual care for <br />
                 <span className="position-relative z-1">
-                  Healthier
+                  anxiety, depression, trauma,
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                 </span>
-                Lives
+                and more
               </h2>
             </div>
             <div className="row g-4">
               <div className="col-lg-4 col-md-6">
                 <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
                   <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service3-v1.jpg" alt="img" className="overflow-hidden w-100" />
+                    <img src={HOMEPAGE_IMAGES.serviceAnxiety} alt="img" className="overflow-hidden w-100" />
                   </div>
                   <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Quality Care Service</a></h3>
+                    <h3 className="black"><a href="/service-details">Anxiety Support</a></h3>
                     <p className="pra">
-                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                      Manage worry, racing thoughts, and panic with evidence-based tools like CBT and mindfulness.
                     </p>
                     <div className="service-btn-inner">
                       <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
@@ -301,12 +323,12 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6">
                 <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
                   <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service3-v2.jpg" alt="img" className="overflow-hidden w-100" />
+                    <img src={HOMEPAGE_IMAGES.serviceDepression} alt="img" className="overflow-hidden w-100" />
                   </div>
                   <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Your Wellness Priority</a></h3>
+                    <h3 className="black"><a href="/service-details">Depression Care</a></h3>
                     <p className="pra">
-                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                      Support for low mood, motivation, and energy with personalized therapy plans that fit your life.
                     </p>
                     <div className="service-btn-inner">
                       <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
@@ -320,12 +342,12 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6">
                 <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
                   <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service3-v3.jpg" alt="img" className="overflow-hidden w-100" />
+                    <img src={HOMEPAGE_IMAGES.serviceTrauma} alt="img" className="overflow-hidden w-100" />
                   </div>
                   <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Caring for You Always</a></h3>
+                    <h3 className="black"><a href="/service-details">Trauma &amp; PTSD Support</a></h3>
                     <p className="pra">
-                      Health care is a vital aspect maintaining overall well-being, encompassing a range
+                      Trauma-informed care in a safe, supportive space to reduce triggers and build lasting resilience.
                     </p>
                     <div className="service-btn-inner">
                       <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
@@ -336,6 +358,12 @@ function HomeThreePage() {
                   </div>
                 </div>
               </div>
+            </div>
+            <div className="text-center mt-5">
+              <a href="/service" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                View All Services
+                <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+              </a>
             </div>
           </div>
         </section>
@@ -350,45 +378,46 @@ function HomeThreePage() {
                     <div className="section-title">
                       <span className="cmn-tag p1-bg heading-font">About Us</span>
                       <h2 className="wow fadeInUp black visible-slowly-right mb-xxl-4 mb-3" data-wow-delay=".3s">
-                        Compassionate Dental There
+                        Care That Meets You Where You Are
                         <span className="position-relative z-1">
-                          Health
+                          MindReach
                           <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                         </span>
-                        First
+                        Makes It Simple
                       </h2>
                       <p className="pra mb-sm-4 mb-3 position-relative syle-pra d-flex align-items-center gap-3">
                         <img src="/assets/img/element/pra-element.png" alt="element" className="d-sm-block d-none" />
-                        Over 30 year’s experience providing top quality country'sacross world. The energy that
-                        is
-                        sourceable , free and healthy.
+                        MindReach is a technology-enabled tele-mental health platform that connects individuals with licensed
+                        therapists and psychiatrists for secure virtual sessions, often covered by insurance. We reduce common
+                        barriers like long waitlists, commuting, and complicated steps, so you can start care sooner and stay
+                        supported in a way that fits real life.
                       </p>
                     </div>
                     <div className="progress-wrap">
                       <div className="pro-items wow fadeInUp" data-wow-delay=".5s">
                         <div className="pro-head">
                           <h4 className="title">
-                            Dental and Mouth Care
+                            Secure Virtual Care Experience
                           </h4>
                           <span className="point style">
-                            87%
+                            95%
                           </span>
                         </div>
                         <div className="progress">
-                          <div className="progress-value" />
+                          <div className="progress-value" style={{ width: '95%' }} />
                         </div>
                       </div>
                       <div className="pro-items wow fadeInUp" data-wow-delay=".7s">
                         <div className="pro-head">
                           <h4 className="title">
-                            Cosmetic Treatment
+                            Scheduling &amp; Access Convenience
                           </h4>
                           <span className="point">
-                            95%
+                            90%
                           </span>
                         </div>
                         <div className="progress">
-                          <div className="progress-value style-two" />
+                          <div className="progress-value" style={{ width: '90%' }} />
                         </div>
                       </div>
                     </div>
@@ -404,15 +433,18 @@ function HomeThreePage() {
                   <div className="about-schedule rounded-4">
                     <div className="about-content">
                       <h1>Schedule</h1>
-                      <p>Dental care focuses on maintaining oral health through practices such as regular check-ups,
-                        cleanings, and treatments for teeth and gums. It includes preventive care to avoid dental issues</p>
+                      <p>
+                        Mental health care should be easy to access. MindReach lets you book secure virtual sessions with licensed
+                        therapists and psychiatrists, meet from anywhere, and choose times that fit your routine, often covered
+                        by insurance.
+                      </p>
                       <div className="time-schedule">
                         <ul>
-                          <li><span className="text">Monday - wednesday</span> <span>8AM - 10PM</span></li>
-                          <li><span className="text">Satuday - Sunday</span> <span>10AM - 2PM</span></li>
-                          <li><span className="text">Friday</span> <span>2PM - 8PM</span></li>
-                          <li><span className="text">thusday</span> <span>Off
-                            </span></li></ul>
+                          <li><span className="text">Monday - Thursday</span> <span>9AM - 8PM</span></li>
+                          <li><span className="text">Friday</span> <span>9AM - 6PM</span></li>
+                          <li><span className="text">Saturday</span> <span>10AM - 3PM</span></li>
+                          <li><span className="text">Sunday</span> <span>By Appointment</span></li>
+                        </ul>
                       </div>
                     </div>
                   </div>
@@ -425,11 +457,11 @@ function HomeThreePage() {
         <section className="team-section3 fix cmn-bg section-padding pb-0">
           <div className="container">
             <div className="section-title text-center mb-60">
-              <span className="cmn-tag p1-bg heading-font">Our Team Member</span>
+              <span className="cmn-tag p1-bg heading-font">The MindReach Team</span>
               <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                Compassionate Dental<br />Exceptional
+                Support That Listens<br />Care That
                 <span className="position-relative z-1">
-                  Results
+                  Helps
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                 </span>
               </h2>
@@ -439,11 +471,11 @@ function HomeThreePage() {
                 <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                   <div className="team-items-info3">
                     <div className="thumb">
-                      <img src="/assets/img/team/teamThumb3_1.jpg" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.teamTherapists} alt="thumb" />
                     </div>
                     <div className="team-content align-items-end">
-                      <h3><a href="/doctor-details">Dr.Alvin Eclair</a></h3>
-                      <p>Dental Care</p>
+                      <h3><a href="/doctor-details">Licensed Therapists</a></h3>
+                      <p>Secure virtual therapy</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
@@ -456,11 +488,11 @@ function HomeThreePage() {
                 <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                   <div className="team-items-info3">
                     <div className="thumb">
-                      <img src="/assets/img/team/teamThumb3_2.jpg" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.teamPsychiatry} alt="thumb" />
                     </div>
                     <div className="team-content align-items-end">
-                      <h3><a href="/doctor-details">Dr.Alan Jelly</a></h3>
-                      <p>Eye Expert</p>
+                      <h3><a href="/doctor-details">Psychiatry Support</a></h3>
+                      <p>Medication management if needed</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
@@ -473,11 +505,11 @@ function HomeThreePage() {
                 <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                   <div className="team-items-info3">
                     <div className="thumb">
-                      <img src="/assets/img/team/teamThumb3_3.jpg" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.teamCoordinators} alt="thumb" />
                     </div>
                     <div className="team-content align-items-end">
-                      <h3><a href="/doctor-details">Dr. R. Chassay</a></h3>
-                      <p>Neurology Expert</p>
+                      <h3><a href="/doctor-details">Care Coordinators</a></h3>
+                      <p>Scheduling and insurance help</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
@@ -501,28 +533,27 @@ function HomeThreePage() {
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
                         <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What Our
+                            What
                             <span className="position-relative z-1">
-                              Present
+                              Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                             </span>
-                            Says?
+                            Can Feel Like
                           </h2>
                         </div>
                         <div className="thumb">
-                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                          <img src={HOMEPAGE_IMAGES.testimonialOne} alt="MindReach client" />
                         </div>
                         <div className="author-details">
-                          <h3>Michael Ramirez</h3>
+                          <h3>MindReach Client</h3>
                           <div className="icon">
                             <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
                           </div>
-                          <span>Ceo</span>
+                          <span>Therapy support</span>
                         </div>
-                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
-                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <p>MindReach helped me start therapy without the stress of commuting or long waitlists. The care feels private, consistent, and easy to fit into my week.</p>
                         <div className="star">
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
@@ -537,28 +568,27 @@ function HomeThreePage() {
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
                         <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What Our
+                            What
                             <span className="position-relative z-1">
-                              Present
+                              Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                             </span>
-                            Says?
+                            Can Feel Like
                           </h2>
                         </div>
                         <div className="thumb">
-                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                          <img src={HOMEPAGE_IMAGES.testimonialTwo} alt="MindReach member" />
                         </div>
                         <div className="author-details">
-                          <h3>Michael Ramirez</h3>
+                          <h3>MindReach Member</h3>
                           <div className="icon">
                             <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
                           </div>
-                          <span>Ceo</span>
+                          <span>Psychiatry support</span>
                         </div>
-                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
-                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <p>The online psychiatry process was clear from day one. Scheduling was simple, follow-ups were smooth, and I felt listened to instead of rushed.</p>
                         <div className="star">
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
@@ -573,28 +603,27 @@ function HomeThreePage() {
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
                         <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">Clients Reviews</span>
+                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What Our
+                            What
                             <span className="position-relative z-1">
-                              Present
+                              Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                             </span>
-                            Says?
+                            Can Feel Like
                           </h2>
                         </div>
                         <div className="thumb">
-                          <img src="/assets/img/testimonial/testimonialthumb3_1.png" alt="thumb" />
+                          <img src={HOMEPAGE_IMAGES.testimonialThree} alt="MindReach patient" />
                         </div>
                         <div className="author-details">
-                          <h3>Michael Ramirez</h3>
+                          <h3>MindReach Patient</h3>
                           <div className="icon">
                             <img src="/assets/img/testimonial/quote-icons3.png" alt="icon" />
                           </div>
-                          <span>Ceo</span>
+                          <span>Care coordination</span>
                         </div>
-                        <p>Dental is wealth, and in the realm of medical heal every life matters. It encompasses a wide range
-                          of specialties aimed at diagnosing and preventing diseases and maintaining </p>
+                        <p>Between reminders, secure sessions, and flexible hours, getting support finally feels manageable. It made asking for help much easier than I expected.</p>
                         <div className="star">
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
@@ -619,9 +648,9 @@ function HomeThreePage() {
           <div className="container">
             <div className="d-flex flex-sm-nowrap flex-wrap gap-2 align-items-end justify-content-between mb-60">
               <div className="section-title">
-                <span className="cmn-tag p1-bg heading-font mb-3">Latest Project</span>
+                <span className="cmn-tag p1-bg heading-font mb-3">Featured Care</span>
                 <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                  Expert Care for Bright Smiles<br />Your Dental Health
+                  Support for anxiety, depression,<br />trauma, and more
                 </h2>
               </div>
               <div className="array-button d-flex align-items-center gap-3 wow fadeInUp" data-wow-delay=".5s">
@@ -638,12 +667,12 @@ function HomeThreePage() {
                 <div className="swiper-slide">
                   <div className="latest-project-slide3">
                     <div className="thumb">
-                      <img src="/assets/img/project/projectThumb3_1.png" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.projectOne} alt="thumb" />
                     </div>
                     <div className="content">
-                      <h4><a href="/project-details">Smile Confidently with Us Keeping Smiles</a></h4>
+                      <h4><a href="/service-details">Anxiety Support</a></h4>
                       <div className="btn-wrapper">
-                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                        <a href="/service-details" className="cmn-arrows1 link-btn d-center">
                           <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                         </a>
                       </div>
@@ -653,12 +682,12 @@ function HomeThreePage() {
                 <div className="swiper-slide">
                   <div className="latest-project-slide3">
                     <div className="thumb">
-                      <img src="/assets/img/project/projectThumb3_2.png" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.projectTwo} alt="thumb" />
                     </div>
                     <div className="content">
-                      <h4><a href="/project-details">A Comprehensive Dental Case Study</a></h4>
+                      <h4><a href="/service-details">Depression Care</a></h4>
                       <div className="btn-wrapper">
-                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                        <a href="/service-details" className="cmn-arrows1 link-btn d-center">
                           <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                         </a>
                       </div>
@@ -668,12 +697,12 @@ function HomeThreePage() {
                 <div className="swiper-slide">
                   <div className="latest-project-slide3">
                     <div className="thumb">
-                      <img src="/assets/img/project/projectThumb3_3.png" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.projectThree} alt="thumb" />
                     </div>
                     <div className="content">
-                      <h4><a href="/project-details">An In-Depth Case Study on Smile Transformations</a></h4>
+                      <h4><a href="/service-details">Trauma &amp; PTSD Support</a></h4>
                       <div className="btn-wrapper">
-                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                        <a href="/service-details" className="cmn-arrows1 link-btn d-center">
                           <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                         </a>
                       </div>
@@ -683,12 +712,12 @@ function HomeThreePage() {
                 <div className="swiper-slide">
                   <div className="latest-project-slide3">
                     <div className="thumb">
-                      <img src="/assets/img/project/projectThumb3_4.png" alt="thumb" />
+                      <img src={HOMEPAGE_IMAGES.projectFour} alt="thumb" />
                     </div>
                     <div className="content">
-                      <h4><a href="/project-details">An In-Depth Analysis of Dental Practices</a></h4>
+                      <h4><a href="/service-details">ADHD &amp; Stress Support</a></h4>
                       <div className="btn-wrapper">
-                        <a href="/project-details" className="cmn-arrows1 link-btn d-center">
+                        <a href="/service-details" className="cmn-arrows1 link-btn d-center">
                           <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                         </a>
                       </div>
@@ -707,8 +736,8 @@ function HomeThreePage() {
                 <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                   <div className="counter-items3">
                     <div className="content3">
-                      <h2><span className="count">600</span>+</h2>
-                      <p>Complte Project</p>
+                      <h2><span className="count">95</span>%</h2>
+                      <p>Secure Virtual Care</p>
                     </div>
                     <div className="icon">
                       <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -721,8 +750,8 @@ function HomeThreePage() {
                 <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
                   <div className="counter-items3">
                     <div className="content3">
-                      <h2><span className="count">200</span>+</h2>
-                      <p>Complte Project</p>
+                      <h2><span className="count">90</span>%</h2>
+                      <p>Scheduling Convenience</p>
                     </div>
                     <div className="icon">
                       <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -735,8 +764,8 @@ function HomeThreePage() {
                 <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
                   <div className="counter-items3">
                     <div className="content3">
-                      <h2><span className="count">500</span>+</h2>
-                      <p>Complte Project</p>
+                      <h2><span className="count">24</span>/7</h2>
+                      <p>Support Access</p>
                     </div>
                     <div className="icon">
                       <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -749,8 +778,8 @@ function HomeThreePage() {
                 <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
                   <div className="counter-items3">
                     <div className="content3">
-                      <h2><span className="count">500</span>+</h2>
-                      <p>Complte Project</p>
+                      <h2><span className="count">1</span>k+</h2>
+                      <p>Patients Supported</p>
                     </div>
                     <div className="icon">
                       <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -772,8 +801,8 @@ function HomeThreePage() {
                 <div className="col-xl-6 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                   <div className="feature-items1">
                     <div className="content">
-                      <h2>Compassionate care a exceptional results</h2>
-                      <p>Dental care focuses on maintaining oral health through practices such as regular </p>
+                      <h2>Compassionate care, real lasting progress</h2>
+                      <p>Mind Reach makes therapy and psychiatry easier to access with secure virtual sessions and evidence-based support.</p>
                       <div className="feature-btn-inner">
                         <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
                           Read More
@@ -788,25 +817,23 @@ function HomeThreePage() {
                 </div>
                 <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                   <div className="feature-thumb">
-                    <img src="/assets/img/feature/featureThumb3_1.png" alt="thumb" />
+                    <img src={HOMEPAGE_IMAGES.featureThumb} alt="Therapy session" />
                   </div>
                 </div>
                 <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                   <div className="feature-content">
-                    <span>10</span>
-                    <h4>years of experiences</h4>
-                    <p>Dental care focuses maintaining oral health through practices such as regular check-ups, cleanings, and
-                      treatments</p>
+                    <span>24/7</span>
+                    <h4>Support Access</h4>
+                    <p>Book online anytime and meet from anywhere. No long waitlists, just private, secure care when you need it.</p>
                   </div>
                 </div>
               </div>
               <div className="row g-4">
                 <div className="col-xl-9 col-lg-8 wow fadeInUp" data-wow-delay="0.9s">
-                  <div className="feature-inner-items2 reveal-left bg-cover rounded-4" style={{backgroundImage: 'url("/assets/img/feature/featureThumb3_2.png")'}}>
+                  <div className="feature-inner-items2 reveal-left bg-cover rounded-4" style={{backgroundImage: `url(${HOMEPAGE_IMAGES.featureBackground})`}}>
                     <div className="content">
-                      <h1>A healthy tomorrow starts today</h1>
-                      <p>Dental care focuses on maintaining oral health through practices such as regular Dental care focuses
-                      </p>
+                      <h1>MindReach Makes It Simple</h1>
+                      <p>Secure virtual sessions, flexible scheduling, and licensed care that fits your routine.</p>
                       <div className="feature-btn-inner">
                         <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100">
                           Read More
@@ -818,19 +845,19 @@ function HomeThreePage() {
                 </div>
                 <div className="col-xl-3 col-lg-4 wow fadeInUp" data-wow-delay="1.3s">
                   <div className="feature-inner-items3">
-                    <h3>Caring for You Always</h3>
+                      <h3>Support That Stays With You</h3>
                     <ul className="list-area d-flex flex-column pb-xl-3">
                       <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
-                        <i className="fa-solid fa-angles-right" /> Health Harmony
+                        <i className="fa-solid fa-angles-right" /> Compassionate Care
                       </li>
                       <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
-                        <i className="fa-solid fa-angles-right" /> Vitality Visions
+                        <i className="fa-solid fa-angles-right" /> Evidence-Based Support
                       </li>
                       <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
-                        <i className="fa-solid fa-angles-right" /> Care Connect Well
+                        <i className="fa-solid fa-angles-right" /> Confidential Sessions
                       </li>
                       <li className="d-flex align-items-center gap-lg-2 gap-1 fs-six">
-                        <i className="fa-solid fa-angles-right" /> Mindful Moments
+                        <i className="fa-solid fa-angles-right" /> Care That Fits Life
                       </li>
                     </ul>
                   </div>
@@ -843,11 +870,11 @@ function HomeThreePage() {
         <section className="pricing-section3 fix section-padding space-top cmn-bg">
           <div className="container">
             <div className="section-title text-center mb-60">
-              <span className="cmn-tag p1-bg heading-font">Pricing Plane</span>
+              <span className="cmn-tag p1-bg heading-font">Pricing Plan</span>
               <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                Where health meets hope <br /> partner in
+                Care plans that fit your life <br /> built for
                 <span className="position-relative z-1">
-                  wellness
+                  support
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                 </span>
               </h2>
@@ -856,12 +883,12 @@ function HomeThreePage() {
                   <ul className="nav" role="tablist">
                     <li className="nav-item wow fadeInUp" data-wow-delay=".3s" role="presentation">
                       <a href="#monthly" data-bs-toggle="tab" className="nav-link1" aria-selected="false" role="tab" tabIndex={-1}>
-                        Daily
+                        Per Session
                       </a>
                     </li>
                     <li className="nav-item wow fadeInUp" data-wow-delay=".5s" role="presentation">
                       <a href="#yearly" data-bs-toggle="tab" className="nav-link2 active" aria-selected="true" role="tab">
-                        Monthy
+                        Monthly
                       </a>
                     </li>
                   </ul>
@@ -887,31 +914,31 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Perfect</h4>
+                        <h4 className="mb-2">Starter</h4>
                         <div className="d-flex align-items-end">
                           <h2>$29</h2>
-                          <h6>/month</h6>
+                          <h6>/session</h6>
                         </div>
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                       </a>
                     </div>
@@ -935,31 +962,31 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Easy</h4>
+                        <h4 className="mb-2">Standard</h4>
                         <div className="d-flex align-items-end">
-                          <h2>$20</h2>
-                          <h6>/month</h6>
+                          <h2>$39</h2>
+                          <h6>/session</h6>
                         </div>
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
                       </a>
                     </div>
@@ -983,31 +1010,31 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Hard</h4>
+                        <h4 className="mb-2">Complete</h4>
                         <div className="d-flex align-items-end">
-                          <h2>$49</h2>
-                          <h6>/month</h6>
+                          <h2>$59</h2>
+                          <h6>/session</h6>
                         </div>
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                       </a>
                     </div>
@@ -1032,7 +1059,7 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Perfect</h4>
+                        <h4 className="mb-2">Starter</h4>
                         <div className="d-flex align-items-end">
                           <h2>$29</h2>
                           <h6>/month</h6>
@@ -1040,23 +1067,23 @@ function HomeThreePage() {
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                       </a>
                     </div>
@@ -1080,31 +1107,31 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Easy</h4>
+                        <h4 className="mb-2">Standard</h4>
                         <div className="d-flex align-items-end">
-                          <h2>$20</h2>
+                          <h2>$39</h2>
                           <h6>/month</h6>
                         </div>
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six black">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
                       </a>
                     </div>
@@ -1128,31 +1155,31 @@ function HomeThreePage() {
                         </svg>
                       </div>
                       <div className="pricing-head">
-                        <h4 className="mb-2">Hard</h4>
+                        <h4 className="mb-2">Complete</h4>
                         <div className="d-flex align-items-end">
-                          <h2>$49</h2>
+                          <h2>$59</h2>
                           <h6>/month</h6>
                         </div>
                       </div>
                       <ul className="pricing-list d-flex flex-column mb-4 pb-xl-3">
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Harmony Dental Practice
+                          <i className="fa-regular fa-check" /> Secure virtual session (video)
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Radiant Smile Dental
+                          <i className="fa-regular fa-check" /> Therapist matching support
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Happy Teeth Family
+                          <i className="fa-regular fa-check" /> Flexible scheduling
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-check" /> Touch Dental Care
+                          <i className="fa-regular fa-check" /> HIPAA-compliant platform
                         </li>
                         <li className="d-flex align-items-center gap-lg-3 gap-1 fs-six">
-                          <i className="fa-regular fa-xmark" /> Elite Dental Solutions
+                          <i className="fa-regular fa-xmark" /> Email support
                         </li>
                       </ul>
                       <a href="/pricing" className="common-btn box-style w-100 first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
-                        Book An Appiontment
+                        Book Appointment
                         <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                       </a>
                     </div>
@@ -1169,14 +1196,14 @@ function HomeThreePage() {
               <div className="row gx-0 gy-5 align-items-end">
                 <div className="col-lg-6 order-lg-0 order-1">
                   <div className="appointment-thumb reveal-left">
-                    <img src="/assets/img/appiontment/appiontmentThumb3_1.png" alt="img" className="w-100 rounded-2" />
+                    <img src={HOMEPAGE_IMAGES.appointment} alt="img" className="w-100 rounded-2" />
                   </div>
                 </div>
                 <div className="col-lg-6">
                   <div className="section-title">
                     <span className="cmn-tag p1-bg heading-font">Contact Us</span>
                     <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                      Get an Appiontment
+                      Book Appointment
                     </h2>
                   </div>
                   <form action="#" className="appointment-forms">
@@ -1198,7 +1225,7 @@ function HomeThreePage() {
                       </div>
                       <div className="col-lg-12">
                         <a href="/doctor-details" className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                          Book An Appiontment
+                          Book Appointment
                           <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
                         </a>
                       </div>
@@ -1213,16 +1240,16 @@ function HomeThreePage() {
         <section className="blog-section2 section-padding cmn-bg">
           <div className="container">
             <div className="section-title text-center mb-60">
-              <span className="cmn-tag p1-bg heading-font">Our Latest Blog</span>
+              <span className="cmn-tag p1-bg heading-font">Resources</span>
               <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                Smile Confidently with<br />Smiles Radiant
+                Insights that support your<br />mental well-being
               </h2>
             </div>
             <div className="row g-4">
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src="/assets/img/blog/blog3-v1.jpg" alt="img" className="rounded-4" />
+                    <img src={HOMEPAGE_IMAGES.resourceOne} alt="img" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>
@@ -1230,7 +1257,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">Fresh Breath Dental Studio Pearly Whites Dentistry</a>
+                      <a href="/blog-details" className="black">How virtual therapy can help with anxiety and overwhelm</a>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
@@ -1239,7 +1266,7 @@ function HomeThreePage() {
                       </div>
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
                         <i className="fa-regular fa-folder-open n900-clr" />
-                        Catagory
+                        Resource
                       </div>
                     </div>
                     <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
@@ -1252,7 +1279,7 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src="/assets/img/blog/blog3-v2.jpg" alt="img" className="rounded-4" />
+                    <img src={HOMEPAGE_IMAGES.resourceTwo} alt="img" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>
@@ -1260,8 +1287,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">Fresh Breath Dental Studio
-                        Pearly Whites Dentistry</a>
+                      <a href="/blog-details" className="black">What to expect from your first online psychiatry visit</a>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
@@ -1270,7 +1296,7 @@ function HomeThreePage() {
                       </div>
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
                         <i className="fa-regular fa-folder-open n900-clr" />
-                        Catagory
+                        Resource
                       </div>
                     </div>
                     <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
@@ -1283,7 +1309,7 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src="/assets/img/blog/blog3-v3.jpg" alt="img" className="rounded-4" />
+                    <img src={HOMEPAGE_IMAGES.resourceThree} alt="img" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>
@@ -1291,8 +1317,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">Fresh Breath Dental Studio
-                        Pearly Whites Dentistry</a>
+                      <a href="/blog-details" className="black">5 signs it may be time to ask for support</a>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
@@ -1301,7 +1326,7 @@ function HomeThreePage() {
                       </div>
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
                         <i className="fa-regular fa-folder-open n900-clr" />
-                        Catagory
+                        Resource
                       </div>
                     </div>
                     <a href="/blog-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100">
@@ -1320,7 +1345,7 @@ function HomeThreePage() {
           <div className="container">
             <div className="newsletter-appoinment-wrap3 p2-bg">
               <div className="row">
-                <div className="col-xl-7 col-lg-7">
+                <div className="col-12">
                   <div className="newsletter-appoinment3">
                     <div className="section-title">
                       <h2 className="wow fadeInUp mb-xxl-4 mb-3 visible-slowly-right" data-wow-delay=".3s">
@@ -1329,7 +1354,7 @@ function HomeThreePage() {
                       <div className="btn-button">
                         <div className="appoinment-btn">
                           <a href="/doctor-details" className="common-btn box-style first-box p1-bg d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                            Book An Appiontment
+                            Book Appointment
                             <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
                           </a>
                         </div>
@@ -1354,16 +1379,6 @@ function HomeThreePage() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-5 col-lg-5">
-                  <div className="appoinment-thumb">
-                    <div className="thumb">
-                      <img src="/assets/img/appiontment/appiontmentThumb3_3.png" alt="thumb" />
-                    </div>
-                    <div className="shape">
-                      <img src="/assets/img/appiontment/appiontmenticon3_1.png" alt="icon" />
                     </div>
                   </div>
                 </div>

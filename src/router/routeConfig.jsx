@@ -14,7 +14,8 @@ import ServiceDetailsPage from '../pages/ServiceDetailsPage'
 import ServicePage from '../pages/ServicePage'
 
 export const routeConfig = [
-  { path: '/', element: <HomePage /> },
+  { path: '/', element: <HomeThreePage /> },
+  { path: '/home-1', element: <HomePage /> },
   { path: '/home-2', element: <HomeTwoPage /> },
   { path: '/home-3', element: <HomeThreePage /> },
   { path: '/about', element: <AboutPage /> },
