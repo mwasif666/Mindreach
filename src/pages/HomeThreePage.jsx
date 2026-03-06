@@ -174,11 +174,10 @@ function HomeThreePage() {
                   <span className="cmn-tag p1-bg heading-font mb-xxl-1 mb-3">Mental Health Care</span>
                   <h1 className="black wow fadeInUp" data-wow-delay="0.6s">
                     We Provide<br />
-                    <span className="position-relative z-1 w-100">
-                      Therapy
+                    <span className="position-relative z-1 hero-highlight">
+                      Therapy Services
                       <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                    </span>
-                    Services<br /> &amp; Psychiatry Support
+                    </span><br /> &amp; Psychiatry Support
                     <img src="/assets/img/banner/icon3_1.svg" alt="icon" className="img-icon" />
                   </h1>
                   <p>
@@ -296,7 +295,7 @@ function HomeThreePage() {
                 <span className="position-relative z-1">
                   anxiety, depression, trauma,
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                </span>
+                </span>{' '}
                 and more
               </h2>
             </div>
@@ -378,11 +377,12 @@ function HomeThreePage() {
                     <div className="section-title">
                       <span className="cmn-tag p1-bg heading-font">About Us</span>
                       <h2 className="wow fadeInUp black visible-slowly-right mb-xxl-4 mb-3" data-wow-delay=".3s">
-                        Care That Meets You Where You Are
+                        Care That Meets You<br />
+                        Where You Are<br />
                         <span className="position-relative z-1">
                           MindReach
                           <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                        </span>
+                        </span>{' '}
                         Makes It Simple
                       </h2>
                       <p className="pra mb-sm-4 mb-3 position-relative syle-pra d-flex align-items-center gap-3">
@@ -459,7 +459,7 @@ function HomeThreePage() {
             <div className="section-title text-center mb-60">
               <span className="cmn-tag p1-bg heading-font">The MindReach Team</span>
               <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                Support That Listens<br />Care That
+                Support That Listens<br />Care That{' '}
                 <span className="position-relative z-1">
                   Helps
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
@@ -473,14 +473,12 @@ function HomeThreePage() {
                     <div className="thumb">
                       <img src={HOMEPAGE_IMAGES.teamTherapists} alt="thumb" />
                     </div>
-                    <div className="team-content align-items-end">
+                    <div className="team-content">
                       <h3><a href="/doctor-details">Licensed Therapists</a></h3>
                       <p>Secure virtual therapy</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
                       </div>
                     </div>
                   </div>
@@ -490,14 +488,12 @@ function HomeThreePage() {
                     <div className="thumb">
                       <img src={HOMEPAGE_IMAGES.teamPsychiatry} alt="thumb" />
                     </div>
-                    <div className="team-content align-items-end">
+                    <div className="team-content">
                       <h3><a href="/doctor-details">Psychiatry Support</a></h3>
                       <p>Medication management if needed</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
                       </div>
                     </div>
                   </div>
@@ -507,14 +503,12 @@ function HomeThreePage() {
                     <div className="thumb">
                       <img src={HOMEPAGE_IMAGES.teamCoordinators} alt="thumb" />
                     </div>
-                    <div className="team-content align-items-end">
+                    <div className="team-content">
                       <h3><a href="/doctor-details">Care Coordinators</a></h3>
                       <p>Scheduling and insurance help</p>
                       <div className="social-wrapper d-flex align-items-center">
                         <a href="#"><i className="fab fa-facebook-f" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-x" /></a>
                         <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
-                        <a href="#" className=" black"><i className="fa-brands fa-pinterest-p" /></a>
                       </div>
                     </div>
                   </div>
@@ -535,11 +529,11 @@ function HomeThreePage() {
                         <div className="section-title text-center mb-60">
                           <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What
+                            What{' '}
                             <span className="position-relative z-1">
                               Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>
+                            </span>{' '}
                             Can Feel Like
                           </h2>
                         </div>
@@ -570,11 +564,11 @@ function HomeThreePage() {
                         <div className="section-title text-center mb-60">
                           <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What
+                            What{' '}
                             <span className="position-relative z-1">
                               Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>
+                            </span>{' '}
                             Can Feel Like
                           </h2>
                         </div>
@@ -605,11 +599,11 @@ function HomeThreePage() {
                         <div className="section-title text-center mb-60">
                           <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
                           <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What
+                            What{' '}
                             <span className="position-relative z-1">
                               Healing
                               <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>
+                            </span>{' '}
                             Can Feel Like
                           </h2>
                         </div>
@@ -872,7 +866,7 @@ function HomeThreePage() {
             <div className="section-title text-center mb-60">
               <span className="cmn-tag p1-bg heading-font">Pricing Plan</span>
               <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                Care plans that fit your life <br /> built for
+                Care plans that fit your life <br /> built for{' '}
                 <span className="position-relative z-1">
                   support
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />

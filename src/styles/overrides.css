@@ -38,6 +38,54 @@
   height: 100%;
 }
 
+.body-bg2 .banner-section3 .hero-content-version3 {
+  max-width: 660px;
+}
+
+.body-bg2 .banner-section3 .hero-content-version3 h1,
+.body-bg2 .banner-section3 .hero-content-version3 h1 span {
+  font-size: clamp(3.4rem, 4.9vw, 4rem);
+  line-height: 1.05;
+}
+
+.body-bg2 .banner-section3 .hero-content-version3 p {
+  max-width: 620px;
+}
+
+.body-bg2 .banner-section3 .banner-thumb-items {
+  max-width: 540px;
+  margin-left: auto;
+}
+
+.body-bg2 .hero-content-version3 h1 .position-relative,
+.body-bg2 .section-title h2 .position-relative {
+  display: inline-block;
+  isolation: isolate;
+}
+
+.body-bg2 .banner-section3 .hero-content-version3 .hero-highlight {
+  width: fit-content;
+}
+
+.body-bg2 .hero-content-version3 .title-badge1,
+.body-bg2 .section-title .title-badge1 {
+  display: none !important;
+}
+
+.body-bg2 .pricing-section3 .section-title .pricing-content .pricing-tab-header .nav {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.body-bg2 .pricing-section3 .section-title .pricing-content .pricing-tab-header .nav .nav-link1,
+.body-bg2 .pricing-section3 .section-title .pricing-content .pricing-tab-header .nav .nav-link2 {
+  width: auto;
+  min-width: 0;
+  height: auto;
+  padding: 14px 28px;
+  white-space: nowrap;
+}
+
 .body-bg2 .service-item3 .thumb,
 .body-bg2 .latest-project3 .latest-project-slide3 .thumb,
 .body-bg2 .feature-wrapper3 .feature-thumb,
@@ -79,6 +127,20 @@
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content p {
   margin-bottom: 24px;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content,
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content h3,
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content p,
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content .social-wrapper {
+  width: 100%;
+  text-align: left;
+  align-items: flex-start !important;
+  justify-content: flex-start;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content .social-wrapper {
+  gap: 12px;
 }
 
 .body-bg2 .testimonial-wrapper3 .testimonial-items3 .testimonial-content .thumb {
@@ -154,6 +216,19 @@
 }
 
 @media (max-width: 991px) {
+  .body-bg2 .banner-section3 .hero-content-version3 {
+    max-width: 100%;
+  }
+
+  .body-bg2 .banner-section3 .banner-thumb-items {
+    max-width: 100%;
+  }
+
+  .body-bg2 .pricing-section3 .section-title .pricing-content .pricing-tab-header .nav .nav-link1,
+  .body-bg2 .pricing-section3 .section-title .pricing-content .pricing-tab-header .nav .nav-link2 {
+    padding: 12px 20px;
+  }
+
   .body-bg2 .team-wrapper3 .team-items-info3 {
     flex-direction: column;
   }
