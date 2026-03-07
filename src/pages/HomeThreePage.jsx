@@ -56,31 +56,31 @@ const FOOTER_CONTACT_ITEMS = [
 ]
 const TEAM_MEMBERS = [
   {
-    image: HOMEPAGE_IMAGES.teamDentistOne,
-    alt: 'Dr. Areeba Khan meeting a patient in clinic',
+    image: HOMEPAGE_IMAGES.testimonialOne,
+    alt: 'Dr. Areeba Khan portrait',
     name: 'Dr. Areeba Khan',
     role: 'Clinical Psychologist',
     experienceLabel: 'Experience',
     experienceValue: '5+ years experience',
-    imageClassName: 'team-profile-image team-profile-image--one',
+    imageClassName: 'team-profile-image',
   },
   {
-    image: HOMEPAGE_IMAGES.teamDentistTwo,
-    alt: 'Dr. Hassan Malik in a treatment room',
+    image: HOMEPAGE_IMAGES.testimonialThree,
+    alt: 'Dr. Hassan Malik portrait',
     name: 'Dr. Hassan Malik',
     role: 'Consultant Psychiatrist',
     experienceLabel: 'Experience',
     experienceValue: '7+ years experience',
-    imageClassName: 'team-profile-image team-profile-image--two',
+    imageClassName: 'team-profile-image',
   },
   {
-    image: HOMEPAGE_IMAGES.teamDentistThree,
-    alt: 'Dr. Mehak Aslam supporting a patient during treatment',
+    image: HOMEPAGE_IMAGES.testimonialTwo,
+    alt: 'Dr. Mehak Aslam portrait',
     name: 'Dr. Mehak Aslam',
     role: 'Behavioral Health Specialist',
     experienceLabel: 'Experience',
     experienceValue: '6+ years experience',
-    imageClassName: 'team-profile-image team-profile-image--three',
+    imageClassName: 'team-profile-image',
   },
 ]
 
