@@ -54,14 +54,15 @@ const FOOTER_CONTACT_ITEMS = [
   },
 ]
 
-function HomepageIconButton({ className, label, iconSrc, iconClassName, ...props }) {
+function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, ...props }) {
   return (
     <button
       type="button"
       className={className}
+      aria-label={iconOnly ? label : undefined}
       {...props}
     >
-      <span>{label}</span>
+      {!iconOnly ? <span>{label}</span> : null}
       {iconSrc ? (
         <img src={iconSrc} alt="" aria-hidden="true" />
       ) : iconClassName ? (
@@ -670,6 +671,7 @@ function HomeThreePage() {
                           className="cmn-arrows1 link-btn d-center"
                           label="Anxiety Support"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
+                          iconOnly
                         />
                       </div>
                     </div>
@@ -687,6 +689,7 @@ function HomeThreePage() {
                           className="cmn-arrows1 link-btn d-center"
                           label="Depression Care"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
+                          iconOnly
                         />
                       </div>
                     </div>
@@ -704,6 +707,7 @@ function HomeThreePage() {
                           className="cmn-arrows1 link-btn d-center"
                           label="Trauma and PTSD Support"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
+                          iconOnly
                         />
                       </div>
                     </div>
@@ -721,6 +725,7 @@ function HomeThreePage() {
                           className="cmn-arrows1 link-btn d-center"
                           label="ADHD and Stress Support"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
+                          iconOnly
                         />
                       </div>
                     </div>
