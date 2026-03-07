@@ -281,6 +281,10 @@
 }
 
 @media (min-width: 992px) {
+  .body-bg2 .appointment-section {
+    padding-top: 36px;
+  }
+
   .body-bg2 .appointment-wrapper .col-lg-6:last-child {
     display: flex;
     flex-direction: column;
