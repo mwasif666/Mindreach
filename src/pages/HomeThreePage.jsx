@@ -1285,7 +1285,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">How virtual therapy can help with anxiety and overwhelm</a>
+                      <span className="black">How virtual therapy can help with anxiety and overwhelm</span>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
@@ -1316,7 +1316,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">What to expect from your first online psychiatry visit</a>
+                      <span className="black">What to expect from your first online psychiatry visit</span>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
@@ -1347,7 +1347,7 @@ function HomeThreePage() {
                   </div>
                   <div className="content">
                     <h3 className="mb-3">
-                      <a href="/blog-details" className="black">5 signs it may be time to ask for support</a>
+                      <span className="black">5 signs it may be time to ask for support</span>
                     </h3>
                     <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
                       <div className="d-flex align-items-center gap-1 fs-eight pra">
