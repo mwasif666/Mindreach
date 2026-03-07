@@ -333,6 +333,10 @@ svg [stroke="#BEFF6B"] {
   color: #fff !important;
 }
 
+.sponsor-text-slide .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
 .sponsor-text-slide .text-slide-item img {
   filter: brightness(0) invert(1);
 }

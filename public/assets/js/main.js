@@ -168,9 +168,12 @@ CSS TABLE OF CONTENTS
 			speed: 6000,
 			loop: true,
 			slidesPerView: "auto",
-			centeredSlides: true,
+			centeredSlides: false,
+			freeMode: true,
+			freeModeMomentum: false,
+			allowTouchMove: false,
 			autoplay: {
-				delay: 1,
+				delay: 0,
 				disableOnInteraction: false,
 			},
 			breakpoints: {
