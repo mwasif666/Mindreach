@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import PageLayout from '../components/layout/PageLayout'
 
 const PAGE_TITLE = "MindReach"
@@ -34,6 +35,40 @@ const NAV_PAGES = [
 ]
 
 function HomeThreePage() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1199) {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    const handleKeyDown = (event) => {
+      if (event.key === 'Escape') {
+        setIsMobileMenuOpen(false)
+      }
+    }
+
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('keydown', handleKeyDown)
+
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [])
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    document.documentElement.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+
+    return () => {
+      document.body.style.overflow = ''
+      document.documentElement.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
@@ -52,7 +87,7 @@ function HomeThreePage() {
                 <div className="header-right d-flex justify-content-end align-items-center">
                   <div className="mean__menu-wrapper">
                     <div className="main-menu">
-                      <nav id="mobile-menu">
+                      <nav aria-label="Primary navigation">
                         <ul>
                           {NAV_PAGES.map(({ label, futureRoute }, index) => (
                             <li key={futureRoute} className={index === 0 ? 'active' : undefined}>
@@ -66,9 +101,16 @@ function HomeThreePage() {
                     </div>
                   </div>
                   <div className="header__hamburger d-xl-none my-auto">
-                    <div className="sidebar__toggle">
+                    <button
+                      type="button"
+                      className="header-mobile-toggle"
+                      aria-expanded={isMobileMenuOpen}
+                      aria-controls="home-mobile-drawer"
+                      aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                      onClick={() => setIsMobileMenuOpen((currentValue) => !currentValue)}
+                    >
                       <img src="/assets/img/icon/menu.png" alt="icon" />
-                    </div>
+                    </button>
                   </div>
                 </div>
                 <div className="header-btn d-xl-block d-none">
@@ -1345,37 +1387,63 @@ function HomeThreePage() {
             </div>
           </div>
         </footer>
-        {/* Offcanvas Area Start */}
-        <div className="fix-area">
-          <div className="offcanvas__info">
-            <div className="offcanvas__wrapper">
-              <div className="offcanvas__content">
-                <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
-                  <div className="offcanvas__logo">
-                    <a href="/">
-                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
-                    </a>
-                  </div>
-                  <div className="offcanvas__close">
-                    <button>
-                      <i className="fas fa-times" />
-                    </button>
-                  </div>
-                </div>
-                <div className="mobile-menu fix mb-3" />
-                <div className="offcanvas__contact offcanvas__contact--minimal">
-                  <div className="header-button mt-4">
-                    <a href="javascript:void(0)" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 nav-placeholder-link">
-                      Book Appointment
-                      <i className="fa-solid fa-arrow-right" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+        {/* Mobile Drawer Start */}
+        <div
+          id="home-mobile-drawer"
+          className={`home-mobile-drawer${isMobileMenuOpen ? ' is-open' : ''}`}
+          aria-hidden={!isMobileMenuOpen}
+        >
+          <div className="home-mobile-drawer__panel">
+            <div className="home-mobile-drawer__top">
+              <a href="/" className="header-logo" onClick={() => setIsMobileMenuOpen(false)}>
+                <img src="/assets/img/logo/logo.svg" alt="logo-img" />
+              </a>
+              <button
+                type="button"
+                className="home-mobile-drawer__close"
+                aria-label="Close navigation menu"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <i className="fas fa-times" />
+              </button>
             </div>
+            <nav className="home-mobile-drawer__nav" aria-label="Mobile navigation">
+              <ul>
+                {NAV_PAGES.map(({ label, futureRoute }) => (
+                  <li key={`mobile-${futureRoute}`}>
+                    <a
+                      href="javascript:void(0)"
+                      className="nav-placeholder-link"
+                      onClick={(event) => {
+                        event.preventDefault()
+                        setIsMobileMenuOpen(false)
+                      }}
+                    >
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <a
+              href="javascript:void(0)"
+              className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 nav-placeholder-link home-mobile-drawer__cta"
+              onClick={(event) => {
+                event.preventDefault()
+                setIsMobileMenuOpen(false)
+              }}
+            >
+              Book Appointment
+              <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
+            </a>
           </div>
         </div>
-        <div className="offcanvas__overlay" />
+        <button
+          type="button"
+          className={`home-mobile-drawer__overlay${isMobileMenuOpen ? ' is-open' : ''}`}
+          aria-label="Close navigation menu"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
         {/*<< All JS Plugins >>*/}
         {/*<< Viewport Js >>*/}
         {/*<< Bootstrap Js >>*/}
