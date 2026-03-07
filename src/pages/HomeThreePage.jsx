@@ -36,6 +36,7 @@ const NAV_PAGES = [
 const FOOTER_PAGE_ITEMS = ['About Us', 'Services', 'Why Chose Us', 'Doctors', 'Blog And News']
 const FOOTER_LINK_ITEMS = ['Terms & Condition', 'Privacy Policy', 'Contact Us', 'Terms Of Use']
 const FOOTER_SOCIAL_ICONS = ['fab fa-facebook-f', 'fa-brands fa-linkedin-in', 'fab fa-instagram', 'fa-brands fa-x']
+const SHOW_HOMEPAGE_PRICING = false
 const FOOTER_CONTACT_ITEMS = [
   {
     iconClassName: 'fa-solid fa-location-dot',
@@ -882,6 +883,7 @@ function HomeThreePage() {
           </div>
         </section>
         {/* Pricing Section Start */}
+        {SHOW_HOMEPAGE_PRICING ? (
         <section className="pricing-section3 fix section-padding space-top cmn-bg">
           <div className="container">
             <div className="section-title text-center mb-60">
@@ -1212,6 +1214,7 @@ function HomeThreePage() {
             </div>
           </div>
         </section>
+        ) : null}
         {/*Appointment Section Start */}
         <section className="appointment-section fix cmn-bg">
           <div className="container">
