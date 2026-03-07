@@ -265,6 +265,11 @@
   align-items: stretch !important;
 }
 
+.body-bg2 .appointment-wrapper .section-title {
+  margin-left: 0;
+  margin-bottom: 24px;
+}
+
 .body-bg2 .appointment-wrapper .appointment-thumb {
   height: 100%;
   min-height: 560px;
@@ -273,6 +278,15 @@
 
 .body-bg2 .appointment-wrapper .appointment-thumb img {
   object-position: center top;
+}
+
+@media (min-width: 992px) {
+  .body-bg2 .appointment-wrapper .col-lg-6:last-child {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-left: 36px;
+  }
 }
 
 .body-bg2 .blog-items3 .thumb {
