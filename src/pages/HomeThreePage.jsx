@@ -1376,9 +1376,9 @@ function HomeThreePage() {
           <div className="container">
             <div className="homepage-footer-newsletter">
               <h2 className="homepage-footer-newsletter__title">
-                Ready To Turn Dreams Into Reality
+                Ready To Start Your Care
                 <br />
-                Subscribe to Our <span className="homepage-footer-newsletter__highlight">Newsletter
+                Book Your <span className="homepage-footer-newsletter__highlight">Appointment
                   <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" />
                 </span>
               </h2>
@@ -1386,9 +1386,9 @@ function HomeThreePage() {
                 className="homepage-footer-newsletter__form"
                 onSubmit={(event) => event.preventDefault()}
               >
-                <input type="email" placeholder="Enter your email" aria-label="Enter your email" />
+                <input type="email" placeholder="Enter your email to get started" aria-label="Enter your email to get started" />
                 <button type="button" className="homepage-footer-newsletter__button">
-                  Subscribe Now
+                  Book Appointment
                   <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
                 </button>
               </form>
