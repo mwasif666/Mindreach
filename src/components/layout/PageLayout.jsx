@@ -2,7 +2,7 @@
 
 function PageLayout({ title, bodyClass, children }) {
   useEffect(() => {
-    document.title = title || 'Medizen'
+    document.title = title || 'MindReach'
     document.body.className = bodyClass || ''
   }, [bodyClass, title])
 

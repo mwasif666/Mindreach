@@ -21,7 +21,7 @@ function HomeTwoPage() {
                 <div className="header-left">
                   <div className="logo">
                     <a href="/" className="header-logo">
-                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
                     </a>
                   </div>
                 </div>
@@ -906,7 +906,7 @@ function HomeTwoPage() {
           <div className="container">
             <div className="footer-social-logo d-flex align-items-center justify-content-sm-between justify-content-center">
               <a href="/">
-                <img src="/assets/img/logo/logo-white.png" alt="logo-img" />
+                <img src="/assets/img/logo/logo-white.svg" alt="logo-img" />
               </a>
               <div className="social-wrapper d-flex align-items-center">
                 <a href="#" className=" black"><i className="fab fa-facebook-f" /></a>
@@ -1067,7 +1067,7 @@ function HomeTwoPage() {
                 <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
                   <div className="offcanvas__logo">
                     <a href="/">
-                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
                     </a>
                   </div>
                   <div className="offcanvas__close">

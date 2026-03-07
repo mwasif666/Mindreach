@@ -21,7 +21,7 @@ function HomePage() {
                 <div className="header-left">
                   <div className="logo">
                     <a href="/" className="header-logo">
-                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
                     </a>
                   </div>
                 </div>
@@ -914,7 +914,7 @@ function HomePage() {
                     <div className="single-footer-widget wow fadeInUp" data-wow-delay="0.4s">
                       <div className="widget-head">
                         <a href="/">
-                          <img src="/assets/img/logo/logo-white.png" alt="logo-img" />
+                          <img src="/assets/img/logo/logo-white.svg" alt="logo-img" />
                         </a>
                       </div>
                       <div className="footer-content">
@@ -1048,7 +1048,7 @@ function HomePage() {
                 <div className="offcanvas__top mb-4 d-flex justify-content-between align-items-center">
                   <div className="offcanvas__logo">
                     <a href="/">
-                      <img src="/assets/img/logo/logo.png" alt="logo-img" />
+                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
                     </a>
                   </div>
                   <div className="offcanvas__close">
