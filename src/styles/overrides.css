@@ -130,6 +130,7 @@
 .body-bg2 .team-wrapper3 .team-items-info3 {
   align-items: stretch;
   gap: 26px;
+  height: 100%;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .thumb {
@@ -141,8 +142,8 @@
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content {
-  justify-content: space-between;
-  min-height: 300px;
+  justify-content: flex-start;
+  min-height: 0;
   padding-block: 10px;
 }
 
@@ -162,7 +163,13 @@
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content .social-wrapper {
   gap: 12px;
-  margin-top: 28px;
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.body-bg2 .team-copy {
+  display: grid;
+  gap: 10px;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content h3 {
@@ -185,17 +192,17 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 6px;
-  min-width: 220px;
-  padding: 16px 22px;
-  border-radius: 26px;
-  background: rgba(34, 181, 115, 0.12);
-  border: 1px solid rgba(34, 181, 115, 0.14);
+  gap: 4px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
 }
 
 .body-bg2 .team-meta-label {
   color: rgba(9, 10, 11, 0.62);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
   line-height: 1.2;
@@ -204,7 +211,7 @@
 
 .body-bg2 .team-meta-value {
   color: var(--black);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 1.45;
 }
@@ -779,8 +786,7 @@ svg [stroke="#BEFF6B"] {
   }
 
   .body-bg2 .team-meta-card {
-    min-width: 0;
-    width: 100%;
+    width: auto;
   }
 
   .body-bg2 .latest-project3 .latest-project-slide3 .thumb,

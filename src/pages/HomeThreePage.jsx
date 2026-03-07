@@ -506,8 +506,10 @@ function HomeThreePage() {
                         <img src={image} alt={alt} className={imageClassName} />
                       </div>
                       <div className="team-content">
-                        <h3>{name}</h3>
-                        <p className="team-role">{role}</p>
+                        <div className="team-copy">
+                          <h3>{name}</h3>
+                          <p className="team-role">{role}</p>
+                        </div>
                         <div className="social-wrapper d-flex align-items-center">
                           <div className="team-meta-card">
                             <span className="team-meta-label">{experienceLabel}</span>
