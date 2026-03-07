@@ -951,6 +951,10 @@ svg [stroke="#BEFF6B"] {
 }
 
 @media (max-width: 767px) {
+  .body-bg2 .appointment-section {
+    padding-top: 28px;
+  }
+
   .body-bg2 .homepage-footer-shell {
     padding: 96px 0 64px;
   }
