@@ -59,7 +59,8 @@ const TEAM_MEMBERS = [
     alt: 'Dr. Areeba Khan meeting a patient in clinic',
     name: 'Dr. Areeba Khan',
     role: 'Clinical Psychologist',
-    experience: '5+ Years of Experience',
+    experienceLabel: 'Experience',
+    experienceValue: '5+ years experience',
     imageClassName: 'team-profile-image team-profile-image--one',
   },
   {
@@ -67,7 +68,8 @@ const TEAM_MEMBERS = [
     alt: 'Dr. Hassan Malik in a treatment room',
     name: 'Dr. Hassan Malik',
     role: 'Consultant Psychiatrist',
-    experience: '7+ Years of Experience',
+    experienceLabel: 'Experience',
+    experienceValue: '7+ years experience',
     imageClassName: 'team-profile-image team-profile-image--two',
   },
   {
@@ -75,7 +77,8 @@ const TEAM_MEMBERS = [
     alt: 'Dr. Mehak Aslam supporting a patient during treatment',
     name: 'Dr. Mehak Aslam',
     role: 'Behavioral Health Specialist',
-    experience: '6+ Years of Experience',
+    experienceLabel: 'Experience',
+    experienceValue: '6+ years experience',
     imageClassName: 'team-profile-image team-profile-image--three',
   },
 ]
@@ -492,7 +495,7 @@ function HomeThreePage() {
             </div>
             <div className="team-wrapper3">
               <div className="row g-4 justify-content-between">
-                {TEAM_MEMBERS.map(({ image, alt, name, role, experience, imageClassName }, index) => (
+                {TEAM_MEMBERS.map(({ image, alt, name, role, experienceLabel, experienceValue, imageClassName }, index) => (
                   <div
                     key={name}
                     className="col-xl-4 col-md-6 wow fadeInUp"
@@ -506,7 +509,10 @@ function HomeThreePage() {
                         <h3>{name}</h3>
                         <p className="team-role">{role}</p>
                         <div className="social-wrapper d-flex align-items-center">
-                          <span className="team-experience">{experience}</span>
+                          <div className="team-meta-card">
+                            <span className="team-meta-label">{experienceLabel}</span>
+                            <span className="team-meta-value">{experienceValue}</span>
+                          </div>
                         </div>
                       </div>
                     </div>
