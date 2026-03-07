@@ -129,17 +129,24 @@
 
 .body-bg2 .team-wrapper3 .team-items-info3 {
   align-items: stretch;
+  gap: 26px;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .thumb {
-  flex: 0 0 230px;
-  min-width: 230px;
-  height: 260px;
-  border-radius: 20px;
+  flex: 0 0 210px;
+  min-width: 210px;
+  height: 300px;
+  border-radius: 24px;
+  background: #f5f6f8;
+}
+
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content {
+  justify-content: center;
+  padding-block: 8px;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content p {
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content,
@@ -165,20 +172,41 @@
   margin-bottom: 10px;
 }
 
-.body-bg2 .team-social-placeholder {
+.body-bg2 .team-wrapper3 .team-items-info3 .team-content .team-role {
+  margin-bottom: 24px;
+  color: var(--text);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.body-bg2 .team-experience {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
+  min-height: 44px;
+  padding: 10px 18px;
   border-radius: 999px;
-  background: var(--white);
+  background: rgba(34, 181, 115, 0.12);
   color: var(--black);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
-.body-bg2 .team-social-placeholder i {
-  font-size: 14px;
-  line-height: 1;
+.body-bg2 .team-profile-image {
+  object-position: center top !important;
+}
+
+.body-bg2 .team-profile-image--one {
+  object-position: 58% center !important;
+}
+
+.body-bg2 .team-profile-image--two {
+  object-position: center top !important;
+}
+
+.body-bg2 .team-profile-image--three {
+  object-position: 58% center !important;
 }
 
 .body-bg2 .testimonial-wrapper3 .testimonial-items3 .testimonial-content .thumb {

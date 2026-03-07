@@ -53,6 +53,32 @@ const FOOTER_CONTACT_ITEMS = [
     value: 'abcd@gmail.com',
   },
 ]
+const TEAM_MEMBERS = [
+  {
+    image: HOMEPAGE_IMAGES.teamDentistOne,
+    alt: 'Dr. Areeba Khan meeting a patient in clinic',
+    name: 'Dr. Areeba Khan',
+    role: 'Clinical Psychologist',
+    experience: '5+ Years of Experience',
+    imageClassName: 'team-profile-image team-profile-image--one',
+  },
+  {
+    image: HOMEPAGE_IMAGES.teamDentistTwo,
+    alt: 'Dr. Hassan Malik in a treatment room',
+    name: 'Dr. Hassan Malik',
+    role: 'Consultant Psychiatrist',
+    experience: '7+ Years of Experience',
+    imageClassName: 'team-profile-image team-profile-image--two',
+  },
+  {
+    image: HOMEPAGE_IMAGES.teamDentistThree,
+    alt: 'Dr. Mehak Aslam supporting a patient during treatment',
+    name: 'Dr. Mehak Aslam',
+    role: 'Behavioral Health Specialist',
+    experience: '6+ Years of Experience',
+    imageClassName: 'team-profile-image team-profile-image--three',
+  },
+]
 
 function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, ...props }) {
   return (
@@ -466,54 +492,26 @@ function HomeThreePage() {
             </div>
             <div className="team-wrapper3">
               <div className="row g-4 justify-content-between">
-                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                  <div className="team-items-info3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.teamDentistOne} alt="General dentist with patient in clinic" />
-                    </div>
-                    <div className="team-content">
-                      <h3>General Dentist</h3>
-                      <p>Preventive care and patient consultations</p>
-                      <div className="social-wrapper d-flex align-items-center">
-                        <span className="team-social-placeholder">
-                          <i className="fa-brands fa-linkedin-in" />
-                        </span>
+                {TEAM_MEMBERS.map(({ image, alt, name, role, experience, imageClassName }, index) => (
+                  <div
+                    key={name}
+                    className="col-xl-4 col-md-6 wow fadeInUp"
+                    data-wow-delay={`${0.3 + (index * 0.2)}s`}
+                  >
+                    <div className="team-items-info3">
+                      <div className="thumb">
+                        <img src={image} alt={alt} className={imageClassName} />
+                      </div>
+                      <div className="team-content">
+                        <h3>{name}</h3>
+                        <p className="team-role">{role}</p>
+                        <div className="social-wrapper d-flex align-items-center">
+                          <span className="team-experience">{experience}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                  <div className="team-items-info3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.teamDentistTwo} alt="Orthodontist portrait in dental office" />
-                    </div>
-                    <div className="team-content">
-                      <h3>Orthodontist</h3>
-                      <p>Smile alignment and restorative planning</p>
-                      <div className="social-wrapper d-flex align-items-center">
-                        <span className="team-social-placeholder">
-                          <i className="fa-brands fa-linkedin-in" />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                  <div className="team-items-info3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.teamDentistThree} alt="Dental specialist performing treatment" />
-                    </div>
-                    <div className="team-content">
-                      <h3>Dental Specialist</h3>
-                      <p>Advanced treatment support and oral procedures</p>
-                      <div className="social-wrapper d-flex align-items-center">
-                        <span className="team-social-placeholder">
-                          <i className="fa-brands fa-linkedin-in" />
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
