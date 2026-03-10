@@ -1042,14 +1042,33 @@ svg [stroke="#BEFF6B"] {
   }
 
   .body-bg2 .banner-section3 .banner-thumb-items {
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    align-items: start;
+    width: min(100%, 360px);
     max-width: 100%;
-    margin: 20px auto 10px;
+    margin: 20px auto 18px;
     padding-top: 12px;
   }
 
+  .body-bg2 .banner-section3 .banner-thumb-items .thumb-shape-1,
   .body-bg2 .banner-section3 .banner-thumb-items .thumb {
+    grid-area: 1 / 1;
+  }
+
+  .body-bg2 .banner-section3 .banner-thumb-items .thumb-shape-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .body-bg2 .banner-section3 .banner-thumb-items .thumb {
+    position: relative;
+    left: auto;
+    top: auto;
     width: min(100%, 360px);
-    top: 0;
+    z-index: 1;
   }
 
   .body-bg2 .banner-section3 .banner-thumb-items .thumb-shape-1 .hero-theme-backdrop {
