@@ -1,6 +1,7 @@
 import PageLayout from '../components/layout/PageLayout'
+import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
-const PAGE_TITLE = "Service|| Medizen || Medizen React Template"
+const PAGE_TITLE = "Services | MindReach"
 const BODY_CLASS = "body-bg"
 
 function ServicePage() {
@@ -162,138 +163,31 @@ function ServicePage() {
         <section className="services-section main-style cmn-bg fix section-padding">
           <div className="container">
             <div className="row g-4">
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser1.png" alt="icon" />
+              {MENTAL_HEALTH_SERVICES.map((service) => (
+                <div key={service.id} className="col-lg-4 col-md-6">
+                  <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
+                    <div className="icon-area d-flex align-items-center gap-2">
+                      <div className="icon d-center">
+                        <img src={service.icon} alt="" aria-hidden="true" />
+                      </div>
+                      <h4 className="black"><a href={service.detailsHref}>{service.title}</a></h4>
                     </div>
-                    <h4 className="black"><a href="/service-details">Quality Care Service</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v4.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
+                    <span className="d-block black fw-semibold mb-2">{service.subtitle}</span>
+                    <p className="pra">
+                      {service.description}
+                    </p>
+                    <div className="thumb overflow-hidden position-relative">
+                      <img src={service.image} alt={service.imageAlt} className="rounded-4 overflow-hidden w-100" />
+                    </div>
+                    <div className="text-center service-btn-inner">
+                      <a href={service.detailsHref} className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser2.png" alt="icon" />
-                    </div>
-                    <h4 className="black"><a href="/service-details">Your Wellness Priority</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v5.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser3.png" alt="icon" />
-                    </div>
-                    <h4 className="black"><a href="/service-details">Caring for You Always</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v3.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser4.png" alt="icon" />
-                    </div>
-                    <h4 className="black"><a href="/service-details">Quality Care Service</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v6.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser5.png" alt="icon" />
-                    </div>
-                    <h4 className="black"><a href="/service-details">Where health meets</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v1.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="icon-area d-flex align-items-center gap-2">
-                    <div className="icon d-center">
-                      <img src="/assets/img/icon/ser6.png" alt="icon" />
-                    </div>
-                    <h4 className="black"><a href="/service-details">Center Harmony</a></h4>
-                  </div>
-                  <p className="pra">
-                    Health care is a vital aspect maintaining overall well-being, encompassing a range
-                  </p>
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src="/assets/img/service/service2-v2.jpg" alt="img" className="rounded-4 overflow-hidden w-100" />
-                  </div>
-                  <div className="text-center service-btn-inner">
-                    <a href="/service-details" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
-                      Read More
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -303,7 +197,11 @@ function ServicePage() {
             <div className="row g-4 align-items-center">
               <div className="col-lg-6 order-lg-0 order-1">
                 <div className="apoentment-thumb">
-                  <img src="/assets/img/service/sub-contact.jpg" alt="img" className="rounded-4" />
+                  <img
+                    src="/assets/img/service/pexels-cottonbro-5867189.jpg"
+                    alt="Virtual therapy consultation on a laptop screen"
+                    className="rounded-4"
+                  />
                 </div>
               </div>
               <div className="col-lg-6">

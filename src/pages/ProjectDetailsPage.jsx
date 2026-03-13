@@ -1,11 +1,29 @@
+import { Navigate, useParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
+import MINDREACH_PROJECTS, { getMindReachProject } from '../data/mindReachProjects'
 
-const PAGE_TITLE = "Project Details|| Medizen || Medizen React Template"
 const BODY_CLASS = "body-bg"
 
 function ProjectDetailsPage() {
+  const { projectId } = useParams()
+
+  if (!projectId) {
+    return <Navigate to={MINDREACH_PROJECTS[0].detailsHref} replace />
+  }
+
+  const project = getMindReachProject(projectId)
+
+  if (!project) {
+    return <Navigate to="/project" replace />
+  }
+
+  const projectIndex = MINDREACH_PROJECTS.findIndex((item) => item.id === project.id)
+  const previousProject = MINDREACH_PROJECTS[(projectIndex - 1 + MINDREACH_PROJECTS.length) % MINDREACH_PROJECTS.length]
+  const nextProject = MINDREACH_PROJECTS[(projectIndex + 1) % MINDREACH_PROJECTS.length]
+  const pageTitle = `${project.title} | MindReach`
+
   return (
-    <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
+    <PageLayout title={pageTitle} bodyClass={BODY_CLASS}>
       <div>
         {/* Start Cursor Pointer */}
         <div className="mouse-follower">
@@ -144,13 +162,17 @@ function ProjectDetailsPage() {
         <section className="breadcrumb-section position-relative fix">
           <div className="container">
             <div className="bread-content px-3 d-flex flex-wrap gap-3 align-items-center justify-content-md-between justify-content-center">
-              <h2 className="black">Project Details</h2>
+              <h2 className="black">{project.title}</h2>
               <ul className="d-flex align-items-center gap-3">
                 <li>
                   <a href="/">Home</a>
                 </li>
                 <li>/</li>
-                <li>Project Details</li>
+                <li>
+                  <a href="/project">Projects</a>
+                </li>
+                <li>/</li>
+                <li>{project.title}</li>
               </ul>
             </div>
           </div>
@@ -162,38 +184,31 @@ function ProjectDetailsPage() {
         <section className="project-details-section space-bottom fix space-top">
           <div className="container">
             <div className="project-details-wrapping">
-              <h1 className="black mb-60 text-center wow fadeInUp" data-wow-delay="0.3s">Healing Lives One Patient at a
-                Time</h1>
+              <h1 className="black mb-60 text-center wow fadeInUp" data-wow-delay="0.3s">{project.tagline}</h1>
               <div className="project-cate-wrap rounded-4 white-bg wow fadeInUp mb-60" data-wow-delay="0.4s">
                 <div className="project-cate-item">
                   <h4 className="black mb-xxl-2 mb-1">Location</h4>
-                  <p className="pra">Mirpur 10 Road 14 House 2 ,Dhaka</p>
+                  <p className="pra">{project.location}</p>
                 </div>
                 <div className="project-cate-item">
-                  <h4 className="black mb-xxl-2 mb-1">Clients</h4>
-                  <p className="pra">Jenny Wilson</p>
+                  <h4 className="black mb-xxl-2 mb-1">Client</h4>
+                  <p className="pra">{project.client}</p>
                 </div>
                 <div className="project-cate-item">
                   <h4 className="black mb-xxl-2 mb-1">Website</h4>
-                  <p className="pra">www.Medisan.com</p>
+                  <a href={project.websiteHref} className="pra project-details-link" target="_blank" rel="noreferrer">
+                    {project.website}
+                  </a>
                 </div>
                 <div className="project-cate-item">
                   <h4 className="black mb-xxl-2 mb-1">Date</h4>
-                  <p className="pra">16 August 2024</p>
+                  <p className="pra">{project.date}</p>
                 </div>
               </div>
               <div className="thumb-area">
-                <img src="/assets/img/service/project-details1.jpg" alt="img" className="w-100 rounded-4 mb-xxl-5 mb-xl-4 mb-3 wow fadeInUp" data-wow-delay="0.5s" />
+                <img src={project.heroImage} alt={project.heroImageAlt} className="w-100 rounded-4 mb-xxl-5 mb-xl-4 mb-3 wow fadeInUp" data-wow-delay="0.5s" />
                 <p className="pra wow fadeInUp" data-wow-delay="0.6s">
-                  Medical care encompasses a range of services aimed at promoting health, preventing disease, and
-                  treating illnesses. From
-                  routine check-ups to life-saving surgeries, medical care plays a crucial role in ensuring the
-                  well-being of individuals
-                  and communities Medical care encompasses a range of services aimed at promoting health,
-                  preventing disease, and treating
-                  illnesses. From routine check-ups to life-saving surgeries, medical care plays a crucial role in
-                  ensuring the well-being
-                  of individuals and communities
+                  {project.description}
                 </p>
               </div>
               <div className="project-drop-inner">
@@ -201,102 +216,63 @@ function ProjectDetailsPage() {
                   <div className="col-lg-6">
                     <div className="project-drop-item">
                       <div className="thumb mb-xxl-4 mb-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <img src="/assets/img/service/project-details2.jpg" alt="img" className="rounded-3 w-100" />
+                        <img src={project.detailImagePrimary} alt={project.detailImagePrimaryAlt} className="rounded-3 w-100" />
                       </div>
                       <div className="mb-xxl-4 mb-3">
-                        <h4 className="black mb-xxl-2 mb-1 wow fadeInUp" data-wow-delay="0.4s">Health Guardians
-                        </h4>
+                        <h4 className="black mb-xxl-2 mb-1 wow fadeInUp" data-wow-delay="0.4s">Project Highlights</h4>
                         <p className="pra wow fadeInUp" data-wow-delay="0.5s">
-                          Medical care encompasses a range of services aimed at promoting health,
-                          preventing
-                          disease, and treating illnesses.
-                          From
-                          routine check-ups to life-saving surgeries
+                          {project.description}
                         </p>
                       </div>
                       <ul className="drop-project d-grid gap-xl-2 gap-1 wow fadeInUp" data-wow-delay="0.3s">
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Your Health, Our Priority
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Compassionate Care, Exceptional
-                          Results
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Healing Lives, One Patient at a
-                          Time
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Empowering Health, Empowering
-                          Lives
-                        </li>
+                        {project.highlights.map((item) => (
+                          <li key={`${project.id}-highlight-${item}`} className="d-flex align-items-center gap-2 pra">
+                            <i className="fa-solid fa-angles-right p2-clr" /> {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="project-drop-item">
                       <div className="thumb mb-xxl-4 mb-3 wow fadeInUp" data-wow-delay="0.3s">
-                        <img src="/assets/img/service/project-details3.jpg" alt="img" className="rounded-3 w-100" />
+                        <img src={project.detailImageSecondary} alt={project.detailImageSecondaryAlt} className="rounded-3 w-100" />
                       </div>
                       <div className="mb-xxl-4 mb-3">
-                        <h4 className="black mb-xxl-2 mb-1 wow fadeInUp" data-wow-delay="0.4s">Harmony Health
-                        </h4>
+                        <h4 className="black mb-xxl-2 mb-1 wow fadeInUp" data-wow-delay="0.4s">Impact Statements</h4>
                         <p className="pra wow fadeInUp" data-wow-delay="0.5s">
-                          Medical care encompasses a range of services aimed at promoting health,
-                          preventing
-                          disease, and treating illnesses.
-                          From
-                          routine check-ups to life-saving surgeries
+                          {project.detailContent}
                         </p>
                       </div>
                       <ul className="drop-project d-grid gap-xl-2 gap-1 wow fadeInUp" data-wow-delay="0.3s">
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Partnering for Better Health
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Tomorrow's Health, Today's Care
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Caring for You, Caring for
-                          Tomorrow
-                        </li>
-                        <li className="d-flex align-items-center gap-2 pra">
-                          <i className="fa-solid fa-angles-right p2-clr" /> Expert Care, Trusted Results
-                        </li>
+                        {project.impacts.map((item) => (
+                          <li key={`${project.id}-impact-${item}`} className="d-flex align-items-center gap-2 pra">
+                            <i className="fa-solid fa-angles-right p2-clr" /> {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
                 </div>
               </div>
               <div className="mb-60">
-                <h4 className="black mb-xl-3 mb-2">Health Matters We Care</h4>
+                <h4 className="black mb-xl-3 mb-2">{project.title} Overview</h4>
                 <p className="pra mb-xl-2 mb-1">
-                  Medical services are an essential part of our lives, offering care and treatment for various
-                  health conditions. These
-                  are a services encompass a wide range of specialties, including primary care, pediatrics,
-                  cardiology Medical services
-                  are an essential part of our lives, offering care and treatment for various health conditions
-                  These services
+                  {project.detailContent}
                 </p>
                 <p className="pra">
-                  Medical care encompasses a range of services aimed at promoting health, preventing disease, and
-                  treating illnesses. From
-                  routine check-ups to life-saving surgeries, medical care plays a crucial role in ensuring the
-                  well-being of individuals
-                  and communities Medical care encompasses a range of services aimed at promoting health,
-                  preventing disease, and treating
-                  illnesses. From routine check-ups to life-saving surgeries, medical care plays a crucial role in
-                  ensuring the well-being
-                  of individuals and communities
+                  {project.title} is designed to make licensed mental health support more accessible through private
+                  telehealth sessions, structured follow-ups, and evidence-based care planning that helps clients stay
+                  engaged in long-term emotional wellness.
                 </p>
               </div>
               <div className="project-prenext d-flex align-items-center justify-content-between">
-                <button type="button" className="d-flex align-items-center gap-xxl-3 gap-2 black fw_600 fs-six">
-                  <i className="fa-solid fa-angle-left black" /> Previous post
-                </button>
-                <button type="button" className="d-flex align-items-center gap-xxl-3 gap-2 black fw_600 fs-six">
-                  Next post <i className="fa-solid fa-angle-right p2-clr" />
-                </button>
+                <a href={previousProject.detailsHref} className="d-flex align-items-center gap-xxl-3 gap-2 black fw_600 fs-six">
+                  <i className="fa-solid fa-angle-left black" /> Previous Project
+                </a>
+                <a href={nextProject.detailsHref} className="d-flex align-items-center gap-xxl-3 gap-2 black fw_600 fs-six">
+                  Next Project <i className="fa-solid fa-angle-right p2-clr" />
+                </a>
               </div>
             </div>
           </div>

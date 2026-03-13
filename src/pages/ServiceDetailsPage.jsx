@@ -1,11 +1,24 @@
+import { Navigate, useParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
+import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
-const PAGE_TITLE = "Service Details|| Medizen || Medizen React Template"
 const BODY_CLASS = "body-bg"
+const HELP_PHONE = '(+888) 178 456 765'
+const HELP_PHONE_HREF = 'tel:+888178456765'
+const HELP_COPY = 'Access professional mental health support anytime, from anywhere. Our licensed therapists and psychiatrists are here to guide you with confidential and compassionate care through secure online sessions.'
 
 function ServiceDetailsPage() {
+  const { serviceId } = useParams()
+  const service = MENTAL_HEALTH_SERVICES.find((item) => item.id === serviceId)
+
+  if (!service) {
+    return <Navigate to="/service" replace />
+  }
+
+  const pageTitle = `${service.title} | MindReach`
+
   return (
-    <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
+    <PageLayout title={pageTitle} bodyClass={BODY_CLASS}>
       <div>
         {/* Start Cursor Pointer */}
         <div className="mouse-follower">
@@ -144,13 +157,17 @@ function ServiceDetailsPage() {
         <section className="breadcrumb-section position-relative fix">
           <div className="container">
             <div className="bread-content px-3 d-flex flex-wrap gap-3 align-items-center justify-content-md-between justify-content-center">
-              <h2 className="black">Service Details</h2>
+              <h2 className="black">{service.title}</h2>
               <ul className="d-flex align-items-center gap-3">
                 <li>
                   <a href="/">Home</a>
                 </li>
                 <li>/</li>
-                <li>Service Details</li>
+                <li>
+                  <a href="/service">Services</a>
+                </li>
+                <li>/</li>
+                <li>{service.title}</li>
               </ul>
             </div>
           </div>
@@ -164,198 +181,128 @@ function ServiceDetailsPage() {
             <div className="row g-4">
               <div className="col-lg-8">
                 <div className="service-details-wraping">
-                  <div className="mb-4 wow fadeInUp" data-wow-delay="0.2s">
-                    <h2 className="black mb-xxl-3 mb-2 wow fadeInUp">A healthy tomorrow starts today</h2>
-                    <p className="pra">Medical services are an essential part of our lives, offering care and
-                      treatment for various health
-                      conditions. These
-                      services encompass a wide range of specialties, including primary care, pediatrics,
-                      cardiology</p>
-                  </div>
-                  <div className="thumb rounded-4 mb-4 w-100 wow fadeInUp" data-wow-delay="0.3s">
-                    <img src="/assets/img/service/service-details-big.jpg" alt="img" className="rounded-4 w-100" />
-                  </div>
-                  <div className="mb-4 wow fadeInUp" data-wow-delay="0.4s">
-                    <h4 className="black mb-3">Senior Care Coordination</h4>
-                    <ul className="d-grid gap-xxl-3 gap-2">
-                      <li className="d-flex align-items-center gap-2 pra fs-seven">
-                        <i className="fa-solid fa-angles-right pra" />
-                        Dental operations involve various procedures performed by dentists
-                      </li>
-                      <li className="d-flex align-items-center gap-2 pra fs-seven">
-                        <i className="fa-solid fa-angles-right pra" />
-                        Medical services are an essential part of our lives, offering care
-                      </li>
-                      <li className="d-flex align-items-center gap-2 pra fs-seven">
-                        <i className="fa-solid fa-angles-right pra" />
-                        These services encompass a wide range of specialties, including primary care,
-                        pediatrics, cardiology
-                      </li>
-                      <li className="d-flex align-items-center gap-2 pra fs-seven">
-                        <i className="fa-solid fa-angles-right pra" />
-                        Empowering Health, Empowering Lives Expert Care, Trusted Results
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mb-4 wow fadeInUp" data-wow-delay="0.5s">
-                    <h4 className="black mb-3">Holistic Health Consultations</h4>
-                    <p className="pra mb-xxl-3 mb-2">
-                      Medical services are an essential part of our lives, offering care and treatment for
-                      various health conditions. These
-                      services encompass a wide range of specialties, including primary care, pediatrics,
-                      cardiology
-                    </p>
-                    <p className="pra">
-                      Medical services are an essential part of our lives, offering care and treatment for
-                      various health conditions. These
-                      are a services encompass a wide range of specialties, including primary care,
-                      pediatrics, cardiology Medical services
-                      are an essential part of our lives, offering care and treatment for various health
-                      conditions These services
-                    </p>
-                  </div>
-                  <div className="mb-4 wow fadeInUp" data-wow-delay="0.6s">
-                    <h4 className="black mb-3">Health Matters We Care</h4>
-                    <p className="pra">
-                      Medical services are an essential part of our lives, offering care and treatment for
-                      various health conditions. These
-                      are a services encompass a wide range of specialties, including primary care,
-                      pediatrics, cardiology Medical services
-                      are an essential part of our lives, offering care and treatment for various health
-                      conditions These services
-                    </p>
-                  </div>
-                  <div className="row g-4 mb-4 wow fadeInUp" data-wow-delay="0.7s">
-                    <div className="col-lg-6 col-md-6">
-                      <div className="service-dorp-out">
-                        <img src="/assets/img/icon/flask.png" alt="img" className="mb-xxl-3 mb-2" />
-                        <h6 className="fw_500 mb-xxl-3 mb-2 black">
-                          Wellness Oasis CarePoint Health the Institute Thrive Wellness Hub
-                        </h6>
-                        <p className="pra">
-                          Health care is a vital aspect maintaining overall well-being, encompassing a
-                          range
-                        </p>
+                  <article className="mindreach-service-detail">
+                    <div className="mindreach-service-detail__header">
+                      <div className="mindreach-service-detail__eyebrow">
+                        <div className="mindreach-service-detail__icon">
+                          <img src={service.icon} alt="" aria-hidden="true" />
+                        </div>
+                        <span className="cmn-tag p1-bg heading-font">{service.detailTitle}</span>
+                      </div>
+                      <h2 className="black mb-3">{service.detailHeadline}</h2>
+                      {service.detailIntro ? (
+                        <p className="pra mindreach-service-detail__intro">{service.detailIntro}</p>
+                      ) : null}
+                    </div>
+                    <div className="mindreach-service-detail__hero thumb rounded-4 overflow-hidden">
+                      <img src={service.image} alt={service.imageAlt} className="rounded-4 w-100" />
+                    </div>
+                    <div className="mindreach-service-detail__copy">
+                      <h4 className="black mb-3">{service.aboutTitle}</h4>
+                      <p className="pra">{service.aboutText}</p>
+                    </div>
+                    <div className="mindreach-service-detail__copy">
+                      <h4 className="black mb-3">How MindReach Helps</h4>
+                      <p className="pra">{service.supportApproach}</p>
+                    </div>
+                    <div className="row g-4">
+                      <div className="col-md-6">
+                        <div className="service-dorp-out mindreach-service-detail__info-card">
+                          <h5 className="black mb-3">Common Symptoms</h5>
+                          <ul className="mindreach-service-detail__list">
+                            {service.symptoms.map((item) => (
+                              <li key={`${service.id}-${item}`}>
+                                <i className="fa-solid fa-angles-right" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="service-dorp-out mindreach-service-detail__info-card">
+                          <h5 className="black mb-3">Common Causes</h5>
+                          <ul className="mindreach-service-detail__list">
+                            {service.causes.map((item) => (
+                              <li key={`${service.id}-cause-${item}`}>
+                                <i className="fa-solid fa-angles-right" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="service-dorp-out mindreach-service-detail__info-card">
+                          <h5 className="black mb-3">What Treatment May Include</h5>
+                          <ul className="mindreach-service-detail__list">
+                            {service.careIncludes.map((item) => (
+                              <li key={`${service.id}-care-${item}`}>
+                                <i className="fa-solid fa-angles-right" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="service-dorp-out mindreach-service-detail__info-card">
+                          <h5 className="black mb-3">What To Expect</h5>
+                          <p className="pra mb-0">{service.whatToExpect}</p>
+                        </div>
                       </div>
                     </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="service-dorp-out">
-                        <img src="/assets/img/icon/serum.png" alt="img" className="mb-xxl-3 mb-2" />
-                        <h6 className="fw_500 mb-xxl-3 mb-2 black">
-                          Where health meets hope Your the a partner in wellness
-                        </h6>
-                        <p className="pra">
-                          Health care is a vital aspect maintaining overall well-being, encompassing a
-                          range
-                        </p>
-                      </div>
+                    <div className="mindreach-service-detail__copy">
+                      <h4 className="black mb-3">Diagnosis</h4>
+                      <p className="pra">{service.diagnosis}</p>
                     </div>
-                  </div>
-                  <div className="mb-0 wow fadeInUp" data-wow-delay="0.8s">
-                    <h4 className="black mb-3">Partnering for Better Health</h4>
-                    <p className="mb-xxl-3 mb-2 pra">
-                      Medical services are an essential part of our lives, offering care and treatment for
-                      various health conditions. These
-                      are a services encompass a wide range of specialties, including primary care,
-                      pediatrics, cardiology Medical services
-                      are an essential part of our lives, offering care and treatment for various health
-                      conditions These services
-                    </p>
-                    <p className="pra">
-                      Medical services are an essential part of our lives, offering care and treatment for
-                      various health conditions. These
-                      services encompass a wide range of specialties, including primary care, pediatrics,
-                      cardiology
-                    </p>
-                  </div>
+                    <div className="mindreach-service-detail__copy">
+                      <h4 className="black mb-3">Treatment Options</h4>
+                      <p className="pra">{service.treatment}</p>
+                    </div>
+                    <div className="mindreach-service-detail__cta">
+                      <div>
+                        <span className="cmn-tag p1-bg heading-font">Book Appointment</span>
+                      </div>
+                      <p className="pra mb-0">{service.bookingText}</p>
+                      <a
+                        href="/contact"
+                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                      >
+                        Book Appointment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </article>
                 </div>
               </div>
               <div className="col-lg-4">
-                <div className="blog-details-right">
+                <div className="blog-details-right mindreach-service-sidebar">
                   <div className="details-common category-service">
-                    <h4 className="black d-flex align-items-center gap-2 mb-4 fw_700 visible-slowly-right"> Services
-                    </h4>
+                    <h4 className="black d-flex align-items-center gap-2 mb-4 fw_700">Services</h4>
                     <ul className="cates">
-                      <li>
-                        <a href="javascript:void(0)" className="d-flex align-items-center justify-content-between fs-five black">
-                          <span className="pra fs-seven">
-                            <i className="fa-solid fa-angles-right p2-clr" /> A Tradition of Healing
-                          </span>
-                          <span className="just-serial">(02)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)" className="d-flex align-items-center justify-content-between fs-five black">
-                          <span className="pra fs-seven">
-                            <i className="fa-solid fa-angles-right p2-clr" /> Harmony Holistic Health
-                          </span>
-                          <span className="just-serial">(02)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)" className="d-flex align-items-center justify-content-between fs-five black">
-                          <span className="pra fs-seven">
-                            <i className="fa-solid fa-angles-right p2-clr" /> Revive Medical Care
-                          </span>
-                          <span className="just-serial">(02)</span>
-                        </a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)" className="d-flex align-items-center justify-content-between fs-five black">
-                          <span className="pra fs-seven">
-                            <i className="fa-solid fa-angles-right p2-clr" /> Unity Health Services
-                          </span>
-                          <span className="just-serial">(02)</span>
-                        </a>
-                      </li>
+                      {MENTAL_HEALTH_SERVICES.map((item) => (
+                        <li key={item.id}>
+                          <a
+                            href={item.detailsHref}
+                            className={`d-flex align-items-center fs-five black${item.id === service.id ? ' is-active' : ''}`}
+                            aria-current={item.id === service.id ? 'page' : undefined}
+                          >
+                            <span className="pra fs-seven">
+                              <i className="fa-solid fa-angles-right p2-clr" /> {item.title}
+                            </span>
+                          </a>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                   <div className="details-common quick-call text-center">
-                    <h4 className="black">Need Help?Call Us</h4>
-                    <a href="#" className="d-center call rounded-circle p2-bg"><i className="fa-solid fa-phone text-white" /></a>
-                    <p className="pra mb-xxl-4 mb-3">Health care is a vital aspect of maintaining overall
-                      well-being, encompassing a range of services from preventive care</p>
-                    <a href="#" className="numbs heading-font">(+888) 178 456 765</a>
-                  </div>
-                  <div className="details-common download-area">
-                    <div className="thumb rounded-circle m-auto w-100">
-                      <img src="/assets/img/service/service-detail-devid.jpg" alt="img" className="rounded-circle w-100" />
-                    </div>
-                    <div className="cont mt-xl-4 mt-3 text-center mb-3">
-                      <h4 className="black mb-1">Dr.Chirs Bekham</h4>
-                      <span className="pra">Cardiac Surgeon</span>
-                    </div>
-                    <div className="social-wrapper d-flex justify-content-center align-items-center">
-                      <a href="#" className=" black"><i className="fab fa-facebook-f" /></a>
-                      <a href="#" className=" black"><i className="fab fa-instagram" /></a>
-                      <a href="#" className=" black">
-                        <svg width={14} height={14} viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g clipPath="url(#clip0_5855_218)">
-                            <path d="M8.30314 5.92804L13.4029 0H12.1944L7.7663 5.14724L4.22958 0H0.150391L5.4986 7.78354L0.150391 14H1.35894L6.03514 8.56434L9.77017 14H13.8494L8.30284 5.92804H8.30314ZM6.64787 7.85211L6.10598 7.07705L1.79439 0.909771H3.65065L7.13015 5.88696L7.67204 6.66202L12.195 13.1316H10.3387L6.64787 7.85241V7.85211Z" fill="#090A0B" />
-                          </g>
-                          <defs>
-                            <clipPath id="clip0_5855_218">
-                              <rect width={14} height={14} fill="white" />
-                            </clipPath>
-                          </defs>
-                        </svg>
-                      </a>
-                      <a href="#" className=" black"><i className="fa-brands fa-linkedin-in" /></a>
-                    </div>
-                  </div>
-                  <div className="details-common download-area">
-                    <a href="javascript:void(0)" className="download-item d-flex align-items-center justify-content-between">
-                      <div className="d-flex align-items-center gap-xxl-3 gap-2 pra">
-                        <i className="fa-solid fa-download" /> (1.5Mb)
-                      </div>
-                      <span className="pra fs-seven">Company File</span>
+                    <h4 className="black">Need Help? Call Us</h4>
+                    <a href={HELP_PHONE_HREF} className="d-center call rounded-circle p2-bg">
+                      <i className="fa-solid fa-phone" />
                     </a>
-                    <a href="javascript:void(0)" className="download-item d-flex align-items-center justify-content-between">
-                      <div className="d-flex align-items-center gap-xxl-3 gap-2 pra">
-                        <i className="fa-solid fa-download" /> (1.5Mb)
-                      </div>
-                      <span className="pra fs-seven">Company File</span>
-                    </a>
+                    <p className="pra mb-xxl-4 mb-3">{HELP_COPY}</p>
+                    <a href={HELP_PHONE_HREF} className="numbs heading-font">{HELP_PHONE}</a>
                   </div>
                 </div>
               </div>

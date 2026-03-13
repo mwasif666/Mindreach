@@ -1,20 +1,14 @@
-import { useEffect, useState } from 'react'
 import PageLayout from '../components/layout/PageLayout'
+import SiteFooter from '../components/layout/SiteFooter'
+import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "MindReach"
 const BODY_CLASS = "body-bg2"
 const HOMEPAGE_IMAGES = {
   hero: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
-  serviceAnxiety: '/assets/img/homepage-images/pexels-alex-green-5699431.jpg',
-  serviceDepression: '/assets/img/homepage-images/pexels-alex-green-5699474.jpg',
-  serviceTrauma: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
   teamDentistOne: '/assets/img/homepage-images/unsplash-dentist-1.jpg',
   teamDentistTwo: '/assets/img/homepage-images/unsplash-dentist-2.jpg',
   teamDentistThree: '/assets/img/homepage-images/unsplash-dentist-4.jpg',
-  projectOne: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
-  projectTwo: '/assets/img/homepage-images/pexels-alex-green-5699431.jpg',
-  projectThree: '/assets/img/homepage-images/pexels-alex-green-5699474.jpg',
-  projectFour: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
   featureThumb: '/assets/img/homepage-images/unsplash-feature-thumb.jpg',
   featureBackground: '/assets/img/homepage-images/unsplash-feature-bg.jpg',
   appointment: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
@@ -25,35 +19,7 @@ const HOMEPAGE_IMAGES = {
   testimonialTwo: '/assets/img/homepage-images/unsplash-portrait-2.jpg',
   testimonialThree: '/assets/img/homepage-images/unsplash-portrait-3.jpg',
 }
-// Future routes remain intentionally disabled in the navbar and footer until the pages are finalized.
-const NAV_PAGES = [
-  { label: 'Home', futureRoute: '/' },
-  { label: 'About Us', futureRoute: '/about' },
-  { label: 'Doctors', futureRoute: '/doctor' },
-  { label: 'Pricing', futureRoute: '/pricing' },
-  { label: 'Contact Us', futureRoute: '/contact' },
-]
-const FOOTER_PAGE_ITEMS = ['About Us', 'Services', 'Why Chose Us', 'Doctors', 'Blog And News']
-const FOOTER_LINK_ITEMS = ['Terms & Condition', 'Privacy Policy', 'Contact Us', 'Terms Of Use']
-const FOOTER_SOCIAL_ICONS = ['fab fa-facebook-f', 'fa-brands fa-linkedin-in', 'fab fa-instagram', 'fa-brands fa-x']
 const SHOW_HOMEPAGE_PRICING = false
-const FOOTER_CONTACT_ITEMS = [
-  {
-    iconClassName: 'fa-solid fa-location-dot',
-    label: 'Address',
-    value: '66 Broklyant,India',
-  },
-  {
-    iconClassName: 'fa-solid fa-phone',
-    label: 'Phone Number',
-    value: '012 345 678 9101',
-  },
-  {
-    iconClassName: 'fa-solid fa-envelope',
-    label: 'Email',
-    value: 'abcd@gmail.com',
-  },
-]
 const TEAM_MEMBERS = [
   {
     image: HOMEPAGE_IMAGES.testimonialOne,
@@ -84,12 +50,15 @@ const TEAM_MEMBERS = [
   },
 ]
 
-function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, ...props }) {
+function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, href, ...props }) {
+  const Component = href ? 'a' : 'button'
+
   return (
-    <button
-      type="button"
+    <Component
       className={className}
       aria-label={iconOnly ? label : undefined}
+      href={href}
+      type={href ? undefined : 'button'}
       {...props}
     >
       {!iconOnly ? <span>{label}</span> : null}
@@ -98,100 +67,14 @@ function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly
       ) : iconClassName ? (
         <i className={iconClassName} aria-hidden="true" />
       ) : null}
-    </button>
+    </Component>
   )
 }
 
 function HomeThreePage() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 1199) {
-        setIsMobileMenuOpen(false)
-      }
-    }
-
-    const handleKeyDown = (event) => {
-      if (event.key === 'Escape') {
-        setIsMobileMenuOpen(false)
-      }
-    }
-
-    window.addEventListener('resize', handleResize)
-    window.addEventListener('keydown', handleKeyDown)
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      window.removeEventListener('keydown', handleKeyDown)
-    }
-  }, [])
-
-  useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
-    document.documentElement.style.overflow = isMobileMenuOpen ? 'hidden' : ''
-
-    return () => {
-      document.body.style.overflow = ''
-      document.documentElement.style.overflow = ''
-    }
-  }, [isMobileMenuOpen])
-
   return (
-    <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
+    <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS} showSharedFooter={false}>
       <div>
-        {/* Header Section Start */}
-        <header id="header-sticky" className="header-3 bg-transparent sticky-header1">
-          <div className="container">
-            <div className="mega-menu-wrapper">
-              <div className="header-main style-2">
-                <div className="header-left">
-                  <div className="logo">
-                    <a href="/" className="header-logo">
-                      <img src="/assets/img/logo/logo.svg" alt="logo-img" />
-                    </a>
-                  </div>
-                </div>
-                <div className="header-right d-flex justify-content-end align-items-center">
-                  <div className="mean__menu-wrapper">
-                    <div className="main-menu">
-                      <nav aria-label="Primary navigation">
-                        <ul>
-                          {NAV_PAGES.map(({ label, futureRoute }, index) => (
-                            <li key={futureRoute} className={index === 0 ? 'active' : undefined}>
-                              <a href="javascript:void(0)" className="nav-placeholder-link">
-                                {label}
-                              </a>
-                            </li>
-                          ))}
-                        </ul>
-                      </nav>
-                    </div>
-                  </div>
-                  <div className="header__hamburger d-xl-none my-auto">
-                    <button
-                      type="button"
-                      className="header-mobile-toggle"
-                      aria-expanded={isMobileMenuOpen}
-                      aria-controls="home-mobile-drawer"
-                      aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                      onClick={() => setIsMobileMenuOpen((currentValue) => !currentValue)}
-                    >
-                      <img src="/assets/img/icon/menu.png" alt="icon" />
-                    </button>
-                  </div>
-                </div>
-                <div className="header-btn d-xl-block d-none">
-                  <HomepageIconButton
-                    className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 nav-placeholder-link"
-                    label="Book Appointment"
-                    iconSrc="/assets/img/icon/arrow-right-black.png"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </header>
         {/* Banner Section Start */}
         <section className="banner-section3 fix bg-cover" style={{backgroundImage: 'url("/assets/img/banner/bg-color3.jpg")'}}>
           <div className="container">
@@ -316,79 +199,44 @@ function HomeThreePage() {
               <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
                 Evidence-based virtual care for <br className="services-title-break" />
                 <span className="position-relative z-1">
-                  anxiety, depression, trauma,
+                  anxiety, depression, panic,
                   <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
                 </span>{' '}
                 and more
               </h2>
             </div>
             <div className="row g-4">
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src={HOMEPAGE_IMAGES.serviceAnxiety} alt="img" className="overflow-hidden w-100" />
-                  </div>
-                  <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Anxiety Support</a></h3>
-                    <p className="pra">
-                      Manage worry, racing thoughts, and panic with evidence-based tools like CBT and mindfulness.
-                    </p>
-                    <div className="service-btn-inner">
-                      <HomepageIconButton
-                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
-                        label="Read More"
-                        iconSrc="/assets/img/icon/arrow-right-black.png"
-                      />
+              {MENTAL_HEALTH_SERVICES.slice(0, 3).map((service) => (
+                <div key={service.id} className="col-lg-4 col-md-6">
+                  <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
+                    <div className="thumb overflow-hidden reveal-left position-relative">
+                      <img src={service.image} alt={service.imageAlt} className="overflow-hidden w-100" />
+                    </div>
+                    <div className="service-content">
+                      <h3 className="black"><a href={service.detailsHref}>{service.title}</a></h3>
+                      <span className="d-block black fw-semibold mb-2">{service.subtitle}</span>
+                      <p className="pra">
+                        {service.summary}
+                      </p>
+                      <div className="service-btn-inner">
+                        <HomepageIconButton
+                          className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
+                          label="Read More"
+                          iconSrc="/assets/img/icon/arrow-right-black.png"
+                          href={service.detailsHref}
+                        />
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src={HOMEPAGE_IMAGES.serviceDepression} alt="img" className="overflow-hidden w-100" />
-                  </div>
-                  <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Depression Care</a></h3>
-                    <p className="pra">
-                      Support for low mood, motivation, and energy with personalized therapy plans that fit your life.
-                    </p>
-                    <div className="service-btn-inner">
-                      <HomepageIconButton
-                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
-                        label="Read More"
-                        iconSrc="/assets/img/icon/arrow-right-black.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-4 col-md-6">
-                <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
-                  <div className="thumb overflow-hidden reveal-left position-relative">
-                    <img src={HOMEPAGE_IMAGES.serviceTrauma} alt="img" className="overflow-hidden w-100" />
-                  </div>
-                  <div className="service-content">
-                    <h3 className="black"><a href="/service-details">Trauma &amp; PTSD Support</a></h3>
-                    <p className="pra">
-                      Trauma-informed care in a safe, supportive space to reduce triggers and build lasting resilience.
-                    </p>
-                    <div className="service-btn-inner">
-                      <HomepageIconButton
-                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
-                        label="Read More"
-                        iconSrc="/assets/img/icon/arrow-right-black.png"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="text-center mt-5">
               <HomepageIconButton
                 className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                 label="View All Services"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
+                href="/service"
               />
             </div>
           </div>
@@ -652,7 +500,7 @@ function HomeThreePage() {
               <div className="section-title">
                 <span className="cmn-tag p1-bg heading-font mb-3">Featured Care</span>
                 <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                  Support for anxiety, depression,<br />trauma, and more
+                  Support for anxiety, depression,<br />panic, trauma, and more
                 </h2>
               </div>
               <div className="array-button d-flex align-items-center gap-3 wow fadeInUp" data-wow-delay=".5s">
@@ -666,78 +514,27 @@ function HomeThreePage() {
             </div>
             <div className="swiper latest-project3__wrapper">
               <div className="swiper-wrapper">
-                <div className="swiper-slide">
-                  <div className="latest-project-slide3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.projectOne} alt="thumb" />
-                    </div>
-                    <div className="content">
-                      <h4><a href="/service-details">Anxiety Support</a></h4>
-                      <div className="btn-wrapper">
-                        <HomepageIconButton
-                          className="cmn-arrows1 link-btn d-center"
-                          label="Anxiety Support"
-                          iconSrc="/assets/img/icon/arrow-right-black.png"
-                          iconOnly
-                        />
+                {MENTAL_HEALTH_SERVICES.map((service) => (
+                  <div key={`featured-${service.id}`} className="swiper-slide">
+                    <div className="latest-project-slide3">
+                      <div className="thumb">
+                        <img src={service.image} alt={service.imageAlt} />
+                      </div>
+                      <div className="content">
+                        <h4><a href={service.detailsHref}>{service.title}</a></h4>
+                        <div className="btn-wrapper">
+                          <HomepageIconButton
+                            className="cmn-arrows1 link-btn d-center"
+                            label={service.title}
+                            iconSrc="/assets/img/icon/arrow-right-black.png"
+                            iconOnly
+                            href={service.detailsHref}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className="swiper-slide">
-                  <div className="latest-project-slide3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.projectTwo} alt="thumb" />
-                    </div>
-                    <div className="content">
-                      <h4><a href="/service-details">Depression Care</a></h4>
-                      <div className="btn-wrapper">
-                        <HomepageIconButton
-                          className="cmn-arrows1 link-btn d-center"
-                          label="Depression Care"
-                          iconSrc="/assets/img/icon/arrow-right-black.png"
-                          iconOnly
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-slide">
-                  <div className="latest-project-slide3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.projectThree} alt="thumb" />
-                    </div>
-                    <div className="content">
-                      <h4><a href="/service-details">Trauma &amp; PTSD Support</a></h4>
-                      <div className="btn-wrapper">
-                        <HomepageIconButton
-                          className="cmn-arrows1 link-btn d-center"
-                          label="Trauma and PTSD Support"
-                          iconSrc="/assets/img/icon/arrow-right-black.png"
-                          iconOnly
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="swiper-slide">
-                  <div className="latest-project-slide3">
-                    <div className="thumb">
-                      <img src={HOMEPAGE_IMAGES.projectFour} alt="thumb" />
-                    </div>
-                    <div className="content">
-                      <h4><a href="/service-details">ADHD &amp; Stress Support</a></h4>
-                      <div className="btn-wrapper">
-                        <HomepageIconButton
-                          className="cmn-arrows1 link-btn d-center"
-                          label="ADHD and Stress Support"
-                          iconSrc="/assets/img/icon/arrow-right-black.png"
-                          iconOnly
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
@@ -1372,144 +1169,7 @@ function HomeThreePage() {
         </section>
         {/*<< Blog News End >>*/}
         {/*<< Footer Section Start >>*/}
-        <footer className="homepage-footer-shell">
-          <div className="container">
-            <div className="homepage-footer-newsletter">
-              <h2 className="homepage-footer-newsletter__title">
-                Ready To Start Your Care
-                <br />
-                Book Your <span className="homepage-footer-newsletter__highlight">Appointment
-                  <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" />
-                </span>
-              </h2>
-              <form
-                className="homepage-footer-newsletter__form"
-                onSubmit={(event) => event.preventDefault()}
-              >
-                <input type="email" placeholder="Enter your email to get started" aria-label="Enter your email to get started" />
-                <button type="button" className="homepage-footer-newsletter__button">
-                  Book Appointment
-                  <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
-                </button>
-              </form>
-            </div>
-            <div className="homepage-footer-card">
-              <div className="row g-4">
-                <div className="col-xl-4 col-lg-5">
-                  <div className="homepage-footer-brand">
-                    <a href="/" className="homepage-footer-brand__logo">
-                      <img src="/assets/img/logo/logo-white.svg" alt="MindReach logo" />
-                    </a>
-                    <p>
-                      Mental health support is an essential part of daily well-being, offering care, guidance,
-                      and treatment for a range of emotional health needs.
-                    </p>
-                    <div className="homepage-footer-socials" aria-label="MindReach social media placeholders">
-                      {FOOTER_SOCIAL_ICONS.map((iconClassName) => (
-                        <span key={iconClassName} className="homepage-footer-socials__icon">
-                          <i className={iconClassName} />
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
-                  <div className="homepage-footer-column">
-                    <h3>Page</h3>
-                    <ul>
-                      {FOOTER_PAGE_ITEMS.map((item) => (
-                        <li key={item}>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-xl-2 col-lg-4 col-md-4 col-sm-6">
-                  <div className="homepage-footer-column">
-                    <h3>Link</h3>
-                    <ul>
-                      {FOOTER_LINK_ITEMS.map((item) => (
-                        <li key={item}>
-                          <span>{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-xl-4 col-lg-12 col-md-4">
-                  <div className="homepage-footer-column homepage-footer-contact">
-                    <h3>Contact</h3>
-                    <ul>
-                      {FOOTER_CONTACT_ITEMS.map(({ iconClassName, label, value }) => (
-                        <li key={label} className="homepage-footer-contact__item">
-                          <span className="homepage-footer-contact__icon">
-                            <i className={iconClassName} />
-                          </span>
-                          <div>
-                            <small>{label}</small>
-                            <span>{value}</span>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        {/* Mobile Drawer Start */}
-        <div
-          id="home-mobile-drawer"
-          className={`home-mobile-drawer${isMobileMenuOpen ? ' is-open' : ''}`}
-          aria-hidden={!isMobileMenuOpen}
-        >
-          <div className="home-mobile-drawer__panel">
-            <div className="home-mobile-drawer__top">
-              <a href="/" className="header-logo" onClick={() => setIsMobileMenuOpen(false)}>
-                <img src="/assets/img/logo/logo.svg" alt="logo-img" />
-              </a>
-              <button
-                type="button"
-                className="home-mobile-drawer__close"
-                aria-label="Close navigation menu"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <i className="fas fa-times" />
-              </button>
-            </div>
-            <nav className="home-mobile-drawer__nav" aria-label="Mobile navigation">
-              <ul>
-                {NAV_PAGES.map(({ label, futureRoute }) => (
-                  <li key={`mobile-${futureRoute}`}>
-                    <a
-                      href="javascript:void(0)"
-                      className="nav-placeholder-link"
-                      onClick={(event) => {
-                        event.preventDefault()
-                        setIsMobileMenuOpen(false)
-                      }}
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            <HomepageIconButton
-              className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 nav-placeholder-link home-mobile-drawer__cta"
-              label="Book Appointment"
-              iconSrc="/assets/img/icon/arrow-right-black.png"
-            />
-          </div>
-        </div>
-        <button
-          type="button"
-          className={`home-mobile-drawer__overlay${isMobileMenuOpen ? ' is-open' : ''}`}
-          aria-label="Close navigation menu"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
+        <SiteFooter />
         {/*<< All JS Plugins >>*/}
         {/*<< Viewport Js >>*/}
         {/*<< Bootstrap Js >>*/}

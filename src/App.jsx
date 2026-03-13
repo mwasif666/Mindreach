@@ -1,4 +1,5 @@
-﻿import InternalLinkHandler from './components/navigation/InternalLinkHandler'
+import InternalLinkHandler from './components/navigation/InternalLinkHandler'
+import LegacyRouteInitializer from './components/navigation/LegacyRouteInitializer'
 import RouteScrollManager from './components/navigation/RouteScrollManager'
 import AppRouter from './router/AppRouter'
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <InternalLinkHandler />
       <RouteScrollManager />
+      <LegacyRouteInitializer />
       <AppRouter />
     </>
   )

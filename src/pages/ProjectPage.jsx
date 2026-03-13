@@ -1,6 +1,7 @@
 import PageLayout from '../components/layout/PageLayout'
+import MINDREACH_PROJECTS from '../data/mindReachProjects'
 
-const PAGE_TITLE = "Project|| Medizen || Medizen React Template"
+const PAGE_TITLE = "Projects | MindReach"
 const BODY_CLASS = "body-bg"
 
 function ProjectPage() {
@@ -143,8 +144,15 @@ function ProjectPage() {
         {/* Banner Section Start */}
         <section className="breadcrumb-section position-relative fix">
           <div className="container">
-            <div className="bread-content px-3 d-flex flex-wrap gap-3 align-items-center justify-content-md-between justify-content-center">
-              <h2 className="black">Project</h2>
+            <div className="bread-content project-page-breadcrumb px-3 d-flex flex-wrap gap-4 align-items-center justify-content-md-between justify-content-center">
+              <div className="project-page-breadcrumb__copy">
+                <span className="cmn-tag p1-bg heading-font mb-3">Mind Reach Projects</span>
+                <h2 className="black">Six Focused Mental Health Programs</h2>
+                <p className="pra project-page-intro mb-0">
+                  Explore six telehealth-focused therapy projects built to support anxiety, depression, trauma, stress,
+                  and long-term emotional well-being through structured virtual care.
+                </p>
+              </div>
               <ul className="d-flex align-items-center gap-3">
                 <li>
                   <a href="/">Home</a>
@@ -162,106 +170,38 @@ function ProjectPage() {
         <section className="project-section space-bottom fix space-top">
           <div className="container">
             <div className="row g-xs-lg-4 g-xs-3 gy-xxl-5 gy-4 justify-content-center">
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project1.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Care Plus</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">Wellness Begins with
-                        Us</a></h4>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project2.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Renew Health
-                      Center</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">Quality health close
-                        to home</a></h4>
+              {MINDREACH_PROJECTS.map((project, index) => (
+                <div
+                  key={project.id}
+                  className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp"
+                  data-wow-delay={`${0.3 + (index * 0.1)}s`}
+                >
+                  <div className="project-items position-relative h-100">
+                    <div className="project-thumb d-center position-relative rounded-4 overflow-hidden mb-4">
+                      <img src={project.cardImage} alt={project.cardImageAlt} className="w-100 rounded-4" />
+                      <a href={project.detailsHref} className="project-arrws p1-bg d-center rounded-circle" aria-label={`View ${project.title} details`}>
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                    </div>
+                    <div className="cont">
+                      <span className="pra fs-seven fw_500 d-block mb-2">{project.title}</span>
+                      <h4>
+                        <a href={project.detailsHref} className="black fw_700">
+                          {project.tagline}
+                        </a>
+                      </h4>
+                      <p className="pra mb-0">{project.description}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project3.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Wellness Oasis</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">A
-                        healthy tomorrow
-                        starts today</a></h4>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project4.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Revive Medical
-                      Care</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">Caring for you every
-                        step of the way</a></h4>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project5.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Harmony Med</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">Tomorrow's Health,
-                        Today's Care</a></h4>
-                  </div>
-                </div>
-              </div>
-              <div className="col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
-                <div className="project-items position-relative">
-                  <div className="project-thumb d-center position-relative rounded-4 overflow-hidden reveal-left mb-4">
-                    <img src="/assets/img/blog/project6.jpg" alt="img" className="w-100 rounded-4" />
-                    <a href="/project-details" className="project-arrws p1-bg d-center rounded-circle">
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="icon" />
-                    </a>
-                  </div>
-                  <div className="cont">
-                    <span className="pra fs-seven fw_500 d-block visible-slowly-right mb-2">Life Harbor</span>
-                    <h4><a href="/project-details" className="black fw_700 wow fadeInUp" data-wow-delay="0.4s">Your Health, Our
-                        Priority</a></h4>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
         {/* Special Section Start */}
-        <section className="special-care-section body-bg space-bottom">
+        <section className="special-care-section project-special-care-section body-bg space-bottom">
           <div className="container custom-contaienr">
-            <div className="special-care-wrap position-relative">
+            <div className="special-care-wrap project-special-care-wrap position-relative">
               <div className="row g-4 justify-content-lg-between">
                 <div className="col-lg-6">
                   <div className="section-title">

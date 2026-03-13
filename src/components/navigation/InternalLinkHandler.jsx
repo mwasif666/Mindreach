@@ -1,6 +1,18 @@
-﻿import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { isSpecialLink, normalizePathname } from '../../utils/pathname'
+
+const ALLOWED_PATH_PREFIXES = [
+  '/',
+  '/about',
+  '/contact',
+  '/doctor',
+  '/doctor-details',
+  '/service',
+  '/service-details',
+  '/project',
+  '/project-details',
+]
 
 function isPrimaryNavigationClick(event) {
   return !(
@@ -15,6 +27,18 @@ function isPrimaryNavigationClick(event) {
 
 function isStaticAssetPath(pathname) {
   return /\.[a-z0-9]+$/i.test(pathname)
+}
+
+function matchesPathPrefix(pathname, prefix) {
+  if (prefix === '/') {
+    return pathname === '/'
+  }
+
+  return pathname === prefix || pathname.startsWith(`${prefix}/`)
+}
+
+function isAllowedInternalPath(pathname) {
+  return ALLOWED_PATH_PREFIXES.some((prefix) => matchesPathPrefix(pathname, prefix))
 }
 
 function InternalLinkHandler() {
@@ -49,6 +73,11 @@ function InternalLinkHandler() {
 
       const nextPath = normalizePathname(targetUrl.pathname)
       if (isStaticAssetPath(nextPath)) {
+        return
+      }
+
+      if (!isAllowedInternalPath(nextPath)) {
+        event.preventDefault()
         return
       }
 

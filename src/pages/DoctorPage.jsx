@@ -340,7 +340,11 @@ function DoctorPage() {
             <div className="row g-4 align-items-center">
               <div className="col-lg-6 order-lg-0 order-1">
                 <div className="apoentment-thumb">
-                  <img src="/assets/img/service/sub-contact.jpg" alt="img" className="rounded-4" />
+                  <img
+                    src="/assets/img/service/pexels-cottonbro-5867189.jpg"
+                    alt="Virtual therapy consultation on a laptop screen"
+                    className="rounded-4"
+                  />
                 </div>
               </div>
               <div className="col-lg-6">
