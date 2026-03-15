@@ -14,6 +14,22 @@ function ServiceDetailsPage() {
   }
 
   const pageTitle = `${service.title} | MindReach`
+  const clinicalCards = [
+    {
+      id: 'diagnosis',
+      iconClassName: 'fa-solid fa-file-waveform',
+      label: 'Assessment',
+      title: 'Diagnosis',
+      text: service.diagnosis,
+    },
+    {
+      id: 'treatment-options',
+      iconClassName: 'fa-solid fa-notes-medical',
+      label: 'Care Plan',
+      title: 'Treatment Options',
+      text: service.treatment,
+    },
+  ]
 
   return (
     <PageLayout title={pageTitle} bodyClass={BODY_CLASS}>
@@ -250,14 +266,6 @@ function ServiceDetailsPage() {
                         </div>
                       </div>
                     </div>
-                    <div className="mindreach-service-detail__copy">
-                      <h4 className="black mb-3">Diagnosis</h4>
-                      <p className="pra">{service.diagnosis}</p>
-                    </div>
-                    <div className="mindreach-service-detail__copy">
-                      <h4 className="black mb-3">Treatment Options</h4>
-                      <p className="pra">{service.treatment}</p>
-                    </div>
                   </article>
                 </div>
               </div>
@@ -291,6 +299,20 @@ function ServiceDetailsPage() {
                       Book Appointment
                       <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
                     </a>
+                  </div>
+                  <div className="mindreach-service-sidebar__clinical-stack">
+                    {clinicalCards.map((card) => (
+                      <div key={card.id} className="mindreach-service-detail__clinical-card">
+                        <div className="mindreach-service-detail__clinical-top">
+                          <span className="mindreach-service-detail__clinical-icon" aria-hidden="true">
+                            <i className={card.iconClassName} />
+                          </span>
+                          <span className="mindreach-service-detail__clinical-label">{card.label}</span>
+                        </div>
+                        <h4 className="black mb-3">{card.title}</h4>
+                        <p className="pra mb-0">{card.text}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

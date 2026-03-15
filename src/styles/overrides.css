@@ -1793,8 +1793,8 @@ header#header-sticky {
 }
 
 .service-details-section .mindreach-service-detail__header h2 {
-  font-size: clamp(2.3rem, 3.8vw, 3.7rem);
-  line-height: 1.1;
+  font-size: clamp(1.95rem, 3.15vw, 3.05rem);
+  line-height: 1.08;
 }
 
 .service-details-section .mindreach-service-detail__copy h4,
@@ -1843,6 +1843,64 @@ header#header-sticky {
 
 .mindreach-service-detail__info-card .pra:last-child {
   margin-bottom: 0;
+}
+
+.mindreach-service-detail__clinical-card {
+  height: 100%;
+  padding: 30px 28px;
+  border: 1px solid rgba(9, 10, 11, 0.08);
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 18px 55px rgba(9, 10, 11, 0.06);
+}
+
+.mindreach-service-detail__clinical-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.mindreach-service-detail__clinical-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: var(--p1-clr);
+  color: #fff;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.mindreach-service-detail__clinical-label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: rgba(34, 181, 115, 0.12);
+  color: var(--p1-clr);
+  font-family: "Syne", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.mindreach-service-detail__clinical-card h4 {
+  margin-bottom: 16px !important;
+}
+
+.mindreach-service-detail__clinical-card .pra {
+  font-size: 17px;
+  line-height: 1.85;
+}
+
+.mindreach-service-sidebar__clinical-stack {
+  display: grid;
+  gap: 24px;
 }
 
 .mindreach-service-detail__list {
@@ -2336,13 +2394,30 @@ header#header-sticky {
   right: 108px;
   width: 230px;
   height: 168px;
+  aspect-ratio: 230 / 168;
   object-fit: cover;
   object-position: center;
   opacity: 0;
   pointer-events: none;
+  overflow: hidden;
+  border-radius: 28px;
   transform: translateY(-50%) rotate(8deg) scale(0.82);
   transform-origin: center;
   box-shadow: 0 18px 45px rgba(9, 10, 11, 0.14);
+}
+
+.doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items .extra-feature > img,
+.doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items .extra-feature .ant-skeleton,
+.doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items .extra-feature .ant-skeleton-element,
+.doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items .extra-feature .ant-skeleton-image {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit !important;
+}
+
+.doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items .extra-feature > img {
+  object-fit: cover;
+  object-position: center;
 }
 
 .doctor-feature-list .featue-wrapper.feaure-wrapper2 .feature-inner .feature-items:hover .extra-feature {
@@ -2597,6 +2672,23 @@ header#header-sticky {
   .about-page-hero__actions a {
     width: 100%;
     justify-content: center;
+  }
+
+  .mindreach-service-detail__clinical-card {
+    padding: 24px 22px;
+    border-radius: 22px;
+  }
+
+  .mindreach-service-detail__clinical-top {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .mindreach-service-detail__clinical-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 16px;
+    font-size: 18px;
   }
 
   .about-page-stat-card,
