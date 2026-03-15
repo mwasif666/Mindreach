@@ -1,5 +1,8 @@
 import PageLayout from '../components/layout/PageLayout'
+import { FiShield } from 'react-icons/fi'
 import SiteFooter from '../components/layout/SiteFooter'
+import AppImage from '../components/ui/AppImage'
+import DOCTORS from '../data/doctors'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "MindReach"
@@ -20,34 +23,12 @@ const HOMEPAGE_IMAGES = {
   testimonialThree: '/assets/img/homepage-images/unsplash-portrait-3.jpg',
 }
 const SHOW_HOMEPAGE_PRICING = false
-const TEAM_MEMBERS = [
-  {
-    image: HOMEPAGE_IMAGES.testimonialOne,
-    alt: 'Dr. Areeba Khan portrait',
-    name: 'Dr. Areeba Khan',
-    role: 'Clinical Psychologist',
-    experienceLabel: 'Experience',
-    experienceValue: '5+ years experience',
-    imageClassName: 'team-profile-image',
-  },
-  {
-    image: HOMEPAGE_IMAGES.testimonialThree,
-    alt: 'Dr. Hassan Malik portrait',
-    name: 'Dr. Hassan Malik',
-    role: 'Consultant Psychiatrist',
-    experienceLabel: 'Experience',
-    experienceValue: '7+ years experience',
-    imageClassName: 'team-profile-image',
-  },
-  {
-    image: HOMEPAGE_IMAGES.testimonialTwo,
-    alt: 'Dr. Mehak Aslam portrait',
-    name: 'Dr. Mehak Aslam',
-    role: 'Behavioral Health Specialist',
-    experienceLabel: 'Experience',
-    experienceValue: '6+ years experience',
-    imageClassName: 'team-profile-image',
-  },
+const TEAM_MEMBERS = DOCTORS.slice(0, 3)
+const HOMEPAGE_TICKER_ITEMS = [
+  'A safe space to speak, heal, and grow',
+  'Take the first step toward feeling better',
+  'A safe space to speak, heal, and grow',
+  'Take the first step toward feeling better',
 ]
 
 function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, href, ...props }) {
@@ -119,9 +100,10 @@ function HomeThreePage() {
                     <img src="/assets/img/banner/search-shape.png" alt="shape-img" />
                   </div>
                   <div className="thumb">
-                    <img
+                    <AppImage
                       src={HOMEPAGE_IMAGES.hero}
                       alt="thumb"
+                      wrapperClassName="hero-main-image"
                       className="hero-main-image"
                     />
                   </div>
@@ -139,56 +121,14 @@ function HomeThreePage() {
         {/* TextSlide System Section Start */}
         <div className="sponsor-text-slide p1-bg swiper">
           <div className="swiper-wrapper">
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                Secure Virtual Care
+            {HOMEPAGE_TICKER_ITEMS.map((item, index) => (
+              <div key={`${item}-${index}`} className="swiper-slide w-fit">
+                <div className="text-slide-item">
+                  <span>{item}</span>
+                  <FiShield className="text-slide-icon" aria-hidden="true" />
+                </div>
               </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                <img src="/assets/img/icon/star-text.png" alt="icon" />
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                Flexible Scheduling
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                <img src="/assets/img/icon/star-text.png" alt="icon" />
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                Confidential Support
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                <img src="/assets/img/icon/star-text.png" alt="icon" />
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                Secure Virtual Care
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                <img src="/assets/img/icon/star-text.png" alt="icon" />
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                Flexible Scheduling
-              </div>
-            </div>
-            <div className="swiper-slide w-fit">
-              <div className="text-slide-item">
-                <img src="/assets/img/icon/star-text.png" alt="icon" />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
         {/* Servie Section Start */}
@@ -210,7 +150,7 @@ function HomeThreePage() {
                 <div key={service.id} className="col-lg-4 col-md-6">
                   <div className="service-item3 overflow-hidden white-bg rounded-4 position-relative">
                     <div className="thumb overflow-hidden reveal-left position-relative">
-                      <img src={service.image} alt={service.imageAlt} className="overflow-hidden w-100" />
+                      <AppImage src={service.image} alt={service.imageAlt} wrapperClassName="app-image--fill" className="overflow-hidden w-100" />
                     </div>
                     <div className="service-content">
                       <h3 className="black"><a href={service.detailsHref}>{service.title}</a></h3>
@@ -344,25 +284,27 @@ function HomeThreePage() {
             </div>
             <div className="team-wrapper3">
               <div className="row g-4 justify-content-between">
-                {TEAM_MEMBERS.map(({ image, alt, name, role, experienceLabel, experienceValue, imageClassName }, index) => (
+                {TEAM_MEMBERS.map((doctor, index) => (
                   <div
-                    key={name}
+                    key={doctor.id}
                     className="col-xl-4 col-md-6 wow fadeInUp"
                     data-wow-delay={`${0.3 + (index * 0.2)}s`}
                   >
                     <div className="team-items-info3">
-                      <div className="thumb">
-                        <img src={image} alt={alt} className={imageClassName} />
-                      </div>
+                      <a href={doctor.detailsHref} className="thumb">
+                        <AppImage src={doctor.image} alt={doctor.imageAlt} wrapperClassName="app-image--fill" className={doctor.imageClassName} />
+                      </a>
                       <div className="team-content">
                         <div className="team-copy">
-                          <h3>{name}</h3>
-                          <p className="team-role">{role}</p>
-                        </div>
-                        <div className="social-wrapper d-flex align-items-center">
+                          <h3>
+                            <a href={doctor.detailsHref} className="team-name-link">
+                              {doctor.name}
+                            </a>
+                          </h3>
+                          <p className="team-role">{doctor.role}</p>
                           <div className="team-meta-card">
-                            <span className="team-meta-label">{experienceLabel}</span>
-                            <span className="team-meta-value">{experienceValue}</span>
+                            <span className="team-meta-label">{doctor.experienceLabel}</span>
+                            <span className="team-meta-value">{doctor.experienceValue}</span>
                           </div>
                         </div>
                       </div>
@@ -371,30 +313,38 @@ function HomeThreePage() {
                 ))}
               </div>
             </div>
+            <div className="text-center mt-5">
+              <HomepageIconButton
+                className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
+                label="View All Doctors"
+                iconSrc="/assets/img/icon/arrow-right-black.png"
+                href="/doctor"
+              />
+            </div>
           </div>
         </section>
         {/* Testimonial Section Start */}
         <section className="testimonial-section3 section-padding cmn-bg fix">
           <div className="container">
+            <div className="section-title text-center mb-60">
+              <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
+              <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
+                What{' '}
+                <span className="position-relative z-1">
+                  Healing
+                  <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
+                </span>{' '}
+                Can Feel Like
+              </h2>
+            </div>
             <div className="testimonial-wrapper3">
               <div className="swiper testimonial-slider3">
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
-                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What{' '}
-                            <span className="position-relative z-1">
-                              Healing
-                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>{' '}
-                            Can Feel Like
-                          </h2>
-                        </div>
                         <div className="thumb">
-                          <img src={HOMEPAGE_IMAGES.testimonialOne} alt="MindReach client" />
+                          <AppImage src={HOMEPAGE_IMAGES.testimonialOne} alt="MindReach client" wrapperClassName="app-image--fill" />
                         </div>
                         <div className="author-details">
                           <h3>MindReach Client</h3>
@@ -417,19 +367,8 @@ function HomeThreePage() {
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
-                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What{' '}
-                            <span className="position-relative z-1">
-                              Healing
-                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>{' '}
-                            Can Feel Like
-                          </h2>
-                        </div>
                         <div className="thumb">
-                          <img src={HOMEPAGE_IMAGES.testimonialTwo} alt="MindReach member" />
+                          <AppImage src={HOMEPAGE_IMAGES.testimonialTwo} alt="MindReach member" wrapperClassName="app-image--fill" />
                         </div>
                         <div className="author-details">
                           <h3>MindReach Member</h3>
@@ -452,19 +391,8 @@ function HomeThreePage() {
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="section-title text-center mb-60">
-                          <span className="cmn-tag p1-bg heading-font">MindReach Support</span>
-                          <h2 className="wow fadeInUp visible-slowly-right" data-wow-delay=".3s">
-                            What{' '}
-                            <span className="position-relative z-1">
-                              Healing
-                              <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                            </span>{' '}
-                            Can Feel Like
-                          </h2>
-                        </div>
                         <div className="thumb">
-                          <img src={HOMEPAGE_IMAGES.testimonialThree} alt="MindReach patient" />
+                          <AppImage src={HOMEPAGE_IMAGES.testimonialThree} alt="MindReach patient" wrapperClassName="app-image--fill" />
                         </div>
                         <div className="author-details">
                           <h3>MindReach Patient</h3>
@@ -518,7 +446,7 @@ function HomeThreePage() {
                   <div key={`featured-${service.id}`} className="swiper-slide">
                     <div className="latest-project-slide3">
                       <div className="thumb">
-                        <img src={service.image} alt={service.imageAlt} />
+                        <AppImage src={service.image} alt={service.imageAlt} wrapperClassName="app-image--fill" />
                       </div>
                       <div className="content">
                         <h4><a href={service.detailsHref}>{service.title}</a></h4>
@@ -629,7 +557,7 @@ function HomeThreePage() {
                 </div>
                 <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                   <div className="feature-thumb">
-                    <img src={HOMEPAGE_IMAGES.featureThumb} alt="Therapy session" />
+                    <AppImage src={HOMEPAGE_IMAGES.featureThumb} alt="Therapy session" wrapperClassName="app-image--fill" />
                   </div>
                 </div>
                 <div className="col-xl-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
@@ -1019,7 +947,7 @@ function HomeThreePage() {
               <div className="row gx-0 gy-5 align-items-end">
                 <div className="col-lg-6 order-lg-0 order-1">
                   <div className="appointment-thumb reveal-left">
-                    <img src={HOMEPAGE_IMAGES.appointment} alt="img" className="w-100 rounded-2" />
+                    <AppImage src={HOMEPAGE_IMAGES.appointment} alt="img" wrapperClassName="app-image--fill" className="w-100 rounded-2" />
                   </div>
                 </div>
                 <div className="col-lg-6">
@@ -1074,7 +1002,7 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src={HOMEPAGE_IMAGES.resourceOne} alt="img" className="rounded-4" />
+                    <AppImage src={HOMEPAGE_IMAGES.resourceOne} alt="img" wrapperClassName="app-image--fill" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>
@@ -1105,7 +1033,7 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src={HOMEPAGE_IMAGES.resourceTwo} alt="img" className="rounded-4" />
+                    <AppImage src={HOMEPAGE_IMAGES.resourceTwo} alt="img" wrapperClassName="app-image--fill" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>
@@ -1136,7 +1064,7 @@ function HomeThreePage() {
               <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div className="blog-items3">
                   <div className="thumb rounded-4 position-relative mb-3">
-                    <img src={HOMEPAGE_IMAGES.resourceThree} alt="img" className="rounded-4" />
+                    <AppImage src={HOMEPAGE_IMAGES.resourceThree} alt="img" wrapperClassName="app-image--fill" className="rounded-4" />
                     <div className="d-flex gap-1 align-items-center blog-date">
                       <div className="icon d-center"><i className="fa-solid fa-calendar-days" /></div>
                       <span className="cont">23 Dec 2023</span>

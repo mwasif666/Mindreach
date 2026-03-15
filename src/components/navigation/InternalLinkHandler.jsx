@@ -10,8 +10,6 @@ const ALLOWED_PATH_PREFIXES = [
   '/doctor-details',
   '/service',
   '/service-details',
-  '/project',
-  '/project-details',
 ]
 
 function isPrimaryNavigationClick(event) {
@@ -86,6 +84,7 @@ function InternalLinkHandler() {
       const currentUrl = `${currentPath}${location.search}${location.hash}`
 
       if (nextUrl === currentUrl) {
+        event.preventDefault()
         return
       }
 

@@ -1,11 +1,9 @@
 import { Navigate, useParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
+import AppImage from '../components/ui/AppImage'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const BODY_CLASS = "body-bg"
-const HELP_PHONE = '(+888) 178 456 765'
-const HELP_PHONE_HREF = 'tel:+888178456765'
-const HELP_COPY = 'Access professional mental health support anytime, from anywhere. Our licensed therapists and psychiatrists are here to guide you with confidential and compassionate care through secure online sessions.'
 
 function ServiceDetailsPage() {
   const { serviceId } = useParams()
@@ -195,7 +193,7 @@ function ServiceDetailsPage() {
                       ) : null}
                     </div>
                     <div className="mindreach-service-detail__hero thumb rounded-4 overflow-hidden">
-                      <img src={service.image} alt={service.imageAlt} className="rounded-4 w-100" />
+                      <AppImage src={service.image} alt={service.imageAlt} wrapperClassName="app-image--fill" className="rounded-4 w-100" />
                     </div>
                     <div className="mindreach-service-detail__copy">
                       <h4 className="black mb-3">{service.aboutTitle}</h4>
@@ -260,19 +258,6 @@ function ServiceDetailsPage() {
                       <h4 className="black mb-3">Treatment Options</h4>
                       <p className="pra">{service.treatment}</p>
                     </div>
-                    <div className="mindreach-service-detail__cta">
-                      <div>
-                        <span className="cmn-tag p1-bg heading-font">Book Appointment</span>
-                      </div>
-                      <p className="pra mb-0">{service.bookingText}</p>
-                      <a
-                        href="/contact"
-                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                      >
-                        Book Appointment
-                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
-                      </a>
-                    </div>
                   </article>
                 </div>
               </div>
@@ -296,13 +281,16 @@ function ServiceDetailsPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="details-common quick-call text-center">
-                    <h4 className="black">Need Help? Call Us</h4>
-                    <a href={HELP_PHONE_HREF} className="d-center call rounded-circle p2-bg">
-                      <i className="fa-solid fa-phone" />
+                  <div className="mindreach-service-detail__cta mindreach-service-detail__cta--sidebar">
+                    <h4 className="black mb-0">Book Appointment</h4>
+                    <p className="pra mb-0">{service.bookingText}</p>
+                    <a
+                      href="/contact"
+                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                    >
+                      Book Appointment
+                      <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
                     </a>
-                    <p className="pra mb-xxl-4 mb-3">{HELP_COPY}</p>
-                    <a href={HELP_PHONE_HREF} className="numbs heading-font">{HELP_PHONE}</a>
                   </div>
                 </div>
               </div>

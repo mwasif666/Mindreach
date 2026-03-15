@@ -1,4 +1,5 @@
 import PageLayout from '../components/layout/PageLayout'
+import AppImage from '../components/ui/AppImage'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "Services | MindReach"
@@ -142,16 +143,16 @@ function ServicePage() {
           </div>
         </header>
         {/* Banner Section Start */}
-        <section className="breadcrumb-section position-relative fix">
+        <section className="breadcrumb-section position-relative fix service-breadcrumb-section">
           <div className="container">
             <div className="bread-content px-3 d-flex flex-wrap gap-3 align-items-center justify-content-md-between justify-content-center">
-              <h2 className="black">Service</h2>
+              <h2 className="black">Services</h2>
               <ul className="d-flex align-items-center gap-3">
                 <li>
                   <a href="/">Home</a>
                 </li>
                 <li>/</li>
-                <li>Service</li>
+                <li>Services</li>
               </ul>
             </div>
           </div>
@@ -177,7 +178,7 @@ function ServicePage() {
                       {service.description}
                     </p>
                     <div className="thumb overflow-hidden position-relative">
-                      <img src={service.image} alt={service.imageAlt} className="rounded-4 overflow-hidden w-100" />
+                      <AppImage src={service.image} alt={service.imageAlt} wrapperClassName="app-image--fill" className="rounded-4 overflow-hidden w-100" />
                     </div>
                     <div className="text-center service-btn-inner">
                       <a href={service.detailsHref} className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100">
@@ -197,9 +198,10 @@ function ServicePage() {
             <div className="row g-4 align-items-center">
               <div className="col-lg-6 order-lg-0 order-1">
                 <div className="apoentment-thumb">
-                  <img
+                  <AppImage
                     src="/assets/img/service/pexels-cottonbro-5867189.jpg"
                     alt="Virtual therapy consultation on a laptop screen"
+                    wrapperClassName="app-image--fill"
                     className="rounded-4"
                   />
                 </div>

@@ -31,6 +31,7 @@ const SWIPER_CONFIGS = [
       autoplay: {
         delay: 0,
         disableOnInteraction: false,
+        pauseOnMouseEnter: true,
       },
       breakpoints: {
         991: { spaceBetween: 30 },
@@ -119,6 +120,51 @@ const SWIPER_CONFIGS = [
   },
 ]
 
+function bindTickerHoverAutoplay(sliderElement, swiperInstance) {
+  if (!sliderElement || !swiperInstance?.autoplay || sliderElement.dataset.tickerHoverBound === 'true') {
+    return
+  }
+
+  const pauseTicker = () => {
+    if (swiperInstance.destroyed) {
+      return
+    }
+
+    if (typeof swiperInstance.autoplay.pause === 'function') {
+      swiperInstance.autoplay.pause()
+      return
+    }
+
+    if (typeof swiperInstance.autoplay.stop === 'function') {
+      swiperInstance.autoplay.stop()
+    }
+  }
+
+  const resumeTicker = () => {
+    if (swiperInstance.destroyed) {
+      return
+    }
+
+    if (typeof swiperInstance.autoplay.resume === 'function' && swiperInstance.autoplay.paused) {
+      swiperInstance.autoplay.resume()
+      return
+    }
+
+    if (typeof swiperInstance.autoplay.start === 'function' && !swiperInstance.autoplay.running) {
+      swiperInstance.autoplay.start()
+      return
+    }
+
+    if (typeof swiperInstance.autoplay.run === 'function') {
+      swiperInstance.autoplay.run()
+    }
+  }
+
+  sliderElement.dataset.tickerHoverBound = 'true'
+  sliderElement.addEventListener('mouseenter', pauseTicker)
+  sliderElement.addEventListener('mouseleave', resumeTicker)
+}
+
 function findScopedControls(sliderElement) {
   const roots = [
     sliderElement.closest('.testimonail-wrapper-style1'),
@@ -174,7 +220,13 @@ function initializeSwipers() {
         sliderElement.swiper.destroy(true, true)
       }
 
-      return new SwiperConstructor(sliderElement, buildSwiperOptions(sliderElement, options))
+      const swiperInstance = new SwiperConstructor(sliderElement, buildSwiperOptions(sliderElement, options))
+
+      if (selector === '.sponsor-text-slide') {
+        bindTickerHoverAutoplay(sliderElement, swiperInstance)
+      }
+
+      return swiperInstance
     })
   })
 }

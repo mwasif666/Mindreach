@@ -26,6 +26,51 @@ CSS TABLE OF CONTENTS
 (function ($) {
 	("use strict");
 
+	function bindTickerHoverAutoplay(sliderElement, swiperInstance) {
+		if (!sliderElement || !swiperInstance || !swiperInstance.autoplay || sliderElement.dataset.tickerHoverBound === "true") {
+			return;
+		}
+
+		const pauseTicker = function () {
+			if (swiperInstance.destroyed) {
+				return;
+			}
+
+			if (typeof swiperInstance.autoplay.pause === "function") {
+				swiperInstance.autoplay.pause();
+				return;
+			}
+
+			if (typeof swiperInstance.autoplay.stop === "function") {
+				swiperInstance.autoplay.stop();
+			}
+		};
+
+		const resumeTicker = function () {
+			if (swiperInstance.destroyed) {
+				return;
+			}
+
+			if (typeof swiperInstance.autoplay.resume === "function" && swiperInstance.autoplay.paused) {
+				swiperInstance.autoplay.resume();
+				return;
+			}
+
+			if (typeof swiperInstance.autoplay.start === "function" && !swiperInstance.autoplay.running) {
+				swiperInstance.autoplay.start();
+				return;
+			}
+
+			if (typeof swiperInstance.autoplay.run === "function") {
+				swiperInstance.autoplay.run();
+			}
+		};
+
+		sliderElement.dataset.tickerHoverBound = "true";
+		sliderElement.addEventListener("mouseenter", pauseTicker);
+		sliderElement.addEventListener("mouseleave", resumeTicker);
+	}
+
 	$(document).ready(function () {
 		//>> Mobile Menu Js Start <<//
 		$("#mobile-menu").meanmenu({
@@ -175,6 +220,7 @@ CSS TABLE OF CONTENTS
 			autoplay: {
 				delay: 0,
 				disableOnInteraction: false,
+				pauseOnMouseEnter: true,
 			},
 			breakpoints: {
 				991: {
@@ -191,6 +237,7 @@ CSS TABLE OF CONTENTS
 				},
 			},
 		});
+		bindTickerHoverAutoplay(document.querySelector(".sponsor-text-slide"), sponsor__text__slide);
 
 		//--Testimonial Slide
 		const testimonialSlider = new Swiper(".testimonial-slider", {

@@ -1,23 +1,9 @@
-const FOOTER_PAGE_ITEMS = ['Home', 'Services', 'Portfolio']
-const FOOTER_LINK_ITEMS = ['Terms & Condition', 'Privacy Policy', 'Contact Us', 'Terms Of Use']
+import { FOOTER_CONTACT_ITEMS } from '../../data/contactDetails'
+import SITE_NAV_ITEMS from '../../data/navigationLinks'
+
 const FOOTER_SOCIAL_ICONS = ['fab fa-facebook-f', 'fa-brands fa-linkedin-in', 'fab fa-instagram', 'fa-brands fa-x']
-const FOOTER_CONTACT_ITEMS = [
-  {
-    iconClassName: 'fa-solid fa-location-dot',
-    label: 'Address',
-    value: '66 Broklyant,India',
-  },
-  {
-    iconClassName: 'fa-solid fa-phone',
-    label: 'Phone Number',
-    value: '012 345 678 9101',
-  },
-  {
-    iconClassName: 'fa-solid fa-envelope',
-    label: 'Email',
-    value: 'abcd@gmail.com',
-  },
-]
+const FOOTER_PRIMARY_NAV_ITEMS = SITE_NAV_ITEMS.slice(0, 3)
+const FOOTER_SECONDARY_NAV_ITEMS = SITE_NAV_ITEMS.slice(3)
 
 function SiteFooter() {
   return (
@@ -67,9 +53,9 @@ function SiteFooter() {
                 <div className="homepage-footer-column">
                   <h3>Page</h3>
                   <ul>
-                    {FOOTER_PAGE_ITEMS.map((item) => (
-                      <li key={item}>
-                        <span>{item}</span>
+                    {FOOTER_PRIMARY_NAV_ITEMS.map((item) => (
+                      <li key={item.href}>
+                        <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -79,9 +65,9 @@ function SiteFooter() {
                 <div className="homepage-footer-column">
                   <h3>Link</h3>
                   <ul>
-                    {FOOTER_LINK_ITEMS.map((item) => (
-                      <li key={item}>
-                        <span>{item}</span>
+                    {FOOTER_SECONDARY_NAV_ITEMS.map((item) => (
+                      <li key={item.href}>
+                        <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
                   </ul>

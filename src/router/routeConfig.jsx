@@ -8,8 +8,6 @@ import HomePage from '../pages/HomePage'
 import HomeThreePage from '../pages/HomeThreePage'
 import HomeTwoPage from '../pages/HomeTwoPage'
 import PricingPage from '../pages/PricingPage'
-import ProjectDetailsPage from '../pages/ProjectDetailsPage'
-import ProjectPage from '../pages/ProjectPage'
 import ServiceDetailsPage from '../pages/ServiceDetailsPage'
 import ServicePage from '../pages/ServicePage'
 
@@ -22,13 +20,11 @@ export const routeConfig = [
   { path: '/service', element: <ServicePage /> },
   { path: '/service-details', element: <ServiceDetailsPage /> },
   { path: '/service-details/:serviceId', element: <ServiceDetailsPage /> },
-  { path: '/project', element: <ProjectPage /> },
-  { path: '/project-details', element: <ProjectDetailsPage /> },
-  { path: '/project-details/:projectId', element: <ProjectDetailsPage /> },
   { path: '/blog', element: <BlogPage /> },
   { path: '/blog-details', element: <BlogDetailsPage /> },
   { path: '/doctor', element: <DoctorPage /> },
   { path: '/doctor-details', element: <DoctorDetailsPage /> },
+  { path: '/doctor-details/:doctorId', element: <DoctorDetailsPage /> },
   { path: '/pricing', element: <PricingPage /> },
   { path: '/contact', element: <ContactPage /> },
 ]

@@ -1,16 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
+import SITE_NAV_ITEMS from '../../data/navigationLinks'
 import { normalizePathname } from '../../utils/pathname'
-
-const NAV_ITEMS = [
-  { label: 'Home', href: '/', matchPaths: ['/', '/home-1', '/home-2', '/home-3'] },
-  { label: 'Services', href: '/service', matchPaths: ['/service', '/service-details'], matchPrefixes: ['/service-details'] },
-  { label: 'About Us', href: '/about', matchPaths: ['/about'], matchPrefixes: [] },
-  { label: 'Doctors', href: '/doctor', matchPaths: ['/doctor', '/doctor-details'], matchPrefixes: ['/doctor-details'] },
-  { label: 'Portfolio', href: '/project', matchPaths: ['/project', '/project-details'], matchPrefixes: ['/project-details'] },
-  { label: 'Contact Us', href: '/contact', matchPaths: ['/contact'], matchPrefixes: [] },
-]
-const DISABLED_NAV_LINKS = new Set(['/about', '/contact', '/doctor'])
 
 function isItemActive(currentPath, matchPaths = [], matchPrefixes = []) {
   return (
@@ -88,18 +79,17 @@ function SiteHeader() {
                   <div className="main-menu">
                     <nav aria-label="Primary navigation">
                       <ul>
-                        {NAV_ITEMS.map((item) => {
+                        {SITE_NAV_ITEMS.map((item) => {
                           const isActive = isItemActive(currentPath, item.matchPaths, item.matchPrefixes)
-                          const isDisabled = DISABLED_NAV_LINKS.has(item.href)
 
                           return (
                             <li key={item.href} className={isActive ? 'active' : undefined}>
                               <a
                                 href={item.href}
+                                aria-disabled={item.disabledInHeader ? 'true' : undefined}
                                 aria-current={isActive ? 'page' : undefined}
-                                aria-disabled={isDisabled ? 'true' : undefined}
-                                tabIndex={isDisabled ? -1 : undefined}
-                                onClick={isDisabled ? (event) => event.preventDefault() : undefined}
+                                tabIndex={item.disabledInHeader ? -1 : undefined}
+                                onClick={item.disabledInHeader ? (event) => event.preventDefault() : undefined}
                               >
                                 {item.label}
                               </a>
@@ -127,9 +117,6 @@ function SiteHeader() {
                 <a
                   href="/contact"
                   className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                  aria-disabled="true"
-                  tabIndex={-1}
-                  onClick={(event) => event.preventDefault()}
                 >
                   Book Appointment
                   <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
@@ -160,19 +147,18 @@ function SiteHeader() {
           </div>
           <nav className="site-mobile-drawer__nav" aria-label="Mobile navigation">
             <ul>
-              {NAV_ITEMS.map((item) => {
+              {SITE_NAV_ITEMS.map((item) => {
                 const isActive = isItemActive(currentPath, item.matchPaths, item.matchPrefixes)
-                const isDisabled = DISABLED_NAV_LINKS.has(item.href)
 
                 return (
                   <li key={`mobile-${item.href}`} className={isActive ? 'active' : undefined}>
                     <a
                       href={item.href}
+                      aria-disabled={item.disabledInHeader ? 'true' : undefined}
                       aria-current={isActive ? 'page' : undefined}
-                      aria-disabled={isDisabled ? 'true' : undefined}
-                      tabIndex={isDisabled ? -1 : undefined}
+                      tabIndex={item.disabledInHeader ? -1 : undefined}
                       onClick={(event) => {
-                        if (isDisabled) {
+                        if (item.disabledInHeader) {
                           event.preventDefault()
                           return
                         }
@@ -190,9 +176,7 @@ function SiteHeader() {
           <a
             href="/contact"
             className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 site-mobile-drawer__cta"
-            aria-disabled="true"
-            tabIndex={-1}
-            onClick={(event) => event.preventDefault()}
+            onClick={() => setIsMobileMenuOpen(false)}
           >
             Book Appointment
             <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
