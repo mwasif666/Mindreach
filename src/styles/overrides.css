@@ -533,6 +533,11 @@ svg [stroke="#BEFF6B"] {
   filter: brightness(0) invert(1);
 }
 
+.box-style {
+  --x: 50%;
+  --y: 50%;
+}
+
 .box-style.first-box:hover,
 .box-style.first-box:hover i,
 .box-style.first-box:hover span {

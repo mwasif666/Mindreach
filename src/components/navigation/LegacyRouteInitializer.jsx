@@ -165,6 +165,41 @@ function bindTickerHoverAutoplay(sliderElement, swiperInstance) {
   sliderElement.addEventListener('mouseleave', resumeTicker)
 }
 
+function initializeBoxStyleButtons() {
+  const buttonElements = document.querySelectorAll('.box-style')
+
+  buttonElements.forEach((element) => {
+    if (!(element instanceof HTMLElement)) {
+      return
+    }
+
+    element.style.setProperty('--x', '50%')
+    element.style.setProperty('--y', '50%')
+
+    if (element.dataset.boxStyleBound === 'true') {
+      return
+    }
+
+    const updateButtonOrigin = (event) => {
+      const rect = element.getBoundingClientRect()
+      const x = `${event.clientX - rect.left}px`
+      const y = `${event.clientY - rect.top}px`
+
+      element.style.setProperty('--x', x)
+      element.style.setProperty('--y', y)
+    }
+
+    const centerButtonOrigin = () => {
+      element.style.setProperty('--x', `${element.clientWidth / 2}px`)
+      element.style.setProperty('--y', `${element.clientHeight / 2}px`)
+    }
+
+    element.dataset.boxStyleBound = 'true'
+    element.addEventListener('mousemove', updateButtonOrigin)
+    element.addEventListener('mouseenter', centerButtonOrigin)
+  })
+}
+
 function findScopedControls(sliderElement) {
   const roots = [
     sliderElement.closest('.testimonail-wrapper-style1'),
@@ -232,6 +267,7 @@ function initializeSwipers() {
 }
 
 function initializeLegacyRoutePlugins() {
+  initializeBoxStyleButtons()
   const swiperInstances = initializeSwipers()
 
   if (window.ScrollTrigger?.refresh) {
@@ -250,6 +286,18 @@ function initializeLegacyRoutePlugins() {
 function LegacyRouteInitializer() {
   const location = useLocation()
   const isInitialRender = useRef(true)
+
+  useEffect(() => {
+    let animationFrame = 0
+
+    animationFrame = window.requestAnimationFrame(() => {
+      initializeBoxStyleButtons()
+    })
+
+    return () => {
+      window.cancelAnimationFrame(animationFrame)
+    }
+  }, [location.pathname])
 
   useEffect(() => {
     if (isInitialRender.current) {
