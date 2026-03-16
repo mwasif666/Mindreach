@@ -285,10 +285,25 @@ footer .single-footer-widget:has(.list-area li a[href="/contact"]):not(:has(.lis
   flex-direction: column;
 }
 
+.body-bg2 .service-item3 .service-content {
+  height: 100%;
+  transform: none !important;
+}
+
+.body-bg2 .service-item3 .service-content:hover {
+  transform: none !important;
+}
+
 .body-bg2 .service-item3 .service-btn-inner,
 .body-bg2 .blog-items3 .common-btn,
 .body-bg2 .team-wrapper3 .team-items-info3 .team-content .social-wrapper {
   margin-top: auto;
+}
+
+.body-bg2 .service-item3 .service-btn-inner {
+  display: flex;
+  align-items: center;
+  padding-top: 6px;
 }
 
 .body-bg2 .team-wrapper3 .team-items-info3 {
@@ -572,7 +587,7 @@ svg [stroke="#BEFF6B"] {
   align-items: center;
   gap: 20px;
   color: #fff !important;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 700;
   line-height: 1.1;
   white-space: nowrap;
@@ -584,7 +599,7 @@ svg [stroke="#BEFF6B"] {
 
 .sponsor-text-slide .text-slide-item .text-slide-icon {
   color: #fff !important;
-  font-size: 25px;
+  font-size: 30px;
   line-height: 1;
   transform: translateY(1px);
 }
@@ -596,11 +611,11 @@ svg [stroke="#BEFF6B"] {
 
   .sponsor-text-slide .text-slide-item {
     gap: 18px;
-    font-size: 25px;
+    font-size: 32px;
   }
 
   .sponsor-text-slide .text-slide-item .text-slide-icon {
-    font-size: 22px;
+    font-size: 26px;
   }
 }
 
@@ -611,12 +626,12 @@ svg [stroke="#BEFF6B"] {
 
   .sponsor-text-slide .text-slide-item {
     gap: 14px;
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.2;
   }
 
   .sponsor-text-slide .text-slide-item .text-slide-icon {
-    font-size: 17px;
+    font-size: 20px;
   }
 }
 
@@ -858,33 +873,20 @@ footer.footer-section {
   height: auto;
 }
 
-.body-bg2 .homepage-footer-newsletter__form {
+.body-bg2 .homepage-footer-newsletter__lead {
+  max-width: 600px;
+  margin: 0 auto 26px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 20px;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.body-bg2 .homepage-footer-newsletter__cta {
   display: flex;
-  align-items: center;
-  gap: 12px;
-  max-width: 520px;
-  margin: 0 auto;
-  padding: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  background: rgba(5, 6, 8, 0.82);
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
-}
-
-.body-bg2 .homepage-footer-newsletter__form input {
-  width: 100%;
-  min-width: 0;
-  height: 56px;
-  padding: 0 18px;
-  border: 0;
-  outline: 0;
-  background: transparent;
-  color: var(--white);
-  font-size: 16px;
-}
-
-.body-bg2 .homepage-footer-newsletter__form input::placeholder {
-  color: rgba(255, 255, 255, 0.64);
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
 }
 
 .body-bg2 .homepage-footer-newsletter__button {
@@ -892,7 +894,7 @@ footer.footer-section {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-width: 202px;
+  min-width: 290px;
   height: 56px;
   padding: 0 24px;
   border: 0;
@@ -903,6 +905,12 @@ footer.footer-section {
   font-size: 17px;
   font-weight: 600;
   line-height: 1;
+  text-align: center;
+}
+
+.body-bg2 .homepage-footer-newsletter__button--secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .body-bg2 .homepage-footer-newsletter__button img {
@@ -1302,16 +1310,15 @@ footer.footer-section {
     width: 145px;
   }
 
-  .body-bg2 .homepage-footer-newsletter__form {
-    flex-direction: column;
-    gap: 10px;
-    padding: 14px;
-    border-radius: 28px;
+  .body-bg2 .homepage-footer-newsletter__lead {
+    margin-bottom: 20px;
+    font-size: 17px;
+    line-height: 1.6;
   }
 
-  .body-bg2 .homepage-footer-newsletter__form input,
   .body-bg2 .homepage-footer-newsletter__button {
     width: 100%;
+    min-width: 0;
   }
 
   .body-bg2 .homepage-footer-card {
@@ -1487,6 +1494,37 @@ footer.footer-section {
   flex-direction: column;
   width: 100%;
   height: 100%;
+}
+
+.services-section.main-style .service-card-description {
+  margin-bottom: 30px;
+}
+
+.services-section.main-style .service-card-description .pra {
+  display: -webkit-box;
+  overflow: hidden;
+  margin-bottom: 10px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+.services-section.main-style .service-card-description .pra.is-expanded {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+  line-clamp: unset;
+}
+
+.services-section.main-style .service-card-description__toggle {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--p1-clr);
+  font-family: "Syne", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
 .services-section.main-style .service-item .thumb,

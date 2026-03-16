@@ -18,16 +18,19 @@ function SiteFooter() {
                 <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" />
               </span>
             </h2>
-            <form
-              className="homepage-footer-newsletter__form"
-              onSubmit={(event) => event.preventDefault()}
-            >
-              <input type="email" placeholder="Enter your email to get started" aria-label="Enter your email to get started" />
-              <button type="button" className="homepage-footer-newsletter__button">
+            <p className="homepage-footer-newsletter__lead">
+              Take the first step toward a healthier and calmer mind.
+            </p>
+            <div className="homepage-footer-newsletter__cta">
+              <a href="/contact" className="homepage-footer-newsletter__button">
                 Book Appointment
                 <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
-              </button>
-            </form>
+              </a>
+              <a href="/service" className="homepage-footer-newsletter__button homepage-footer-newsletter__button--secondary">
+                Read More
+                <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
+              </a>
+            </div>
           </div>
           <div className="homepage-footer-card">
             <div className="row g-4">
