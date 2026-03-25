@@ -1,5 +1,6 @@
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
+import DoctorCardGrid from '../components/doctors/DoctorCardGrid'
 import DOCTORS from '../data/doctors'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
@@ -62,7 +63,7 @@ const CARE_STEPS = [
   {
     number: '02',
     title: 'Get matched with the right clinician',
-    text: 'Based on your needs, MindReach guides you toward therapy, psychiatry, or the doctor profile that best fits your goals and schedule.',
+    text: 'Based on your needs, MindReach guides you toward therapy, psychiatry, or the provider profile that best fits your goals and schedule.',
   },
   {
     number: '03',
@@ -129,12 +130,12 @@ function AboutPage() {
                   </ul>
 
                   <div className="d-flex flex-wrap gap-3 about-page-hero__actions">
-                    <a href="/contact" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+                    <a href="/book-appointment" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
                       Book Appointment
                       <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
                     </a>
                     <a href="/doctor" className="common-btn cmn-border d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
-                      Meet Our Doctors
+                      Meet Our Providers
                       <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
                     </a>
                   </div>
@@ -296,7 +297,7 @@ function AboutPage() {
           <div className="container">
             <div className="d-flex flex-wrap align-items-end justify-content-between gap-3 mb-60">
               <div className="section-title mb-0">
-                <span className="cmn-tag p1-bg heading-font">Our Doctors</span>
+                <span className="cmn-tag p1-bg heading-font">Our Providers</span>
                 <h2 className="wow fadeInUp black visible-slowly-right mb-0" data-wow-delay=".3s">
                   Meet the clinicians currently featured on
                   <span className="position-relative z-1">
@@ -307,38 +308,12 @@ function AboutPage() {
               </div>
 
               <a href="/doctor" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
-                View All Doctors
+                View All Providers
                 <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
               </a>
             </div>
 
-            <div className="about-page-team-grid doctor-team-grid">
-              <div className="row g-4">
-                {FEATURED_DOCTORS.map((doctor, index) => (
-                  <div key={doctor.id} className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay={`${0.3 + (index * 0.1)}s`}>
-                    <div className="team-items-info3">
-                      <a href={doctor.detailsHref} className="thumb">
-                        <AppImage src={doctor.image} alt={doctor.imageAlt} wrapperClassName="app-image--fill" className={doctor.imageClassName} />
-                      </a>
-                      <div className="team-content">
-                        <div className="team-copy">
-                          <h3>
-                            <a href={doctor.detailsHref} className="team-name-link">
-                              {doctor.name}
-                            </a>
-                          </h3>
-                          <p className="team-role">{doctor.role}</p>
-                          <div className="team-meta-card">
-                            <span className="team-meta-label">{doctor.experienceLabel}</span>
-                            <span className="team-meta-value">{doctor.experienceValue}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <DoctorCardGrid doctors={FEATURED_DOCTORS} />
           </div>
         </section>
       </div>

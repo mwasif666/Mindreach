@@ -1,3 +1,4 @@
+import { useSearchParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
 import { CONTACT_INFO_CARDS } from '../data/contactDetails'
@@ -7,6 +8,9 @@ const BODY_CLASS = 'body-bg'
 const CONTACT_IMAGE = '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg'
 
 function ContactPage() {
+  const [searchParams] = useSearchParams()
+  const selectedDoctor = searchParams.get('doctor')?.trim() ?? ''
+
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
@@ -51,10 +55,11 @@ function ContactPage() {
               </div>
             </div>
 
-            <div className="contact-wrapper-anys white-bg rounded-4 contact-page-panel">
+            <div id="appointment-form" className="contact-wrapper-anys white-bg rounded-4 contact-page-panel">
               <div className="row g-6 align-items-center justify-content-between">
                 <div className="col-lg-7">
                   <form
+                    key={selectedDoctor || 'default-contact-form'}
                     action="#"
                     className="appoentment-forms contact-page-form"
                     onSubmit={(event) => event.preventDefault()}
@@ -62,7 +67,7 @@ function ContactPage() {
                     <div className="section-title mb-60 contact-page-form-copy">
                       <span className="black fw_700 fs-six d-block mb-3 heading-font">Contact Us</span>
                       <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                        Get an
+                        Get an{' '}
                         <span className="position-relative z-1">
                           Appointment
                           <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" className="title-badge1 d-md-block d-none w-100" />
@@ -84,7 +89,7 @@ function ContactPage() {
                         <input type="text" placeholder="Phone Number" />
                       </div>
                       <div className="col-lg-6">
-                        <input type="text" placeholder="Subject" />
+                        <input type="text" placeholder="Preferred Doctor" defaultValue={selectedDoctor} />
                       </div>
                       <div className="col-lg-12">
                         <textarea name="message" placeholder="Message" rows={5} defaultValue={''} />

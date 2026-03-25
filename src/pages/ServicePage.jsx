@@ -234,7 +234,7 @@ function ServicePage() {
                   <div className="section-title mb-60">
                     <span className="cmn-tag p1-bg heading-font">Contact Us</span>
                     <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                      Get an
+                      Get an{' '}
                       <span className="position-relative z-1">
                         Appiontment
                         <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />

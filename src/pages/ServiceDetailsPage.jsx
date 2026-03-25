@@ -271,6 +271,31 @@ function ServiceDetailsPage() {
               </div>
               <div className="col-lg-4">
                 <div className="blog-details-right mindreach-service-sidebar">
+                  <div className="mindreach-service-sidebar__clinical-stack">
+                    {clinicalCards.map((card) => (
+                      <div key={card.id} className="mindreach-service-detail__clinical-card">
+                        <div className="mindreach-service-detail__clinical-top">
+                          <span className="mindreach-service-detail__clinical-icon" aria-hidden="true">
+                            <i className={card.iconClassName} />
+                          </span>
+                          <span className="mindreach-service-detail__clinical-label">{card.label}</span>
+                        </div>
+                        <h4 className="black mb-3">{card.title}</h4>
+                        <p className="pra mb-0">{card.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="mindreach-service-detail__cta mindreach-service-detail__cta--sidebar">
+                    <h4 className="black mb-0">Book Appointment</h4>
+                    <p className="pra mb-0">{service.bookingText}</p>
+                    <a
+                      href="/contact"
+                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                    >
+                      Book Appointment
+                      <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                    </a>
+                  </div>
                   <div className="details-common category-service">
                     <h4 className="black d-flex align-items-center gap-2 mb-4 fw_700">Services</h4>
                     <ul className="cates">
@@ -288,31 +313,6 @@ function ServiceDetailsPage() {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                  <div className="mindreach-service-detail__cta mindreach-service-detail__cta--sidebar">
-                    <h4 className="black mb-0">Book Appointment</h4>
-                    <p className="pra mb-0">{service.bookingText}</p>
-                    <a
-                      href="/contact"
-                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                    >
-                      Book Appointment
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
-                    </a>
-                  </div>
-                  <div className="mindreach-service-sidebar__clinical-stack">
-                    {clinicalCards.map((card) => (
-                      <div key={card.id} className="mindreach-service-detail__clinical-card">
-                        <div className="mindreach-service-detail__clinical-top">
-                          <span className="mindreach-service-detail__clinical-icon" aria-hidden="true">
-                            <i className={card.iconClassName} />
-                          </span>
-                          <span className="mindreach-service-detail__clinical-label">{card.label}</span>
-                        </div>
-                        <h4 className="black mb-3">{card.title}</h4>
-                        <p className="pra mb-0">{card.text}</p>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </div>

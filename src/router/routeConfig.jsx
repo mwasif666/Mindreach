@@ -1,4 +1,5 @@
 ﻿import AboutPage from '../pages/AboutPage'
+import BookAppointmentPage from '../pages/BookAppointmentPage'
 import BlogDetailsPage from '../pages/BlogDetailsPage'
 import BlogPage from '../pages/BlogPage'
 import ContactPage from '../pages/ContactPage'
@@ -22,6 +23,7 @@ export const routeConfig = [
   { path: '/service-details/:serviceId', element: <ServiceDetailsPage /> },
   { path: '/blog', element: <BlogPage /> },
   { path: '/blog-details', element: <BlogDetailsPage /> },
+  { path: '/book-appointment', element: <BookAppointmentPage /> },
   { path: '/doctor', element: <DoctorPage /> },
   { path: '/doctor-details', element: <DoctorDetailsPage /> },
   { path: '/doctor-details/:doctorId', element: <DoctorDetailsPage /> },

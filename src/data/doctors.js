@@ -1,12 +1,27 @@
+export function getDoctorBookingHref(doctorId) {
+  if (!doctorId) {
+    return '/book-appointment'
+  }
+
+  return `/book-appointment?doctor=${encodeURIComponent(doctorId)}`
+}
+
 const DOCTORS = [
   {
     id: 'dr-areeba-khan',
     detailsHref: '/doctor-details/dr-areeba-khan',
+    bookingHref: getDoctorBookingHref('dr-areeba-khan'),
     name: 'Dr. Areeba Khan',
     role: 'Clinical Psychologist',
+    credential: 'MS Clinical Psychology',
     shortRole: 'Psychology',
     experienceLabel: 'Experience',
     experienceValue: '5+ years experience',
+    rating: 4.8,
+    approvalRate: '98%',
+    feedbackCount: 37,
+    locationPrimary: 'Virtual Care',
+    locationSecondary: 'Pakistan',
     image: '/assets/img/homepage-images/unsplash-portrait-1.jpg',
     imageAlt: 'Dr. Areeba Khan smiling during a professional portrait session',
     featureImage: '/assets/img/homepage-images/unsplash-dentist-1.jpg',
@@ -47,11 +62,18 @@ const DOCTORS = [
   {
     id: 'dr-hassan-malik',
     detailsHref: '/doctor-details/dr-hassan-malik',
+    bookingHref: getDoctorBookingHref('dr-hassan-malik'),
     name: 'Dr. Hassan Malik',
     role: 'Consultant Psychiatrist',
+    credential: 'MBBS, FCPS',
     shortRole: 'Psychiatry',
     experienceLabel: 'Experience',
     experienceValue: '7+ years experience',
+    rating: 4.9,
+    approvalRate: '99%',
+    feedbackCount: 41,
+    locationPrimary: 'Tele-Psychiatry',
+    locationSecondary: 'Pakistan',
     image: '/assets/img/homepage-images/unsplash-portrait-3.jpg',
     imageAlt: 'Dr. Hassan Malik in a professional studio portrait',
     featureImage: '/assets/img/homepage-images/unsplash-dentist-2.jpg',
@@ -92,11 +114,18 @@ const DOCTORS = [
   {
     id: 'dr-mehak-aslam',
     detailsHref: '/doctor-details/dr-mehak-aslam',
+    bookingHref: getDoctorBookingHref('dr-mehak-aslam'),
     name: 'Dr. Mehak Aslam',
     role: 'Behavioral Health Specialist',
+    credential: 'MPhil Behavioral Sciences',
     shortRole: 'Behavioral Health',
     experienceLabel: 'Experience',
     experienceValue: '6+ years experience',
+    rating: 4.7,
+    approvalRate: '97%',
+    feedbackCount: 34,
+    locationPrimary: 'Online Sessions',
+    locationSecondary: 'Pakistan',
     image: '/assets/img/homepage-images/unsplash-portrait-2.jpg',
     imageAlt: 'Dr. Mehak Aslam in a professional portrait with a calm expression',
     featureImage: '/assets/img/homepage-images/unsplash-dentist-4.jpg',

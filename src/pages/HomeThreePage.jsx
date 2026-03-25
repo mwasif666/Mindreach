@@ -1,5 +1,6 @@
 import PageLayout from '../components/layout/PageLayout'
 import { FiShield } from 'react-icons/fi'
+import DoctorCardGrid from '../components/doctors/DoctorCardGrid'
 import SiteFooter from '../components/layout/SiteFooter'
 import AppImage from '../components/ui/AppImage'
 import DOCTORS from '../data/doctors'
@@ -82,6 +83,7 @@ function HomeThreePage() {
                         className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight"
                         label="Book Appointment"
                         iconSrc="/assets/img/icon/arrow-right-white.png"
+                        href="/book-appointment"
                         data-wow-delay="0.8s"
                       />
                     </div>
@@ -282,41 +284,11 @@ function HomeThreePage() {
                 </span>
               </h2>
             </div>
-            <div className="team-wrapper3">
-              <div className="row g-4 justify-content-between">
-                {TEAM_MEMBERS.map((doctor, index) => (
-                  <div
-                    key={doctor.id}
-                    className="col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay={`${0.3 + (index * 0.2)}s`}
-                  >
-                    <div className="team-items-info3">
-                      <a href={doctor.detailsHref} className="thumb">
-                        <AppImage src={doctor.image} alt={doctor.imageAlt} wrapperClassName="app-image--fill" className={doctor.imageClassName} />
-                      </a>
-                      <div className="team-content">
-                        <div className="team-copy">
-                          <h3>
-                            <a href={doctor.detailsHref} className="team-name-link">
-                              {doctor.name}
-                            </a>
-                          </h3>
-                          <p className="team-role">{doctor.role}</p>
-                          <div className="team-meta-card">
-                            <span className="team-meta-label">{doctor.experienceLabel}</span>
-                            <span className="team-meta-value">{doctor.experienceValue}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <DoctorCardGrid doctors={TEAM_MEMBERS} />
             <div className="text-center mt-5">
               <HomepageIconButton
                 className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
-                label="View All Doctors"
+                label="View All Providers"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
                 href="/doctor"
               />
