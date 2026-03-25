@@ -1,6 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
+import BookingCtaSection from '../components/ui/BookingCtaSection'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const BODY_CLASS = "body-bg"
@@ -319,6 +320,7 @@ function ServiceDetailsPage() {
             </div>
           </div>
         </section>
+        <BookingCtaSection sectionClassName="appoentment-section fix space-bottom" />
         {/*<< Footer Section Start >>*/}
         <footer className="footer-section z-1 position-relative blackbg fix">
           <div className="container">

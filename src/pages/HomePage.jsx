@@ -1,3 +1,4 @@
+import BookingCtaSection from '../components/ui/BookingCtaSection'
 import PageLayout from '../components/layout/PageLayout'
 
 const PAGE_TITLE = "Home || Medizen || Medizen React Template"
@@ -313,54 +314,7 @@ function HomePage() {
           </div>
         </section>
         {/* Appiontment Section Start */}
-        <section className="appoentment-section fix">
-          <div className="container">
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-6 order-lg-0 order-1">
-                <div className="apoentment-thumb">
-                  <img src="/assets/img/blog/apoentment-thumb.jpg" alt="img" className="rounded-4" />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <form action="#" className="appoentment-forms">
-                  <div className="section-title mb-60">
-                    <span className="cmn-tag p1-bg heading-font">Contact Us</span>
-                    <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                      Get an{' '}
-                      <span className="position-relative z-1">
-                        Appiontment
-                        <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                      </span>
-                    </h2>
-                  </div>
-                  <div className="row g-lg-4 g-3">
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Your Name" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="email" placeholder="Your Email" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Phone Number" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Subject" />
-                    </div>
-                    <div className="col-lg-12">
-                      <textarea name="message" placeholder="Message" rows={5} defaultValue={""} />
-                    </div>
-                    <div className="col-lg-12">
-                      <a href="/doctor-details" className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                        Book An Appiontment
-                        <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
-                      </a>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BookingCtaSection />
         {/* Feature Section Start */}
         <section className="feature-section fix section-padding">
           <div className="container">

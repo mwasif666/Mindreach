@@ -1,11 +1,10 @@
 import DoctorCardGrid from '../components/doctors/DoctorCardGrid'
 import PageLayout from '../components/layout/PageLayout'
-import AppImage from '../components/ui/AppImage'
+import BookingCtaSection from '../components/ui/BookingCtaSection'
 import DOCTORS from '../data/doctors'
 
 const PAGE_TITLE = 'Our Providers | MindReach'
 const BODY_CLASS = 'body-bg'
-const FEATURED_PROVIDER = DOCTORS[0]
 
 function DoctorPage() {
   return (
@@ -49,48 +48,7 @@ function DoctorPage() {
           </div>
         </section>
 
-        <section className="appoentment-section fix space-bottom">
-          <div className="container">
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-6 order-lg-0 order-1">
-                <div className="apoentment-thumb">
-                  <AppImage
-                    src={FEATURED_PROVIDER.featureImage}
-                    alt={FEATURED_PROVIDER.featureImageAlt}
-                    wrapperClassName="app-image--fill"
-                    className="rounded-4"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <div className="appoentment-forms">
-                  <div className="section-title mb-40">
-                    <span className="cmn-tag p1-bg heading-font">Book Appointment</span>
-                    <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                      Go straight to the{' '}
-                      <span className="position-relative z-1">
-                        booking page
-                        <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" className="title-badge1 d-md-block d-none w-100" />
-                      </span>
-                    </h2>
-                    <p className="pra pt-3 mb-0">
-                      The booking page shows the same providers and opens the right Calendly booking flow for the provider you choose.
-                    </p>
-                  </div>
-
-                  <a
-                    href="/book-appointment"
-                    className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight"
-                    data-wow-delay="0.8s"
-                  >
-                    Open Booking Page
-                    <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BookingCtaSection sectionClassName="appoentment-section fix space-bottom" />
       </div>
     </PageLayout>
   )
