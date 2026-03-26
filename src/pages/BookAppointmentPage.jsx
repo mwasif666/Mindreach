@@ -51,40 +51,43 @@ function BookAppointmentPage() {
 
         <section className="feature-section fix section-padding doctor-feature-list">
           <div className="container">
-            <div className="section-title text-center mb-60">
-              <span className="cmn-tag p1-bg heading-font">
-                Book Appointment
-              </span>
-              <h2
-                className="wow fadeInUp black visible-slowly-right"
-                data-wow-delay=".3s"
-              >
-                Choose your provider and open the right{' '}
-                <span className="position-relative z-1">
-                  booking calendar
-                  <img
-                    src="/assets/img/element/title-badge1.png"
-                    alt=""
-                    aria-hidden="true"
-                    className="title-badge1 d-md-block d-none w-100"
-                  />
+            <div className="doctor-feature-list__inner">
+              <div className="section-title text-center mb-60">
+                <span className="cmn-tag p1-bg heading-font">
+                  Book Appointment
                 </span>
-              </h2>
-              <p className="pra pt-3 mb-0">
-                Click any provider below to open that provider&apos;s booking
-                flow directly.
-                {selectedDoctor
-                  ? ` ${selectedDoctor.name} is currently selected.`
-                  : ""}
-              </p>
-            </div>
+                <h2
+                  className="wow fadeInUp black visible-slowly-right"
+                  data-wow-delay=".3s"
+                >
+                  Choose your provider and open the right
+                  <br className="d-none d-md-block" />{' '}
+                  <span className="position-relative z-1">
+                    booking calendar
+                    <img
+                      src="/assets/img/element/title-badge1.png"
+                      alt=""
+                      aria-hidden="true"
+                      className="title-badge1 d-md-block d-none w-100"
+                    />
+                  </span>
+                </h2>
+                <p className="pra pt-3 mb-0">
+                  Click any provider below to open that provider&apos;s booking
+                  flow directly.
+                  {selectedDoctor
+                    ? ` ${selectedDoctor.name} is currently selected.`
+                    : ""}
+                </p>
+              </div>
 
-            <DoctorCardGrid
-              doctors={DOCTORS}
-              interaction="modal"
-              selectedDoctorId={selectedDoctor?.id ?? null}
-              onSelectedDoctorIdChange={handleSelectedDoctorIdChange}
-            />
+              <DoctorCardGrid
+                doctors={DOCTORS}
+                interaction="modal"
+                selectedDoctorId={selectedDoctor?.id ?? null}
+                onSelectedDoctorIdChange={handleSelectedDoctorIdChange}
+              />
+            </div>
           </div>
         </section>
       </div>

@@ -87,6 +87,7 @@ function DoctorCardGrid({
     <div className="mindreach-doctor-grid-shell">
       {isModalInteraction ? (
         <CalendlyInlineModal
+          key={activeDoctor?.id ?? 'closed-booking-modal'}
           open={Boolean(activeDoctor)}
           onClose={() => updateSelectedDoctorId(null)}
           doctorName={activeDoctor?.name}
