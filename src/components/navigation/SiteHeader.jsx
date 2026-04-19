@@ -115,7 +115,7 @@ function SiteHeader() {
               </div>
               <div className="header-btn d-xl-block d-none">
                 <a
-                  href="/contact"
+                  href="/book-appointment"
                   className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
                 >
                   Book Appointment
@@ -174,7 +174,7 @@ function SiteHeader() {
             </ul>
           </nav>
           <a
-            href="/contact"
+            href="/book-appointment"
             className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100 site-mobile-drawer__cta"
             onClick={() => setIsMobileMenuOpen(false)}
           >

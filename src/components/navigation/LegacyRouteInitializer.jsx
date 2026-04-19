@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
 
 const SWIPER_CONFIGS = [
@@ -38,6 +38,28 @@ const SWIPER_CONFIGS = [
         400: { spaceBetween: 16 },
         0: { spaceBetween: 14 },
       },
+    },
+  },
+  {
+    selector: '.insurance-acceptance__slider',
+    options: {
+      speed: 500,
+      loop: true,
+      slidesPerView: 'auto',
+      centeredSlides: false,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: true,
+      },
+      breakpoints: {
+        1400: { spaceBetween: 20 },
+        992: { spaceBetween: 18 },
+        768: { spaceBetween: 16 },
+        0: { spaceBetween: 14 },
+      },
+      usePagination: true,
+      useNavigation: true,
     },
   },
   {
@@ -233,7 +255,6 @@ function initializeLegacyRoutePlugins() {
 
 function LegacyRouteInitializer() {
   const location = useLocation()
-  const isInitialRender = useRef(true)
 
   useEffect(() => {
     let animationFrame = 0
@@ -248,11 +269,6 @@ function LegacyRouteInitializer() {
   }, [location.pathname])
 
   useEffect(() => {
-    if (isInitialRender.current) {
-      isInitialRender.current = false
-      return undefined
-    }
-
     let cleanup = () => {}
     let animationFrameOne = 0
     let animationFrameTwo = 0

@@ -1,8 +1,12 @@
+import { createElement } from 'react'
 import PageLayout from '../components/layout/PageLayout'
-import { FiCalendar, FiClock, FiShield, FiUsers } from 'react-icons/fi'
+import { FiCalendar, FiChevronLeft, FiChevronRight, FiClock, FiShield, FiUsers } from 'react-icons/fi'
+import DoctorCardGrid from '../components/doctors/DoctorCardGrid'
 import SiteFooter from '../components/layout/SiteFooter'
 import AppImage from '../components/ui/AppImage'
+import InsuranceLogoMark from '../components/ui/InsuranceLogoMark'
 import DOCTORS from '../data/doctors'
+import INSURANCE_LOGOS from '../data/insuranceLogos'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "MindReach"
@@ -113,6 +117,7 @@ function HomeThreePage() {
                         className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight"
                         label="Book Appointment"
                         iconSrc="/assets/img/icon/arrow-right-white.png"
+                        href="/book-appointment"
                         data-wow-delay="0.8s"
                       />
                     </div>
@@ -162,6 +167,51 @@ function HomeThreePage() {
             ))}
           </div>
         </div>
+        <section className="insurance-acceptance-section white-bg">
+          <div className="container">
+            <div className="section-title text-center insurance-acceptance__header">
+              <h2 className="black wow fadeInUp" data-wow-delay=".3s">We accept insurance</h2>
+              <p className="insurance-acceptance__subtitle">
+                99% of patients have successfully booked with these insurances
+              </p>
+            </div>
+            <div className="insurance-acceptance__carousel">
+              <button
+                type="button"
+                className="array-prev insurance-acceptance__nav-button"
+                aria-label="Show previous insurance logos"
+              >
+                <FiChevronLeft aria-hidden="true" />
+              </button>
+              <div className="swiper insurance-acceptance__slider">
+                <div className="swiper-wrapper">
+                  {INSURANCE_LOGOS.map((logo) => (
+                    <div key={logo.id} className="swiper-slide">
+                      <div className="insurance-acceptance__logo-card" data-logo={logo.id}>
+                        <InsuranceLogoMark id={logo.id} name={logo.name} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button
+                type="button"
+                className="array-next insurance-acceptance__nav-button"
+                aria-label="Show next insurance logos"
+              >
+                <FiChevronRight aria-hidden="true" />
+              </button>
+            </div>
+            <div className="insurance-acceptance__pagination swiper-dot dot" />
+            <div className="text-center">
+              <HomepageIconButton
+                className="common-btn box-style first-box insurance-acceptance__cta d-inline-flex justify-content-center align-items-center fs18 fw-semibold overflow-hidden rounded100"
+                label="See All Insurances"
+                href="/book-appointment"
+              />
+            </div>
+          </div>
+        </section>
         {/* Servie Section Start */}
         <section className="services-section cmn-bg fix section-padding">
           <div className="container">
@@ -303,41 +353,11 @@ function HomeThreePage() {
                 </span>
               </h2>
             </div>
-            <div className="team-wrapper3">
-              <div className="row g-4 justify-content-between">
-                {TEAM_MEMBERS.map((doctor, index) => (
-                  <div
-                    key={doctor.id}
-                    className="col-xl-4 col-md-6 wow fadeInUp"
-                    data-wow-delay={`${0.3 + (index * 0.2)}s`}
-                  >
-                    <div className="team-items-info3">
-                      <a href={doctor.detailsHref} className="thumb">
-                        <AppImage src={doctor.image} alt={doctor.imageAlt} wrapperClassName="app-image--fill" className={doctor.imageClassName} />
-                      </a>
-                      <div className="team-content">
-                        <div className="team-copy">
-                          <h3>
-                            <a href={doctor.detailsHref} className="team-name-link">
-                              {doctor.name}
-                            </a>
-                          </h3>
-                          <p className="team-role">{doctor.role}</p>
-                          <div className="team-meta-card">
-                            <span className="team-meta-label">{doctor.experienceLabel}</span>
-                            <span className="team-meta-value">{doctor.experienceValue}</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <DoctorCardGrid doctors={TEAM_MEMBERS} />
             <div className="text-center mt-5">
               <HomepageIconButton
                 className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
-                label="View All Doctors"
+                label="View All Providers"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
                 href="/doctor"
               />
@@ -493,14 +513,14 @@ function HomeThreePage() {
           <div className="container">
             <div className="care-counter-wrap3 mindreach-care-stats">
               <div className="mindreach-care-stats__grid">
-                {CARE_COUNTERS.map(({ value, suffix, title, detail, icon: Icon }, index) => (
+                {CARE_COUNTERS.map(({ value, suffix, title, detail, icon }, index) => (
                   <article
                     key={title}
                     className="mindreach-care-stat wow fadeIn"
                     data-wow-delay={`${0.4 + (index * 0.1)}s`}
                   >
                     <span className="mindreach-care-stat__icon" aria-hidden="true">
-                      <Icon />
+                      {createElement(icon)}
                     </span>
                     <h2 className="mindreach-care-stat__value">
                       <span className="count">{value}</span>

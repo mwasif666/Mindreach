@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
+import BookingCtaSection from '../components/ui/BookingCtaSection'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "Services | MindReach"
@@ -216,59 +217,7 @@ function ServicePage() {
           </div>
         </section>
         {/* Appiontment Section Start */}
-        <section className="appoentment-section fix space-bottom">
-          <div className="container">
-            <div className="row g-4 align-items-center">
-              <div className="col-lg-6 order-lg-0 order-1">
-                <div className="apoentment-thumb">
-                  <AppImage
-                    src="/assets/img/service/pexels-cottonbro-5867189.jpg"
-                    alt="Virtual therapy consultation on a laptop screen"
-                    wrapperClassName="app-image--fill"
-                    className="rounded-4"
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
-                <form action="#" className="appoentment-forms">
-                  <div className="section-title mb-60">
-                    <span className="cmn-tag p1-bg heading-font">Contact Us</span>
-                    <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                      Get an
-                      <span className="position-relative z-1">
-                        Appiontment
-                        <img src="/assets/img/element/title-badge1.png" alt="img" className="title-badge1 d-md-block d-none w-100" />
-                      </span>
-                    </h2>
-                  </div>
-                  <div className="row g-lg-4 g-3">
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Your Name" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="email" placeholder="Your Email" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Phone Number" />
-                    </div>
-                    <div className="col-lg-6">
-                      <input type="text" placeholder="Subject" />
-                    </div>
-                    <div className="col-lg-12">
-                      <textarea name="message" placeholder="Message" rows={5} defaultValue={""} />
-                    </div>
-                    <div className="col-lg-12">
-                      <a href="/doctor-details" className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight" data-wow-delay="0.8s">
-                        Book An Appiontment
-                        <img src="/assets/img/icon/arrow-right-white.png" alt="icon" />
-                      </a>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
+        <BookingCtaSection sectionClassName="appoentment-section fix space-bottom" />
         {/*<< Footer Section Start >>*/}
         <footer className="footer-section z-1 position-relative blackbg fix">
           <div className="container">
