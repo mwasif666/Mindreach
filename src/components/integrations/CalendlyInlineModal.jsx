@@ -105,6 +105,7 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
         <div className="mindreach-calendly-modal__hero">
           <span className="mindreach-calendly-modal__eyebrow">Secure Online Booking</span>
           <h2>{doctorName ? `Book Appointment - ${doctorName}` : 'Book Appointment'}</h2>
+          <p>{heroDescription}</p>
         </div>
 
         {isToastVisible ? (
