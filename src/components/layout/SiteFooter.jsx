@@ -26,10 +26,6 @@ function SiteFooter() {
                 Book Appointment
                 <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
               </a>
-              <a href="/service" className="homepage-footer-newsletter__button homepage-footer-newsletter__button--secondary">
-                Read More
-                <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
-              </a>
             </div>
           </div>
           <div className="homepage-footer-card">

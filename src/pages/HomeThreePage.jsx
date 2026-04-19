@@ -1,5 +1,5 @@
 import PageLayout from '../components/layout/PageLayout'
-import { FiShield } from 'react-icons/fi'
+import { FiCalendar, FiClock, FiShield, FiUsers } from 'react-icons/fi'
 import SiteFooter from '../components/layout/SiteFooter'
 import AppImage from '../components/ui/AppImage'
 import DOCTORS from '../data/doctors'
@@ -14,6 +14,7 @@ const HOMEPAGE_IMAGES = {
   teamDentistThree: '/assets/img/homepage-images/unsplash-dentist-4.jpg',
   featureThumb: '/assets/img/homepage-images/unsplash-feature-thumb.jpg',
   featureBackground: '/assets/img/homepage-images/unsplash-feature-bg.jpg',
+  aboutTherapySession: '/assets/img/homepage-images/unsplash-therapy-session.jpg',
   appointment: '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg',
   resourceOne: '/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png',
   resourceTwo: '/assets/img/homepage-images/unsplash-feature-bg.jpg',
@@ -29,6 +30,36 @@ const HOMEPAGE_TICKER_ITEMS = [
   'Take the first step toward feeling better',
   'A safe space to speak, heal, and grow',
   'Take the first step toward feeling better',
+]
+const CARE_COUNTERS = [
+  {
+    value: '95',
+    suffix: '%',
+    title: 'Secure Virtual Care',
+    detail: 'Sessions designed to stay simple, private, and easier to access from anywhere.',
+    icon: FiShield,
+  },
+  {
+    value: '90',
+    suffix: '%',
+    title: 'Scheduling Convenience',
+    detail: 'Appointment times shaped around work, home, school, and everyday routines.',
+    icon: FiCalendar,
+  },
+  {
+    value: '24',
+    suffix: '/7',
+    title: 'Support Access',
+    detail: 'Care pathways built to feel reachable when you need guidance and follow-up most.',
+    icon: FiClock,
+  },
+  {
+    value: '1',
+    suffix: 'k+',
+    title: 'Patients Supported',
+    detail: 'More people already connected to ongoing online therapy and psychiatry support.',
+    icon: FiUsers,
+  },
 ]
 
 function HomepageIconButton({ className, label, iconSrc, iconClassName, iconOnly = false, href, ...props }) {
@@ -173,7 +204,7 @@ function HomeThreePage() {
             </div>
             <div className="text-center mt-5">
               <HomepageIconButton
-                className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
+                className="common-btn box-style first-box mindreach-services-cta d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                 label="View All Services"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
                 href="/service"
@@ -246,23 +277,13 @@ function HomeThreePage() {
                   </div>
                 </div>
                 <div className="col-xl-6 col-lg-6 wow fadeInUp" data-wow-delay="0.6s">
-                  <div className="about-schedule rounded-4">
-                    <div className="about-content">
-                      <h1>Schedule</h1>
-                      <p>
-                        Mental health care should be easy to access. MindReach lets you book secure virtual sessions with licensed
-                        therapists and psychiatrists, meet from anywhere, and choose times that fit your routine, often covered
-                        by insurance.
-                      </p>
-                      <div className="time-schedule">
-                        <ul>
-                          <li><span className="text">Monday - Thursday</span> <span>9AM - 8PM</span></li>
-                          <li><span className="text">Friday</span> <span>9AM - 6PM</span></li>
-                          <li><span className="text">Saturday</span> <span>10AM - 3PM</span></li>
-                          <li><span className="text">Sunday</span> <span>By Appointment</span></li>
-                        </ul>
-                      </div>
-                    </div>
+                  <div className="about-schedule rounded-4 mindreach-about-image-card">
+                    <AppImage
+                      src={HOMEPAGE_IMAGES.aboutTherapySession}
+                      alt="Therapist listening to a patient during a counseling session"
+                      wrapperClassName="app-image--fill mindreach-about-image-card__media"
+                      className="mindreach-about-image-card__image"
+                    />
                   </div>
                 </div>
               </div>
@@ -470,64 +491,25 @@ function HomeThreePage() {
         {/* Counter Care Section Start */}
         <section className="care-counter3 cmn-bg fix section-padding">
           <div className="container">
-            <div className="care-counter-wrap3">
-              <div className="row g-3 justify-content-center">
-                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                  <div className="counter-items3">
-                    <div className="content3">
-                      <h2><span className="count">95</span>%</h2>
-                      <p>Secure Virtual Care</p>
-                    </div>
-                    <div className="icon">
-                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
-                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.5s">
-                  <div className="counter-items3">
-                    <div className="content3">
-                      <h2><span className="count">90</span>%</h2>
-                      <p>Scheduling Convenience</p>
-                    </div>
-                    <div className="icon">
-                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
-                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.6s">
-                  <div className="counter-items3">
-                    <div className="content3">
-                      <h2><span className="count">24</span>/7</h2>
-                      <p>Support Access</p>
-                    </div>
-                    <div className="icon">
-                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
-                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
-                <div className="col-lg-3 col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.7s">
-                  <div className="counter-items3">
-                    <div className="content3">
-                      <h2><span className="count">1</span>k+</h2>
-                      <p>Patients Supported</p>
-                    </div>
-                    <div className="icon">
-                      <svg width={11} height={107} viewBox="0 0 11 107" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <line x1="0.5" y1="0.164063" x2="0.499995" y2="106.164" stroke="#CCCCCC" />
-                        <line x1="10.5" y1="0.164063" x2="10.5" y2="106.164" stroke="#CCCCCC" />
-                      </svg>
-                    </div>
-                  </div>
-                </div>
+            <div className="care-counter-wrap3 mindreach-care-stats">
+              <div className="mindreach-care-stats__grid">
+                {CARE_COUNTERS.map(({ value, suffix, title, detail, icon: Icon }, index) => (
+                  <article
+                    key={title}
+                    className="mindreach-care-stat wow fadeIn"
+                    data-wow-delay={`${0.4 + (index * 0.1)}s`}
+                  >
+                    <span className="mindreach-care-stat__icon" aria-hidden="true">
+                      <Icon />
+                    </span>
+                    <h2 className="mindreach-care-stat__value">
+                      <span className="count">{value}</span>
+                      <span className="mindreach-care-stat__suffix">{suffix}</span>
+                    </h2>
+                    <h3 className="mindreach-care-stat__title">{title}</h3>
+                    <p className="mindreach-care-stat__detail">{detail}</p>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
