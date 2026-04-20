@@ -18,6 +18,7 @@ function SiteHeader() {
   const currentPath = normalizePathname(location.pathname)
   const isFloatingHeader = currentPath === '/' || currentPath === '/home-3'
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [openMobileSubmenus, setOpenMobileSubmenus] = useState({})
   const [isSticky, setIsSticky] = useState(false)
 
   useEffect(() => {
@@ -59,6 +60,18 @@ function SiteHeader() {
     }
   }, [isMobileMenuOpen])
 
+  useEffect(() => {
+    setIsMobileMenuOpen(false)
+    setOpenMobileSubmenus({})
+  }, [location.pathname])
+
+  const toggleMobileSubmenu = (href) => {
+    setOpenMobileSubmenus((currentValue) => ({
+      ...currentValue,
+      [href]: !currentValue[href],
+    }))
+  }
+
   return (
     <>
       <header
@@ -81,9 +94,13 @@ function SiteHeader() {
                       <ul>
                         {SITE_NAV_ITEMS.map((item) => {
                           const isActive = isItemActive(currentPath, item.matchPaths, item.matchPrefixes)
+                          const hasChildren = Array.isArray(item.children) && item.children.length > 0
 
                           return (
-                            <li key={item.href} className={isActive ? 'active' : undefined}>
+                            <li
+                              key={item.href}
+                              className={`${hasChildren ? 'has-dropdown site-header__nav-item--has-children' : ''}${isActive ? ' active' : ''}`.trim() || undefined}
+                            >
                               <a
                                 href={item.href}
                                 aria-disabled={item.disabledInHeader ? 'true' : undefined}
@@ -92,7 +109,27 @@ function SiteHeader() {
                                 onClick={item.disabledInHeader ? (event) => event.preventDefault() : undefined}
                               >
                                 {item.label}
+                                {hasChildren ? <i className="fas fa-angle-down" aria-hidden="true" /> : null}
                               </a>
+                              {hasChildren ? (
+                                <ul className="submenu site-header__submenu">
+                                  {item.children.map((child) => {
+                                    const isChildActive = isItemActive(
+                                      currentPath,
+                                      child.matchPaths ?? [child.href],
+                                      child.matchPrefixes ?? [],
+                                    )
+
+                                    return (
+                                      <li key={child.href} className={isChildActive ? 'active' : undefined}>
+                                        <a href={child.href} aria-current={isChildActive ? 'page' : undefined}>
+                                          {child.label}
+                                        </a>
+                                      </li>
+                                    )
+                                  })}
+                                </ul>
+                              ) : null}
                             </li>
                           )
                         })}
@@ -149,25 +186,67 @@ function SiteHeader() {
             <ul>
               {SITE_NAV_ITEMS.map((item) => {
                 const isActive = isItemActive(currentPath, item.matchPaths, item.matchPrefixes)
+                const hasChildren = Array.isArray(item.children) && item.children.length > 0
+                const mobileSubmenuId = `mobile-submenu-${item.href.replace(/[^a-z0-9]+/gi, '-').replace(/^-|-$/g, '')}`
+                const isSubmenuOpen = openMobileSubmenus[item.href] ?? isActive
 
                 return (
-                  <li key={`mobile-${item.href}`} className={isActive ? 'active' : undefined}>
-                    <a
-                      href={item.href}
-                      aria-disabled={item.disabledInHeader ? 'true' : undefined}
-                      aria-current={isActive ? 'page' : undefined}
-                      tabIndex={item.disabledInHeader ? -1 : undefined}
-                      onClick={(event) => {
-                        if (item.disabledInHeader) {
-                          event.preventDefault()
-                          return
-                        }
+                  <li
+                    key={`mobile-${item.href}`}
+                    className={`${hasChildren ? 'site-mobile-drawer__item--has-children' : ''}${isActive ? ' active' : ''}`.trim() || undefined}
+                  >
+                    <div className="site-mobile-drawer__item-row">
+                      <a
+                        href={item.href}
+                        aria-disabled={item.disabledInHeader ? 'true' : undefined}
+                        aria-current={isActive ? 'page' : undefined}
+                        tabIndex={item.disabledInHeader ? -1 : undefined}
+                        onClick={(event) => {
+                          if (item.disabledInHeader) {
+                            event.preventDefault()
+                            return
+                          }
 
-                        setIsMobileMenuOpen(false)
-                      }}
-                    >
-                      {item.label}
-                    </a>
+                          setIsMobileMenuOpen(false)
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                      {hasChildren ? (
+                        <button
+                          type="button"
+                          className={`site-mobile-drawer__submenu-toggle${isSubmenuOpen ? ' is-open' : ''}`}
+                          aria-label={`${isSubmenuOpen ? 'Collapse' : 'Expand'} ${item.label} menu`}
+                          aria-controls={mobileSubmenuId}
+                          aria-expanded={isSubmenuOpen}
+                          onClick={() => toggleMobileSubmenu(item.href)}
+                        >
+                          <i className="fas fa-angle-down" aria-hidden="true" />
+                        </button>
+                      ) : null}
+                    </div>
+                    {hasChildren ? (
+                      <ul
+                        id={mobileSubmenuId}
+                        className={`site-mobile-drawer__submenu${isSubmenuOpen ? ' is-open' : ''}`}
+                      >
+                        {item.children.map((child) => {
+                          const isChildActive = isItemActive(
+                            currentPath,
+                            child.matchPaths ?? [child.href],
+                            child.matchPrefixes ?? [],
+                          )
+
+                          return (
+                            <li key={`mobile-${child.href}`} className={isChildActive ? 'active' : undefined}>
+                              <a href={child.href} aria-current={isChildActive ? 'page' : undefined}>
+                                {child.label}
+                              </a>
+                            </li>
+                          )
+                        })}
+                      </ul>
+                    ) : null}
                   </li>
                 )
               })}

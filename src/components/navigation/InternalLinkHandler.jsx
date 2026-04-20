@@ -9,6 +9,7 @@ const ALLOWED_PATH_PREFIXES = [
   '/contact',
   '/doctor',
   '/doctor-details',
+  '/insurances',
   '/service',
   '/service-details',
 ]

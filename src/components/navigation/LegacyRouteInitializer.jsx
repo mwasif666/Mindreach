@@ -63,6 +63,20 @@ const SWIPER_CONFIGS = [
     },
   },
   {
+    selector: '.homepage-services__slider',
+    options: {
+      speed: 500,
+      loop: false,
+      watchOverflow: true,
+      breakpoints: {
+        1200: { slidesPerView: 3, spaceBetween: 24, allowTouchMove: false },
+        768: { slidesPerView: 2, spaceBetween: 20, allowTouchMove: true },
+        0: { slidesPerView: 1.08, spaceBetween: 16, allowTouchMove: true },
+      },
+      usePagination: true,
+    },
+  },
+  {
     selector: '.testimonial-slider',
     options: {
       spaceBetween: 30,
