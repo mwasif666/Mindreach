@@ -28,7 +28,7 @@ const HOMEPAGE_IMAGES = {
   testimonialThree: '/assets/img/homepage-images/unsplash-portrait-3.jpg',
 }
 const SHOW_HOMEPAGE_PRICING = false
-const TEAM_MEMBERS = DOCTORS.slice(0, 3)
+const TEAM_MEMBERS = DOCTORS.slice(0, 4)
 const HOMEPAGE_TICKER_ITEMS = [
   'A safe space to speak, heal, and grow',
   'Take the first step toward feeling better',
