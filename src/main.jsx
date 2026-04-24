@@ -3,6 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import 'antd/dist/reset.css'
 import App from './App.jsx'
 import './styles/overrides.css'
+import './styles/responsive.css'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>

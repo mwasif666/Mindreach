@@ -9,9 +9,13 @@ const ALLOWED_PATH_PREFIXES = [
   '/contact',
   '/doctor',
   '/doctor-details',
+  '/good-faith-estimate-notice',
   '/insurances',
+  '/notice-of-privacy-practices',
+  '/privacy-policy',
   '/service',
   '/service-details',
+  '/terms-and-conditions',
 ]
 
 function isPrimaryNavigationClick(event) {

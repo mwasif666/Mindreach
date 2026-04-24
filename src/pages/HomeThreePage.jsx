@@ -201,8 +201,8 @@ function HomeThreePage() {
                   </div>
                 </div>
               </div>
-              <div className="col-xxl-5 col-xl-5 col-md-7">
-                <div className="banner-thumb-items">
+              <div className="col-xxl-5 col-xl-5 col-md-7 home-three-hero__media-col">
+                <div className="banner-thumb-items home-three-hero__media">
                   <div className="thumb-shape-1">
                     <div className="hero-theme-backdrop" aria-hidden="true" />
                   </div>

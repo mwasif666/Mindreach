@@ -1,9 +1,10 @@
 import { FOOTER_CONTACT_ITEMS } from '../../data/contactDetails'
+import { LEGAL_LINKS } from '../../data/legalPages'
 import SITE_NAV_ITEMS from '../../data/navigationLinks'
 
 const FOOTER_SOCIAL_ICONS = ['fab fa-facebook-f', 'fa-brands fa-linkedin-in', 'fab fa-instagram', 'fa-brands fa-x']
-const FOOTER_PRIMARY_NAV_ITEMS = SITE_NAV_ITEMS.slice(0, 3)
-const FOOTER_SECONDARY_NAV_ITEMS = SITE_NAV_ITEMS.slice(3)
+const FOOTER_PRIMARY_NAV_ITEMS = SITE_NAV_ITEMS
+const FOOTER_SECONDARY_NAV_ITEMS = LEGAL_LINKS
 
 function SiteFooter() {
   return (
