@@ -307,7 +307,7 @@ function AboutPage() {
                 </h2>
               </div>
 
-              <a href="/doctor" className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
+              <a href="/doctor" className="common-btn mindreach-provider-outline-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100">
                 View All Providers
                 <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
               </a>

@@ -3,12 +3,25 @@ import { Modal } from 'antd'
 import MENTAL_HEALTH_SERVICES from '../../data/mentalHealthServices'
 import useContactForm from '../../hooks/useContactForm'
 
-const CALENDLY_BASE_URL = 'https://calendly.com/mwasif66625426'
+const CALENDLY_BASE_URL = 'https://calendly.com/mwasif66625426/30min'
 const APPOINTMENT_SERVICE_OPTIONS = Array.from(
   new Set(MENTAL_HEALTH_SERVICES.map((service) => service.title)),
 )
 
-function buildCalendlyUrl(doctorName) {
+function buildCalendlyPrefillAnswer(bookingDetails, doctorName) {
+  if (!bookingDetails) {
+    return ''
+  }
+
+  return [
+    bookingDetails.contact ? `Contact: ${bookingDetails.contact}` : '',
+    bookingDetails.service ? `Service: ${bookingDetails.service}` : '',
+    bookingDetails.insurance_image?.name ? `Insurance image: ${bookingDetails.insurance_image.name}` : '',
+    doctorName ? `Provider: ${doctorName}` : '',
+  ].filter(Boolean).join('\n')
+}
+
+function buildCalendlyUrl(doctorName, bookingDetails) {
   const url = new URL(CALENDLY_BASE_URL)
   url.searchParams.set('hide_landing_page_details', '1')
   url.searchParams.set('hide_gdpr_banner', '1')
@@ -17,6 +30,20 @@ function buildCalendlyUrl(doctorName) {
 
   if (doctorName) {
     url.searchParams.set('utm_content', doctorName)
+  }
+
+  if (bookingDetails?.name) {
+    url.searchParams.set('name', bookingDetails.name)
+  }
+
+  if (bookingDetails?.email) {
+    url.searchParams.set('email', bookingDetails.email)
+  }
+
+  const prefillAnswer = buildCalendlyPrefillAnswer(bookingDetails, doctorName)
+
+  if (prefillAnswer) {
+    url.searchParams.set('a1', prefillAnswer)
   }
 
   return url.toString()
@@ -52,10 +79,9 @@ function getBookingSubmitErrorMessage(error) {
 
 function CalendlyInlineModal({ open, onClose, doctorName }) {
   const [currentStep, setCurrentStep] = useState('form')
-  const [didSaveContact, setDidSaveContact] = useState(false)
-  const [canContinueAfterError, setCanContinueAfterError] = useState(false)
+  const [bookingDetails, setBookingDetails] = useState(null)
 
-  const calendlyUrl = buildCalendlyUrl(doctorName)
+  const calendlyUrl = buildCalendlyUrl(doctorName, bookingDetails)
   const isCalendarStep = currentStep === 'calendar'
   const {
     formRef,
@@ -73,21 +99,19 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
     errorMessage:
       'We could not save your details right now. You can try again or continue to the calendar.',
     getErrorMessage: getBookingSubmitErrorMessage,
-    onSuccess: () => {
-      setDidSaveContact(true)
-      setCanContinueAfterError(false)
+    showErrorToast: false,
+    onSuccess: ({ values }) => {
+      setBookingDetails(values)
       setCurrentStep('calendar')
     },
-    onError: () => {
-      setDidSaveContact(false)
-      setCanContinueAfterError(true)
+    onError: (error, { values } = {}) => {
+      setBookingDetails(values ?? null)
+      setCurrentStep('calendar')
     },
   })
 
   const heroDescription = isCalendarStep
-    ? didSaveContact
-      ? 'Select an available time below to continue your booking.'
-      : 'We could not email the form details just now, but you can still continue to the booking calendar.'
+    ? 'Select an available time below to continue your booking.'
     : 'Complete a few quick details first, then the booking calendar will open.'
 
   return (
@@ -120,12 +144,6 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
 
         {isCalendarStep ? (
           <>
-            {!didSaveContact ? (
-              <div className="mindreach-calendly-modal__notice">
-                The intake form could not be emailed, but the booking calendar is still available below.
-              </div>
-            ) : null}
-
             <div className="mindreach-calendly-modal__frame">
               <iframe
                 key={calendlyUrl}
@@ -202,6 +220,16 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                     ))}
                   </select>
                 </div>
+
+                <div className="mindreach-booking-form__field mindreach-booking-form__field--wide">
+                  <label htmlFor="booking-insurance-image">Insurance Image</label>
+                  <input
+                    id="booking-insurance-image"
+                    name="insurance_image"
+                    type="file"
+                    accept="image/*"
+                  />
+                </div>
               </div>
 
               <div className="mindreach-booking-form__context">
@@ -219,15 +247,6 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                   <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
                 </button>
 
-                {canContinueAfterError ? (
-                  <button
-                    type="button"
-                    className="mindreach-booking-form__secondary"
-                    onClick={() => setCurrentStep('calendar')}
-                  >
-                    Skip this step and open calendar
-                  </button>
-                ) : null}
               </div>
             </form>
           </div>

@@ -488,7 +488,7 @@ function HomeThreePage() {
             <DoctorCardGrid doctors={TEAM_MEMBERS} />
             <div className="text-center mt-5">
               <HomepageIconButton
-                className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
+                className="common-btn mindreach-provider-outline-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                 label="View All Providers"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
                 href="/doctor"

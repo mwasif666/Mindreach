@@ -10,6 +10,7 @@ function useContactForm(options = {}) {
     successMessage = "Form submitted successfully.",
     errorMessage = "Submission failed. Please try again.",
     getErrorMessage,
+    showErrorToast = true,
     onSuccess,
     onError,
   } = options;
@@ -52,9 +53,10 @@ function useContactForm(options = {}) {
     }
 
     setIsSubmitting(true);
+    const formData = new FormData(formRef.current);
+    const values = Object.fromEntries(formData.entries());
 
     try {
-      const formData = new FormData(formRef.current);
       const nextSubject =
         typeof buildSubject === "function"
           ? buildSubject(formData)
@@ -82,8 +84,6 @@ function useContactForm(options = {}) {
         throw submissionError;
       }
 
-      const values = Object.fromEntries(formData.entries());
-
       formRef.current.reset();
       showToast(successMessage, "success");
       onSuccess?.({ response: responsePayload, values });
@@ -93,8 +93,10 @@ function useContactForm(options = {}) {
           ? getErrorMessage(error)
           : errorMessage;
 
-      showToast(nextErrorMessage, "error");
-      onError?.(error);
+      if (showErrorToast) {
+        showToast(nextErrorMessage, "error");
+      }
+      onError?.(error, { values });
     } finally {
       setIsSubmitting(false);
     }
