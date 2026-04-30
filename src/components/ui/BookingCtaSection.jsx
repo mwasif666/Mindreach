@@ -18,7 +18,7 @@ function BookingCtaSection({
   return (
     <section className={sectionClassName}>
       <div className="container">
-        <div className="row g-4 align-items-center">
+        <div className="row g-4 align-items-stretch">
           <div className="col-lg-6 order-lg-0 order-1">
             <div className="apoentment-thumb">
               <AppImage

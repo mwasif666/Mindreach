@@ -28,6 +28,7 @@ export const routeConfig = [
   { path: '/service-details/:serviceId', element: <ServiceDetailsPage /> },
   { path: '/blog', element: <BlogPage /> },
   { path: '/blog-details', element: <BlogDetailsPage /> },
+  { path: '/blog-details/:blogId', element: <BlogDetailsPage /> },
   { path: '/book-appointment', element: <BookAppointmentPage /> },
   { path: '/doctor', element: <DoctorPage /> },
   { path: '/doctor-details', element: <DoctorDetailsPage /> },

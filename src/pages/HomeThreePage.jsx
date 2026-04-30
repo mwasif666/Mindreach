@@ -12,6 +12,7 @@ import DoctorCardGrid from "../components/doctors/DoctorCardGrid";
 import SiteFooter from "../components/layout/SiteFooter";
 import AppImage from "../components/ui/AppImage";
 import InsuranceLogoMark from "../components/ui/InsuranceLogoMark";
+import BLOGS from "../data/blogs";
 import DOCTORS from "../data/doctors";
 import INSURANCE_LOGOS from "../data/insuranceLogos";
 import MENTAL_HEALTH_SERVICES from "../data/mentalHealthServices";
@@ -1478,135 +1479,52 @@ function HomeThreePage() {
               </h2>
             </div>
             <div className="row g-4">
-              <div
-                className="col-lg-4 col-md-6 wow fadeInUp"
-                data-wow-delay="0.3s"
-              >
-                <div className="blog-items3">
-                  <div className="thumb rounded-4 position-relative mb-3">
-                    <AppImage
-                      src={HOMEPAGE_IMAGES.resourceOne}
-                      alt="img"
-                      wrapperClassName="app-image--fill"
-                      className="rounded-4"
-                    />
-                    <div className="d-flex gap-1 align-items-center blog-date">
-                      <div className="icon d-center">
-                        <i className="fa-solid fa-calendar-days" />
-                      </div>
-                      <span className="cont">23 Dec 2023</span>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <h3 className="mb-3">
-                      <span className="black">
-                        How virtual therapy can help with anxiety and overwhelm
-                      </span>
-                    </h3>
-                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-solid fa-user n900-clr" />
-                        Admin
-                      </div>
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-regular fa-folder-open n900-clr" />
-                        Resource
+              {BLOGS.map((blog, i) => (
+                <div
+                  key={blog.id}
+                  className="col-lg-4 col-md-6 wow fadeInUp"
+                  data-wow-delay={`${0.3 + i * 0.2}s`}
+                >
+                  <div className="blog-items3">
+                    <div className="thumb rounded-4 position-relative mb-3">
+                      <AppImage
+                        src={blog.image}
+                        alt={blog.imageAlt}
+                        wrapperClassName="app-image--fill"
+                        className="rounded-4"
+                      />
+                      <div className="d-flex gap-1 align-items-center blog-date">
+                        <div className="icon d-center">
+                          <i className="fa-solid fa-calendar-days" />
+                        </div>
+                        <span className="cont">{blog.date}</span>
                       </div>
                     </div>
-                    <HomepageIconButton
-                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100"
-                      label="Read More"
-                      iconSrc="/assets/img/icon/arrow-right-black.png"
-                    />
+                    <div className="content">
+                      <h3 className="mb-3">
+                        <a href={blog.detailsHref} className="black">{blog.title}</a>
+                      </h3>
+                      <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
+                        <div className="d-flex align-items-center gap-1 fs-eight pra">
+                          <i className="fa-solid fa-user n900-clr" />
+                          {blog.author}
+                        </div>
+                        <div className="d-flex align-items-center gap-1 fs-eight pra">
+                          <i className="fa-regular fa-folder-open n900-clr" />
+                          {blog.category}
+                        </div>
+                      </div>
+                      <a
+                        href={blog.detailsHref}
+                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100"
+                      >
+                        Read More
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow fadeInUp"
-                data-wow-delay="0.5s"
-              >
-                <div className="blog-items3">
-                  <div className="thumb rounded-4 position-relative mb-3">
-                    <AppImage
-                      src={HOMEPAGE_IMAGES.resourceTwo}
-                      alt="img"
-                      wrapperClassName="app-image--fill"
-                      className="rounded-4"
-                    />
-                    <div className="d-flex gap-1 align-items-center blog-date">
-                      <div className="icon d-center">
-                        <i className="fa-solid fa-calendar-days" />
-                      </div>
-                      <span className="cont">23 Dec 2023</span>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <h3 className="mb-3">
-                      <span className="black">
-                        What to expect from your first online psychiatry visit
-                      </span>
-                    </h3>
-                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-solid fa-user n900-clr" />
-                        Admin
-                      </div>
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-regular fa-folder-open n900-clr" />
-                        Resource
-                      </div>
-                    </div>
-                    <HomepageIconButton
-                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100"
-                      label="Read More"
-                      iconSrc="/assets/img/icon/arrow-right-black.png"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div
-                className="col-lg-4 col-md-6 wow fadeInUp"
-                data-wow-delay="0.7s"
-              >
-                <div className="blog-items3">
-                  <div className="thumb rounded-4 position-relative mb-3">
-                    <AppImage
-                      src={HOMEPAGE_IMAGES.resourceThree}
-                      alt="img"
-                      wrapperClassName="app-image--fill"
-                      className="rounded-4"
-                    />
-                    <div className="d-flex gap-1 align-items-center blog-date">
-                      <div className="icon d-center">
-                        <i className="fa-solid fa-calendar-days" />
-                      </div>
-                      <span className="cont">23 Dec 2023</span>
-                    </div>
-                  </div>
-                  <div className="content">
-                    <h3 className="mb-3">
-                      <span className="black">
-                        5 signs it may be time to ask for support
-                      </span>
-                    </h3>
-                    <div className="admin-area d-flex align-items-center gap-xl-4 gap-3 mb-xl-3 mb-3 border-bottom">
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-solid fa-user n900-clr" />
-                        Admin
-                      </div>
-                      <div className="d-flex align-items-center gap-1 fs-eight pra">
-                        <i className="fa-regular fa-folder-open n900-clr" />
-                        Resource
-                      </div>
-                    </div>
-                    <HomepageIconButton
-                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden bg-color rounded100"
-                      label="Read More"
-                      iconSrc="/assets/img/icon/arrow-right-black.png"
-                    />
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

@@ -16,7 +16,8 @@ function buildCalendlyPrefillAnswer(bookingDetails, doctorName) {
   return [
     bookingDetails.contact ? `Contact: ${bookingDetails.contact}` : '',
     bookingDetails.service ? `Service: ${bookingDetails.service}` : '',
-    bookingDetails.insurance_image?.name ? `Insurance image: ${bookingDetails.insurance_image.name}` : '',
+    bookingDetails.insurance_front_image?.name ? `Insurance front image: ${bookingDetails.insurance_front_image.name}` : '',
+    bookingDetails.insurance_back_image?.name ? `Insurance back image: ${bookingDetails.insurance_back_image.name}` : '',
     doctorName ? `Provider: ${doctorName}` : '',
   ].filter(Boolean).join('\n')
 }
@@ -71,10 +72,10 @@ function getBookingSubmitErrorMessage(error) {
     || backendMessage.includes('authenticate on SMTP server')
     || backendMessage.includes('Incorrect authentication data')
   ) {
-    return 'Your details could not be emailed right now because the booking server email is temporarily unavailable. You can continue to the calendar and we can fix the email delivery separately.'
+    return 'Your details could not be emailed right now because the booking server is rejecting SMTP authentication. Please fix the API email settings and try again.'
   }
 
-  return 'We could not save your details right now. You can try again or continue to the calendar.'
+  return 'We could not email your details right now. Please try again after the booking email API is fixed.'
 }
 
 function CalendlyInlineModal({ open, onClose, doctorName }) {
@@ -97,15 +98,11 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
     ),
     successMessage: 'Details saved. Please choose your appointment time.',
     errorMessage:
-      'We could not save your details right now. You can try again or continue to the calendar.',
+      'We could not email your details right now. Please try again after the booking email API is fixed.',
     getErrorMessage: getBookingSubmitErrorMessage,
-    showErrorToast: false,
+    showErrorToast: true,
     onSuccess: ({ values }) => {
       setBookingDetails(values)
-      setCurrentStep('calendar')
-    },
-    onError: (error, { values } = {}) => {
-      setBookingDetails(values ?? null)
       setCurrentStep('calendar')
     },
   })
@@ -221,11 +218,21 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                   </select>
                 </div>
 
-                <div className="mindreach-booking-form__field mindreach-booking-form__field--wide">
-                  <label htmlFor="booking-insurance-image">Insurance Image</label>
+                <div className="mindreach-booking-form__field">
+                  <label htmlFor="booking-insurance-front-image">Insurance Front Image</label>
                   <input
-                    id="booking-insurance-image"
-                    name="insurance_image"
+                    id="booking-insurance-front-image"
+                    name="insurance_front_image"
+                    type="file"
+                    accept="image/*"
+                  />
+                </div>
+
+                <div className="mindreach-booking-form__field">
+                  <label htmlFor="booking-insurance-back-image">Insurance Back Image</label>
+                  <input
+                    id="booking-insurance-back-image"
+                    name="insurance_back_image"
                     type="file"
                     accept="image/*"
                   />
@@ -243,7 +250,7 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                   className="common-btn box-style p2-bg text-nowrap d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold white overflow-hidden rounded100 mindreach-booking-form__submit"
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? 'Opening Calendar...' : 'Next: Choose a Time'}
+                  {isSubmitting ? 'Sending Details...' : 'Next: Choose a Time'}
                   <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
                 </button>
 

@@ -100,7 +100,7 @@ function ContactPage() {
                           className="common-btn box-style p2-bg w-100 text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white overflow-hidden rounded100 wow fadeInRight"
                           data-wow-delay="0.8s"
                         >
-                          Book An Appointment
+                          Submit
                           <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
                         </button>
                       </div>

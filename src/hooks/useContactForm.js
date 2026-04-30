@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 
 export const CONTACT_FORM_ACTION =
   "https://api.rootsbmd.com/public/SaveContactForm";
-export const CONTACT_FORM_EMAIL_TO = "ahsan@rootsbmd.com";
+export const CONTACT_FORM_EMAIL_TO = "mwasif6662@gmail.com";
 
 function useContactForm(options = {}) {
   const {

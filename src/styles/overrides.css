@@ -134,6 +134,33 @@
   visibility: hidden;
 }
 
+.blog-section2 .blog-items3 .thumb {
+  width: 100%;
+  height: 300px;
+  border-radius: 20px;
+}
+
+.blog-section2 .blog-items3 .thumb > img,
+.blog-section2 .blog-items3 .thumb .app-image,
+.blog-section2 .blog-items3 .thumb .app-image > img {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center;
+}
+
+.blog-details-right .details-common .tags li span {
+  display: inline-block;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  color: #666;
+  font-size: 14px;
+  font-weight: 300;
+  border-radius: 100px;
+  cursor: default;
+}
+
 /*
  * Limit navigation to Home, Services, and Portfolio while keeping
  * existing section layouts intact on legacy template pages.
@@ -1642,7 +1669,8 @@ header#header-sticky {
 
 .appoentment-section .apoentment-thumb {
   width: 100%;
-  aspect-ratio: 810 / 772;
+  height: 100%;
+  min-height: 420px;
   overflow: hidden;
 }
 
@@ -1652,7 +1680,7 @@ header#header-sticky {
   height: 100%;
   max-width: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: top;
 }
 
 .service-details-section .service-details-wraping {

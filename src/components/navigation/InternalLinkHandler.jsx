@@ -5,6 +5,8 @@ import { isSpecialLink, normalizePathname } from '../../utils/pathname'
 const ALLOWED_PATH_PREFIXES = [
   '/',
   '/about',
+  '/blog',
+  '/blog-details',
   '/book-appointment',
   '/contact',
   '/doctor',
