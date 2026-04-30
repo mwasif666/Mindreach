@@ -15,22 +15,6 @@ function ServiceDetailsPage() {
   }
 
   const pageTitle = `${service.title} | MindReach`
-  const clinicalCards = [
-    {
-      id: 'diagnosis',
-      iconClassName: 'fa-solid fa-file-waveform',
-      label: 'Assessment',
-      title: 'Diagnosis',
-      text: service.diagnosis,
-    },
-    {
-      id: 'treatment-options',
-      iconClassName: 'fa-solid fa-notes-medical',
-      label: 'Care Plan',
-      title: 'Treatment Options',
-      text: service.treatment,
-    },
-  ]
 
   return (
     <PageLayout title={pageTitle} bodyClass={BODY_CLASS}>
@@ -214,78 +198,38 @@ function ServiceDetailsPage() {
                     </div>
                     <div className="mindreach-service-detail__copy">
                       <h4 className="black mb-3">{service.aboutTitle}</h4>
-                      <p className="pra">{service.aboutText}</p>
+                      <p className="pra mb-4">{service.aboutText}</p>
+                      <a
+                        href="/contact"
+                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fw-semibold black overflow-hidden p1-bg rounded100 mb-2"
+                      >
+                        Request a Call Back
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                    </div>
+                    <div className="mindreach-service-detail__copy mt-4">
+                      <h4 className="black mb-3">Diagnosis</h4>
+                      <p className="pra">{service.diagnosis}</p>
                     </div>
                     <div className="mindreach-service-detail__copy">
-                      <h4 className="black mb-3">How MindReach Helps</h4>
-                      <p className="pra">{service.supportApproach}</p>
+                      <h4 className="black mb-3">Treatment Options</h4>
+                      <p className="pra mb-0">{service.treatment}</p>
                     </div>
-                    <div className="row g-4">
-                      <div className="col-md-6">
-                        <div className="service-dorp-out mindreach-service-detail__info-card">
-                          <h5 className="black mb-3">Common Symptoms</h5>
-                          <ul className="mindreach-service-detail__list">
-                            {service.symptoms.map((item) => (
-                              <li key={`${service.id}-${item}`}>
-                                <i className="fa-solid fa-angles-right" />
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="service-dorp-out mindreach-service-detail__info-card">
-                          <h5 className="black mb-3">Common Causes</h5>
-                          <ul className="mindreach-service-detail__list">
-                            {service.causes.map((item) => (
-                              <li key={`${service.id}-cause-${item}`}>
-                                <i className="fa-solid fa-angles-right" />
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="service-dorp-out mindreach-service-detail__info-card">
-                          <h5 className="black mb-3">What Treatment May Include</h5>
-                          <ul className="mindreach-service-detail__list">
-                            {service.careIncludes.map((item) => (
-                              <li key={`${service.id}-care-${item}`}>
-                                <i className="fa-solid fa-angles-right" />
-                                <span>{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="col-md-6">
-                        <div className="service-dorp-out mindreach-service-detail__info-card">
-                          <h5 className="black mb-3">What To Expect</h5>
-                          <p className="pra mb-0">{service.whatToExpect}</p>
-                        </div>
-                      </div>
+                    <div className="mindreach-service-detail__bottom-cta text-center mt-5 pt-2">
+                      <p className="pra mb-3">{service.bookingText}</p>
+                      <a
+                        href="/contact"
+                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                      >
+                        Book Appointment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
                     </div>
                   </article>
                 </div>
               </div>
               <div className="col-lg-4">
                 <div className="blog-details-right mindreach-service-sidebar">
-                  <div className="mindreach-service-sidebar__clinical-stack">
-                    {clinicalCards.map((card) => (
-                      <div key={card.id} className="mindreach-service-detail__clinical-card">
-                        <div className="mindreach-service-detail__clinical-top">
-                          <span className="mindreach-service-detail__clinical-icon" aria-hidden="true">
-                            <i className={card.iconClassName} />
-                          </span>
-                          <span className="mindreach-service-detail__clinical-label">{card.label}</span>
-                        </div>
-                        <h4 className="black mb-3">{card.title}</h4>
-                        <p className="pra mb-0">{card.text}</p>
-                      </div>
-                    ))}
-                  </div>
                   <div className="mindreach-service-detail__cta mindreach-service-detail__cta--sidebar">
                     <h4 className="black mb-0">Book Appointment</h4>
                     <p className="pra mb-0">{service.bookingText}</p>
@@ -311,6 +255,28 @@ function ServiceDetailsPage() {
                               <i className="fa-solid fa-angles-right p2-clr" /> {item.title}
                             </span>
                           </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="service-dorp-out mindreach-service-detail__info-card mt-4">
+                    <h5 className="black mb-3">Common Symptoms</h5>
+                    <ul className="mindreach-service-detail__list">
+                      {service.symptoms.map((item) => (
+                        <li key={`${service.id}-sym-${item}`}>
+                          <i className="fa-solid fa-angles-right" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="service-dorp-out mindreach-service-detail__info-card mt-4">
+                    <h5 className="black mb-3">Common Causes</h5>
+                    <ul className="mindreach-service-detail__list">
+                      {service.causes.map((item) => (
+                        <li key={`${service.id}-cause-${item}`}>
+                          <i className="fa-solid fa-angles-right" />
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
