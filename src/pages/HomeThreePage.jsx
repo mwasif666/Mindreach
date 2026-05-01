@@ -400,47 +400,12 @@ function HomeThreePage() {
                         in a way that fits real life.
                       </p>
                     </div>
-                    <div className="progress-wrap">
-                      <div
-                        className="pro-items wow fadeInUp"
-                        data-wow-delay=".5s"
-                      >
-                        <div className="pro-head">
-                          <h4 className="title">
-                            Secure Virtual Care Experience
-                          </h4>
-                          <span className="point style">95%</span>
-                        </div>
-                        <div className="progress">
-                          <div
-                            className="progress-value"
-                            style={{ width: "95%" }}
-                          />
-                        </div>
-                      </div>
-                      <div
-                        className="pro-items wow fadeInUp"
-                        data-wow-delay=".7s"
-                      >
-                        <div className="pro-head">
-                          <h4 className="title">
-                            Scheduling &amp; Access Convenience
-                          </h4>
-                          <span className="point">90%</span>
-                        </div>
-                        <div className="progress">
-                          <div
-                            className="progress-value"
-                            style={{ width: "90%" }}
-                          />
-                        </div>
-                      </div>
-                    </div>
                     <div className="about-btn-inner mt-5">
                       <HomepageIconButton
                         className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                         label="Read More"
                         iconSrc="/assets/img/icon/arrow-right-black.png"
+                        href="/about"
                       />
                     </div>
                   </div>

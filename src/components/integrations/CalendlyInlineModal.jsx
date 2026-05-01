@@ -4,6 +4,7 @@ import MENTAL_HEALTH_SERVICES from '../../data/mentalHealthServices'
 import useContactForm from '../../hooks/useContactForm'
 
 const CALENDLY_BASE_URL = 'https://calendly.com/mwasif66625426/30min'
+const MAX_INSURANCE_IMAGE_BYTES = 1024 * 1024 * 1024
 const APPOINTMENT_SERVICE_OPTIONS = Array.from(
   new Set(MENTAL_HEALTH_SERVICES.map((service) => service.title)),
 )
@@ -63,7 +64,18 @@ function buildAppointmentSubject(doctorName, service) {
 
 function getBookingSubmitErrorMessage(error) {
   const backendMessage = error?.responsePayload?.message || error?.message || ''
+  const backendErrors = error?.responsePayload?.errors
   const responseStatus = error?.response?.status
+
+  if (backendErrors && typeof backendErrors === 'object') {
+    const firstError = Object.values(backendErrors)
+      .flat()
+      .find(Boolean)
+
+    if (firstError) {
+      return firstError
+    }
+  }
 
   if (
     responseStatus >= 500
@@ -81,6 +93,7 @@ function getBookingSubmitErrorMessage(error) {
 function CalendlyInlineModal({ open, onClose, doctorName }) {
   const [currentStep, setCurrentStep] = useState('form')
   const [bookingDetails, setBookingDetails] = useState(null)
+  const [fileSizeError, setFileSizeError] = useState('')
 
   const calendlyUrl = buildCalendlyUrl(doctorName, bookingDetails)
   const isCalendarStep = currentStep === 'calendar'
@@ -111,6 +124,18 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
     ? 'Select an available time below to continue your booking.'
     : 'Complete a few quick details first, then the booking calendar will open.'
 
+  const handleInsuranceImageChange = (event) => {
+    const file = event.target.files?.[0]
+
+    if (!file || file.size <= MAX_INSURANCE_IMAGE_BYTES) {
+      setFileSizeError('')
+      return
+    }
+
+    event.target.value = ''
+    setFileSizeError('Insurance image must be 1GB or smaller.')
+  }
+
   return (
     <Modal
       open={open}
@@ -136,6 +161,16 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
             aria-live="polite"
           >
             {toastMessage}
+          </div>
+        ) : null}
+
+        {fileSizeError ? (
+          <div
+            className="mindreach-calendly-modal__toast mindreach-calendly-modal__toast--error"
+            role="alert"
+            aria-live="polite"
+          >
+            {fileSizeError}
           </div>
         ) : null}
 
@@ -224,7 +259,8 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                     id="booking-insurance-front-image"
                     name="insurance_front_image"
                     type="file"
-                    accept="image/*"
+                    accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"
+                    onChange={handleInsuranceImageChange}
                   />
                 </div>
 
@@ -234,7 +270,8 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
                     id="booking-insurance-back-image"
                     name="insurance_back_image"
                     type="file"
-                    accept="image/*"
+                    accept=".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif"
+                    onChange={handleInsuranceImageChange}
                   />
                 </div>
               </div>

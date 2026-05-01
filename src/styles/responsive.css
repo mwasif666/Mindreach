@@ -57,32 +57,32 @@
 
 @media (max-width: 1199px) {
   .sponsor-text-slide {
-    padding: 16px 0 12px !important;
+    padding: 20px 0 16px !important;
   }
 
   .sponsor-text-slide .text-slide-item {
-    gap: 18px;
-    font-size: 44px;
+    gap: 22px;
+    font-size: 52px;
   }
 
   .sponsor-text-slide .text-slide-item .text-slide-icon {
-    font-size: 34px;
+    font-size: 40px;
   }
 }
 
 @media (max-width: 767px) {
   .sponsor-text-slide {
-    padding: 14px 0 10px !important;
+    padding: 18px 0 14px !important;
   }
 
   .sponsor-text-slide .text-slide-item {
-    gap: 14px;
-    font-size: 32px;
+    gap: 18px;
+    font-size: 38px;
     line-height: 1.2;
   }
 
   .sponsor-text-slide .text-slide-item .text-slide-icon {
-    font-size: 24px;
+    font-size: 30px;
   }
 }
 

@@ -572,7 +572,6 @@ footer
   object-position: center top;
 }
 
-
 .body-bg2 .blog-items3 .thumb {
   height: 300px;
   border-radius: 20px;
@@ -682,8 +681,6 @@ svg [stroke="#BEFF6B"] {
   object-position: center;
 }
 
-
-
 .mindreach-care-stats {
   padding: 1px;
   border-radius: 24px;
@@ -755,9 +752,6 @@ svg [stroke="#BEFF6B"] {
   line-height: 1.65;
 }
 
-
-
-
 .feature-wrapper3 .feature-inner-items2 .content h1,
 .feature-wrapper3 .feature-inner-items2 .content p,
 .feature-wrapper3 .feature-inner-items2 .content .common-btn {
@@ -797,7 +791,7 @@ svg [stroke="#BEFF6B"] {
 }
 
 .sponsor-text-slide {
-  padding: 18px 0 14px !important;
+  padding: 24px 0 20px !important;
   pointer-events: none;
   user-select: none;
 }
@@ -805,10 +799,10 @@ svg [stroke="#BEFF6B"] {
 .sponsor-text-slide .text-slide-item {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 26px;
   color: #fff !important;
-  font-size: 54px;
-  font-weight: 700;
+  font-size: 68px;
+  font-weight: 600;
   line-height: 1.1;
   white-space: nowrap;
 }
@@ -819,12 +813,10 @@ svg [stroke="#BEFF6B"] {
 
 .sponsor-text-slide .text-slide-item .text-slide-icon {
   color: #fff !important;
-  font-size: 38px;
+  font-size: 50px;
   line-height: 1;
   transform: translateY(1px);
 }
-
-
 
 .insurance-acceptance-section {
   --insurance-accent: var(--p1-clr);
@@ -933,11 +925,14 @@ svg [stroke="#BEFF6B"] {
 .insurance-acceptance-section .insurance-acceptance__nav-button:hover,
 .insurance-acceptance-section .insurance-acceptance__nav-button:hover svg,
 .insurance-acceptance-section .insurance-acceptance__nav-button:focus-visible,
-.insurance-acceptance-section .insurance-acceptance__nav-button:focus-visible svg {
+.insurance-acceptance-section
+  .insurance-acceptance__nav-button:focus-visible
+  svg {
   color: var(--insurance-accent-strong) !important;
 }
 
-.insurance-acceptance-section .insurance-acceptance__nav-button.swiper-button-disabled {
+.insurance-acceptance-section
+  .insurance-acceptance__nav-button.swiper-button-disabled {
   opacity: 0.35;
 }
 
@@ -955,15 +950,18 @@ svg [stroke="#BEFF6B"] {
   opacity: 1;
 }
 
-.insurance-acceptance__pagination.swiper-dot .swiper-pagination-bullet:not(:last-child) {
+.insurance-acceptance__pagination.swiper-dot
+  .swiper-pagination-bullet:not(:last-child) {
   margin-right: 14px;
 }
 
-.insurance-acceptance__pagination.swiper-dot .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.insurance-acceptance__pagination.swiper-dot
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background: var(--insurance-accent);
 }
 
-.insurance-acceptance__pagination.swiper-dot .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
+.insurance-acceptance__pagination.swiper-dot
+  .swiper-pagination-bullet.swiper-pagination-bullet-active::before {
   display: none;
 }
 
@@ -991,8 +989,6 @@ svg [stroke="#BEFF6B"] {
 .insurance-acceptance__cta.box-style.first-box:hover span {
   color: #fff !important;
 }
-
-
 
 .array-button .array-next,
 .array-button .array-next i,
@@ -1477,9 +1473,6 @@ footer.footer-section {
   display: none;
 }
 
-
-
-
 .services-section.main-style .row > div {
   display: flex;
 }
@@ -1619,25 +1612,51 @@ header#header-sticky {
   color: var(--p1-clr) !important;
 }
 
-.site-header .main-menu ul li.site-header__nav-item--has-children:focus-within > .site-header__submenu {
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children:focus-within
+  > .site-header__submenu {
   transform: translateY(1px);
   visibility: visible;
   opacity: 1;
 }
 
-.site-header .main-menu ul li.site-header__nav-item--has-children .site-header__submenu {
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu {
   width: 320px;
   max-height: min(70vh, 420px);
   overflow-y: auto;
 }
 
-.site-header .main-menu ul li.site-header__nav-item--has-children .site-header__submenu li a {
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li
+  a {
   white-space: normal;
   line-height: 1.45;
 }
 
-.site-header .main-menu ul li.site-header__nav-item--has-children .site-header__submenu li.active > a,
-.site-header .main-menu ul li.site-header__nav-item--has-children .site-header__submenu li > a[aria-current="page"] {
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li.active
+  > a,
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li
+  > a[aria-current="page"] {
   background: var(--p1-clr);
   color: #fff !important;
 }
@@ -1664,8 +1683,6 @@ header#header-sticky {
 .site-mobile-drawer__overlay {
   display: none;
 }
-
-
 
 .appoentment-section .apoentment-thumb {
   width: 100%;
@@ -1914,8 +1931,6 @@ header#header-sticky {
   font-size: 20px;
   color: #fff;
 }
-
-
 
 .team-name-link {
   color: var(--black);
@@ -2803,7 +2818,10 @@ header#header-sticky {
   background: rgba(255, 255, 255, 0.94);
   color: var(--black);
   font-size: 16px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .mindreach-booking-form__field input::placeholder {
@@ -2999,7 +3017,6 @@ header#header-sticky {
   object-position: center;
 }
 
-
 .insurance-directory-hero {
   position: relative;
   overflow: hidden;
@@ -3013,7 +3030,8 @@ header#header-sticky {
   inset: 0;
   background:
     linear-gradient(120deg, rgba(7, 51, 34, 0.9), rgba(34, 181, 115, 0.82)),
-    url("/assets/img/homepage-images/unsplash-feature-bg.jpg") center / cover no-repeat;
+    url("/assets/img/homepage-images/unsplash-feature-bg.jpg") center / cover
+      no-repeat;
 }
 
 .insurance-directory-hero .container {

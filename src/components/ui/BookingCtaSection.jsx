@@ -1,8 +1,6 @@
 import AppImage from './AppImage'
-import DOCTORS from '../../data/doctors'
-
-const DEFAULT_BOOKING_IMAGE = DOCTORS[0]?.featureImage ?? '/assets/img/homepage-images/unsplash-dentist-1.jpg'
-const DEFAULT_BOOKING_IMAGE_ALT = DOCTORS[0]?.featureImageAlt ?? 'MindReach provider during a clinical consultation'
+const DEFAULT_BOOKING_IMAGE = '/assets/img/appiontment/unsplash-mental-health-appointment.jpg'
+const DEFAULT_BOOKING_IMAGE_ALT = 'Therapist listening and taking notes during a mental health counseling session'
 
 function BookingCtaSection({
   sectionClassName = 'appoentment-section fix',
