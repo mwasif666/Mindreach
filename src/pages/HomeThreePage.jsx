@@ -164,17 +164,18 @@ function HomeThreePage() {
                     Mental Health Care
                   </span>
                   <h1 className="black wow fadeInUp" data-wow-delay="0.6s">
-                    We Provide
+                    Therapy Services
+                   
                     <br />
                     <span className="position-relative z-1 hero-highlight">
-                      Therapy Services
+                     & Psychiatry Support,
                       <img
                         src="/assets/img/element/title-badge1.png"
                         alt="img"
                         className="title-badge1 d-md-block d-none w-100"
                       />
                     </span>
-                    <br /> &amp; Psychiatry Support
+                    <br /> &amp; right where you are
                     <img
                       src="/assets/img/banner/icon3_1.svg"
                       alt="icon"
@@ -373,7 +374,7 @@ function HomeThreePage() {
                       >
                         Care That Meets You
                         <br />
-                        Where You Are
+                        Where You Are. 
                         <br />
                         <span className="position-relative z-1">
                           MindReach
@@ -640,7 +641,7 @@ function HomeThreePage() {
           </div>
         </section>
         {/* Latest Project Section Start */}
-        <section className="latest-project3 cmn-bg fix">
+        {/* <section className="latest-project3 cmn-bg fix">
           <div className="container">
             <div className="d-flex flex-sm-nowrap flex-wrap gap-2 align-items-end justify-content-between mb-60">
               <div className="section-title">
@@ -703,7 +704,7 @@ function HomeThreePage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Feature Section Start */}
         <section className="feature-section3 fix cmn-bg">
@@ -721,13 +722,13 @@ function HomeThreePage() {
                         Mind Reach makes therapy and psychiatry easier to access
                         with secure virtual sessions and evidence-based support.
                       </p>
-                      <div className="feature-btn-inner">
+                      {/* <div className="feature-btn-inner">
                         <HomepageIconButton
                           className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                           label="Read More"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
                         />
-                      </div>
+                      </div> */}
                     </div>
                     <div className="icon">
                       <img

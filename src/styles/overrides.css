@@ -265,7 +265,7 @@ footer
 
 .body-bg2 .banner-section3 .hero-content-version3 h1,
 .body-bg2 .banner-section3 .hero-content-version3 h1 span {
-  font-size: clamp(3.4rem, 4.9vw, 4rem);
+  font-size: clamp(3.4rem, 4.9vw, 3rem);
   line-height: 1.05;
 }
 
