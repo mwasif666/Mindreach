@@ -553,6 +553,50 @@
     z-index: 1;
   }
 
+  .body-bg2 .banner-section3 .banner-thumb-items .counter-area-1 {
+    display: block;
+    left: 14px;
+    top: auto;
+    bottom: 18px;
+    z-index: 2;
+  }
+
+  .body-bg2
+    .banner-section3
+    .banner-thumb-items
+    .counter-area-1
+    .counter-content {
+    width: 92px;
+    height: 92px;
+  }
+
+  .body-bg2
+    .banner-section3
+    .banner-thumb-items
+    .counter-area-1
+    .counter-content
+    h3,
+  .body-bg2
+    .banner-section3
+    .banner-thumb-items
+    .counter-area-1
+    .counter-content
+    h3
+    span {
+    font-size: 22px;
+    line-height: 1.2;
+  }
+
+  .body-bg2
+    .banner-section3
+    .banner-thumb-items
+    .counter-area-1
+    .counter-content
+    h4 {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+
   .body-bg2
     .banner-section3
     .banner-thumb-items
