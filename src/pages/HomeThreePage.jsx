@@ -180,11 +180,6 @@ function HomeThreePage() {
                       />
                     </span>
                     <br /> &amp; right where you are
-                    <img
-                      src="/assets/img/banner/icon3_1.svg"
-                      alt="icon"
-                      className="img-icon"
-                    />
                   </h1>
                   <p>
                     Mental health care supports your emotional well-being
