@@ -5,7 +5,7 @@ const BLOGS = [
     title: 'What Are the Early Signs of Anxiety Disorder?',
     subtitle: 'And When to Seek Help',
     date: 'May 1, 2026',
-    author: 'MindReach Team',
+    author: 'MindReach',
     category: 'Anxiety',
     image: '/assets/img/blog/unsplash-anxiety-blog.jpg',
     imageAlt: 'Person covering their face with their hands while feeling anxious',
@@ -67,7 +67,7 @@ const BLOGS = [
         textAfter: 'You do not need to check every box to benefit from professional support. If anxiety is consistently getting in the way of how you want to live, that is reason enough to reach out.',
       },
       {
-        heading: 'Anxiety Disorders That Are Commonly Missed',
+        heading: 'Anxiety Disorder That Are Commonly Missed',
         text: 'Not all anxiety disorders look like constant worry. A few presentations are frequently overlooked:',
         subsections: [
           {
@@ -136,7 +136,7 @@ const BLOGS = [
     title: 'Online Therapy vs. In-Person Therapy',
     subtitle: 'Which Is Right for You?',
     date: 'May 1, 2026',
-    author: 'MindReach Team',
+    author: 'MindReach',
     category: 'Telehealth',
     image: '/assets/img/blog/unsplash-online-therapy-blog.jpg',
     imageAlt: 'Clinician consulting with a patient through a laptop video call',
@@ -274,7 +274,7 @@ const BLOGS = [
     title: 'How to Get an ADHD Diagnosis as an Adult',
     subtitle: 'A Step-by-Step Guide',
     date: 'May 1, 2026',
-    author: 'MindReach Team',
+    author: 'MindReach',
     category: 'ADHD',
     image: '/assets/img/blog/unsplash-adhd-blog.jpg',
     imageAlt: 'Adult writing notes beside a laptop while organizing tasks',

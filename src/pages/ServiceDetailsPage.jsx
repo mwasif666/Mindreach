@@ -5,6 +5,8 @@ import BookingCtaSection from '../components/ui/BookingCtaSection'
 import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const BODY_CLASS = "body-bg"
+const MINDREACH_CALL_NUMBER = '+1-979-595-8975'
+const MINDREACH_CALL_HREF = 'tel:+19795958975'
 
 function ServiceDetailsPage() {
   const { serviceId } = useParams()
@@ -200,11 +202,12 @@ function ServiceDetailsPage() {
                       <h4 className="black mb-3">{service.aboutTitle}</h4>
                       <p className="pra mb-4">{service.aboutText}</p>
                       <a
-                        href="/contact"
+                        href={MINDREACH_CALL_HREF}
                         className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fw-semibold black overflow-hidden p1-bg rounded100 mb-2"
+                        aria-label={`Call MindReach at ${MINDREACH_CALL_NUMBER}`}
                       >
-                        Request a Call Back
-                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                        Call Now for Support
+                        <i className="fa-solid fa-phone" aria-hidden="true" />
                       </a>
                     </div>
                     <div className="mindreach-service-detail__copy mt-4">
@@ -217,13 +220,23 @@ function ServiceDetailsPage() {
                     </div>
                     <div className="mindreach-service-detail__bottom-cta text-center mt-5 pt-2">
                       <p className="pra mb-3">{service.bookingText}</p>
-                      <a
-                        href="/contact"
-                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                      >
-                        Book Appointment
-                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
-                      </a>
+                      <div className="mindreach-service-detail__actions d-flex flex-wrap justify-content-center gap-3">
+                        <a
+                          href="/doctor"
+                          className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                        >
+                          Book Appointment
+                          <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                        </a>
+                        <a
+                          href={MINDREACH_CALL_HREF}
+                          className="common-btn box-style first-box mindreach-service-detail__call-btn d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
+                          aria-label={`Call MindReach at ${MINDREACH_CALL_NUMBER}`}
+                        >
+                          Call Now
+                          <i className="fa-solid fa-phone" aria-hidden="true" />
+                        </a>
+                      </div>
                     </div>
                   </article>
                 </div>
@@ -233,13 +246,23 @@ function ServiceDetailsPage() {
                   <div className="mindreach-service-detail__cta mindreach-service-detail__cta--sidebar">
                     <h4 className="black mb-0">Book Appointment</h4>
                     <p className="pra mb-0">{service.bookingText}</p>
-                    <a
-                      href="/contact"
-                      className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                    >
-                      Book Appointment
-                      <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
-                    </a>
+                    <div className="mindreach-service-detail__actions">
+                      <a
+                        href="/doctor"
+                        className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
+                      >
+                        Book Appointment
+                        <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                      </a>
+                      <a
+                        href={MINDREACH_CALL_HREF}
+                        className="common-btn box-style first-box mindreach-service-detail__call-btn d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
+                        aria-label={`Call MindReach at ${MINDREACH_CALL_NUMBER}`}
+                      >
+                        Call Now
+                        <i className="fa-solid fa-phone" aria-hidden="true" />
+                      </a>
+                    </div>
                   </div>
                   <div className="details-common category-service">
                     <h4 className="black d-flex align-items-center gap-2 mb-4 fw_700">Services</h4>

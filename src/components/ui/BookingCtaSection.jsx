@@ -9,8 +9,8 @@ function BookingCtaSection({
   tag = 'Book Appointment',
   leadText = 'Go straight to your',
   highlightText = 'appointment',
-  description = 'Choose a provider and open the right Calendly booking flow for the support you need.',
-  buttonHref = '/book-appointment',
+  description = 'Choose a provider and select the time that best fits your schedule for the support you need.',
+  buttonHref = '/doctor',
   buttonLabel = 'Book Appointment',
 }) {
   return (

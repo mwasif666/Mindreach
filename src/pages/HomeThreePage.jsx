@@ -34,9 +34,9 @@ const HOMEPAGE_IMAGES = {
     "/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png",
   resourceTwo: "/assets/img/homepage-images/unsplash-feature-bg.jpg",
   resourceThree: "/assets/img/homepage-images/pexels-cottonbro-4100666.jpg",
-  testimonialOne: "/assets/img/homepage-images/unsplash-portrait-1.jpg",
-  testimonialTwo: "/assets/img/homepage-images/unsplash-portrait-2.jpg",
-  testimonialThree: "/assets/img/homepage-images/unsplash-portrait-3.jpg",
+  testimonialOne: "/assets/img/homepage-images/pexels-cottonbro-3205403.jpg",
+  testimonialTwo: "/assets/img/homepage-images/unsplash-therapist-1.jpg",
+  testimonialThree: "/assets/img/homepage-images/pexels-alex-green-5699431.jpg",
 };
 const SHOW_HOMEPAGE_PRICING = false;
 const TEAM_MEMBERS = DOCTORS.slice(0, 4);
@@ -44,12 +44,16 @@ const HOMEPAGE_FEATURED_SERVICES = MENTAL_HEALTH_SERVICES.slice(0, 3);
 const HOMEPAGE_TICKER_ITEMS = [
   "A safe space to speak, heal, and grow",
   "Take the first step toward feeling better",
+  "No long waitlists, no commutes",
+  "Quality care, wherever and whenever you need it.",
   "A safe space to speak, heal, and grow",
   "Take the first step toward feeling better",
+  "No long waitlists, no commutes",
+  "Quality care, wherever and whenever you need it.",
 ];
 const CARE_COUNTERS = [
   {
-    value: "95",
+    value: "100",
     suffix: "%",
     title: "Secure Virtual Care",
     detail:
@@ -57,7 +61,7 @@ const CARE_COUNTERS = [
     icon: FiShield,
   },
   {
-    value: "90",
+    value: "100",
     suffix: "%",
     title: "Scheduling Convenience",
     detail:
@@ -200,6 +204,18 @@ function HomeThreePage() {
                         data-wow-delay="0.8s"
                       />
                     </div>
+                    <a
+                      href="tel:XXX-XXX-XXXX"
+                      className="hero-call-pill d-inline-flex align-items-center gap-2"
+                    >
+                      <span className="hero-call-pill__icon d-center rounded-circle">
+                        <i className="fa-solid fa-phone" aria-hidden="true" />
+                      </span>
+                      <span className="d-flex flex-column">
+                        <span className="hero-call-pill__label">Call Us</span>
+                        <span className="hero-call-pill__number fw_600">XXX-XXX-XXXX</span>
+                      </span>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -258,10 +274,10 @@ function HomeThreePage() {
           <div className="container">
             <div className="section-title text-center insurance-acceptance__header">
               <h2 className="black wow fadeInUp" data-wow-delay=".3s">
-                We accept insurance
+                Insurances we accept
               </h2>
               <p className="insurance-acceptance__subtitle">
-                99% of patients have successfully booked with these insurances
+                We partner with a wide range of insurances to make expert mental health care more accessible and affordable
               </p>
             </div>
             <div className="insurance-acceptance__carousel">
@@ -392,13 +408,7 @@ function HomeThreePage() {
                           alt="element"
                           className="d-sm-block d-none"
                         />
-                        MindReach is a technology-enabled tele-mental health
-                        platform that connects individuals with licensed
-                        therapists and psychiatrists for secure virtual
-                        sessions, often covered by insurance. We reduce common
-                        barriers like long waitlists, commuting, and complicated
-                        steps, so you can start care sooner and stay supported
-                        in a way that fits real life.
+                        MindReach is a technology-enabled tele-mental health platform that connects individuals with licensed therapists and psychiatrists for secure virtual sessions, 99% of the time covered by insurance. We reduce common barriers like long waitlists, commuting, and complicated steps, so you can start care sooner and stay supported in a way that fits real life. You can feel confident knowing you are in the hands of trusted experts who put your mental well-being first.
                       </p>
                     </div>
                     <div className="about-btn-inner mt-5">
@@ -433,7 +443,7 @@ function HomeThreePage() {
           <div className="container">
             <div className="section-title text-center mb-60">
               <span className="cmn-tag p1-bg heading-font">
-                The MindReach Team
+                Our Providers
               </span>
               <h2
                 className="wow fadeInUp black visible-slowly-right"
@@ -501,7 +511,7 @@ function HomeThreePage() {
           <div className="container">
             <div className="section-title text-center mb-60">
               <span className="cmn-tag p1-bg heading-font">
-                Customer Reviews
+                Patient Reviews
               </span>
               <h2
                 className="wow fadeInUp visible-slowly-right"
@@ -528,31 +538,31 @@ function HomeThreePage() {
                         <div className="thumb">
                           <AppImage
                             src={HOMEPAGE_IMAGES.testimonialOne}
-                            alt="MindReach client"
+                            alt="Sam Herbet"
                             wrapperClassName="app-image--fill"
                           />
                         </div>
                         <div className="author-details">
-                          <h3>MindReach Client</h3>
+                          <h3>Sam Herbet</h3>
                           <div className="icon">
                             <img
                               src="/assets/img/testimonial/quote-icons3.png"
                               alt="icon"
                             />
                           </div>
-                          <span>Therapy support</span>
+                          <span>Emotional Stress</span>
                         </div>
                         <p>
                           MindReach helped me start therapy without the stress
                           of commuting or long waitlists. The care feels
-                          private, consistent, and easy to fit into my week.
+                          private, consistent, and an easy way to fit into my week.
                         </p>
                         <div className="star">
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
-                          <i className="fas fa-star color-2" />
+                          <i className="fas fa-star" />
                         </div>
                       </div>
                     </div>
@@ -563,24 +573,24 @@ function HomeThreePage() {
                         <div className="thumb">
                           <AppImage
                             src={HOMEPAGE_IMAGES.testimonialTwo}
-                            alt="MindReach member"
+                            alt="Cassandra Williams"
                             wrapperClassName="app-image--fill"
                           />
                         </div>
                         <div className="author-details">
-                          <h3>MindReach Member</h3>
+                          <h3>Cassandra Williams</h3>
                           <div className="icon">
                             <img
                               src="/assets/img/testimonial/quote-icons3.png"
                               alt="icon"
                             />
                           </div>
-                          <span>Psychiatry support</span>
+                          <span>Depression Support</span>
                         </div>
                         <p>
-                          The online psychiatry process was clear from day one.
+                          The virtual session process was clear from day one.
                           Scheduling was simple, follow-ups were smooth, and I
-                          felt listened to instead of rushed.
+                          genuinely felt listened to instead of rushed.
                         </p>
                         <div className="star">
                           <i className="fas fa-star" />
@@ -598,19 +608,19 @@ function HomeThreePage() {
                         <div className="thumb">
                           <AppImage
                             src={HOMEPAGE_IMAGES.testimonialThree}
-                            alt="MindReach patient"
+                            alt="Johnathan Poole"
                             wrapperClassName="app-image--fill"
                           />
                         </div>
                         <div className="author-details">
-                          <h3>MindReach Patient</h3>
+                          <h3>Johnathan Poole</h3>
                           <div className="icon">
                             <img
                               src="/assets/img/testimonial/quote-icons3.png"
                               alt="icon"
                             />
                           </div>
-                          <span>Care coordination</span>
+                          <span>Anxiety Disorder</span>
                         </div>
                         <p>
                           Between reminders, secure sessions, and flexible
@@ -622,7 +632,7 @@ function HomeThreePage() {
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
                           <i className="fas fa-star" />
-                          <i className="fas fa-star color-2" />
+                          <i className="fas fa-star" />
                         </div>
                       </div>
                     </div>
@@ -781,12 +791,26 @@ function HomeThreePage() {
                         Secure virtual sessions, flexible scheduling, and
                         licensed care that fits your routine.
                       </p>
-                      <div className="feature-btn-inner">
+                      <div className="feature-btn-inner d-flex flex-wrap align-items-center gap-3">
                         <HomepageIconButton
                           className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
-                          label="Read More"
+                          label="Find a Provider"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
+                          href="/doctor"
                         />
+                        <a
+                          href="tel:XXX-XXX-XXXX"
+                          className="hero-call-pill d-inline-flex align-items-center gap-2"
+                          style={{ borderColor: '#fff' }}
+                        >
+                          <span className="hero-call-pill__icon d-center rounded-circle" style={{ borderColor: '#fff', color: '#fff' }}>
+                            <i className="fa-solid fa-phone" aria-hidden="true" />
+                          </span>
+                          <span className="d-flex flex-column">
+                            <span className="hero-call-pill__label" style={{ color: 'rgba(255,255,255,0.75)' }}>Call Now</span>
+                            <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>XXX-XXX-XXXX</span>
+                          </span>
+                        </a>
                       </div>
                     </div>
                   </div>

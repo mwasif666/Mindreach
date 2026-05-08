@@ -14,16 +14,19 @@ function InsuranceLogoSvg({ title, viewBox = '0 0 360 120', children }) {
 
 function InsuranceLogoMark({ id, name }) {
   switch (id) {
-    case 'medicaid':
+
+    case 'aetna':
       return (
-        <InsuranceLogoSvg title={name}>
-          <g fill="none" stroke="#86a2d2" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M46 67c16-11 28-30 34-52 19 25 36 41 55 49-15 19-35 34-59 43-12-9-21-20-30-40Z" opacity="0.85" />
-            <path d="M26 62c12-9 22-22 28-39 14 18 28 30 43 37-11 14-27 25-44 32-11-8-18-17-27-30Z" opacity="0.6" />
-          </g>
-          <text x="115" y="71" fill="#6f8bc2" fontFamily="Georgia, serif" fontSize="44" fontStyle="italic">
-            Medicaid
+        <InsuranceLogoSvg title={name} viewBox="0 0 300 120">
+          {/* Purple heart */}
+          <path
+            d="M38 38 C38 28 48 22 56 30 C64 22 74 28 74 38 C74 50 56 68 56 68 C56 68 38 50 38 38Z"
+            fill="#6b1f7c"
+          />
+          <text x="88" y="72" fill="#6b1f7c" fontFamily="Arial, sans-serif" fontSize="46" fontWeight="700">
+            aetna
           </text>
+          <text x="248" y="46" fill="#6b1f7c" fontFamily="Arial, sans-serif" fontSize="20">™</text>
         </InsuranceLogoSvg>
       )
 
@@ -46,34 +49,57 @@ function InsuranceLogoMark({ id, name }) {
         </InsuranceLogoSvg>
       )
 
-    case 'optum':
+    case 'medicare':
       return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 320 120">
-          <text x="18" y="73" fill="#ff7f2a" fontFamily="Arial, sans-serif" fontSize="58" fontWeight="700">
-            Optum
+        <InsuranceLogoSvg title={name} viewBox="0 0 340 120">
+          {/* HHS eagle silhouette (simplified) */}
+          <g transform="translate(14 10)" fill="#1a2f6e">
+            <ellipse cx="38" cy="52" rx="18" ry="26" opacity="0.15" />
+            <path d="M20 55 Q22 30 38 22 Q54 30 56 55 Q46 70 38 76 Q30 70 20 55Z" opacity="0.18" />
+            <circle cx="38" cy="30" r="9" opacity="0.25" />
+            {/* wings */}
+            <path d="M4 44 Q18 36 30 42" fill="none" stroke="#1a2f6e" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+            <path d="M72 44 Q58 36 46 42" fill="none" stroke="#1a2f6e" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+            {/* circle outline */}
+            <circle cx="38" cy="50" r="36" fill="none" stroke="#1a2f6e" strokeWidth="2.5" opacity="0.35" />
+          </g>
+          <text x="106" y="72" fill="#1a2f6e" fontFamily="Georgia, serif" fontSize="48" fontWeight="700">
+            Medicare
           </text>
-          <path d="M248 38l18 20-18 20" fill="none" stroke="#0d3f75" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round" />
         </InsuranceLogoSvg>
       )
 
-    case 'champva':
+    case 'medicaid':
       return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 280 120">
-          <path d="M38 74l16-31 16 31-16 14-16-14Z" fill="#175d9d" />
-          <path d="M54 36l5 9 10 1-8 7 2 10-9-5-9 5 2-10-8-7 10-1 5-9Z" fill="#f4b43a" />
-          <text x="95" y="72" fill="#175d9d" fontFamily="Arial, sans-serif" fontSize="34" fontWeight="700" letterSpacing="1.5">
-            CHAMPVA
+        <InsuranceLogoSvg title={name} viewBox="0 0 340 120">
+          <g transform="translate(14 10)" fill="#1a2f6e">
+            <ellipse cx="38" cy="52" rx="18" ry="26" opacity="0.15" />
+            <path d="M20 55 Q22 30 38 22 Q54 30 56 55 Q46 70 38 76 Q30 70 20 55Z" opacity="0.18" />
+            <circle cx="38" cy="30" r="9" opacity="0.25" />
+            <path d="M4 44 Q18 36 30 42" fill="none" stroke="#1a2f6e" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+            <path d="M72 44 Q58 36 46 42" fill="none" stroke="#1a2f6e" strokeWidth="3" strokeLinecap="round" opacity="0.5" />
+            <circle cx="38" cy="50" r="36" fill="none" stroke="#1a2f6e" strokeWidth="2.5" opacity="0.35" />
+          </g>
+          <text x="106" y="72" fill="#1a2f6e" fontFamily="Georgia, serif" fontSize="48" fontWeight="700">
+            Medicaid
           </text>
         </InsuranceLogoSvg>
       )
 
-    case 'magellan':
+    case 'united-healthcare':
       return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 300 120">
-          <circle cx="52" cy="58" r="17" fill="#f4a43a" />
-          <circle cx="52" cy="58" r="9" fill="#fff" />
-          <text x="88" y="70" fill="#1e3e73" fontFamily="Arial, sans-serif" fontSize="42" fontWeight="700">
-            magellan
+        <InsuranceLogoSvg title={name} viewBox="0 0 380 120">
+          {/* Shield/U shape */}
+          <g transform="translate(14 14)" fill="none" stroke="#2457a6" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M18 0v52c0 13 9 23 20 30 11-7 20-17 20-30V0" />
+            <path d="M30 0v53" opacity="0.5" />
+            <path d="M42 0v44" opacity="0.35" />
+          </g>
+          <text x="100" y="52" fill="#2457a6" fontFamily="Georgia, serif" fontSize="30" fontWeight="700">
+            UnitedHealthcare
+          </text>
+          <text x="100" y="82" fill="#2457a6" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="500">
+            ®
           </text>
         </InsuranceLogoSvg>
       )
@@ -81,87 +107,131 @@ function InsuranceLogoMark({ id, name }) {
     case 'tricare':
       return (
         <InsuranceLogoSvg title={name} viewBox="0 0 300 120">
-          <g transform="translate(24 30)" fill="none" stroke="#1a5f9d" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 42l18-26 18 26" />
-            <path d="M20 42l10-15 10 15" opacity="0.75" />
+          {/* American flag stripes */}
+          <g transform="translate(14 26)">
+            <rect x="0" y="0"  width="64" height="10" fill="#c8102e" rx="1" />
+            <rect x="0" y="14" width="64" height="10" fill="#c8102e" rx="1" opacity="0.75" />
+            <rect x="0" y="28" width="64" height="10" fill="#c8102e" rx="1" opacity="0.5" />
+            {/* stars */}
+            <text x="4" y="10" fill="#002868" fontFamily="Arial" fontSize="18" fontWeight="900">★★★</text>
           </g>
-          <text x="92" y="71" fill="#1a5f9d" fontFamily="Arial, sans-serif" fontSize="44" fontWeight="700" letterSpacing="3">
+          <text x="96" y="71" fill="#002868" fontFamily="Arial, sans-serif" fontSize="44" fontWeight="700" letterSpacing="2">
             TRICARE
           </text>
+          <text x="96" y="93" fill="#c8102e" fontFamily="Arial, sans-serif" fontSize="16" fontWeight="600" letterSpacing="1">
+            ®
+          </text>
         </InsuranceLogoSvg>
       )
 
-    case 'umr':
+    case 'medicare-railroad':
+      return (
+        <InsuranceLogoSvg title={name} viewBox="0 0 340 120">
+          {/* Blue star */}
+          <text x="14" y="72" fill="#003087" fontFamily="Arial" fontSize="64" fontWeight="900">★</text>
+          <text x="84" y="58" fill="#003087" fontFamily="Arial, sans-serif" fontSize="30" fontWeight="700">
+            Medicare
+          </text>
+          <text x="84" y="88" fill="#c8102e" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="700" letterSpacing="1">
+            RAILROAD
+          </text>
+        </InsuranceLogoSvg>
+      )
+
+    case 'sana':
+      return (
+        <InsuranceLogoSvg title={name} viewBox="0 0 260 120">
+          <text x="18" y="78" fill="#111111" fontFamily="Arial Black, sans-serif" fontSize="58" fontWeight="900">
+            sa
+          </text>
+          <circle cx="146" cy="62" r="14" fill="#f5a623" />
+          <text x="162" y="78" fill="#111111" fontFamily="Arial Black, sans-serif" fontSize="58" fontWeight="900">
+            na
+          </text>
+        </InsuranceLogoSvg>
+      )
+
+    case 'oscar':
+      return (
+        <InsuranceLogoSvg title={name} viewBox="0 0 280 120">
+          <text x="18" y="78" fill="#0066ff" fontFamily="Arial Black, sans-serif" fontSize="62" fontWeight="900">
+            oscar
+          </text>
+        </InsuranceLogoSvg>
+      )
+
+    case 'curative':
       return (
         <InsuranceLogoSvg title={name} viewBox="0 0 310 120">
-          <g transform="translate(26 24)" fill="none" stroke="#1b5cab" strokeWidth="8" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M0 4v42c0 17 12 29 28 29s28-12 28-29V4" />
-            <path d="M24 4v42c0 8-6 14-14 14s-14-6-14-14" opacity="0.45" />
+          {/* Blue asterisk / snowflake */}
+          <g transform="translate(54 60)" stroke="#00a8e8" strokeWidth="7" strokeLinecap="round">
+            <line x1="0" y1="-34" x2="0"  y2="34" />
+            <line x1="-34" y1="0"  x2="34" y2="0" />
+            <line x1="-24" y1="-24" x2="24" y2="24" />
+            <line x1="24"  y1="-24" x2="-24" y2="24" />
           </g>
-          <text x="104" y="72" fill="#1b5cab" fontFamily="Arial, sans-serif" fontSize="54" fontWeight="700">
-            umr
+          <text x="104" y="72" fill="#111111" fontFamily="Arial, sans-serif" fontSize="44" fontWeight="700">
+            curative
           </text>
         </InsuranceLogoSvg>
       )
 
-    case 'ambetter':
+    case 'bcbs-texas':
       return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 350 120">
-          <path d="M38 69c10-12 18-27 22-46 16 20 31 33 46 39-13 17-30 30-50 39-9-7-14-17-18-32Z" fill="#f5b13d" />
-          <text x="104" y="60" fill="#234e9d" fontFamily="Arial, sans-serif" fontSize="38" fontWeight="700">
-            Ambetter
+        <InsuranceLogoSvg title={name} viewBox="0 0 380 120">
+          {/* Blue cross */}
+          <rect x="14" y="34" width="16" height="52" fill="#00a0d1" rx="2" />
+          <rect x="2"  y="46" width="40" height="16" fill="#00a0d1" rx="2" />
+          {/* Blue shield with caduceus hint */}
+          <path d="M52 28 L72 28 L72 64 Q72 80 62 88 Q52 80 52 64Z" fill="#00a0d1" />
+          <text x="52" y="34" fill="#fff" fontFamily="Arial" fontSize="10" fontWeight="700" textAnchor="middle">⚕</text>
+          <text x="84" y="52" fill="#003087" fontFamily="Arial, sans-serif" fontSize="26" fontWeight="700">
+            BlueCross BlueShield
           </text>
-          <text x="104" y="87" fill="#59a947" fontFamily="Arial, sans-serif" fontSize="18" fontWeight="600">
-            from Sunshine Health
+          <text x="84" y="78" fill="#003087" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="500">
+            of Texas
           </text>
         </InsuranceLogoSvg>
       )
 
-    case 'beacon':
+    case 'multiplan':
       return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 430 120">
-          <g transform="translate(18 18)">
-            <circle cx="42" cy="42" r="38" fill="none" stroke="#3ab3e5" strokeWidth="8" />
-            <path d="M28 54l13-23 18 11-18 24Z" fill="#2e72b8" />
-            <path d="M40 34h14v8H40Z" fill="#fff" opacity="0.9" />
-          </g>
-          <text x="112" y="62" fill="#111111" fontFamily="Arial, sans-serif" fontSize="54" fontWeight="700">
-            beacon
+        <InsuranceLogoSvg title={name} viewBox="0 0 320 120">
+          {/* Colorful people figures */}
+          <circle cx="24" cy="38" r="9"  fill="#4caf50" />
+          <path d="M14 56 Q24 48 34 56 L34 80 L14 80Z" fill="#4caf50" />
+          <circle cx="48" cy="32" r="9"  fill="#ff9800" />
+          <path d="M38 50 Q48 42 58 50 L58 80 L38 80Z" fill="#ff9800" />
+          <circle cx="72" cy="38" r="9"  fill="#2196f3" />
+          <path d="M62 56 Q72 48 82 56 L82 80 L62 80Z" fill="#2196f3" />
+          <text x="96" y="66" fill="#333333" fontFamily="Arial, sans-serif" fontSize="40" fontWeight="700">
+            Multi
           </text>
-          <path d="M360 60l20-24 28 12-24 28Z" fill="#f1bf2b" />
-          <path d="M345 60l16-16 16 14-15 17Z" fill="#7c3fb4" />
-          <text x="112" y="89" fill="#9ca3af" fontFamily="Arial, sans-serif" fontSize="26" fontWeight="500">
-            health options
+          <text x="200" y="66" fill="#888888" fontFamily="Arial, sans-serif" fontSize="40" fontWeight="400">
+            Plan
           </text>
+          <text x="284" y="66" fill="#888888" fontFamily="Arial, sans-serif" fontSize="18">®</text>
         </InsuranceLogoSvg>
       )
 
-    case 'emblem-health':
+    case 'superior-health':
       return (
         <InsuranceLogoSvg title={name} viewBox="0 0 360 120">
-          <text x="18" y="72" fill="#6b2f8d" fontFamily="Arial, sans-serif" fontSize="54" fontWeight="700">
-            EmblemHealth
+          {/* Colorful circle with family figures */}
+          <circle cx="54" cy="60" r="46" fill="#f0f0f0" />
+          <circle cx="38" cy="48" r="8"  fill="#e84393" />
+          <path d="M28 60 Q38 54 48 60 L48 78 L28 78Z" fill="#e84393" />
+          <circle cx="56" cy="42" r="8"  fill="#8bc34a" />
+          <path d="M46 54 Q56 48 66 54 L66 78 L46 78Z" fill="#8bc34a" />
+          <circle cx="72" cy="48" r="8"  fill="#ff9800" />
+          <path d="M62 60 Q72 54 82 60 L82 78 L62 78Z" fill="#ff9800" />
+          <text x="108" y="56" fill="#555555" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="600">
+            superior
           </text>
-        </InsuranceLogoSvg>
-      )
-
-    case 'united-healthcare':
-      return (
-        <InsuranceLogoSvg title={name} viewBox="0 0 420 120">
-          <g transform="translate(18 18)" fill="none" stroke="#2457a6" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 0v52c0 13 9 23 20 30 11-7 20-17 20-30V0" />
-            <path d="M30 0v53" opacity="0.5" />
-            <path d="M42 0v44" opacity="0.35" />
-          </g>
-          <text x="104" y="45" fill="#2457a6" fontFamily="Georgia, serif" fontSize="32" fontWeight="700">
-            UnitedHealthcare
+          <text x="108" y="84" fill="#555555" fontFamily="Arial, sans-serif" fontSize="28" fontWeight="600">
+            healthplan
           </text>
-          <text x="156" y="74" fill="#2457a6" fontFamily="Arial, sans-serif" fontSize="22" fontWeight="700">
-            All Savers
-          </text>
-          <text x="126" y="98" fill="#2457a6" fontFamily="Arial, sans-serif" fontSize="20" fontWeight="600">
-            Alternate Funding
-          </text>
+          <text x="290" y="84" fill="#555555" fontFamily="Arial, sans-serif" fontSize="18">.</text>
         </InsuranceLogoSvg>
       )
 

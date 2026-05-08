@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
 import BookingCtaSection from '../components/ui/BookingCtaSection'
@@ -6,17 +5,10 @@ import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "Services | MindReach"
 const BODY_CLASS = "body-bg"
+const MINDREACH_CALL_NUMBER = '+1-979-595-8975'
+const MINDREACH_CALL_HREF = 'tel:+19795958975'
 
 function ServicePage() {
-  const [expandedDescriptions, setExpandedDescriptions] = useState({})
-
-  const toggleDescription = (serviceId) => {
-    setExpandedDescriptions((currentValue) => ({
-      ...currentValue,
-      [serviceId]: !currentValue[serviceId],
-    }))
-  }
-
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
@@ -175,10 +167,7 @@ function ServicePage() {
         <section className="services-section main-style cmn-bg fix section-padding">
           <div className="container">
             <div className="row g-4">
-              {MENTAL_HEALTH_SERVICES.map((service) => {
-                const isDescriptionExpanded = Boolean(expandedDescriptions[service.id])
-
-                return (
+              {MENTAL_HEALTH_SERVICES.map((service) => (
                 <div key={service.id} className="col-lg-4 col-md-6">
                   <div className="service-item overflow-hidden white-bg rounded-4 position-relative">
                     <div className="icon-area d-flex align-items-center gap-2">
@@ -189,16 +178,9 @@ function ServicePage() {
                     </div>
                     <span className="d-block black fw-semibold mb-2">{service.subtitle}</span>
                     <div className="service-card-description">
-                      <p className={`pra${isDescriptionExpanded ? ' is-expanded' : ''}`}>
+                      <p className="pra">
                         {service.description}
                       </p>
-                      <button
-                        type="button"
-                        className="service-card-description__toggle"
-                        onClick={() => toggleDescription(service.id)}
-                      >
-                        {isDescriptionExpanded ? 'Read Less' : 'Read More'}
-                      </button>
                     </div>
                     <div className="thumb overflow-hidden position-relative">
                       <AppImage src={service.image} alt={service.imageAlt} wrapperClassName="app-image--fill" className="rounded-4 overflow-hidden w-100" />
@@ -211,8 +193,23 @@ function ServicePage() {
                     </div>
                   </div>
                 </div>
-                )
-              })}
+              ))}
+              <div className="col-lg-8 col-md-6">
+                <div className="service-support-cta rounded-4">
+                  <div>
+                    <h3>Not seeing your condition?</h3>
+                    <p>We are here to help and support you in finding the right care</p>
+                  </div>
+                  <a
+                    href={MINDREACH_CALL_HREF}
+                    className="common-btn box-style first-box service-support-cta__button d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden white-bg rounded100"
+                    aria-label={`Call MindReach at ${MINDREACH_CALL_NUMBER}`}
+                  >
+                    Call Now
+                    <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>

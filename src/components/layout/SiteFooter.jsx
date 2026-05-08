@@ -22,10 +22,19 @@ function SiteFooter() {
             <p className="homepage-footer-newsletter__lead">
               Take the first step toward a healthier and calmer mind.
             </p>
-            <div className="homepage-footer-newsletter__cta">
-              <a href="/contact" className="homepage-footer-newsletter__button">
+            <div className="homepage-footer-newsletter__cta d-flex flex-wrap justify-content-center align-items-center gap-3">
+              <a href="/book-appointment" className="homepage-footer-newsletter__button">
                 Book Appointment
                 <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
+              </a>
+              <a href="tel:XXX-XXX-XXXX" className="hero-call-pill d-inline-flex align-items-center gap-2" style={{ borderColor: '#fff' }}>
+                <span className="hero-call-pill__icon d-center rounded-circle" style={{ borderColor: '#fff', color: '#fff' }}>
+                  <i className="fa-solid fa-phone" aria-hidden="true" />
+                </span>
+                <span className="d-flex flex-column">
+                  <span className="hero-call-pill__label" style={{ color: 'rgba(255,255,255,0.7)' }}>Call Now</span>
+                  <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>XXX-XXX-XXXX</span>
+                </span>
               </a>
             </div>
           </div>
@@ -58,6 +67,7 @@ function SiteFooter() {
                         <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
+                    <li><a href="/blog">Blogs</a></li>
                   </ul>
                 </div>
               </div>
