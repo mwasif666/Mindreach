@@ -99,7 +99,7 @@ const BLOGS = [
       },
       {
         heading: 'How MindReach Can Help',
-        text: 'At MindReach, our licensed therapists and psychiatrists specialize in diagnosing and treating anxiety disorders through secure, convenient telehealth appointments. Whether you are wondering if what you experience qualifies as an anxiety disorder or you have been struggling for years without the right support, we will meet you where you are.\n\nYour first step is a comprehensive intake evaluation that explores your symptoms, history, and daily functioning. From there, we build a personalized treatment plan that may include CBT, medication, mindfulness-based strategies, or a combination of all three.',
+        text: 'At MindReach, our licensed therapists and psychiatrists specialize in diagnosing and treating anxiety disorders through secure, convenient telehealth appointments. Whether you are wondering if what you experience qualifies as an anxiety disorder or you have been struggling for years without the right support, we will meet you where you are.\n\nYour first step is a comprehensive intake evaluation that explores your symptoms, history, and daily functioning. From there, we build a personalized treatment plan that may include CBT, mindfulness-based strategies, or a combination of both.',
       },
     ],
     cta: {
@@ -121,11 +121,11 @@ const BLOGS = [
       },
       {
         question: 'What is the most effective treatment for anxiety disorder?',
-        answer: 'Cognitive Behavioral Therapy (CBT) has the strongest evidence base for anxiety disorders across all types. Medication, particularly SSRIs and SNRIs, is also effective and is often combined with therapy for moderate to severe presentations.',
+        answer: 'Cognitive Behavioral Therapy (CBT) has the strongest evidence base for anxiety disorders across all types. CBT helps individuals identify and reframe negative thought patterns, build coping skills, and gradually face situations that trigger anxiety. Alongside CBT, mindfulness-based strategies, exposure therapy, and relaxation techniques have also shown strong results in reducing anxiety symptoms and improving daily functioning.',
       },
       {
         question: 'Can I get anxiety treatment online?',
-        answer: 'Yes. Telehealth platforms like MindReach offer full anxiety evaluations, therapy, and psychiatric medication management online. Research consistently shows that telehealth anxiety treatment produces outcomes equivalent to in-person care.',
+        answer: 'Yes. MindReach offers full anxiety evaluations and therapy sessions entirely online, so you can access the support you need from the comfort of your home. Our licensed therapists work with you to understand your symptoms, build coping strategies, and create a personalized treatment plan. All through our secure, HIPAA-compliant telehealth platform. Research consistently shows that telehealth anxiety treatment produces outcomes equivalent to in-person care.',
       },
     ],
     tags: ['Anxiety', 'Mental Health', 'Therapy', 'Telehealth'],
@@ -146,14 +146,13 @@ const BLOGS = [
     sections: [
       {
         heading: 'What Is Online Therapy?',
-        text: 'Online therapy, also called teletherapy or telehealth mental health care, involves receiving psychological assessment, therapy, psychiatric evaluation, and medication management through secure video calls, messaging, or phone sessions. Providers are fully licensed mental health professionals — the same qualifications as those you would see in a clinic.\n\nPlatforms like MindReach offer the full spectrum of mental health services online, from an initial diagnostic evaluation to ongoing therapy and psychiatric medication management for conditions including depression, anxiety, PTSD, ADHD, bipolar disorder, and more.',
-      },
-      {
+        text: 'Online therapy, also called teletherapy or telehealth mental health care, involves receiving psychological assessment, therapy, and psychiatric evaluation through secure video calls, messaging, or phone sessions. Providers are fully licensed mental health professionals with the same qualifications as those you would see in a clinic.\n\nPlatforms like MindReach offer the full spectrum of mental health services online, from an initial diagnostic evaluation to ongoing therapy for conditions including depression, anxiety, PTSD, ADHD, bipolar disorder, and more.',
+      },      {
         heading: 'What Does the Research Say?',
         text: 'The evidence base for online therapy has grown significantly, particularly since 2020. Key findings from peer-reviewed research include:',
         bullets: [
-          'Multiple meta-analyses show that video-based CBT produces equivalent outcomes to in-person CBT for depression and anxiety disorders',
-          'Telepsychiatry studies consistently show that medication management via video call is as effective as in-person management for most conditions',
+          'Multiple meta-analyses show that video-based Cognitive Behavioral Therapy (CBT), a structured, evidence-based approach that helps individuals identify and reframe negative thought patterns, produces equivalent outcomes to in-person CBT for depression and anxiety disorders',
+          'Telepsychiatry studies consistently show that virtual therapy sessions are as effective as in-person care for most mental health conditions',
           'Patient satisfaction scores for telehealth mental health care are consistently high, often exceeding in-person scores on measures of convenience and accessibility',
           'Dropout rates in teletherapy are comparable to or lower than traditional therapy, suggesting that accessibility improves adherence',
         ],
@@ -180,15 +179,15 @@ const BLOGS = [
           },
           {
             heading: 'Privacy and Comfort',
-            text: 'Many people feel more comfortable discussing sensitive mental health topics from the privacy of their own home. This is particularly true for individuals dealing with shame, stigma, social anxiety, or trauma. Attending a session from a familiar environment can lower the emotional barrier to opening up.\n\nIn-person therapy offers a dedicated, bounded space that some people prefer. The act of travelling to a separate location and entering a distinct therapeutic environment helps some clients mentally shift into a more open, focused mindset.',
+            text: 'Many people feel more comfortable discussing sensitive mental health topics from the privacy of their own home. This is particularly true for individuals dealing with shame, stigma, social anxiety, or trauma. At MindReach, all sessions are conducted through a secure, HIPAA-compliant platform, so you can open up in a space that feels safe and familiar.',
           },
           {
             heading: 'Cost',
-            text: 'Online therapy platforms have expanded access to more affordable care in many markets. Without the overhead costs of maintaining a physical clinic, some telehealth services can offer lower session rates. Many online providers, including MindReach, accept insurance, which significantly reduces out-of-pocket costs.',
+            text: 'At MindReach, we believe quality mental health care should be accessible to everyone. We work with leading insurance providers to significantly reduce out-of-pocket costs, so financial stress never stands in the way of getting the support you need.',
           },
           {
             heading: 'Continuity of Care',
-            text: 'Online therapy makes it significantly easier to maintain care during life disruptions: travel, relocation, illness, or changes in work schedule. Clients who move cities no longer have to restart their care from scratch if their provider is licensed in both states.',
+            text: 'Life doesn\'t always stay in one place, and neither should your care. MindReach makes it easy to maintain consistent support through travel, relocation, illness, or changes in your schedule. As long as your provider is licensed in your state, your care continues without interruption.',
           },
         ],
       },
@@ -205,7 +204,6 @@ const BLOGS = [
           'Autism spectrum support',
           'Emotional stress and burnout',
         ],
-        textAfter: 'In-person care is generally recommended for individuals in acute psychiatric crisis, those requiring involuntary assessment, or those needing intensive outpatient or inpatient programs.',
       },
       {
         heading: 'Who Is Online Therapy Best Suited For?',
@@ -232,12 +230,8 @@ const BLOGS = [
         ],
       },
       {
-        heading: 'Can You Switch Between Online and In-Person?',
-        text: 'Absolutely. Many MindReach clients use online therapy as their primary care model and attend occasional in-person sessions when needed or available. The idea that it has to be one or the other is outdated. A hybrid approach often offers the best of both worlds: the consistency and convenience of telehealth with the option for in-person support during intensive periods.\n\nThe best therapy is the therapy you actually attend. If online care removes the barriers that have stopped you from seeking help, that accessibility is clinically significant.',
-      },
-      {
         heading: 'What to Expect from MindReach Online Care',
-        text: 'At MindReach, your care begins with a comprehensive intake assessment conducted via a secure video call. Your licensed psychiatrist or therapist will explore your symptoms, history, and goals. From there, you receive a personalized treatment plan that may include therapy, psychiatric medication management, or both.\n\nSessions are available across a range of appointment times to fit working schedules. Your care team remains consistent, meaning you build a real therapeutic relationship with your provider over time, not a different face every session.',
+        text: 'At MindReach, your care begins with a comprehensive intake assessment conducted via a secure, HIPAA-compliant video call. Your licensed therapist will take the time to explore your symptoms, history, and personal goals in a safe and supportive environment. From there, they build a personalized treatment plan tailored to your unique needs, focused on helping you make real, lasting progress.\n\nSessions are available across a range of appointment times to fit your work schedule and lifestyle. You won\'t have to worry about commutes, waiting rooms, or disruptions to your day. Your care team remains consistent throughout your journey, meaning you build a real therapeutic relationship with your provider over time. At MindReach, you are never just another appointment.',
       },
     ],
     cta: {
@@ -247,15 +241,11 @@ const BLOGS = [
     faqs: [
       {
         question: 'Is online therapy as effective as in-person therapy for depression?',
-        answer: 'Yes. Multiple clinical studies and meta-analyses confirm that online CBT and psychiatric care for depression produce outcomes equivalent to in-person treatment when delivered by qualified providers.',
-      },
-      {
-        question: 'Can a therapist prescribe medication online?',
-        answer: 'Therapists (counselors, psychologists) do not prescribe medication. Psychiatrists and some nurse practitioners do. At MindReach, our psychiatric team can evaluate and prescribe medication online where clinically appropriate.',
+        answer: 'Yes. Research consistently shows that online therapy produces outcomes equivalent to in-person care for depression. At MindReach, our licensed therapists use evidence-based approaches like Cognitive Behavioral Therapy (CBT) to help you work through persistent sadness, low motivation, and emotional fatigue. The convenience of virtual sessions also means you are more likely to show up consistently, which plays a big role in making real progress.',
       },
       {
         question: 'Is online therapy covered by insurance?',
-        answer: 'Many insurance plans now cover telehealth mental health services. Coverage varies by plan and provider. MindReach accepts a range of major insurance providers. We recommend contacting your insurer directly or speaking with our team to confirm your specific coverage.',
+        answer: 'Yes. MindReach works with a wide range of major insurance providers, and 99% of our patients have successfully used their insurance to cover their care. Our team handles the verification process so you don\'t have to worry about the paperwork.\n\nFor those without insurance, MindReach offers some of the lowest out-of-pocket rates in the industry, because we believe cost should never be a barrier to getting the mental health support you deserve. Reach out to our team and we will help you find the best option for your situation.',
       },
       {
         question: 'How do I know if my therapist is qualified online?',
@@ -305,11 +295,11 @@ const BLOGS = [
         subsections: [
           {
             heading: 'Step 1: Acknowledge Your Symptoms and Track Them',
-            text: 'Before your first appointment, spend one to two weeks noting specific examples of how ADHD-like symptoms are affecting your life. Write down situations where you lost focus, forgot something important, acted impulsively, or felt overwhelmed by tasks others managed easily. This documentation is invaluable during your clinical evaluation.',
+            text: 'Before your first appointment, note down specific examples of how ADHD-like symptoms are affecting your life. Write down situations where you lost focus, forgot something important, acted impulsively, or felt overwhelmed by tasks others managed easily. This documentation is invaluable during your clinical evaluation.',
           },
           {
             heading: 'Step 2: Choose the Right Provider',
-            text: 'ADHD in adults is diagnosed by licensed mental health professionals including psychiatrists, psychologists, and in some cases licensed therapists or nurse practitioners. Telehealth platforms like MindReach connect you with board-certified psychiatrists who specialize in adult ADHD, from the comfort of your home.\n\nWhen choosing a provider, look for someone who conducts a thorough intake rather than a quick checklist. A proper evaluation explores your childhood history, current symptoms, and how those symptoms affect your daily functioning.',
+            text: 'ADHD in adults is diagnosed by licensed mental health professionals including psychiatrists, psychologists, and in some cases licensed therapists or nurse practitioners. MindReach connects you with board-certified psychiatrists who specialize in adult ADHD, from the comfort of your home.\n\nWhen choosing a provider, look for someone who conducts a thorough intake rather than a quick checklist. A proper evaluation explores your childhood history, current symptoms, and how those symptoms affect your daily functioning.',
           },
           {
             heading: 'Step 3: Complete a Clinical Intake and Screening',
@@ -329,16 +319,16 @@ const BLOGS = [
             heading: 'Step 5: Receive Your Diagnosis and Treatment Plan',
             text: 'If your evaluation supports a diagnosis, your provider will discuss the findings with you in detail. You will receive a personalized treatment plan that may include:',
             bullets: [
-              'Stimulant medication (such as Adderall or Vyvanse) or non-stimulant alternatives (such as Strattera)',
               'Cognitive Behavioral Therapy (CBT) adapted for ADHD to build executive functioning skills',
               'Behavioral coaching for time management, organization, and routine building',
+              'Mindfulness-based strategies to improve focus, reduce impulsivity, and manage emotional regulation',
               'Workplace or academic accommodation letters if needed (IEPs, 504 plans)',
             ],
-            textAfter: 'Your treatment plan is not a one-size-fits-all prescription. It is built around your specific symptoms, life context, and personal goals.',
+            textAfter: 'Your treatment plan is not one-size-fits-all. It is built around your specific symptoms, life context, and personal goals.',
           },
           {
             heading: 'Step 6: Follow Up and Adjust',
-            text: 'ADHD management is an ongoing process. Medication may need to be adjusted in terms of dose or type. Therapy strategies evolve as you build new skills. MindReach provides regular follow-up appointments to monitor your progress, address side effects, and ensure your treatment continues to match your needs.',
+            text: 'ADHD management is an ongoing process. As you progress through therapy, your strategies will evolve and be refined to match where you are in your journey. MindReach provides regular follow-up appointments to monitor your progress, celebrate your wins, and ensure your treatment continues to meet your needs. Our team is with you every step of the way.',
           },
         ],
       },
@@ -347,11 +337,11 @@ const BLOGS = [
       },
       {
         heading: 'Why Telehealth Is a Game-Changer for Adult ADHD Diagnosis',
-        text: 'For many adults with ADHD, the idea of scheduling appointments, sitting in waiting rooms, and navigating a traditional healthcare system is itself a barrier to getting help. Telehealth removes that friction entirely.\n\nWith MindReach, you can schedule your intake evaluation online, attend appointments via video call from any device, receive prescriptions electronically, and manage your care without leaving home. For individuals whose ADHD makes routine tasks difficult, this accessibility is not a convenience. It is a necessity.',
+        text: 'For many adults with ADHD, the idea of scheduling appointments, sitting in waiting rooms, and navigating a traditional healthcare system is itself a barrier to getting help. MindReach removes that friction entirely.\n\nWith MindReach, you can schedule your intake evaluation online, attend appointments via video call from any device, and manage your care without ever leaving home. For individuals whose ADHD makes routine tasks difficult, this accessibility is not a convenience. It is a necessity.',
       },
       {
         heading: 'How Long Does the ADHD Diagnosis Process Take?',
-        text: 'At MindReach, most patients complete their initial evaluation within one to two appointments. If additional testing or records are needed, the process may take slightly longer. From first appointment to formal diagnosis and treatment plan, most patients move forward within one to three weeks.',
+        text: 'At MindReach, most patients complete their initial evaluation within one to two appointments. If additional testing or records are needed, the process may take slightly longer. From first appointment to formal diagnosis and treatment plan, most patients move forward within one week.',
       },
       {
         heading: 'Is an ADHD Diagnosis Worth It?',
@@ -365,11 +355,11 @@ const BLOGS = [
     faqs: [
       {
         question: 'Can I get an ADHD diagnosis online?',
-        answer: 'Yes. Licensed psychiatrists on telehealth platforms like MindReach can conduct a full ADHD evaluation online, including clinical interviews, validated screening tools, and a formal DSM-5 diagnosis.',
+        answer: 'Yes. MindReach\'s licensed therapists can conduct a full ADHD evaluation online, including clinical interviews, validated screening tools, and a formal diagnosis based on the Diagnostic and Statistical Manual of Mental Disorders, Fifth Edition (DSM-5).',
       },
       {
         question: 'Do I need a referral to get an ADHD diagnosis as an adult?',
-        answer: 'In most cases, no. You can book directly with a MindReach psychiatrist without a GP referral. Check your insurance requirements as some plans may ask for a primary care referral first.',
+        answer: 'In most cases, no. You can book directly with a MindReach therapist without a GP referral. Check your insurance requirements as some plans may ask for a primary care referral first. If you are unsure about what you need, reach out to our team and we will help guide you through the process.',
       },
       {
         question: 'Will I definitely be prescribed medication?',

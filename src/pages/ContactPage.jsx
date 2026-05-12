@@ -1,16 +1,13 @@
-import { useSearchParams } from 'react-router-dom'
 import PageLayout from '../components/layout/PageLayout'
 import AppImage from '../components/ui/AppImage'
 import { CONTACT_INFO_CARDS } from '../data/contactDetails'
+import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = 'Contact Us | MindReach'
 const BODY_CLASS = 'body-bg'
 const CONTACT_IMAGE = '/assets/img/homepage-images/pexels-polina-tankilevitch-5234582.jpg'
 
 function ContactPage() {
-  const [searchParams] = useSearchParams()
-  const selectedDoctor = searchParams.get('doctor')?.trim() ?? ''
-
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
@@ -59,7 +56,6 @@ function ContactPage() {
               <div className="row g-6 align-items-center justify-content-between">
                 <div className="col-lg-7">
                   <form
-                    key={selectedDoctor || 'default-contact-form'}
                     action="#"
                     className="appoentment-forms contact-page-form"
                     onSubmit={(event) => event.preventDefault()}
@@ -67,14 +63,14 @@ function ContactPage() {
                     <div className="section-title mb-60 contact-page-form-copy">
                       <span className="black fw_700 fs-six d-block mb-3 heading-font">Contact Us</span>
                       <h2 className="wow fadeInUp black visible-slowly-right" data-wow-delay=".3s">
-                        Get an{' '}
+                        We're here to{' '}
                         <span className="position-relative z-1">
-                          Appointment
+                          help
                           <img src="/assets/img/element/title-badge1.png" alt="" aria-hidden="true" className="title-badge1 d-md-block d-none w-100" />
                         </span>
                       </h2>
                       <p className="pra pt-3 mb-0">
-                        Reach MindReach for therapy, psychiatry, doctor availability, or appointment scheduling.
+                        MindReach is here to answer your questions and guide you to the right support. If you don't see your condition or service listed, contact us and our team will find the right provider for you.
                       </p>
                     </div>
 
@@ -89,7 +85,15 @@ function ContactPage() {
                         <input type="text" placeholder="Phone Number" />
                       </div>
                       <div className="col-lg-6">
-                        <input type="text" placeholder="Preferred Doctor" defaultValue={selectedDoctor} />
+                        <select name="service" defaultValue="">
+                          <option value="" disabled>Service</option>
+                          {MENTAL_HEALTH_SERVICES.map((service) => (
+                            <option key={service.id} value={service.title}>
+                              {service.title}
+                            </option>
+                          ))}
+                          <option value="Other">Other</option>
+                        </select>
                       </div>
                       <div className="col-lg-12">
                         <textarea name="message" placeholder="Message" rows={5} defaultValue={''} />

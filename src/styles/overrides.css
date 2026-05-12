@@ -2039,6 +2039,15 @@ header#header-sticky {
   gap: 28px;
 }
 
+.about-page-hero__text {
+  display: grid;
+  gap: 14px;
+}
+
+.about-page-hero__text p {
+  margin: 0;
+}
+
 .about-page-hero__lead {
   max-width: 640px;
 }
@@ -2064,6 +2073,11 @@ header#header-sticky {
   margin-top: 7px;
   color: var(--p1-clr);
   flex-shrink: 0;
+}
+
+.about-page-hero__actions .common-btn,
+.about-page-support .common-btn {
+  border: 1px solid rgba(9, 10, 11, 0.22) !important;
 }
 
 .about-page-hero__stats {
@@ -3042,6 +3056,16 @@ header#header-sticky {
 
 .contact-page-form-copy .pra {
   max-width: 620px;
+}
+
+.contact-page-form select {
+  width: 100%;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  background: #f5f6f8;
+  color: var(--text);
+  padding: 14px 24px;
 }
 
 .contact-page-aside {

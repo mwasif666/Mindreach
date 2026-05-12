@@ -8,6 +8,14 @@ const BODY_CLASS = "body-bg"
 const MINDREACH_CALL_NUMBER = '+1-979-595-8975'
 const MINDREACH_CALL_HREF = 'tel:+19795958975'
 
+function renderTreatmentText(text) {
+  return text.split('\n\n').map((paragraph, index, paragraphs) => (
+    <p key={paragraph} className={`pra${index === paragraphs.length - 1 ? ' mb-0' : ' mb-3'}`}>
+      {paragraph}
+    </p>
+  ))
+}
+
 function ServiceDetailsPage() {
   const { serviceId } = useParams()
   const service = MENTAL_HEALTH_SERVICES.find((item) => item.id === serviceId)
@@ -216,7 +224,7 @@ function ServiceDetailsPage() {
                     </div>
                     <div className="mindreach-service-detail__copy">
                       <h4 className="black mb-3">Treatment Options</h4>
-                      <p className="pra mb-0">{service.treatment}</p>
+                      {renderTreatmentText(service.treatment)}
                     </div>
                     <div className="mindreach-service-detail__bottom-cta text-center mt-5 pt-2">
                       <p className="pra mb-3">{service.bookingText}</p>

@@ -2,7 +2,7 @@ export const CONTACT_INFO_CARDS = [
   {
     iconClassName: 'fa-solid fa-location-dot',
     title: 'Virtual Care Coverage',
-    lines: ['Secure online therapy and psychiatry appointments across Pakistan.'],
+    lines: ['Secure online therapy and psychiatry appointments.'],
   },
   {
     iconClassName: 'fa-solid fa-envelope',

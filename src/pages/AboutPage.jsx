@@ -18,6 +18,7 @@ const ABOUT_POINTS = [
   "Licensed therapists and psychiatrists in one virtual-first platform",
   "Support for anxiety, depression, trauma, panic, ADHD, and mood concerns",
   "Flexible online appointments designed around real schedules and routines",
+  "Fully HIPAA-compliant platform keeping your health information private and secure",
 ];
 
 const ABOUT_METRICS = [
@@ -26,7 +27,7 @@ const ABOUT_METRICS = [
     label: "patients supported through secure online mental health care",
   },
   {
-    value: "6",
+    value: "10+",
     label: "core support areas featured across therapy and psychiatry services",
   },
   {
@@ -38,36 +39,36 @@ const ABOUT_METRICS = [
 const ABOUT_VALUES = [
   {
     iconClassName: "fa-solid fa-shield-check",
-    title: "Private, secure care",
-    text: "Sessions are designed to feel safe, confidential, and simple to join from home, work, or wherever support is easiest to access.",
+    title: "Insurance friendly & affordable",
+    text: "We work with leading insurance providers to make expert mental health care accessible to more people — so cost is never a barrier to getting the support you deserve.",
   },
   {
     iconClassName: "fa-solid fa-user-doctor",
-    title: "Therapy and psychiatry together",
-    text: "MindReach gives people access to talk therapy, psychiatric assessment, medication follow-up, and coordinated care in one place.",
+    title: "Licensed experts you can trust",
+    text: "Our providers are board-certified, clinically experienced, and carefully vetted to deliver culturally competent, evidence-based care tailored to your needs.",
   },
   {
     iconClassName: "fa-solid fa-calendar-check",
-    title: "Built for consistency",
-    text: "The platform is structured for follow-through, with practical scheduling, easier check-ins, and care plans that fit everyday life.",
+    title: "Your schedule, your terms",
+    text: "No long waitlists. Book a virtual appointment in minutes and connect with a licensed mental health professional from the comfort of your home, whenever you're ready.",
   },
 ];
 
 const CARE_STEPS = [
   {
     number: "01",
-    title: "Share what support you need",
-    text: "Start with anxiety, depression, trauma, ADHD, burnout, medication questions, or general emotional overwhelm. The goal is to make the first step clear.",
+    title: "Find the right service",
+    text: "Browse our services to find care that fits your needs. From anxiety and depression to PTSD, ADHD, and more. Not sure where to start? We're here to help you figure it out.",
   },
   {
     number: "02",
-    title: "Get matched with the right clinician",
-    text: "Based on your needs, MindReach guides you toward therapy, psychiatry, or the provider profile that best fits your goals and schedule.",
+    title: "Book your session",
+    text: "Once you've found the right fit, book your appointment easily through our online portal or give us a call. Don't see your condition listed? Call us and our team will match you with the best provider for your needs.",
   },
   {
     number: "03",
-    title: "Continue care with steady follow-up",
-    text: "Treatment stays practical through structured sessions, progress tracking, medication review when needed, and support that is easier to stay with.",
+    title: "Start your care",
+    text: "Connect with your licensed therapist or psychiatrist virtually, from wherever you are. Your care begins from day one. No long waits, no complicated processes.",
   },
 ];
 
@@ -123,19 +124,21 @@ function AboutPage() {
                     </h2>
                   </div>
 
-                  <p className="pra about-page-hero__lead">
-                    MindReach is a virtual mental health platform connecting
-                    people with licensed therapists and psychiatrists for secure
-                    online care. The focus is simple access, clear treatment
-                    pathways, and support that fits real schedules instead of
-                    adding more friction.
-                  </p>
-                  <p className="pra mb-0">
-                    Whether someone needs therapy for anxiety or trauma,
-                    psychiatry for medication planning, or behavior-focused
-                    support for motivation and routines, MindReach brings that
-                    care into one connected experience.
-                  </p>
+                  <div className="about-page-hero__text">
+                    <p className="pra about-page-hero__lead">
+                      MindReach is a virtual mental health platform connecting
+                      people with licensed therapists and psychiatrists for secure
+                      online care. The focus is simple access, clear treatment
+                      pathways, and support that fits real schedules instead of
+                      adding more friction.
+                    </p>
+                    <p className="pra mb-0">
+                      Whether someone needs therapy for anxiety or trauma,
+                      behavioral support for motivation and routines, or help
+                      navigating life's more challenging moments, MindReach brings
+                      that care into one connected experience.
+                    </p>
+                  </div>
 
                   <ul className="about-page-hero__points">
                     {ABOUT_POINTS.map((point) => (
@@ -202,7 +205,7 @@ function AboutPage() {
                   </div>
                   <div className="about-page-hero__badge">
                     <span className="about-page-hero__badge-label">
-                      Virtual care across Pakistan
+                      Virtual care at your convenience
                     </span>
                     <strong>
                       Flexible online appointments for therapy and psychiatry
@@ -282,9 +285,9 @@ function AboutPage() {
                     className="wow fadeInUp black visible-slowly-right mb-3"
                     data-wow-delay=".3s"
                   >
-                    A simple process built for people who need
+                    From first step to first session, we've got{" "}
                     <span className="position-relative z-1">
-                      support
+                      you
                       <img
                         src="/assets/img/element/title-badge1.png"
                         alt=""
@@ -292,7 +295,6 @@ function AboutPage() {
                         className="title-badge1 d-md-block d-none w-100"
                       />
                     </span>
-                    without extra stress
                   </h2>
                   <p className="pra mb-0">
                     MindReach is designed to remove common delays and make care
@@ -374,6 +376,19 @@ function AboutPage() {
                 </div>
               ))}
             </div>
+            <div className="text-center mt-5">
+              <a
+                href="/service"
+                className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100"
+              >
+                View All Services
+                <img
+                  src="/assets/img/icon/arrow-right-black.png"
+                  alt=""
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
           </div>
         </section>
 
@@ -388,7 +403,7 @@ function AboutPage() {
                   className="wow fadeInUp black visible-slowly-right mb-0"
                   data-wow-delay=".3s"
                 >
-                  Meet the clinicians currently available on
+                  Meet the licensed experts on{" "}
                   <span className="position-relative z-1">
                     MindReach
                     <img
