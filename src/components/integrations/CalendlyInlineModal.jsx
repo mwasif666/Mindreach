@@ -1,13 +1,38 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Modal } from 'antd'
 import MENTAL_HEALTH_SERVICES from '../../data/mentalHealthServices'
 import useContactForm from '../../hooks/useContactForm'
 
-const CALENDLY_BASE_URL = 'https://calendly.com/mwasif66625426/30min'
+const CALENDLY_BASE_URL = 'https://calendly.com/aliahmed_95/30min'
+const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js'
 const MAX_INSURANCE_IMAGE_BYTES = 1024 * 1024 * 1024
 const APPOINTMENT_SERVICE_OPTIONS = Array.from(
   new Set(MENTAL_HEALTH_SERVICES.map((service) => service.title)),
 )
+
+function loadCalendlyScript() {
+  return new Promise((resolve, reject) => {
+    if (window.Calendly?.initInlineWidget) {
+      resolve()
+      return
+    }
+
+    const existingScript = document.querySelector(`script[src="${CALENDLY_SCRIPT_SRC}"]`)
+
+    if (existingScript) {
+      existingScript.addEventListener('load', resolve, { once: true })
+      existingScript.addEventListener('error', reject, { once: true })
+      return
+    }
+
+    const script = document.createElement('script')
+    script.src = CALENDLY_SCRIPT_SRC
+    script.async = true
+    script.addEventListener('load', resolve, { once: true })
+    script.addEventListener('error', reject, { once: true })
+    document.body.appendChild(script)
+  })
+}
 
 function buildCalendlyPrefillAnswer(bookingDetails, doctorName) {
   if (!bookingDetails) {
@@ -25,10 +50,8 @@ function buildCalendlyPrefillAnswer(bookingDetails, doctorName) {
 
 function buildCalendlyUrl(doctorName, bookingDetails) {
   const url = new URL(CALENDLY_BASE_URL)
-  url.searchParams.set('hide_landing_page_details', '1')
+  url.searchParams.set('hide_event_type_details', '1')
   url.searchParams.set('hide_gdpr_banner', '1')
-  url.searchParams.set('text_color', '1f2a37')
-  url.searchParams.set('primary_color', '22b573')
 
   if (doctorName) {
     url.searchParams.set('utm_content', doctorName)
@@ -91,6 +114,7 @@ function getBookingSubmitErrorMessage(error) {
 }
 
 function CalendlyInlineModal({ open, onClose, doctorName }) {
+  const calendlyWidgetRef = useRef(null)
   const [currentStep, setCurrentStep] = useState('form')
   const [bookingDetails, setBookingDetails] = useState(null)
   const [fileSizeError, setFileSizeError] = useState('')
@@ -119,6 +143,38 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
       setCurrentStep('calendar')
     },
   })
+
+  useEffect(() => {
+    if (!isCalendarStep || !calendlyWidgetRef.current) {
+      return undefined
+    }
+
+    let isCancelled = false
+    const widgetContainer = calendlyWidgetRef.current
+    widgetContainer.innerHTML = ''
+
+    loadCalendlyScript()
+      .then(() => {
+        if (isCancelled || !window.Calendly?.initInlineWidget) {
+          return
+        }
+
+        widgetContainer.innerHTML = ''
+        window.Calendly.initInlineWidget({
+          url: calendlyUrl,
+          parentElement: widgetContainer,
+        })
+      })
+      .catch(() => {
+        if (!isCancelled) {
+          widgetContainer.innerHTML = ''
+        }
+      })
+
+    return () => {
+      isCancelled = true
+    }
+  }, [calendlyUrl, isCalendarStep])
 
   const heroDescription = isCalendarStep
     ? 'Select an available time below to continue your booking.'
@@ -177,12 +233,10 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
         {isCalendarStep ? (
           <>
             <div className="mindreach-calendly-modal__frame">
-              <iframe
-                key={calendlyUrl}
-                src={calendlyUrl}
-                title={doctorName ? `Calendly booking for ${doctorName}` : 'Calendly booking'}
-                className="mindreach-calendly-modal__iframe"
-                frameBorder="0"
+              <div
+                ref={calendlyWidgetRef}
+                className="calendly-inline-widget mindreach-calendly-modal__iframe"
+                data-url={calendlyUrl}
               />
             </div>
           </>
