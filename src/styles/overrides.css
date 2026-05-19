@@ -161,6 +161,37 @@
   cursor: default;
 }
 
+.blog-details-right .quick-call .numbs {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 58px;
+  padding: 16px 34px;
+  border: 2px solid var(--p2-clr);
+  border-radius: 999px;
+  background: var(--p2-clr);
+  color: #fff !important;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(34, 181, 115, 0.24);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.blog-details-right .quick-call .numbs:hover,
+.blog-details-right .quick-call .numbs:focus-visible {
+  background: #179b61;
+  border-color: #179b61;
+  color: #fff !important;
+  box-shadow: 0 18px 36px rgba(34, 181, 115, 0.32);
+  transform: translateY(-2px);
+}
+
 /*
  * Limit navigation to Home, Services, and Portfolio while keeping
  * existing section layouts intact on legacy template pages.
@@ -496,6 +527,135 @@ footer
   border-radius: 50%;
 }
 
+.body-bg2
+  .testimonial-wrapper3
+  .testimonial-items3
+  .testimonial-content
+  .mindreach-review-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-family: "Syne", sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide
+  .testimonial-content
+  .thumb.mindreach-review-avatar {
+  background-image: none !important;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide
+  .testimonial-content
+  .thumb.mindreach-review-avatar
+  img,
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide
+  .testimonial-content
+  .thumb.mindreach-review-avatar
+  .app-image {
+  display: none !important;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(-n + 3)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: none !important;
+  color: #fff;
+  font-family: "Syne", sans-serif;
+  font-size: 44px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(-n + 3)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar)
+  img,
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(-n + 3)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar)
+  .app-image {
+  display: none !important;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(1)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar)::before {
+  content: "S";
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(2)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar)::before {
+  content: "C";
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(3)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar)::before {
+  content: "J";
+}
+
+.mindreach-review-avatar--sam {
+  background: #0b5d50;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(1)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar) {
+  background: #0b5d50;
+}
+
+.mindreach-review-avatar--cassandra {
+  background: #7b3f98;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(2)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar) {
+  background: #7b3f98;
+}
+
+.mindreach-review-avatar--johnathan {
+  background: #d56b2d;
+}
+
+.body-bg2
+  .testimonial-wrapper3
+  .swiper-slide:nth-child(3)
+  .testimonial-content
+  .thumb:not(.mindreach-review-avatar) {
+  background: #d56b2d;
+}
+
 .body-bg2 .service-item3 .thumb img,
 .body-bg2 .latest-project3 .latest-project-slide3 .thumb img,
 .body-bg2 .feature-wrapper3 .feature-thumb img,
@@ -543,9 +703,45 @@ footer
   padding-top: 8px;
 }
 
+.body-bg2 .feature-wrapper3 > .row:first-child {
+  align-items: stretch;
+}
+
+.body-bg2 .feature-wrapper3 > .row:first-child > [class*="col-"] {
+  display: flex;
+}
+
+.body-bg2 .feature-wrapper3 .feature-items1,
+.body-bg2 .feature-wrapper3 .feature-thumb,
+.body-bg2 .feature-wrapper3 .feature-content {
+  width: 100%;
+  min-height: 360px;
+}
+
+.body-bg2 .feature-wrapper3 .feature-items1 {
+  justify-content: flex-start;
+  padding: 38px;
+}
+
+.body-bg2 .feature-wrapper3 .feature-items1 .content {
+  width: 100%;
+  max-width: 360px;
+}
+
 .body-bg2 .feature-wrapper3 .feature-thumb {
-  height: 309px;
+  height: auto;
   border-radius: 20px;
+}
+
+.body-bg2 .feature-wrapper3 .feature-thumb .app-image,
+.body-bg2 .feature-wrapper3 .feature-thumb img {
+  height: 100%;
+}
+
+.body-bg2 .feature-wrapper3 .feature-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .body-bg2 .feature-wrapper3 .feature-inner-items2 {
@@ -1514,6 +1710,7 @@ footer.footer-section {
   justify-content: center;
   align-items: center;
   gap: 20px;
+  width: 100%;
   min-height: 220px;
   height: 100%;
   padding: 36px;

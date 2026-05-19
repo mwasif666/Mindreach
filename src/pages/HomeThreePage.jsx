@@ -45,11 +45,11 @@ const HOMEPAGE_TICKER_ITEMS = [
   "A safe space to speak, heal, and grow",
   "Take the first step toward feeling better",
   "No long waitlists, no commutes",
-  "Quality care, wherever and whenever you need it.",
+  "Quality care, wherever and whenever you need it",
   "A safe space to speak, heal, and grow",
   "Take the first step toward feeling better",
   "No long waitlists, no commutes",
-  "Quality care, wherever and whenever you need it.",
+  "Quality care, wherever and whenever you need it",
 ];
 const CARE_COUNTERS = [
   {
@@ -487,7 +487,13 @@ function HomeThreePage() {
                         {createElement(icon)}
                       </span>
                       <h2 className="mindreach-care-stat__value">
-                        <span className="count">{value}</span>
+                        <span
+                          className="count"
+                          data-counterup-delay="10"
+                          data-counterup-time="1200"
+                        >
+                          {value}
+                        </span>
                         <span className="mindreach-care-stat__suffix">
                           {suffix}
                         </span>
@@ -530,12 +536,8 @@ function HomeThreePage() {
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="thumb">
-                          <AppImage
-                            src={HOMEPAGE_IMAGES.testimonialOne}
-                            alt="Sam Herbet"
-                            wrapperClassName="app-image--fill"
-                          />
+                        <div className="thumb mindreach-review-avatar mindreach-review-avatar--sam" aria-label="Sam Herbet">
+                          S
                         </div>
                         <div className="author-details">
                           <h3>Sam Herbet</h3>
@@ -565,12 +567,8 @@ function HomeThreePage() {
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="thumb">
-                          <AppImage
-                            src={HOMEPAGE_IMAGES.testimonialTwo}
-                            alt="Cassandra Williams"
-                            wrapperClassName="app-image--fill"
-                          />
+                        <div className="thumb mindreach-review-avatar mindreach-review-avatar--cassandra" aria-label="Cassandra Williams">
+                          C
                         </div>
                         <div className="author-details">
                           <h3>Cassandra Williams</h3>
@@ -600,12 +598,8 @@ function HomeThreePage() {
                   <div className="swiper-slide">
                     <div className="testimonial-items3">
                       <div className="testimonial-content">
-                        <div className="thumb">
-                          <AppImage
-                            src={HOMEPAGE_IMAGES.testimonialThree}
-                            alt="Johnathan Poole"
-                            wrapperClassName="app-image--fill"
-                          />
+                        <div className="thumb mindreach-review-avatar mindreach-review-avatar--johnathan" aria-label="Johnathan Poole">
+                          J
                         </div>
                         <div className="author-details">
                           <h3>Johnathan Poole</h3>
@@ -717,7 +711,7 @@ function HomeThreePage() {
             <div className="feature-wrapper3">
               <div className="row g-4 mb-30">
                 <div
-                  className="col-xl-6 col-md-6 wow fadeInUp"
+                  className="col-xl-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.3s"
                 >
                   <div className="feature-items1">
@@ -735,16 +729,10 @@ function HomeThreePage() {
                         />
                       </div> */}
                     </div>
-                    <div className="icon">
-                      <img
-                        src="/assets/img/feature/featureIcon3_1.png"
-                        alt="icon"
-                      />
-                    </div>
                   </div>
                 </div>
                 <div
-                  className="col-xl-3 col-md-6 wow fadeInUp"
+                  className="col-xl-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.5s"
                 >
                   <div className="feature-thumb">
@@ -756,7 +744,7 @@ function HomeThreePage() {
                   </div>
                 </div>
                 <div
-                  className="col-xl-3 col-md-6 wow fadeInUp"
+                  className="col-xl-4 col-md-6 wow fadeInUp"
                   data-wow-delay="0.7s"
                 >
                   <div className="feature-content">

@@ -75,9 +75,6 @@ function BookAppointmentPage() {
                 <p className="pra pt-3 mb-0">
                   Click any provider below to open that provider&apos;s booking
                   flow directly.
-                  {selectedDoctor
-                    ? ` ${selectedDoctor.name} is currently selected.`
-                    : ""}
                 </p>
               </div>
 

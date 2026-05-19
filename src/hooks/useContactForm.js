@@ -7,6 +7,7 @@ export const CONTACT_FORM_EMAIL_TO = "ahsan@rootsbmd.com";
 function useContactForm(options = {}) {
   const {
     buildSubject,
+    emailTo,
     successMessage = "Form submitted successfully.",
     errorMessage = "Submission failed. Please try again.",
     getErrorMessage,
@@ -61,8 +62,12 @@ function useContactForm(options = {}) {
         typeof buildSubject === "function"
           ? buildSubject(formData)
           : "MindReach appointment request";
+      const nextEmailTo =
+        typeof emailTo === "function"
+          ? emailTo(formData, values)
+          : emailTo || CONTACT_FORM_EMAIL_TO;
 
-      formData.set("email_to", CONTACT_FORM_EMAIL_TO);
+      formData.set("email_to", nextEmailTo);
       formData.set("subject", nextSubject);
 
       const response = await fetch(CONTACT_FORM_ACTION, {

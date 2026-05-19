@@ -17,7 +17,7 @@ const DOCTORS = [
     shortRole: "Psychology",
     experienceLabel: "Experience",
     experienceValue: "5+ years experience",
-    rating: 4.8,
+    rating: 5.0,
     approvalRate: "98%",
     feedbackCount: 37,
     locationPrimary: "Virtual Care",
@@ -82,7 +82,7 @@ const DOCTORS = [
     shortRole: "Psychiatry",
     experienceLabel: "Experience",
     experienceValue: "7+ years experience",
-    rating: 4.9,
+    rating: 5.0,
     approvalRate: "99%",
     feedbackCount: 41,
     locationPrimary: "Tele-Psychiatry",
@@ -147,7 +147,7 @@ const DOCTORS = [
     shortRole: "Behavioral Health",
     experienceLabel: "Experience",
     experienceValue: "6+ years experience",
-    rating: 4.7,
+    rating: 4.9,
     approvalRate: "97%",
     feedbackCount: 34,
     locationPrimary: "Online Sessions",
@@ -271,8 +271,10 @@ const DOCTORS = [
   },
 ];
 
+const ACTIVE_DOCTORS = DOCTORS.slice(0, 4);
+
 export function getDoctorById(doctorId) {
-  return DOCTORS.find((doctor) => doctor.id === doctorId);
+  return ACTIVE_DOCTORS.find((doctor) => doctor.id === doctorId);
 }
 
-export default DOCTORS;
+export default ACTIVE_DOCTORS;

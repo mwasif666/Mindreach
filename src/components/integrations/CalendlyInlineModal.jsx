@@ -3,8 +3,19 @@ import { Modal } from 'antd'
 import MENTAL_HEALTH_SERVICES from '../../data/mentalHealthServices'
 import useContactForm from '../../hooks/useContactForm'
 
-const CALENDLY_BASE_URL = 'https://calendly.com/aliahmed_95/30min'
+const CALENDLY_ACCOUNT_URL = 'https://calendly.com/aliahmed_95'
 const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js'
+const DEFAULT_CALENDLY_EVENT_TYPE = 'dr-areeba-khan'
+const DOCTOR_CALENDLY_EVENT_TYPES = {
+  'dr-areeba-khan': 'dr-areeba-khan',
+  'dr-hassan-malik': 'dr-hassan-malik',
+  'dr-mehak-aslam': 'dr-mehak-aslam',
+}
+const DOCTOR_BOOKING_EMAILS = {
+  'dr-areeba-khan': 'areeba.khan@mindreachcare.com',
+  'dr-hassan-malik': 'hassan.malik@mindreachcare.com',
+  'dr-mehak-aslam': 'mehak.aslam@mindreachcare.com',
+}
 const MAX_INSURANCE_IMAGE_BYTES = 1024 * 1024 * 1024
 const APPOINTMENT_SERVICE_OPTIONS = Array.from(
   new Set(MENTAL_HEALTH_SERVICES.map((service) => service.title)),
@@ -48,9 +59,17 @@ function buildCalendlyPrefillAnswer(bookingDetails, doctorName) {
   ].filter(Boolean).join('\n')
 }
 
-function buildCalendlyUrl(doctorName, bookingDetails) {
-  const url = new URL(CALENDLY_BASE_URL)
-  url.searchParams.set('hide_event_type_details', '1')
+function getCalendlyEventType(doctorId) {
+  return DOCTOR_CALENDLY_EVENT_TYPES[doctorId] ?? DEFAULT_CALENDLY_EVENT_TYPE
+}
+
+function getBookingEmailTo(doctorId) {
+  return DOCTOR_BOOKING_EMAILS[doctorId] ?? DOCTOR_BOOKING_EMAILS['dr-areeba-khan']
+}
+
+function buildCalendlyUrl(doctorId, doctorName, bookingDetails) {
+  const eventType = getCalendlyEventType(doctorId)
+  const url = new URL(`${CALENDLY_ACCOUNT_URL}/${eventType}`)
   url.searchParams.set('hide_gdpr_banner', '1')
 
   if (doctorName) {
@@ -113,13 +132,15 @@ function getBookingSubmitErrorMessage(error) {
   return 'We could not email your details right now. Please try again after the booking email API is fixed.'
 }
 
-function CalendlyInlineModal({ open, onClose, doctorName }) {
+function CalendlyInlineModal({ open, onClose, doctorId, doctorName }) {
   const calendlyWidgetRef = useRef(null)
   const [currentStep, setCurrentStep] = useState('form')
   const [bookingDetails, setBookingDetails] = useState(null)
   const [fileSizeError, setFileSizeError] = useState('')
 
-  const calendlyUrl = buildCalendlyUrl(doctorName, bookingDetails)
+  const calendlyEventType = getCalendlyEventType(doctorId)
+  const calendlyUrl = buildCalendlyUrl(doctorId, doctorName, bookingDetails)
+  const bookingEmailTo = getBookingEmailTo(doctorId)
   const isCalendarStep = currentStep === 'calendar'
   const {
     formRef,
@@ -129,6 +150,7 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
     toastTone,
     isToastVisible,
   } = useContactForm({
+    emailTo: bookingEmailTo,
     buildSubject: (formData) => buildAppointmentSubject(
       doctorName,
       formData.get('service'),
@@ -248,7 +270,11 @@ function CalendlyInlineModal({ open, onClose, doctorName }) {
               className="mindreach-booking-form"
               onSubmit={handleSubmit}
             >
+              <input type="hidden" name="doctor_id" defaultValue={doctorId ?? ''} />
               <input type="hidden" name="doctor_name" defaultValue={doctorName ?? ''} />
+              <input type="hidden" name="booking_email_to" defaultValue={bookingEmailTo} />
+              <input type="hidden" name="calendly_event_type" defaultValue={calendlyEventType} />
+              <input type="hidden" name="calendly_url" defaultValue={calendlyUrl} />
               <input type="hidden" name="source" defaultValue="Book Appointment Modal" />
 
               <div className="mindreach-booking-form__grid">

@@ -39,11 +39,11 @@ function DoctorPage() {
                   </span>
                 </h2>
                 <p className="pra pt-3 mb-0">
-                  Browse our providers below. Clicking a profile or appointment button now takes you straight to the booking page for that selected provider.
+                  Browse our providers below. Clicking a profile or appointment button opens the booking flow for that selected provider.
                 </p>
               </div>
 
-              <DoctorCardGrid doctors={DOCTORS} />
+              <DoctorCardGrid doctors={DOCTORS} interaction="modal" />
             </div>
           </div>
         </section>

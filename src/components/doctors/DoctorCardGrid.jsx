@@ -90,6 +90,7 @@ function DoctorCardGrid({
           key={activeDoctor?.id ?? 'closed-booking-modal'}
           open={Boolean(activeDoctor)}
           onClose={() => updateSelectedDoctorId(null)}
+          doctorId={activeDoctor?.id}
           doctorName={activeDoctor?.name}
         />
       ) : null}
@@ -134,7 +135,6 @@ function DoctorCardGrid({
               <div className="mindreach-doctor-card__body">
                 <div className="mindreach-doctor-card__content">
                   <div className="mindreach-doctor-card__header">
-                    <span className="mindreach-doctor-card__credential">{doctor.credential ?? doctor.education}</span>
                     <h3 className="mindreach-doctor-card__name">
                       {isModalInteraction ? (
                         <button

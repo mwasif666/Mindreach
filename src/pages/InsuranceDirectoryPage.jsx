@@ -1,53 +1,12 @@
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import PageLayout from '../components/layout/PageLayout'
-import INSURANCE_DIRECTORY from '../data/insuranceDirectory'
+import InsuranceLogoMark from '../components/ui/InsuranceLogoMark'
+import INSURANCE_LOGOS from '../data/insuranceLogos'
 
 const PAGE_TITLE = 'Insurances | MindReach'
 const BODY_CLASS = 'body-bg'
 
-function InsuranceDirectoryCard({ state, summary, groups }) {
-  const totalPlans = groups.reduce((total, group) => total + group.plans.length, 0)
-
-  return (
-    <article className="insurance-directory-card">
-      <div className="insurance-directory-card__header">
-        <span className="insurance-directory-card__eyebrow">Accepted Coverage</span>
-        <div className="insurance-directory-card__title-row">
-          <h2>{state}</h2>
-          <span className="insurance-directory-card__count">{totalPlans} plans</span>
-        </div>
-        <p>{summary}</p>
-      </div>
-
-      <div className="insurance-directory-card__groups">
-        {groups.map((group) => (
-          <section key={`${state}-${group.letter}`} className="insurance-directory-group">
-            <h3>{group.letter}</h3>
-            <ul>
-              {group.plans.map((plan) => (
-                <li key={`${state}-${group.letter}-${plan}`}>{plan}</li>
-              ))}
-            </ul>
-          </section>
-        ))}
-      </div>
-
-      <a
-        href="/book-appointment"
-        className="common-btn box-style p2-bg insurance-directory-card__button d-inline-flex justify-content-center align-items-center fs18 fw-semibold white overflow-hidden rounded100"
-      >
-        Book Appointment
-      </a>
-    </article>
-  )
-}
-
 function InsuranceDirectoryPage() {
-  const totalPlans = INSURANCE_DIRECTORY.reduce(
-    (overallTotal, state) =>
-      overallTotal + state.groups.reduce((stateTotal, group) => stateTotal + group.plans.length, 0),
-    0,
-  )
-
   return (
     <PageLayout title={PAGE_TITLE} bodyClass={BODY_CLASS}>
       <div>
@@ -60,18 +19,18 @@ function InsuranceDirectoryPage() {
               <div className="insurance-directory-hero__copy">
                 <h1>Insurances We Accept</h1>
                 <p>
-                  Browse accepted plans by state before booking. Final eligibility depends on your
-                  member benefits, network, and referral requirements.
+                  Review accepted insurance providers before booking. Final eligibility depends on
+                  your member benefits, network, and referral requirements.
                 </p>
               </div>
               <div className="insurance-directory-hero__meta" aria-label="Insurance coverage summary">
                 <div className="insurance-directory-hero__meta-item">
-                  <strong>{INSURANCE_DIRECTORY.length}</strong>
-                  <span>States listed</span>
+                  <strong>100+</strong>
+                  <span>Plans</span>
                 </div>
                 <div className="insurance-directory-hero__meta-item">
-                  <strong>{totalPlans}</strong>
-                  <span>Plans shown</span>
+                  <strong>HIPAA</strong>
+                  <span>Compliance</span>
                 </div>
                 <div className="insurance-directory-hero__meta-item">
                   <strong>Direct</strong>
@@ -82,29 +41,50 @@ function InsuranceDirectoryPage() {
           </div>
         </section>
 
-        <section className="insurance-directory-section">
+        <section className="insurance-directory-section insurance-acceptance-section">
           <div className="container">
             <div className="section-title text-center insurance-directory-section__title">
               <span className="cmn-tag p1-bg heading-font">Accepted Coverage</span>
               <h2 className="black wow fadeInUp" data-wow-delay=".3s">
-                Find your state and review the plans we commonly accept
+                Insurances we accept
               </h2>
               <p className="insurance-directory-section__subtitle">
-                If you do not see your plan listed, contact us before scheduling and we can help
-                confirm the right network details.
+                We partner with a wide range of insurances to make expert mental health care more
+                accessible and affordable.
               </p>
             </div>
 
-            <div className="insurance-directory-grid">
-              {INSURANCE_DIRECTORY.map((entry) => (
-                <InsuranceDirectoryCard
-                  key={entry.state}
-                  state={entry.state}
-                  summary={entry.summary}
-                  groups={entry.groups}
-                />
-              ))}
+            <div className="insurance-acceptance__carousel">
+              <button
+                type="button"
+                className="array-prev insurance-acceptance__nav-button"
+                aria-label="Show previous insurance logos"
+              >
+                <FiChevronLeft aria-hidden="true" />
+              </button>
+              <div className="swiper insurance-acceptance__slider">
+                <div className="swiper-wrapper">
+                  {INSURANCE_LOGOS.map((logo) => (
+                    <div key={logo.id} className="swiper-slide">
+                      <div
+                        className="insurance-acceptance__logo-card"
+                        data-logo={logo.id}
+                      >
+                        <InsuranceLogoMark id={logo.id} name={logo.name} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <button
+                type="button"
+                className="array-next insurance-acceptance__nav-button"
+                aria-label="Show next insurance logos"
+              >
+                <FiChevronRight aria-hidden="true" />
+              </button>
             </div>
+            <div className="insurance-acceptance__pagination swiper-dot dot" />
           </div>
         </section>
       </div>
