@@ -29,7 +29,7 @@ function InsuranceDirectoryPage() {
                 </div>
                 <div className="insurance-directory-hero__meta-item">
                   <strong>HIPAA</strong>
-                  <span>Compliance</span>
+                  <span>Complaint</span>
                 </div>
                 <div className="insurance-directory-hero__meta-item">
                   <strong>Direct</strong>

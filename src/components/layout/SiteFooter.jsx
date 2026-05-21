@@ -12,6 +12,10 @@ const FOOTER_SOCIAL_LINKS = [
   { iconClassName: 'fab fa-instagram', label: 'Instagram', href: '#' },
 ]
 const FOOTER_PRIMARY_NAV_ITEMS = SITE_NAV_ITEMS
+const FOOTER_ADDITIONAL_NAV_ITEMS = [
+  { label: 'Blogs', href: '/blog' },
+  { label: 'Insurance', href: '/insurances' },
+]
 const FOOTER_SECONDARY_NAV_ITEMS = LEGAL_LINKS
 
 function SiteFooter() {
@@ -75,20 +79,22 @@ function SiteFooter() {
               </div>
               <div className="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                 <div className="homepage-footer-column">
-                  <h3>Page</h3>
                   <ul>
                     {FOOTER_PRIMARY_NAV_ITEMS.map((item) => (
                       <li key={item.href}>
                         <a href={item.href}>{item.label}</a>
                       </li>
                     ))}
-                    <li><a href="/blog">Blogs</a></li>
+                    {FOOTER_ADDITIONAL_NAV_ITEMS.map((item) => (
+                      <li key={item.href}>
+                        <a href={item.href}>{item.label}</a>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
               <div className="col-xl-2 col-lg-4 col-md-4 col-sm-6">
                 <div className="homepage-footer-column">
-                  <h3>Link</h3>
                   <ul>
                     {FOOTER_SECONDARY_NAV_ITEMS.map((item) => (
                       <li key={item.href}>
@@ -100,7 +106,6 @@ function SiteFooter() {
               </div>
               <div className="col-xl-4 col-lg-12 col-md-4">
                 <div className="homepage-footer-column homepage-footer-contact">
-                  <h3>Contact</h3>
                   <ul>
                     {FOOTER_CONTACT_ITEMS.map(({ iconClassName, label, value }) => (
                       <li key={label} className="homepage-footer-contact__item">

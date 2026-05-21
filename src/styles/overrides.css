@@ -206,13 +206,17 @@ a[href="/pricing"] {
   cursor: default;
 }
 
-footer li:has(> a[href="/blog"]),
 footer li:has(> a[href="/blog-details"]),
 footer li:has(> a[href="/home-1"]),
 footer li:has(> a[href="/home-2"]),
 footer li:has(> a[href="/home-3"]),
 footer li:has(> a[href="/pricing"]) {
   display: none !important;
+}
+
+footer a[href="/blog"] {
+  pointer-events: auto;
+  cursor: pointer;
 }
 
 footer
