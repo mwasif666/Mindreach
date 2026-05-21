@@ -2,7 +2,15 @@ import { FOOTER_CONTACT_ITEMS } from '../../data/contactDetails'
 import { LEGAL_LINKS } from '../../data/legalPages'
 import SITE_NAV_ITEMS from '../../data/navigationLinks'
 
-const FOOTER_SOCIAL_ICONS = ['fab fa-facebook-f', 'fa-brands fa-linkedin-in', 'fab fa-instagram', 'fa-brands fa-x']
+const FOOTER_SOCIAL_LINKS = [
+  { iconClassName: 'fab fa-facebook-f', label: 'Facebook', href: '#' },
+  {
+    iconClassName: 'fa-brands fa-linkedin-in',
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/company/mindreachhealth/',
+  },
+  { iconClassName: 'fab fa-instagram', label: 'Instagram', href: '#' },
+]
 const FOOTER_PRIMARY_NAV_ITEMS = SITE_NAV_ITEMS
 const FOOTER_SECONDARY_NAV_ITEMS = LEGAL_LINKS
 
@@ -49,11 +57,18 @@ function SiteFooter() {
                     Mental health support is an essential part of daily well-being, offering care, guidance,
                     and treatment for a range of emotional health needs.
                   </p>
-                  <div className="homepage-footer-socials" aria-label="MindReach social media placeholders">
-                    {FOOTER_SOCIAL_ICONS.map((iconClassName) => (
-                      <span key={iconClassName} className="homepage-footer-socials__icon">
-                        <i className={iconClassName} />
-                      </span>
+                  <div className="homepage-footer-socials" aria-label="MindReach social media">
+                    {FOOTER_SOCIAL_LINKS.map(({ iconClassName, label, href }) => (
+                      <a
+                        key={label}
+                        href={href}
+                        className="homepage-footer-socials__icon"
+                        aria-label={label}
+                        target={href.startsWith('http') ? '_blank' : undefined}
+                        rel={href.startsWith('http') ? 'noreferrer' : undefined}
+                      >
+                        <i className={iconClassName} aria-hidden="true" />
+                      </a>
                     ))}
                   </div>
                 </div>

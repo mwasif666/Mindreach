@@ -33,176 +33,145 @@ function PrivacyPolicyPage() {
             <div className="privacy-policy-content">
 
               <div className="privacy-policy-block">
-                <h2 className="black mb-3">Privacy at MindReach</h2>
-                <p>
-                  At MindReach, protecting your personal and health information is a core part of our mission to deliver safe, ethical, and effective mental health care. We understand the sensitive nature of mental health support and are committed to handling your data with the utmost care, transparency, and confidentiality.
-                </p>
-              </div>
-
-              <div className="privacy-policy-block">
-                <h3>Our Commitment to Your Privacy</h3>
+                <h3>1. Information We Collect</h3>
                 <ul className="mindreach-service-detail__list flex-column gap-3">
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>HIPAA-Compliant Practices:</strong> All our services and systems are fully compliant with the Health Insurance Portability and Accountability Act (HIPAA). Your personal health information (PHI) is protected through secure technologies and strict ethical handling.</span>
+                    <span><strong>Personal Information:</strong> Name, email address, phone number, billing details, and other identifiers.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Secure Telehealth Platform:</strong> All sessions are conducted through encrypted, secure platforms designed specifically for healthcare.</span>
+                    <span><strong>Technical Data:</strong> IP address, browser type, operating system, and access logs.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Data Minimization:</strong> We only collect the information necessary to provide care. We never sell your data or share it with third parties for marketing.</span>
+                    <span><strong>Usage Data:</strong> Information on how you interact with our website, products, and services.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Transparent Communication:</strong> You have the right to review, request, or correct your data, and will always be informed if your information is used beyond your care (with your explicit consent).</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>Professional Conduct:</strong> Our staff are trained in privacy standards and committed to maintaining confidentiality.</span>
+                    <span><strong>Health Information:</strong> If applicable, details related to medical billing and healthcare services.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="privacy-policy-block">
-                <h3>Information We Collect</h3>
-                <p>To provide you with high-quality care and comply with healthcare regulations, MindReach may collect the following types of information:</p>
+                <h3>2. How We Use Your Information</h3>
                 <ul className="mindreach-service-detail__list flex-column gap-3">
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Personal Identification:</strong> Name, date of birth, contact information, and insurance details</span>
+                    <span>Provide, operate, and improve our services.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Health Information:</strong> Medical history, mental health history, symptoms, medications, and treatment records</span>
+                    <span>Personalize user experiences and respond to inquiries.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Session Data:</strong> Notes from therapy or psychiatry sessions, appointment history, and communication logs</span>
+                    <span>Process payments and manage customer accounts.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Usage Data:</strong> Website usage patterns, IP addresses, and device information (used only for platform performance and security monitoring)</span>
-                  </li>
-                </ul>
-                <p className="mt-3">We only collect what is necessary to provide safe, effective, and personalized care.</p>
-              </div>
-
-              <div className="privacy-policy-block">
-                <h3>How We Use Your Information</h3>
-                <p>MindReach uses your information solely for the following purposes:</p>
-                <ul className="mindreach-service-detail__list flex-column gap-3">
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>Delivering mental health care services</span>
+                    <span>Send marketing, promotions, and service-related communications (with consent).</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span>Communicating with you about appointments, care plans, and support</span>
+                    <span>Ensure compliance with The Campaign Registry (TCR) and other legal regulations.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span>Coordinating care across therapists, psychiatrists, or primary care (with your consent)</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>Insurance verification and claims processing</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>Internal quality improvement and training (with data de-identified when applicable)</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>Responding to your inquiries or feedback</span>
-                  </li>
-                </ul>
-                <p className="mt-3">We do not use your data for advertising, sell it to third parties, or allow any unauthorized access.</p>
-              </div>
-
-              <div className="privacy-policy-block">
-                <h3>How We Protect Your Data</h3>
-                <p>MindReach implements multiple layers of data protection to ensure your privacy:</p>
-                <ul className="mindreach-service-detail__list flex-column gap-3">
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>End-to-End Encryption:</strong> All sessions and data transfers are encrypted using industry-leading protocols</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>Secure Storage:</strong> Your information is stored in HIPAA-compliant systems with role-based access controls</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>Access Restrictions:</strong> Only authorized personnel involved in your care can access your records</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>Regular Audits:</strong> We conduct periodic privacy audits and security assessments</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span><strong>Staff Training:</strong> All staff complete annual privacy and security training, with strict policies on data handling</span>
+                    <span>Facilitate medical billing services, including interactions with healthcare providers and insurance companies.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="privacy-policy-block">
-                <h3>Your Rights</h3>
-                <p>You have the right to:</p>
+                <h3>3. Data Sharing &amp; Compliance</h3>
+                <p>We do not sell or share text messaging opt-in data with third parties or affiliates for marketing.</p>
+                <p>Third-party services used (e.g., payment processors) follow industry standards to protect user data.</p>
+                <p>All data sharing complies with applicable laws and regulations, including HIPAA.</p>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h3>4. SMS Communications</h3>
+                <p>We may send appointment reminders, payment notifications, and other relevant information via SMS on behalf of healthcare providers.</p>
+                <p>Consent for receiving SMS messages is obtained through our service agreements or interactions. You can opt out of receiving SMS messages at any time by replying STOP or UNSUBSCRIBE.</p>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h3>5. Data Security</h3>
+                <p>We implement safeguards to protect personal information from unauthorized access, use, or disclosure.</p>
+                <p>While we strive to protect your data, no method of transmission over the internet or electronic storage is 100% secure.</p>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h3>6. Changes to This Privacy Policy</h3>
+                <p>We reserve the right to update this Privacy Policy. Continued use of our services after changes constitutes acceptance of the updated policy.</p>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h2 className="black mb-3">Data Privacy</h2>
+                <h3>1. Information We Collect</h3>
+                <p><strong>a. Personal Information*</strong> - We collect various types of information to provide and improve our services, including:</p>
+                <p><strong>b. Identifying Information:</strong></p>
                 <ul className="mindreach-service-detail__list flex-column gap-3">
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span>Know how your information is used</span>
+                    <span>Name</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span>Access or request a copy of your health records</span>
+                    <span>Contact details (email addresses, phone numbers)</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span>Request corrections or updates</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>Withdraw consent for non-care-related use</span>
-                  </li>
-                  <li>
-                    <i className="fa-solid fa-angles-right" />
-                    <span>File a complaint without risk of retaliation</span>
+                    <span><strong>Medical Credentialing and Billing Information:</strong> Any information related to medical credentialing and billing services that you provide to us.</span>
                   </li>
                 </ul>
               </div>
 
               <div className="privacy-policy-block">
-                <h3>Contact Us</h3>
-                <p>If you have any questions, concerns, or requests related to your privacy at MindReach, please contact:</p>
+                <h3>2. How We Use Your Information</h3>
                 <ul className="mindreach-service-detail__list flex-column gap-3">
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Email:</strong> care@mindreachcare.com</span>
+                    <span><strong>Providing Services:</strong> To facilitate medical billing and credentialing services as requested by you.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Phone:</strong> +1 (603) 555-0123</span>
+                    <span><strong>Communication:</strong> To respond to your inquiries, send updates, and provide information related to our services.</span>
                   </li>
                   <li>
                     <i className="fa-solid fa-angles-right" />
-                    <span><strong>Mail:</strong> MindReach Behavioral Health, 66 Brooklyn, India</span>
+                    <span><strong>Improvement:</strong> To analyze usage patterns and improve the quality of our website and services.</span>
                   </li>
                 </ul>
               </div>
 
-              <div className="text-center mt-5 pt-2">
-                <p className="pra mb-3">Ready to take the first step toward better mental health? Book your appointment today.</p>
-                <a
-                  href="/contact"
-                  className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden p1-bg rounded100"
-                >
-                  Book Appointment
-                  <img src="/assets/img/icon/arrow-right-black.png" alt="" aria-hidden="true" />
-                </a>
+              <div className="privacy-policy-block">
+                <h3>3. Information Sharing &amp; Disclosure</h3>
+                <p>We do not share your personal information with third parties. Your information is solely used for the provision of our medical credentialing services and communication with you.</p>
+                <p>No mobile information will be shared with third parties/affiliates for marketing or promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.</p>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h3>4. Your Consent and Control</h3>
+                <p>By providing your information, you consent to the collection, processing, and storage of your personal data as outlined in this Privacy Policy.</p>
+                <ul className="mindreach-service-detail__list flex-column gap-3">
+                  <li>
+                    <i className="fa-solid fa-angles-right" />
+                    <span><strong>Opt-Out:</strong> You may opt out of receiving promotional communications from us by contacting us directly.</span>
+                  </li>
+                  <li>
+                    <i className="fa-solid fa-angles-right" />
+                    <span><strong>Access and Correction:</strong> You may request access to and correction of your personal information by contacting us.</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="privacy-policy-block">
+                <h3>Contact Information</h3>
+                <p><strong>Email:</strong> info@mindreach.com</p>
+                <p><strong>Phone:</strong> XXX-XXX-XXXX</p>
               </div>
 
             </div>

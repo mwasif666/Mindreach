@@ -1851,9 +1851,15 @@ header#header-sticky {
   ul
   li.site-header__nav-item--has-children
   .site-header__submenu {
-  width: 320px;
-  max-height: min(70vh, 420px);
-  overflow-y: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 0;
+  width: min(640px, calc(100vw - 48px));
+  max-height: none;
+  overflow: hidden;
+  border: 1px solid rgba(9, 10, 11, 0.08);
+  border-radius: 14px;
+  box-shadow: 0 24px 70px rgba(9, 10, 11, 0.14);
 }
 
 .site-header
@@ -1863,8 +1869,43 @@ header#header-sticky {
   .site-header__submenu
   li
   a {
+  display: flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 13px 18px;
+  border-radius: 0;
   white-space: normal;
-  line-height: 1.45;
+  line-height: 1.35;
+}
+
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li:last-child
+  a {
+  border-bottom: 1px solid #eeeeee;
+}
+
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li:nth-last-child(-n + 2)
+  a {
+  border-bottom: 0;
+}
+
+.site-header
+  .main-menu
+  ul
+  li.site-header__nav-item--has-children
+  .site-header__submenu
+  li:nth-child(odd)
+  a {
+  border-right: 1px solid #eeeeee;
 }
 
 .site-header
@@ -3265,6 +3306,212 @@ header#header-sticky {
   padding: 14px 24px;
 }
 
+.contact-page-service-select {
+  position: relative;
+  z-index: 20;
+}
+
+.contact-page-service-select.is-open {
+  z-index: 30;
+}
+
+.contact-page-service-select__button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  min-height: 70px;
+  padding: 0 30px;
+  border: 1px solid transparent;
+  border-radius: 34px;
+  background: #f5f6f8;
+  color: #6b7280;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.contact-page-service-select__button.has-value {
+  color: var(--black);
+}
+
+.contact-page-service-select__button:hover,
+.contact-page-service-select__button:focus-visible {
+  border-color: rgba(34, 181, 115, 0.35);
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(34, 181, 115, 0.1);
+  outline: none;
+}
+
+.contact-page-service-select__button i {
+  color: var(--p1-clr);
+  font-size: 16px;
+  transition: transform 0.2s ease;
+}
+
+.contact-page-service-select.is-open .contact-page-service-select__button i {
+  transform: rotate(180deg);
+}
+
+.contact-page-service-select__menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  max-height: 330px;
+  margin: 0;
+  padding: 8px;
+  overflow-y: auto;
+  list-style: none;
+  border: 1px solid rgba(34, 181, 115, 0.18);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 22px 60px rgba(9, 10, 11, 0.16);
+}
+
+.contact-page-service-select__menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.contact-page-service-select__menu::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(34, 181, 115, 0.38);
+}
+
+.contact-page-service-select__menu li {
+  margin: 0;
+}
+
+.contact-page-service-select__menu button {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 14px;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  color: #374151;
+  font-family: "Outfit", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  text-align: left;
+  transition:
+    background 0.18s ease,
+    color 0.18s ease;
+}
+
+.contact-page-service-select__menu button:hover,
+.contact-page-service-select__menu button:focus-visible {
+  background: rgba(34, 181, 115, 0.1);
+  color: #0b5d3a;
+  outline: none;
+}
+
+.contact-page-service-select__menu button.is-selected {
+  background: var(--p1-clr);
+  color: #fff;
+}
+
+.contact-page-sms-consent {
+  margin: 0;
+  padding: 20px 22px;
+  border: 1px solid rgba(34, 181, 115, 0.22);
+  border-left: 4px solid var(--p2-clr);
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(34, 181, 115, 0.05) 0%, #fff 100%);
+}
+
+.contact-page-sms-consent legend {
+  float: none;
+  width: auto;
+  margin: 0 0 14px;
+  color: var(--black);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.contact-page-sms-consent__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.contact-page-sms-consent__options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 24px;
+  border: 2px solid rgba(9, 10, 11, 0.14);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--black);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(9, 10, 11, 0.06);
+}
+
+.contact-page-sms-consent__options label:hover {
+  border-color: var(--p2-clr);
+  box-shadow: 0 4px 14px rgba(34, 181, 115, 0.18);
+}
+
+.contact-page-sms-consent__options label:has(input:checked) {
+  border-color: var(--p2-clr);
+  background: var(--p2-clr);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(34, 181, 115, 0.32);
+}
+
+.contact-page-sms-consent__options input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+  accent-color: var(--p2-clr);
+  cursor: pointer;
+}
+
+.contact-page-sms-consent__options label:has(input:checked) input[type="radio"] {
+  accent-color: #fff;
+}
+
+.contact-page-sms-consent p {
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(9, 10, 11, 0.04);
+  color: var(--text);
+  font-size: 12.5px;
+  line-height: 1.65;
+}
+
+.contact-page-sms-consent a {
+  color: var(--p2-clr);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.contact-page-sms-consent a:hover {
+  color: #179b61;
+}
+
 .contact-page-aside {
   display: grid;
   gap: 0;
@@ -3408,6 +3655,103 @@ header#header-sticky {
   color: #4d5b68;
   font-size: 17px;
   line-height: 1.7;
+}
+
+.insurance-directory-logo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.insurance-directory-logo-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  align-items: center;
+  justify-items: center;
+  min-width: 0;
+  min-height: 176px;
+  padding: 34px 22px 28px;
+  border: 1px solid rgba(34, 181, 115, 0.16);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(34, 181, 115, 0.08) 0%, rgba(255, 255, 255, 0.96) 52%),
+    #fff;
+  box-shadow: 0 18px 44px rgba(34, 181, 115, 0.08);
+  transition:
+    border-color 0.24s ease,
+    box-shadow 0.24s ease,
+    transform 0.24s ease;
+}
+
+.insurance-directory-logo-card:hover {
+  border-color: rgba(34, 181, 115, 0.34);
+  box-shadow: 0 22px 54px rgba(34, 181, 115, 0.14);
+  transform: translateY(-3px);
+}
+
+.insurance-directory-logo-card__mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 90px;
+}
+
+.insurance-directory-logo-card__mark svg,
+.insurance-directory-logo-card__mark img {
+  display: block;
+  width: min(100%, 260px);
+  height: 82px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(52%) sepia(74%) saturate(482%)
+    hue-rotate(104deg) brightness(92%) contrast(91%);
+}
+
+.insurance-directory-logo-card h3 {
+  margin: 16px 0 0;
+  color: #0b3f2a;
+  font-family: "Syne", sans-serif;
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+}
+
+@media (max-width: 1199px) {
+  .insurance-directory-logo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .insurance-directory-logo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .insurance-directory-logo-card {
+    min-height: 150px;
+    padding: 26px 16px 22px;
+  }
+
+  .insurance-directory-logo-card__mark {
+    min-height: 72px;
+  }
+
+  .insurance-directory-logo-card__mark svg,
+  .insurance-directory-logo-card__mark img {
+    height: 62px;
+  }
+
+  .insurance-directory-logo-card h3 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 420px) {
+  .insurance-directory-logo-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .insurance-directory-grid {

@@ -1,4 +1,3 @@
-import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import PageLayout from '../components/layout/PageLayout'
 import InsuranceLogoMark from '../components/ui/InsuranceLogoMark'
 import INSURANCE_LOGOS from '../data/insuranceLogos'
@@ -54,37 +53,20 @@ function InsuranceDirectoryPage() {
               </p>
             </div>
 
-            <div className="insurance-acceptance__carousel">
-              <button
-                type="button"
-                className="array-prev insurance-acceptance__nav-button"
-                aria-label="Show previous insurance logos"
-              >
-                <FiChevronLeft aria-hidden="true" />
-              </button>
-              <div className="swiper insurance-acceptance__slider">
-                <div className="swiper-wrapper">
-                  {INSURANCE_LOGOS.map((logo) => (
-                    <div key={logo.id} className="swiper-slide">
-                      <div
-                        className="insurance-acceptance__logo-card"
-                        data-logo={logo.id}
-                      >
-                        <InsuranceLogoMark id={logo.id} name={logo.name} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <button
-                type="button"
-                className="array-next insurance-acceptance__nav-button"
-                aria-label="Show next insurance logos"
-              >
-                <FiChevronRight aria-hidden="true" />
-              </button>
+            <div className="insurance-directory-logo-grid" aria-label="Accepted insurance plans">
+              {INSURANCE_LOGOS.map((logo) => (
+                <article
+                  key={logo.id}
+                  className="insurance-directory-logo-card"
+                  data-logo={logo.id}
+                >
+                  <div className="insurance-directory-logo-card__mark">
+                    <InsuranceLogoMark id={logo.id} name={logo.name} />
+                  </div>
+                  <h3>{logo.name}</h3>
+                </article>
+              ))}
             </div>
-            <div className="insurance-acceptance__pagination swiper-dot dot" />
           </div>
         </section>
       </div>
