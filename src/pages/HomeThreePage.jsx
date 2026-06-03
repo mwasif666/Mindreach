@@ -16,6 +16,7 @@ import BLOGS from "../data/blogs";
 import DOCTORS from "../data/doctors";
 import INSURANCE_LOGOS from "../data/insuranceLogos";
 import MENTAL_HEALTH_SERVICES from "../data/mentalHealthServices";
+import "../components/ui/RotatingText.css";
 
 const PAGE_TITLE = "MindReach";
 const BODY_CLASS = "body-bg2";
@@ -24,8 +25,8 @@ const HOMEPAGE_IMAGES = {
   teamDentistOne: "/assets/img/homepage-images/unsplash-dentist-1.jpg",
   teamDentistTwo: "/assets/img/homepage-images/unsplash-dentist-2.jpg",
   teamDentistThree: "/assets/img/homepage-images/unsplash-dentist-4.jpg",
-  featureThumb: "/assets/img/homepage-images/unsplash-feature-thumb.jpg",
-  featureBackground: "/assets/img/homepage-images/unsplash-feature-bg.jpg",
+  featureThumb: "/assets/img/homepage-images/about-compassionate-care.jpg",
+  featureBackground: "/assets/img/homepage-images/about-virtual-care-bg.jpg",
   aboutTherapySession:
     "/assets/img/homepage-images/unsplash-therapy-session.jpg",
   appointment:
@@ -147,6 +148,38 @@ function HomepageServiceCard({ service }) {
   );
 }
 
+function HeroRotatingWord({ words }) {
+  const sizingWord = words.reduce(
+    (longestWord, word) => (word.length > longestWord.length ? word : longestWord),
+    "",
+  );
+
+  return (
+    <span className="home-hero-css-rotator" aria-label={words.join(" / ")}>
+      <span className="home-hero-css-rotator__sizer" aria-hidden="true">
+        {sizingWord}
+      </span>
+      <span className="home-hero-css-rotator__viewport" aria-hidden="true">
+        {words.map((word, wordIndex) => (
+          <span
+            key={word}
+            className={`home-hero-css-rotator__item home-hero-css-rotator__item--${wordIndex + 1}`}
+          >
+            {Array.from(word).map((char, charIndex) => (
+              <span
+                key={`${word}-${charIndex}`}
+                className="home-hero-css-rotator__char"
+              >
+                {char}
+              </span>
+            ))}
+          </span>
+        ))}
+      </span>
+    </span>
+  );
+}
+
 function HomeThreePage() {
   return (
     <PageLayout
@@ -167,19 +200,17 @@ function HomeThreePage() {
                   <span className="cmn-tag p1-bg heading-font mb-xxl-1 mb-3">
                     Mental Health Care
                   </span>
-                  <h1 className="black wow fadeInUp" data-wow-delay="0.6s">
-                    Therapy Services
-                   
-                    <br />
-                    <span className="position-relative z-1 hero-highlight">
-                     & Psychiatry Support,
+                  <h1 className="black">
+                    <span className="position-relative z-1 hero-highlight home-hero-rotating-line">
+                      <span className="home-hero-rotating-prefix">No</span>
+                      <HeroRotatingWord words={["Waitlists.", "Commutes."]} />
                       <img
                         src="/assets/img/element/title-badge1.png"
                         alt="img"
-                        className="title-badge1 d-md-block d-none w-100"
+                        className="title-badge1 d-md-block d-none w-100 home-hero-rotating-highlight"
                       />
                     </span>
-                    <br /> &amp; right where you are
+                    <br /> Just Quality Mental Health Care
                   </h1>
                   <p>
                     Mental health care supports your emotional well-being
@@ -192,15 +223,14 @@ function HomeThreePage() {
                   <div className="d-flex flex-wrap align-items-center gap-xxl-4 gap-xl-3 gap-3">
                     <div className="hero-button">
                       <HomepageIconButton
-                        className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100 wow fadeInRight"
+                        className="common-btn box-style text-nowrap d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold white p2-bg overflow-hidden rounded100"
                         label="Book Appointment"
                         iconSrc="/assets/img/icon/arrow-right-white.png"
                         href="/book-appointment"
-                        data-wow-delay="0.8s"
                       />
                     </div>
                     <a
-                      href="tel:XXX-XXX-XXXX"
+                      href="tel:+19795958975"
                       className="hero-call-pill d-inline-flex align-items-center gap-2"
                     >
                       <span className="hero-call-pill__icon d-center rounded-circle">
@@ -208,7 +238,7 @@ function HomeThreePage() {
                       </span>
                       <span className="d-flex flex-column">
                         <span className="hero-call-pill__label">Call Us</span>
-                        <span className="hero-call-pill__number fw_600">XXX-XXX-XXXX</span>
+                        <span className="hero-call-pill__number fw_600">(979) 595 8975</span>
                       </span>
                     </a>
                   </div>
@@ -463,7 +493,7 @@ function HomeThreePage() {
                 className="common-btn mindreach-provider-outline-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                 label="View All Providers"
                 iconSrc="/assets/img/icon/arrow-right-black.png"
-                href="/doctor"
+                href="/provider"
               />
             </div>
           </div>
@@ -779,10 +809,10 @@ function HomeThreePage() {
                           className="common-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-xxl-2 gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                           label="Find a Provider"
                           iconSrc="/assets/img/icon/arrow-right-black.png"
-                          href="/doctor"
+                          href="/provider"
                         />
                         <a
-                          href="tel:XXX-XXX-XXXX"
+                          href="tel:+19795958975"
                           className="hero-call-pill d-inline-flex align-items-center gap-2"
                           style={{ borderColor: '#fff' }}
                         >
@@ -791,7 +821,7 @@ function HomeThreePage() {
                           </span>
                           <span className="d-flex flex-column">
                             <span className="hero-call-pill__label" style={{ color: 'rgba(255,255,255,0.75)' }}>Call Now</span>
-                            <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>XXX-XXX-XXXX</span>
+                            <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>(979) 595 8975</span>
                           </span>
                         </a>
                       </div>

@@ -15,6 +15,7 @@ import PrivacyPolicyPage from '../pages/PrivacyPolicyPage'
 import ServiceDetailsPage from '../pages/ServiceDetailsPage'
 import ServicePage from '../pages/ServicePage'
 import { LEGAL_PAGE_CONFIGS } from '../data/legalPages'
+import { Navigate } from 'react-router-dom'
 
 export const routeConfig = [
   { path: '/', element: <HomeThreePage /> },
@@ -30,7 +31,8 @@ export const routeConfig = [
   { path: '/blog-details', element: <BlogDetailsPage /> },
   { path: '/blog-details/:blogId', element: <BlogDetailsPage /> },
   { path: '/book-appointment', element: <BookAppointmentPage /> },
-  { path: '/doctor', element: <DoctorPage /> },
+  { path: '/provider', element: <DoctorPage /> },
+  { path: '/doctor', element: <Navigate to="/provider" replace /> },
   { path: '/doctor-details', element: <DoctorDetailsPage /> },
   { path: '/doctor-details/:doctorId', element: <DoctorDetailsPage /> },
   { path: '/pricing', element: <PricingPage /> },

@@ -110,7 +110,7 @@ function HomePage() {
                             </a>
                             <ul className="submenu">
                               <li><a href="/about">About Us</a></li>
-                              <li><a href="/doctor">Doctor</a></li>
+                              <li><a href="/provider">Doctor</a></li>
                               <li><a href="/doctor-details">Doctor Details</a></li>
                               <li><a href="/pricing">Pricing</a></li>
                             </ul>
@@ -490,14 +490,14 @@ function HomePage() {
                       Care
                     </h2>
                   </div>
-                  <a href="/doctor" className="w-100 rounded-4 overflow-hidden">
+                  <a href="/provider" className="w-100 rounded-4 overflow-hidden">
                     <img src="/assets/img/choose/choose1.jpg" alt="img" className="rounded-4 w-100" />
                   </a>
                 </div>
               </div>
               <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                 <div className="chosse-middle">
-                  <a href="/doctor" className="w-100 rounded-4 overflow-hidden mb-xxl-4 mb-3 d-block">
+                  <a href="/provider" className="w-100 rounded-4 overflow-hidden mb-xxl-4 mb-3 d-block">
                     <img src="/assets/img/choose/choose2.jpg" alt="img" className="rounded-4 w-100" />
                   </a>
                   <h4 className="mb-xxl-3 mb-2">
@@ -514,7 +514,7 @@ function HomePage() {
               <div className="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
                 <div className="choose-right position-relative d-center overflow-hidden rounded-4 w-100">
                   <img src="/assets/img/choose/choose3.jpg" alt="img" className="rounded-4 w-100" />
-                  <a href="/doctor" className="video-choose d-center rounded-circle p1-bg video-popup">
+                  <a href="/provider" className="video-choose d-center rounded-circle p1-bg video-popup">
                     <i className="fa-solid fa-play black" />
                   </a>
                 </div>
@@ -907,7 +907,7 @@ function HomePage() {
                           </a>
                         </li>
                         <li>
-                          <a href="/doctor">
+                          <a href="/provider">
                             Doctors
                           </a>
                         </li>
@@ -1045,8 +1045,8 @@ function HomePage() {
                         <i className="far fa-phone" />
                       </div>
                       <div className="offcanvas__contact-text">
-                        <a href="tel:+11002345909" className="d-block">017 5552-0127</a>
-                        <a href="tel:+11002345909">017458632718</a>
+                        <a href="tel:+19795958975" className="d-block">(979) 595 8975</a>
+                        <a href="tel:+19795958975">(979) 595 8975</a>
                       </div>
                     </li>
                   </ul>

@@ -39,13 +39,13 @@ function SiteFooter() {
                 Book Appointment
                 <img src="/assets/img/icon/arrow-right-white.png" alt="" aria-hidden="true" />
               </a>
-              <a href="tel:XXX-XXX-XXXX" className="hero-call-pill d-inline-flex align-items-center gap-2" style={{ borderColor: '#fff' }}>
+              <a href="tel:+19795958975" className="hero-call-pill d-inline-flex align-items-center gap-2" style={{ borderColor: '#fff' }}>
                 <span className="hero-call-pill__icon d-center rounded-circle" style={{ borderColor: '#fff', color: '#fff' }}>
                   <i className="fa-solid fa-phone" aria-hidden="true" />
                 </span>
                 <span className="d-flex flex-column">
                   <span className="hero-call-pill__label" style={{ color: 'rgba(255,255,255,0.7)' }}>Call Now</span>
-                  <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>XXX-XXX-XXXX</span>
+                  <span className="hero-call-pill__number fw_600" style={{ color: '#fff' }}>(979) 595 8975</span>
                 </span>
               </a>
             </div>

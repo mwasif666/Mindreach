@@ -42,8 +42,8 @@ const DOCTORS = [
     profession:
       "Lead therapist for anxiety and trauma-focused virtual care at MindReach",
     location: "Virtual appointments across Pakistan",
-    phone: "+92 (300) 555-0101",
-    phoneHref: "tel:+923005550101",
+    phone: "(979) 595 8975",
+    phoneHref: "tel:+19795958975",
     email: "areeba.khan@mindreachcare.com",
     emailHref: "mailto:areeba.khan@mindreachcare.com",
     websiteLabel: "MindReach profile",
@@ -107,8 +107,8 @@ const DOCTORS = [
     profession:
       "Consultant psychiatrist leading MindReach virtual psychiatry services",
     location: "Secure tele-psychiatry appointments nationwide",
-    phone: "+92 (300) 555-0102",
-    phoneHref: "tel:+923005550102",
+    phone: "(979) 595 8975",
+    phoneHref: "tel:+19795958975",
     email: "hassan.malik@mindreachcare.com",
     emailHref: "mailto:hassan.malik@mindreachcare.com",
     websiteLabel: "MindReach profile",
@@ -152,9 +152,9 @@ const DOCTORS = [
     feedbackCount: 34,
     locationPrimary: "Online Sessions",
     locationSecondary: "Pakistan",
-    image: "/assets/img/homepage-images/unsplash-portrait-2.jpg",
+    image: "/assets/img/homepage-images/dr-mehak-aslam-professional.jpg",
     imageAlt:
-      "Dr. Mehak Aslam in a professional portrait with a calm expression",
+      "Dr. Mehak Aslam smiling in a professional office portrait",
     featureImage: "/assets/img/homepage-images/unsplash-therapist-3.jpg",
     featureImageAlt:
       "Dr. Mehak Aslam supporting a client through a behavioral care plan",
@@ -172,8 +172,8 @@ const DOCTORS = [
     profession:
       "Behavioral health specialist for routine, motivation, and resilience support",
     location: "Online sessions for flexible weekday and weekend care",
-    phone: "+92 (300) 555-0103",
-    phoneHref: "tel:+923005550103",
+    phone: "(979) 595 8975",
+    phoneHref: "tel:+19795958975",
     email: "mehak.aslam@mindreachcare.com",
     emailHref: "mailto:mehak.aslam@mindreachcare.com",
     websiteLabel: "MindReach profile",
@@ -217,10 +217,9 @@ const DOCTORS = [
     feedbackCount: 29,
     locationPrimary: "Virtual Counseling",
     locationSecondary: "Pakistan",
-    image:
-      "/assets/img/homepage-images/ChatGPT Image Mar 6, 2026, 10_50_34 AM.png",
+    image: "/assets/img/homepage-images/dr-sana-ahmed-counseling.jpg",
     imageAlt:
-      "Dr. Sana Ahmed smiling during an online counseling session portrait",
+      "Dr. Sana Ahmed smiling during a virtual counseling session",
     featureImage: "/assets/img/homepage-images/unsplash-therapist-4.jpg",
     featureImageAlt:
       "Dr. Sana Ahmed in a counseling conversation during a virtual care consultation",
@@ -239,8 +238,8 @@ const DOCTORS = [
     profession:
       "Counseling psychologist focused on accessible virtual therapy for anxiety, confidence, and life transitions",
     location: "Virtual counseling appointments across Pakistan",
-    phone: "+92 (300) 555-0104",
-    phoneHref: "tel:+923005550104",
+    phone: "(979) 595 8975",
+    phoneHref: "tel:+19795958975",
     email: "sana.ahmed@mindreachcare.com",
     emailHref: "mailto:sana.ahmed@mindreachcare.com",
     websiteLabel: "MindReach profile",

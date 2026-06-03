@@ -171,7 +171,7 @@ function PrivacyPolicyPage() {
               <div className="privacy-policy-block">
                 <h3>Contact Information</h3>
                 <p><strong>Email:</strong> info@mindreach.com</p>
-                <p><strong>Phone:</strong> XXX-XXX-XXXX</p>
+                <p><strong>Phone:</strong> (979) 595 8975</p>
               </div>
 
             </div>

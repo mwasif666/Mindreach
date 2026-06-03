@@ -84,7 +84,7 @@ function BlogPage() {
                             <a href="#!">Pages <i className="fas fa-angle-down" /></a>
                             <ul className="submenu">
                               <li><a href="/about">About Us</a></li>
-                              <li><a href="/doctor">Doctors</a></li>
+                              <li><a href="/provider">Doctors</a></li>
                               <li><a href="/pricing">Pricing</a></li>
                             </ul>
                           </li>

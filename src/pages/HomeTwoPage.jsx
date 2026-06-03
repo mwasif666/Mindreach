@@ -109,7 +109,7 @@ function HomeTwoPage() {
                             </a>
                             <ul className="submenu">
                               <li><a href="/about">About Us</a></li>
-                              <li><a href="/doctor">Doctor</a></li>
+                              <li><a href="/provider">Doctor</a></li>
                               <li><a href="/doctor-details">Doctor Details</a></li>
                               <li><a href="/pricing">Pricing</a></li>
                             </ul>
@@ -1110,8 +1110,8 @@ function HomeTwoPage() {
                         <i className="far fa-phone" />
                       </div>
                       <div className="offcanvas__contact-text">
-                        <a href="tel:+11002345909" className="d-block">017 5552-0127</a>
-                        <a href="tel:+11002345909">017458632718</a>
+                        <a href="tel:+19795958975" className="d-block">(979) 595 8975</a>
+                        <a href="tel:+19795958975">(979) 595 8975</a>
                       </div>
                     </li>
                   </ul>

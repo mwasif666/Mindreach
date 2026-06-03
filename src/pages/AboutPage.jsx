@@ -162,7 +162,7 @@ function AboutPage() {
                       />
                     </a>
                     <a
-                      href="/doctor"
+                      href="/provider"
                       className="common-btn cmn-border d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100"
                     >
                       Meet Our Providers
@@ -417,7 +417,7 @@ function AboutPage() {
               </div>
 
               <a
-                href="/doctor"
+                href="/provider"
                 className="common-btn mindreach-provider-outline-btn box-style first-box d-inline-flex justify-content-center align-items-center gap-2 fs18 fw-semibold black overflow-hidden rounded100"
               >
                 View All Providers

@@ -10,7 +10,7 @@ function BookingCtaSection({
   leadText = 'Go straight to your',
   highlightText = 'appointment',
   description = 'Choose a provider and select the time that best fits your schedule for the support you need.',
-  buttonHref = '/doctor',
+  buttonHref = '/provider',
   buttonLabel = 'Book Appointment',
 }) {
   return (

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Modal } from 'antd'
 import MENTAL_HEALTH_SERVICES from '../../data/mentalHealthServices'
-import useContactForm from '../../hooks/useContactForm'
+import useContactForm, { CONTACT_FORM_EMAIL_TO } from '../../hooks/useContactForm'
 
 const CALENDLY_ACCOUNT_URL = 'https://calendly.com/aliahmed_95'
 const CALENDLY_SCRIPT_SRC = 'https://assets.calendly.com/assets/external/widget.js'
@@ -10,11 +10,6 @@ const DOCTOR_CALENDLY_EVENT_TYPES = {
   'dr-areeba-khan': 'dr-areeba-khan',
   'dr-hassan-malik': 'dr-hassan-malik',
   'dr-mehak-aslam': 'dr-mehak-aslam',
-}
-const DOCTOR_BOOKING_EMAILS = {
-  'dr-areeba-khan': 'areeba.khan@mindreachcare.com',
-  'dr-hassan-malik': 'hassan.malik@mindreachcare.com',
-  'dr-mehak-aslam': 'mehak.aslam@mindreachcare.com',
 }
 const MAX_INSURANCE_IMAGE_BYTES = 1024 * 1024 * 1024
 const APPOINTMENT_SERVICE_OPTIONS = Array.from(
@@ -63,8 +58,8 @@ function getCalendlyEventType(doctorId) {
   return DOCTOR_CALENDLY_EVENT_TYPES[doctorId] ?? DEFAULT_CALENDLY_EVENT_TYPE
 }
 
-function getBookingEmailTo(doctorId) {
-  return DOCTOR_BOOKING_EMAILS[doctorId] ?? DOCTOR_BOOKING_EMAILS['dr-areeba-khan']
+function getBookingEmailTo() {
+  return CONTACT_FORM_EMAIL_TO
 }
 
 function buildCalendlyUrl(doctorId, doctorName, bookingDetails) {

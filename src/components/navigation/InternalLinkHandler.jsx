@@ -15,6 +15,7 @@ const ALLOWED_PATH_PREFIXES = [
   '/insurances',
   '/notice-of-privacy-practices',
   '/privacy-policy',
+  '/provider',
   '/service',
   '/service-details',
   '/terms-and-conditions',

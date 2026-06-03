@@ -5,7 +5,7 @@ import MENTAL_HEALTH_SERVICES from '../data/mentalHealthServices'
 
 const PAGE_TITLE = "Services | MindReach"
 const BODY_CLASS = "body-bg"
-const MINDREACH_CALL_NUMBER = '+1-979-595-8975'
+const MINDREACH_CALL_NUMBER = '(979) 595 8975'
 const MINDREACH_CALL_HREF = 'tel:+19795958975'
 
 function ServicePage() {
@@ -115,7 +115,7 @@ function ServicePage() {
                             </a>
                             <ul className="submenu">
                               <li><a href="/about">About Us</a></li>
-                              <li><a href="/doctor">Doctor</a></li>
+                              <li><a href="/provider">Doctor</a></li>
                               <li><a href="/doctor-details">Doctor Details</a></li>
                               <li><a href="/pricing">Pricing</a></li>
                             </ul>
@@ -278,7 +278,7 @@ function ServicePage() {
                           </a>
                         </li>
                         <li>
-                          <a href="/doctor">
+                          <a href="/provider">
                             Doctors
                           </a>
                         </li>
@@ -416,8 +416,8 @@ function ServicePage() {
                         <i className="far fa-phone" />
                       </div>
                       <div className="offcanvas__contact-text">
-                        <a href="tel:+11002345909" className="d-block">017 5552-0127</a>
-                        <a href="tel:+11002345909">017458632718</a>
+                        <a href="tel:+19795958975" className="d-block">(979) 595 8975</a>
+                        <a href="tel:+19795958975">(979) 595 8975</a>
                       </div>
                     </li>
                   </ul>

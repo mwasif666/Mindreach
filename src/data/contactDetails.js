@@ -7,12 +7,12 @@ export const CONTACT_INFO_CARDS = [
   {
     iconClassName: 'fa-solid fa-envelope',
     title: 'Email Support',
-    lines: ['care@mindreachcare.com', 'support@mindreachcare.com'],
+    lines: ['info@mindreach.us'],
   },
   {
     iconClassName: 'fa-solid fa-phone',
     title: 'Call MindReach',
-    lines: ['+92 (300) 555-0100', '+92 (301) 555-0199'],
+    lines: ['(979) 595 8975'],
   },
   {
     iconClassName: 'fa-solid fa-clock',
@@ -25,16 +25,16 @@ export const FOOTER_CONTACT_ITEMS = [
   {
     iconClassName: 'fa-solid fa-location-dot',
     label: 'Coverage',
-    value: 'Virtual appointments across Pakistan',
+    value: 'Virtual appointments across the US',
   },
   {
     iconClassName: 'fa-solid fa-phone',
     label: 'Phone Number',
-    value: '+92 (300) 555-0100',
+    value: '(979) 595 8975',
   },
   {
     iconClassName: 'fa-solid fa-envelope',
     label: 'Email',
-    value: 'care@mindreachcare.com',
+    value: 'info@mindreach.us',
   },
 ]

@@ -52,8 +52,8 @@ const SITE_NAV_ITEMS = [
   // },
   {
     label: "Our Providers",
-    href: "/doctor",
-    matchPaths: ["/doctor", "/doctor-details", "/book-appointment"],
+    href: "/provider",
+    matchPaths: ["/provider", "/doctor", "/doctor-details", "/book-appointment"],
     matchPrefixes: ["/doctor-details"],
   },
   {
